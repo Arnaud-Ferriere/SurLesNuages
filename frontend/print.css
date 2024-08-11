@@ -1,0 +1,36 @@
+h1 {
+	color: #23477c;
+}
+
+h4 {
+	color: #23477c;
+}
+
+.container {
+	margin-bottom: 3em;
+}
+
+.date {
+	font-weight: 400;
+	font-size: 1.3rem;
+	color: #23477c;
+}
+
+.bordure {
+	border-left: 5px solid #bdc3c7;
+	padding-left: 10px;
+}
+
+.ancre {
+	padding-top: 160px;
+	margin-top: -160px;
+}
+
+.row {
+	color: #23477c;
+}
+
+#nom {
+	font-weight: 500;
+	font-size: 1.5rem;
+}
