@@ -8,16 +8,16 @@ body {
 
 	#mobile {
 		font-size: 2rem;
-		color: #23477c;
+		color: #081a34;
 	}
 }
 
 h1 {
-	color: #23477c;
+	color: #081a34;
 }
 
 h4 {
-	color: #23477c;
+	color: #081a34;
 }
 
 .container {
@@ -27,7 +27,7 @@ h4 {
 .date {
 	font-weight: 400;
 	font-size: 1.3rem;
-	color: #23477c;
+	color: #081a34;
 }
 
 .bordure {
@@ -41,7 +41,7 @@ h4 {
 }
 
 .row {
-	color: #23477c;
+	color: #081a34;
 }
 
 #nom {
@@ -52,7 +52,7 @@ h4 {
 .hover-underline-animation {
 	display: inline-block;
 	position: relative;
-	color: #23477c;
+	color: #081a34;
 }
 .hover-underline-animation::after {
 	content: '';
@@ -62,7 +62,7 @@ h4 {
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: #23477c;
+	background-color: #081a34;
 	transform-origin: bottom right;
 	transition: transform 0.25s ease-out;
 }
@@ -84,5 +84,5 @@ h4 {
 }
 
 .back-to-top .fa-chevron-up {
-	color: #23477c;
+	color: #081a34;
 }
