@@ -226,3 +226,35 @@ h4 {
         font-size: 1.3rem;
     }
 }
+
+.section-header {
+    display: flex;
+    align-items: center;
+}
+
+.section-header h1 {
+    margin: 0;
+    margin-left: 10px; /* Adjust the spacing as needed */
+}
+
+.toggle-section-btn {
+    font-size: 1.2em;
+    color: #000;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-section-btn:focus {
+    outline: none;
+}
+
+.toggle-section-btn i {
+    vertical-align: middle;
+}
+
+.section-content {
+    /* Optional: Add transition for smooth toggle */
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
