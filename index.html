@@ -288,7 +288,7 @@
         </div>
     </div>
 
-    <!--Footer ?-->
+    <!--Footer, à travailler-->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:svgjs="http://svgjs.dev/svgjs" width="4096" height="560" preserveAspectRatio="none"
         viewBox="0 0 4096 560">
@@ -349,30 +349,30 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var toggleButtons = document.querySelectorAll('.toggle-section-btn');
-
+    
             toggleButtons.forEach(function (button) {
                 var section = button.closest('.container');
                 var content = section.querySelector('.section-content');
                 var title = section.querySelector('h1');
-
+    
                 function toggleContent() {
-                    if (content.style.display === 'none' || content.style.display === '') {
-                        content.style.display = 'block';
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
                         button.innerHTML = '<i class="fas fa-chevron-up"></i>';
                         button.setAttribute('aria-expanded', 'true');
                     } else {
-                        content.style.display = 'none';
+                        content.classList.add('hidden');
                         button.innerHTML = '<i class="fas fa-chevron-down"></i>';
                         button.setAttribute('aria-expanded', 'false');
                     }
                 }
-
+    
                 button.addEventListener('click', toggleContent);
                 title.addEventListener('click', toggleContent);
             });
         });
-
     </script>
+    
 
 
 
