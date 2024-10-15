@@ -260,3 +260,6 @@ h4 {
     overflow: hidden;
 }
 
+.hidden {
+    display: none;
+}
