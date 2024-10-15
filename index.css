@@ -285,11 +285,12 @@ h4 {
 }
 
 .stacked-card-img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
     margin-right: 20px;
-    align-self: center;
+    margin-bottom: 10px; /* Ajoutez une marge pour espacer le logo du titre */
+    align-self: start; /* Aligner le logo en haut à gauche du titre */
 }
 
 .stacked-card-body {
