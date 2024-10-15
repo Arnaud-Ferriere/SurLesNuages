@@ -323,38 +323,43 @@
     <!-- Back to top button -->
     <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
 
-    <!-- Custom JS -->
-
-
     <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 50) {
-                    $('#back-to-top').fadeIn();
-                } else {
-                    $('#back-to-top').fadeOut();
-                }
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+    // Obtenir le bouton
+    var backToTopButton = document.getElementById('back-to-top');
 
-            $('#back-to-top').click(function () {
-                $('body, html').animate({
-                    scrollTop: 0
-                }, 800);
-                return false;
-            });
+    // Afficher ou masquer le bouton en fonction du défilement
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    };
+
+    // Fonction de retour en haut avec un effet fluide
+    backToTopButton.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    };
+});
+
+
+
     </script>
 
     <!--Arrow to hide a section-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var toggleButtons = document.querySelectorAll('.toggle-section-btn');
-    
+
             toggleButtons.forEach(function (button) {
                 var section = button.closest('.container');
                 var content = section.querySelector('.section-content');
                 var title = section.querySelector('h1');
-    
+
                 function toggleContent() {
                     if (content.classList.contains('hidden')) {
                         content.classList.remove('hidden');
@@ -366,13 +371,13 @@
                         button.setAttribute('aria-expanded', 'false');
                     }
                 }
-    
+
                 button.addEventListener('click', toggleContent);
                 title.addEventListener('click', toggleContent);
             });
         });
     </script>
-    
+
 
 
 
