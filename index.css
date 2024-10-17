@@ -270,14 +270,18 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: start;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); /* Same box-shadow as certifications */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-    margin-bottom: 20px; /* Ajout de marge pour espacer les cartes */
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 59, 130, 0.2); /* Optional if you want to add a border */
 }
+
+
+
 
 .stacked-card:hover {
     transform: translateY(-10px);
@@ -313,3 +317,13 @@ h4 {
     }
 }
 
+
+.navbar-brand:hover {
+    color: #91c9ec; /* Change to any color you like, e.g., tomato red */
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
