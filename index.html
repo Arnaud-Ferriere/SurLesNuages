@@ -145,6 +145,58 @@
     </div>
 
 
+      <!--SKILLS-->
+    <div id="skills" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Skills section" aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Compétences Techniques</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0, this)" id="comp-header">Compétence <i class="sort-arrow fas fa-chevron-up"></i></th>
+                            <th onclick="sortTable(1, this)" id="niveau-header">Niveau <i class="sort-arrow fas fa-chevron-up"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Systèmes d’exploitation : Windows 10/11, Windows Server 2012, 2019, 2022</td>
+                            <td>Confirmé</td>
+                        </tr>
+                        <tr>
+                            <td>Gestion des identités et accès : Active Directory, Entra ID</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud & Collaboration : Microsoft 365, Teams, SharePoint, Exchange</td>
+                            <td>Confirmé</td>
+                        </tr>
+                        <tr>
+                            <td>Automatisation : PowerApps, Power Automate, PowerShell</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Sécurité : MFA, Accès conditionnels, bonnes pratiques ANSSI, IAM</td>
+                            <td>Bonnes connaissances</td>
+                        </tr>
+                        <tr>
+                            <td>Virtualisation : VmWare, Hyper-V, Ferme RDS</td>
+                            <td>Confirmé</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    
 
     <!--EXPERIENCES CARDS-->
 
@@ -356,9 +408,10 @@
     </div>
 
     <!--Footer, à travailler-->
+    <footer class="footer">
+        
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:svgjs="http://svgjs.dev/svgjs" width="4096" height="560" preserveAspectRatio="none"
-        viewBox="0 0 4096 560">
+        xmlns:svgjs="http://svgjs.dev/svgjs" width="4096" height="560" preserveAspectRatio="none" viewBox="0 0 4096 560">
         <g mask="url(&quot;#SvgjsMask3236&quot;)" fill="none">
             <rect width="4096" height="560" x="0" y="0" fill="url(&quot;#SvgjsLinearGradient3237&quot;)"></rect>
             <path
@@ -378,13 +431,16 @@
             <mask id="SvgjsMask3236">
                 <rect width="4096" height="560" fill="#ffffff"></rect>
             </mask>
-            <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" gradientUnits="userSpaceOnUse"
-                id="SvgjsLinearGradient3237">
+            <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient3237">
                 <stop stop-color="rgba(0, 205, 255, 1)" offset="0"></stop>
                 <stop stop-color="rgba(238, 242, 243, 1)" offset="1"></stop>
             </linearGradient>
         </defs>
     </svg>
+    <div class=" text-center py-4">
+        <p>Arnaud FERRIERE - 2024</p>
+    </div>
+    </footer>
 
 
     <!-- Back to top button -->
@@ -463,6 +519,67 @@
 
     </script>
 
+<!--Table sorting-->
+<script>
+    function sortTable(n, header) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.querySelector(".table");
+        switching = true;
+        // Set the sorting direction to ascending by default:
+        dir = header.getAttribute("data-dir") === "desc" ? "asc" : "desc";
+        
+        // Remove active sort indicators from all columns
+        const headers = document.querySelectorAll("th");
+        headers.forEach(h => {
+            h.setAttribute("data-dir", "");
+            h.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
+            h.querySelector(".sort-arrow").classList.add("fa-chevron-up"); // Reset all arrows to up
+        });
+    
+        // Set the active sort indicator for the clicked header
+        header.setAttribute("data-dir", dir);
+        if (dir === "asc") {
+            header.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
+            header.querySelector(".sort-arrow").classList.add("fa-chevron-up");
+        } else {
+            header.querySelector(".sort-arrow").classList.remove("fa-chevron-up");
+            header.querySelector(".sort-arrow").classList.add("fa-chevron-down");
+        }
+    
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            // Loop through all rows except the first (header):
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                // Compare the two elements in the given column:
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                // Check if the rows should switch place based on direction:
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                // Make the switch and mark that a switch has been made:
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            }
+        }
+    }
+    </script>
+    
+
+    
 
 
 
