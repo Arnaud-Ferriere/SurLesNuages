@@ -286,3 +286,69 @@ svg {
     height: auto;
     display: block;
 }
+
+
+/* Skills Section */
+#skills {
+    margin-bottom: 4em;
+}
+
+#skills .table {
+    width: 100%;
+    margin: 20px 0;
+    color: #081a34; /* même couleur de texte que les autres sections */
+}
+
+#skills .table th {
+    font-weight: 700;
+    background-color: #f0f4f8;
+}
+
+#skills .table td {
+    font-weight: 500;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #EDF7FF; /* Couleur similaire au bas des nuages */
+    color: #081a34;
+    padding: 00px 0;
+
+}
+
+.footer a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #003b82;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.1rem;
+    padding: 0;
+
+}
+
+/* Styling for sortable table headers with Font Awesome icons */
+th {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+th .sort-arrow {
+    font-size: 0.8em;
+    margin-left: 5px;
+    visibility: hidden;
+    transition: visibility 0.2s;
+}
+
+/* Show arrow on hover or when sorted */
+th:hover .sort-arrow,
+th[data-dir] .sort-arrow {
+    visibility: visible;
+}
