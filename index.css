@@ -382,7 +382,7 @@ th[data-dir] .sort-arrow {
 .hover-image {
     position: fixed; /* Permet de sortir l'image du flux normal */
     width: auto; /* Ajustez la taille de l'image selon vos besoins */
-    height: 200px;
+    height: 250px;
     border: 1px solid rgba(0, 59, 130, 0.2);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
