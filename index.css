@@ -442,3 +442,12 @@ th[data-dir] .sort-arrow {
         font-size: 1.2rem;
     }
 }
+
+@media (max-width: 767px) {
+    #back-to-top {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+        z-index: 2;
+    }
+}
