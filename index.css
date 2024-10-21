@@ -390,3 +390,55 @@ th[data-dir] .sort-arrow {
     z-index: 1000;
     pointer-events: none; /* Pour éviter que l'image interfère avec les événements de la souris */
 }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .stacked-card-img {
+        width: 60px;
+        height: 60px;
+    }
+    .certifications-grid,
+    .applied-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .stacked-cards {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .stacked-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .stacked-card {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        margin-bottom: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-toggler {
+        padding: 0.6rem;
+        font-size: 1.2rem;
+    }
+    .toggle-section-btn {
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+}
