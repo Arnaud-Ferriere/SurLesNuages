@@ -135,6 +135,7 @@ a,
     visibility: hidden;
     background-color: #081a34;
     color: #fff;
+    z-index: 2;
     border: none;
     border-radius: 50%;
     padding: 15px;
@@ -242,15 +243,14 @@ h4 {
     overflow: hidden;
     margin-bottom: 10px;
     border: 1px solid rgba(0, 59, 130, 0.2);
-    z-index: 1; /* Z-index par défaut */
-    position: relative; /* Permet de gérer la position par rapport aux autres éléments */
+    position: relative; 
 }
 
 .stacked-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Assure que la carte est devant */
-    position: relative; /* Garde la position lors du survol */
+    z-index: 1; 
+    position: relative; 
 }
 
 
@@ -387,7 +387,7 @@ th[data-dir] .sort-arrow {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none; /* Cachée par défaut */
-    z-index: 1000;
+    z-index: 1;
     pointer-events: none; /* Pour éviter que l'image interfère avec les événements de la souris */
 }
 
