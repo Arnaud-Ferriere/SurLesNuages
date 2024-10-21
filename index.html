@@ -601,30 +601,48 @@
     <!-- Script images intérêts-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Crée un élément img pour afficher l'image en survol
             const hoverImage = document.createElement('img');
             hoverImage.classList.add('hover-image');
             document.body.appendChild(hoverImage);
-
+    
+            // Détection des appareils mobiles
+            function isMobileDevice() {
+                return window.innerWidth <= 768; // Vous pouvez ajuster la largeur selon ce que vous considérez comme "mobile"
+            }
+    
+            // Sélectionne tous les éléments avec la classe interest
             const interests = document.querySelectorAll('.interest');
-
+    
             interests.forEach(interest => {
                 interest.addEventListener('mouseover', (event) => {
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
                     const imageUrl = interest.getAttribute('data-image');
                     hoverImage.src = imageUrl;
                     hoverImage.style.display = 'block';
                 });
-
+    
                 interest.addEventListener('mousemove', (event) => {
-                    hoverImage.style.top = (event.clientY + 20) + 'px';
-                    hoverImage.style.left = (event.clientX + 20) + 'px';
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    hoverImage.style.top = (event.clientY + 20) + 'px'; // Ajuster la position Y pour l'image
+                    hoverImage.style.left = (event.clientX + 20) + 'px'; // Ajuster la position X pour l'image
                 });
-
+    
                 interest.addEventListener('mouseout', () => {
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
                     hoverImage.style.display = 'none';
                 });
             });
+    
+            // Cacher l'image si la fenêtre est redimensionnée sur une largeur mobile
+            window.addEventListener('resize', () => {
+                if (isMobileDevice()) {
+                    hoverImage.style.display = 'none';
+                }
+            });
         });
     </script>
+    
 
 
 
