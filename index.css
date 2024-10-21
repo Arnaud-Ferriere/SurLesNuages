@@ -186,6 +186,7 @@ h4 {
 .section-header {
     display: flex;
     align-items: center;
+    z-index: 0;
 }
 
 .section-header h1 {
@@ -215,6 +216,7 @@ h4 {
     height: 0;
     overflow: hidden;
     transition: height 0.5s ease-in-out;
+    margin-top: 10px;
 }
 
 .section-content.hidden {
@@ -234,23 +236,25 @@ h4 {
     justify-content: start;
     background-color: #fff;
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-    /* Same box-shadow as certifications */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid rgba(0, 59, 130, 0.2);
-    /* Optional if you want to add a border */
+    z-index: 1; /* Z-index par défaut */
+    position: relative; /* Permet de gérer la position par rapport aux autres éléments */
 }
-
-
-
 
 .stacked-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Assure que la carte est devant */
+    position: relative; /* Garde la position lors du survol */
 }
+
+
+
 
 .stacked-card-img {
     width: 90px;
@@ -264,7 +268,7 @@ h4 {
 }
 
 .stacked-card-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Mobile adjustments */
@@ -323,7 +327,7 @@ svg {
     background-color: #EFF6FE;
     /* Couleur similaire au bas des nuages */
     color: #081a34;
-    padding: 10px 10;
+    padding: 00px 10;
 
 }
 
@@ -360,4 +364,29 @@ th .sort-arrow {
 th:hover .sort-arrow,
 th[data-dir] .sort-arrow {
     visibility: visible;
+}
+
+.interest {
+    position: relative;
+    cursor: pointer;
+    color: #081a34;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.interest:hover {
+    color: #0056b3;
+}
+
+/* Initial style for hover image */
+.hover-image {
+    position: fixed; /* Permet de sortir l'image du flux normal */
+    width: auto; /* Ajustez la taille de l'image selon vos besoins */
+    height: 200px;
+    border: 1px solid rgba(0, 59, 130, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Cachée par défaut */
+    z-index: 1000;
+    pointer-events: none; /* Pour éviter que l'image interfère avec les événements de la souris */
 }
