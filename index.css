@@ -78,6 +78,7 @@ a,
 }
 
 @media (max-width: 767px) {
+
     .certifications-grid,
     .applied-skills-grid {
         grid-template-columns: 1fr;
@@ -154,7 +155,8 @@ a,
 
 
 /* Headers */
-h1, h4 {
+h1,
+h4 {
     color: #081a34;
     margin-bottom: 20px;
 }
@@ -220,7 +222,8 @@ h4 {
 }
 
 .section-content:not(.hidden) {
-    height: auto; /* la hauteur sera calculée dynamiquement */
+    height: auto;
+    /* la hauteur sera calculée dynamiquement */
 }
 
 
@@ -232,11 +235,13 @@ h4 {
     background-color: #fff;
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); /* Same box-shadow as certifications */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    /* Same box-shadow as certifications */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     margin-bottom: 20px;
-    border: 1px solid rgba(0, 59, 130, 0.2); /* Optional if you want to add a border */
+    border: 1px solid rgba(0, 59, 130, 0.2);
+    /* Optional if you want to add a border */
 }
 
 
@@ -252,8 +257,10 @@ h4 {
     height: 90px;
     object-fit: contain;
     margin-right: 20px;
-    margin-bottom: 10px; /* Ajoutez une marge pour espacer le logo du titre */
-    align-self: start; /* Aligner le logo en haut à gauche du titre */
+    margin-bottom: 10px;
+    /* Ajoutez une marge pour espacer le logo du titre */
+    align-self: start;
+    /* Aligner le logo en haut à gauche du titre */
 }
 
 .stacked-card-body {
@@ -278,13 +285,15 @@ h4 {
 
 
 .navbar-brand:hover {
-    color: #91c9ec; /* Change to any color you like, e.g., tomato red */
+    color: #91c9ec;
+    /* Change to any color you like, e.g., tomato red */
 }
 
 svg {
     width: 100%;
     height: auto;
     display: block;
+    border: none;
 }
 
 
@@ -296,7 +305,8 @@ svg {
 #skills .table {
     width: 100%;
     margin: 20px 0;
-    color: #081a34; /* même couleur de texte que les autres sections */
+    color: #081a34;
+    /* même couleur de texte que les autres sections */
 }
 
 #skills .table th {
@@ -310,9 +320,10 @@ svg {
 
 /* Footer Section */
 .footer {
-    background-color: #EDF7FF; /* Couleur similaire au bas des nuages */
+    background-color: #EFF6FE;
+    /* Couleur similaire au bas des nuages */
     color: #081a34;
-    padding: 00px 0;
+    padding: 10px 10;
 
 }
 
@@ -322,9 +333,7 @@ svg {
     font-weight: bold;
 }
 
-.footer a:hover {
-    color: #003b82;
-}
+
 
 .footer p {
     margin: 0;
