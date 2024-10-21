@@ -359,7 +359,10 @@
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <ul>
-                        <li><strong>2024 :</strong> Microsoft Power Up - Low code Maker Course - <a href="https://www.credly.com/badges/9a01771e-a5e3-44ba-9f65-d156e97935f6/public_url" target="_blank" rel="noopener noreferrer" class="cert-link">Voir le badge Credly <i class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
+                        <li><strong>2024 :</strong> Microsoft Power Up - Low code Maker Course - <a
+                                href="https://www.credly.com/badges/9a01771e-a5e3-44ba-9f65-d156e97935f6/public_url"
+                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir le badge Credly <i
+                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
                         <li><strong>2023 :</strong> Autoformation "SecNumacadémie" - Bases de cybersécurité</li>
                         <li><strong>2022 :</strong> ENI Formation - Microsoft 365 Identity & Services (MS100)</li>
                         <li><strong>2021 :</strong> Autoformation développement PowerApps / PowerPlatform</li>
@@ -369,8 +372,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
 
     <div id="langues" class="container mt-5">
         <div class="section-header">
@@ -383,18 +386,22 @@
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <ul>
-                        <li><strong>Anglais :</strong> Courant, TOEIC 965/990 - <a href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY" target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
+                        <li><strong>Anglais :</strong> Courant, TOEIC 965/990 - <a
+                                href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
+                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
                         <li><strong>Espagnol :</strong> Notions</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    
+
 
     <div id="interets" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Centres d'intérêt section" aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Centres d'intérêt section"
+                aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h1 class="hover-underline-animation">Centres d'Intérêt</h1>
@@ -403,11 +410,12 @@
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <p>
-                        <span class="interest" data-image="assets/cuisine.png">Cuisine</span>, 
-                        <span class="interest" data-image="assets/jardinage.jpg">jardinage d'intérieur (hydroponie)</span>, 
+                        <span class="interest" data-image="assets/cuisine.png">Cuisine</span>,
+                        <span class="interest" data-image="assets/jardinage.jpg">jardinage d'intérieur
+                            (hydroponie)</span>,
                         <span class="interest" data-image="assets/menuiserie.jpg">menuiserie (ébénisterie)</span>.
                     </p>
-                    
+
                 </div>
             </div>
         </div>
@@ -590,35 +598,33 @@
     </script>
 
 
-<!-- Script images intérêts-->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Crée un élément img pour afficher l'image en survol
-        const hoverImage = document.createElement('img');
-        hoverImage.classList.add('hover-image');
-        document.body.appendChild(hoverImage);
+    <!-- Script images intérêts-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hoverImage = document.createElement('img');
+            hoverImage.classList.add('hover-image');
+            document.body.appendChild(hoverImage);
 
-        // Sélectionne tous les éléments avec la classe interest
-        const interests = document.querySelectorAll('.interest');
+            const interests = document.querySelectorAll('.interest');
 
-        interests.forEach(interest => {
-            interest.addEventListener('mouseover', (event) => {
-                const imageUrl = interest.getAttribute('data-image');
-                hoverImage.src = imageUrl;
-                hoverImage.style.display = 'block';
-            });
+            interests.forEach(interest => {
+                interest.addEventListener('mouseover', (event) => {
+                    const imageUrl = interest.getAttribute('data-image');
+                    hoverImage.src = imageUrl;
+                    hoverImage.style.display = 'block';
+                });
 
-            interest.addEventListener('mousemove', (event) => {
-                hoverImage.style.top = (event.clientY + 20) + 'px'; // Ajuster la position Y pour l'image
-                hoverImage.style.left = (event.clientX + 20) + 'px'; // Ajuster la position X pour l'image
-            });
+                interest.addEventListener('mousemove', (event) => {
+                    hoverImage.style.top = (event.clientY + 20) + 'px';
+                    hoverImage.style.left = (event.clientX + 20) + 'px';
+                });
 
-            interest.addEventListener('mouseout', () => {
-                hoverImage.style.display = 'none';
+                interest.addEventListener('mouseout', () => {
+                    hoverImage.style.display = 'none';
+                });
             });
         });
-    });
-</script>
+    </script>
 
 
 
