@@ -453,3 +453,86 @@ th[data-dir] .sort-arrow {
         z-index: 2;
     }
 }
+
+.card-img-top {
+    border-radius: 15px 15px 0 0;
+}
+
+.card-title {
+    color: #081a34;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #333;
+}
+
+/* Sidebar */
+aside h3 {
+    color: #081a34;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.list-group-item {
+    background-color: #eef2f3;
+    border: none;
+}
+
+.list-group-item a {
+    color: #003b82;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    color: #081a34;
+    text-decoration: underline;
+}
+
+
+/* ARTICLES */
+article h1 {
+    font-size: 2.5rem;
+    color: #081a34;
+}
+
+article .content h2, 
+article .content h3 {
+    color: #003b82;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+article .content p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.blockquote {
+    border-left: 5px solid #003b82;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #555;
+}
+
+/* Style de la boîte blanche pour les articles */
+.article-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.article-container img {
+    max-height: 300px; /* Ajuste cette valeur pour la hauteur désirée */
+    width: auto; /* Garde les proportions */
+    object-fit: cover; /* Adapte l'image sans déformation */
+}
+

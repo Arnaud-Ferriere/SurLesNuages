@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sur les nuages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" as="style">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="https://kit.fontawesome.com/f1818ff38c.js" crossorigin="anonymous"></script>
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="index.css?v1.3">
+
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#"><i class="fas fa-cloud"></i> Sur les nuages</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link hover-underline-animation" href="index.html">Accueil</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link hover-underline-animation" href="apropos.html">À propos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank"
+                        title="LinkedIn" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i><span class="sr-only">(ouvre ma page LinkedIn)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Arnaud-Ferriere" target="_blank" title="GitHub"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-github"></i><span class="sr-only">(ouvre ma page GitHub)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mailto:arn.fer@gmail.com" title="Envoyer un e-mail"
+                        rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i><span class="sr-only">(ouvre l'application de mail pour m'envoyer
+                            un mail)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!--DESCRIPTION-->
+    <div id="description" class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="assets/photo.png" class="img-thumbnail rounded"
+                    alt="Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique">
+            </div>
+            <div class="col-md-9">
+                <h2>Qui suis-je ?</h2>
+                <p>Je suis tombé dans l'informatique tout petit avec un bon vieux 286 sur MS-DOS 6.22. J'ai grandi avec et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation (jamais dans le même ordre !) jusqu'au développement actuel des IA... et de tout ce qui viendra ! <br/>
+                    Aujourd'hui, je suis consultant et Administrateur systèmes spécialisé dans la gestion des identités et les environnements hybrides Active Directory - Entra ID et les outils collaboratifs Microsoft 365. 
+                    A côté de ça j'ai développé mes compétences en automatisation sur la Power Platform de Microsoft et PowerShell, me permettant de contribuer à des projets où l'innovation et l'amélioration continue sont des priorités.<br/>
+                    J'ai beaucoup appris en ligne et j'ai créé ce site pour essayer de contribuer, à mon tour et à ma façon, à partager mon expérience.
+                                     
+                </p>
+                <h5>J'espère vous retrouver bientôt, sur les nuages !   - Arnaud FERRIERE</h5>
+            </div>
+        </div>
+    </div>
+
+    <!--CERTIFICATIONS-->
+    <div id="certifications" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Certifications section"
+                aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Certifications</h1>
+        </div>
+        <div class="section-content">
+            <div class="certifications-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/microsoft-certified-associate-badge.svg" alt="SC-300 certification badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>SC-300 – Identity and Access Administrator Associate</h4>
+                        <h6>Septembre 2024</h6>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/DB312FBD462463D1?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-square-up-right"></i>
+                            <span class="sr-only">(ouvre la page de la certification SC-300)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="PL-900 certification badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>PL-900 – Power Platform Fundamentals</h4>
+                        <h6>Octobre 2024</h6>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/55B523EABF8799AB?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification PL-900)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="AI-900 certification badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>AI-900 – Azure AI Fundamentals</h4>
+                        <h6>Juin 2024</h6>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/2FC051060EE5B751?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification AI-900)</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--SKILLS-->
+    <div id="skills" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Skills section" aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Compétences techniques</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0, this)" id="comp-header">Compétence <i
+                                    class="sort-arrow fas fa-chevron-up"></i></th>
+                            <th onclick="sortTable(1, this)" id="niveau-header">Niveau <i
+                                    class="sort-arrow fas fa-chevron-up"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Systèmes d’exploitation : Windows 10/11, Windows Server 2012, 2019, 2022</td>
+                            <td>Confirmé</td>
+                        </tr>
+                        <tr>
+                            <td>Gestion des identités et accès : Active Directory, Entra ID, MFA, IAM</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud & Collaboration : Microsoft 365, Teams, SharePoint, Exchange</td>
+                            <td>Confirmé</td>
+                        </tr>
+                        <tr>
+                            <td>Automatisation : PowerShell, PowerApps, Power Automate</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Sécurité : Accès conditionnels, bonnes pratiques ANSSI </td>
+                            <td>Bonnes connaissances</td>
+                        </tr>
+                        <tr>
+                            <td>Virtualisation : VmWare, Hyper-V, RDS</td>
+                            <td>Confirmé</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--EXPERIENCES CARDS-->
+
+
+    <div id="stacked-experiences" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Stacked Expériences section"
+                aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Expériences professionnelles</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <img src="assets/metsys-logo.svg" alt="Logo Metsys" class="stacked-card-img">
+                <div class="stacked-card-body">
+                    <h4><strong>2023 - En cours :</strong> Administrateur systèmes</h4>
+                    <p>Associate consultant pour Metsys, je suis en mission pour un grand groupe national où je participe à la gestion des identités et l'infrastructure hybride pour
+                        250 000 utilisateurs répartis sur 80 domaines dans un environnement hybride (AD / Entra ID). Je conçois et implémente des solutions
+                        d'automatisation avec PowerAutomate et PowerShell pour améliorer les processus métiers, tout en
+                        assurant le support N2/N3 sur Microsoft 365. Je participe également à la formation des équipes
+                        N1 et à l'optimisation des outils de collaboration (Exchange, Teams, SharePoint).</p>
+                    <h5>Compétences clés :</h5>
+                    <ul>
+                        <li>Gestion des identités : ADFS, Sun Java™ System Identity Manager, Entra Connect Sync, MFA,
+                            groupes et droits.</li>
+
+                        <li>Support niveau 2 et 3 : Résolution d'incidents, formation des supports niveau 1, outils
+                            Microsoft 365 (Exchange, Teams, SharePoint, OneDrive).</li>
+
+                        <li>Automatisation de tâches via PowerAutomate et PowerShell.</li>
+
+                        <li>Amélioration continue : Optimisation et refonte de l’outil de support (évolution vers
+                            PowerApps, PowerAutomate, SharePoint).</li>
+
+                        <li>Documentation et connaissances : Refonte et rationalisation de la base de connaissance,
+                            formations aux bonnes pratiques.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stacked-card">
+                <img src="assets/netplus-logo.png" alt="Logo NetPlus" class="stacked-card-img">
+                <div class="stacked-card-body">
+                    <h4>2019 - 2023 : Administrateur systèmes</h4>
+                    <p>En tant qu’administrateur systèmes au sein de NETPLUS, j’étais responsable du maintien et de
+                        l'évolution de l’infrastructure IT pour une entreprise passant de 150 à 300 collaborateurs après
+                        la période COVID. L’équipe IT était composée d’un DSI à temps partagé et de moi-même, gérant un
+                        environnement hybride couvrant 27 agences et un siège social.</p>
+                    <h5>Compétences clé :</h5>
+                    <ul>
+                        <li>Administration Active Directory : Création et maintenance des GPO, gestion des comptes
+                            utilisateurs, onboarding, AGDLP, scripting PowerShell (notifications, verrouillage de
+                            comptes).</li>
+
+                        <li>Microsoft 365 et Exchange : Migration vers un environnement hybride, gestion des licences,
+                            activation de MFA, administration des groupes Teams, BAL partagées et règles de messagerie.
+                        </li>
+
+                        <li>Développement PowerApps : Création d'une application d'annuaire pour l’entreprise.</li>
+
+                        <li>Maintenance des serveurs : Administration des serveurs Windows, patching, configuration de
+                            rôles AD DS, fichiers, impressions, etc.</li>
+
+                        <li>Support Utilisateurs : Assistance N1/N2, diagnostic des incidents réseaux, administration
+                            GLPI, formation des utilisateurs aux bonnes pratiques de sécurité.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stacked-card">
+                <img src="assets/nomotech-logo.jpg" alt="Logo Nomotech" class="stacked-card-img">
+                <div class="stacked-card-body">
+                    <h4>2017 -2018 : Administrateur ERP Sage</h4>
+                    <p>J'étais en charge de la gestion des processus quotidiens, de la résolution des incidents, et de la rédaction de procédures pour les utilisateurs. J'ai également développé des macros en VBA pour automatiser certaines tâches et rédigé des requêtes SQL pour les analyses de données.</p>
+                    <h5>Compétences clé :</h5>
+                    <ul>
+                        <li>Résolution d’incidents N1 / N2.</li>
+
+                        <li>Requêtes SQL et création de rapports "Crystal Reports"
+                        </li>
+
+                        <li>Rédaction de procédures à destination des utilisateurs et autres administrateurs SI.</li>
+
+                        <li>Réalisation de macros Excel en VBA.                        </li>
+
+                        <li>Gestion de tickets et incidents sur GLPI.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stacked-card">
+                <img src="assets/freelance-logo.png" alt="Logo Freelance" class="stacked-card-img">
+                <div class="stacked-card-body">
+                    <h4>2015 -2017 : Freelance polyvalent</h4>
+                    <p>Durant cette période, j'ai travaillé en tant que freelance sur plusieurs projets de crowdsourcing, notamment pour des plateformes telles que UHRS (Microsoft), Mturk (Amazon), Lionbridge, et DefinedCrowd. Mes missions incluaient la saisie de données, leur traitement et leur classification, ainsi que des travaux de transcription et d'analyse.</p>
+                    <h5>Compétences clé :</h5>
+                    <ul>
+                        <li>Autonomie et gestion de projet : gérer plusieurs projets de manière indépendante, avec des deadlines strictes et des exigences précises.</li>
+
+                        <li>Adaptabilité : adaptation rapide à des outils et technologies variés en fonction des missions.
+                        </li>
+
+                        <li>Collaboration à distance : Expérience de travail avec des équipes internationales via des plateformes en ligne.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stacked-card">
+                <img src="assets/tnt-logo.jpg" alt="Logo TNT" class="stacked-card-img">
+                <div class="stacked-card-body">
+                    <h4>2008 - 2011 : Technicien de support polyvalent</h4>
+                    <p>En tant que technicien de support polyvalent chez TNT Express, j'assurais le support technique de niveaux pour les collaborateurs (livreurs devant effectuer des prestations techniques sans formation préalable). J'étais responsable de la gestion des incidents techniques, de la transmission d'informations aux fournisseurs, ainsi que de la rédaction de fiches techniques et de modes opératoires pour les équipes support.</p>
+                    <h5>Compétences clé :</h5>
+                    <ul>
+                        <li>Support technique N1/N2 sur des matériels de types variés (du TPE - terminal de paiement électronique - à la baie de serveur en passant par les imprimantes).</li>
+
+                        <li>Transmissions d'informations entre intervenants et fournisseurs.
+                        </li>
+
+                        <li>Gestion de conflits intervenants / clients finaux.</li>
+                        <li>Création de fiches techniques et modes opératoires.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div id="applied-skills" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Formations section" aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Compétences Appliquées</h1>
+        </div>
+        <div class="section-content">
+            <div class="applied-skills-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/applied-skill.svg" alt="Azure Arc skill badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>Deploy and manage Microsoft Azure Arc–enabled servers </h4>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/D841A489BB729D30?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/applied-skill.svg" alt="Power Apps and Dataverse skill badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>Create and manage model-driven apps with Power Apps and Dataverse</h4>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/63CE7DE458BC4A4?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/applied-skill.svg" alt="Canvas apps skill badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>Create and manage canvas apps with Power Apps</h4>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/CC0A45372F09A65E?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/applied-skill.svg" alt="Active Directory skill badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>Administer Active Directory Domain Services</h4>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/685B28DE7B4568D5?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification)</span></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="assets/applied-skill.svg" alt="Power Automate skill badge">
+                    </div>
+                    <div class="card-body">
+                        <h4>Create and manage automated processes by using Power Automate</h4>
+                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/7E4C4B66520D8770?sharingId=F8FF919B676DA62B"
+                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification)</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="formations" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Formations section" aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Formations</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <div class="stacked-card-body">
+                    <ul>
+                        <li><strong>2024 :</strong> Microsoft Power Up - Low code Maker Course - <a
+                                href="https://www.credly.com/badges/9a01771e-a5e3-44ba-9f65-d156e97935f6/public_url"
+                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir le badge Credly <i
+                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
+                        <li><strong>2023 :</strong> Autoformation "SecNumacadémie" - Bases de cybersécurité</li>
+                        <li><strong>2022 :</strong> ENI Formation - Microsoft 365 Identity & Services (MS100)</li>
+                        <li><strong>2021 :</strong> Autoformation développement PowerApps / PowerPlatform</li>
+                        <li><strong>2006 - 2008 :</strong> Classes préparatoires PSI (Physique/Informatique)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="langues" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Langues section" aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Langues</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <div class="stacked-card-body">
+                    <ul>
+                        <li><strong>Anglais :</strong> Courant, TOEIC 965/990 - <a
+                                href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
+                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
+                        <li><strong>Espagnol :</strong> Notions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="interets" class="container mt-5">
+        <div class="section-header">
+            <button class="toggle-section-btn btn btn-link" aria-label="Toggle Centres d'intérêt section"
+                aria-expanded="true">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <h1 class="hover-underline-animation">Centres d'Intérêt</h1>
+        </div>
+        <div class="section-content stacked-cards">
+            <div class="stacked-card">
+                <div class="stacked-card-body">
+                    <p>
+                        <span class="interest" data-image="assets/cuisine.png">Cuisine</span>,
+                        <span class="interest" data-image="assets/jardinage.jpg">jardinage d'intérieur
+                            (hydroponie)</span>,
+                        <span class="interest" data-image="assets/menuiserie.jpg">menuiserie (ébénisterie)</span>.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.dev/svgjs" width="4096" height="560" preserveAspectRatio="none"
+            viewBox="0 0 4096 560">
+            <g mask="url(&quot;#SvgjsMask3236&quot;)" fill="none">
+                <rect width="4096" height="560" x="0" y="0" fill="url(&quot;#SvgjsLinearGradient3237&quot;)"></rect>
+                <path
+                    d="M4096.000000000001 560L0 560 L0 339.69Q87.06 221.95, 204.8 309.01Q329.29 228.7, 409.6 353.19Q501.49 240.28, 614.4000000000001 332.17Q806.83 183.26, 955.7333333333333 375.69Q1115.18 193.8, 1297.0666666666666 353.24Q1394.33 245.7, 1501.8666666666666 342.96Q1683.83 183.59, 1843.1999999999998 365.55Q1994.21 175.23, 2184.5333333333333 326.24Q2280.74 217.65, 2389.3333333333335 313.86Q2532.24 251.97, 2594.1333333333337 394.88Q2743.7 203.11, 2935.466666666667 352.68Q3119.49 195.37, 3276.8000000000006 379.4Q3346.76 244.56, 3481.600000000001 314.52Q3624.11 252.22, 3686.400000000001 394.73Q3774.46 277.98, 3891.200000000001 366.04Q3971.43 241.46, 4096.000000000001 321.69z"
+                    fill="rgba(58, 95, 147, 1)"></path>
+                <path
+                    d="M4232.533333333334 560L0 560 L0 418.32Q96.65 310.16, 204.8 406.81Q361.88 222.56, 546.1333333333333 379.64Q737.78 229.96, 887.4666666666667 421.61Q1067.64 260.45, 1228.8 440.63Q1305.02 312.05, 1433.6 388.27Q1568.57 318.44, 1638.3999999999999 453.41Q1722.12 332.34, 1843.1999999999998 416.06Q1938.73 306.79, 2047.9999999999998 402.32Q2167.58 317.11, 2252.7999999999997 436.69Q2418.36 260.92, 2594.133333333333 426.48Q2707.96 335.51, 2798.9333333333334 449.34Q2941.34 250.41, 3140.266666666667 392.81Q3248.87 296.61, 3345.066666666667 405.21Q3434.92 290.26, 3549.8666666666672 380.12Q3754.37 243.29, 3891.2000000000007 447.79Q4053.34 268.59, 4232.533333333334 430.73z"
+                    fill="rgba(103, 132, 172, 1)"></path>
+                <path
+                    d="M4164.266666666667 560L0 560 L0 452.08Q118.87 366.15, 204.8 485.03Q296.56 371.98, 409.6 463.74Q569.59 282.4, 750.9333333333334 442.39Q888.77 375.43, 955.7333333333333 513.26Q1041.08 393.81, 1160.5333333333333 479.15Q1271.96 385.78, 1365.3333333333333 497.21Q1520.52 311.06, 1706.6666666666665 466.24Q1818.76 373.53, 1911.4666666666665 485.63Q1997.22 366.59, 2116.2666666666664 452.34Q2251.83 383.1, 2321.0666666666666 518.66Q2486.23 342.49, 2662.4 507.65Q2748.1 388.55, 2867.2000000000003 474.25Q2958.86 361.1, 3072.0000000000005 452.76Q3264.85 304.27, 3413.333333333334 497.12Q3574.88 317.33, 3754.6666666666674 478.87Q3848.75 368.15, 3959.4666666666676 462.23Q4077.63 375.59, 4164.266666666667 493.75z"
+                    fill="rgba(204, 223, 237, 1)"></path>
+                <path
+                    d="M4369.0666666666675 560L0 560 L0 559.58Q94.83 449.61, 204.8 544.44Q359.78 358.09, 546.1333333333333 513.07Q723.13 348.74, 887.4666666666667 525.74Q997.87 431.34, 1092.2666666666667 541.74Q1212.26 456.93, 1297.0666666666666 576.92Q1460.9 399.42, 1638.3999999999999 563.25Q1801.59 385.1, 1979.7333333333331 548.29Q2072.21 435.97, 2184.5333333333333 528.45Q2311.62 450.73, 2389.3333333333335 577.82Q2457.2 440.89, 2594.1333333333337 508.76Q2775.91 349.2, 2935.466666666667 530.98Q3031.86 422.57, 3140.2666666666673 518.97Q3304.01 341.38, 3481.600000000001 505.13Q3677.06 359.25, 3822.9333333333343 554.71Q3915.89 442.87, 4027.7333333333345 535.83Q4222.59 389.35, 4369.0666666666675 584.21z"
+                    fill="rgba(237, 247, 255, 1)"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask3236">
+                    <rect width="4096" height="560" fill="#ffffff"></rect>
+                </mask>
+                <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" gradientUnits="userSpaceOnUse"
+                    id="SvgjsLinearGradient3237">
+                    <stop stop-color="rgba(0, 205, 255, 1)" offset="0"></stop>
+                    <stop stop-color="rgba(238, 242, 243, 1)" offset="1"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <footer class="footer">
+        <div class=" text-center py-4">
+            <p>Arnaud FERRIERE - 2024</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Back to top button -->
+    <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+    <!--Custom JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtenir le bouton
+            var backToTopButton = document.getElementById('back-to-top');
+
+            // Afficher ou masquer le bouton en fonction du défilement
+            window.onscroll = function () {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            };
+
+            // Fonction de retour en haut avec un effet fluide
+            backToTopButton.onclick = function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
+        });
+
+
+
+    </script>
+
+    <!--Arrow to hide a section-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggleButtons = document.querySelectorAll('.toggle-section-btn');
+
+            toggleButtons.forEach(function (button) {
+                var section = button.closest('.container');
+                var content = section.querySelector('.section-content');
+                var title = section.querySelector('h1');
+
+                function toggleContent() {
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        button.innerHTML = '<i class="fas fa-chevron-up"></i>';
+                        button.setAttribute('aria-expanded', 'true');
+
+                        // Pour permettre une animation fluide, on fixe d'abord la hauteur à ce qu'elle serait
+                        content.style.height = content.scrollHeight + "px";
+
+                        // Après la transition, on remet la hauteur à 'auto' pour l'ajuster aux futurs contenus
+                        content.addEventListener('transitionend', function handler() {
+                            content.style.height = 'auto';
+                            content.removeEventListener('transitionend', handler);
+                        });
+                    } else {
+                        button.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                        button.setAttribute('aria-expanded', 'false');
+
+                        // Pour fermer, on calcule d'abord la hauteur actuelle puis on la ramène à 0
+                        content.style.height = content.scrollHeight + "px";
+                        requestAnimationFrame(() => {
+                            content.style.height = "0";
+                        });
+
+                        content.classList.add('hidden');
+                    }
+                }
+
+
+                button.addEventListener('click', toggleContent);
+                title.addEventListener('click', toggleContent);
+            });
+        });
+
+    </script>
+
+    <!--Table sorting-->
+    <script>
+        function sortTable(n, header) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.querySelector(".table");
+            switching = true;
+            // Set the sorting direction to ascending by default:
+            dir = header.getAttribute("data-dir") === "desc" ? "asc" : "desc";
+
+            // Remove active sort indicators from all columns
+            const headers = document.querySelectorAll("th");
+            headers.forEach(h => {
+                h.setAttribute("data-dir", "");
+                h.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
+                h.querySelector(".sort-arrow").classList.add("fa-chevron-up"); // Reset all arrows to up
+            });
+
+            // Set the active sort indicator for the clicked header
+            header.setAttribute("data-dir", dir);
+            if (dir === "asc") {
+                header.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
+                header.querySelector(".sort-arrow").classList.add("fa-chevron-up");
+            } else {
+                header.querySelector(".sort-arrow").classList.remove("fa-chevron-up");
+                header.querySelector(".sort-arrow").classList.add("fa-chevron-down");
+            }
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                // Loop through all rows except the first (header):
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    // Compare the two elements in the given column:
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    // Check if the rows should switch place based on direction:
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    // Make the switch and mark that a switch has been made:
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                }
+            }
+        }
+    </script>
+
+
+    <!-- Script images intérêts-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Crée un élément img pour afficher l'image en survol
+            const hoverImage = document.createElement('img');
+            hoverImage.classList.add('hover-image');
+            document.body.appendChild(hoverImage);
+    
+            // Détection des appareils mobiles
+            function isMobileDevice() {
+                return window.innerWidth <= 768; // Vous pouvez ajuster la largeur selon ce que vous considérez comme "mobile"
+            }
+    
+            // Sélectionne tous les éléments avec la classe interest
+            const interests = document.querySelectorAll('.interest');
+    
+            interests.forEach(interest => {
+                interest.addEventListener('mouseover', (event) => {
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    const imageUrl = interest.getAttribute('data-image');
+                    hoverImage.src = imageUrl;
+                    hoverImage.style.display = 'block';
+                });
+    
+                interest.addEventListener('mousemove', (event) => {
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    hoverImage.style.top = (event.clientY + 20) + 'px'; // Ajuster la position Y pour l'image
+                    hoverImage.style.left = (event.clientX + 20) + 'px'; // Ajuster la position X pour l'image
+                });
+    
+                interest.addEventListener('mouseout', () => {
+                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    hoverImage.style.display = 'none';
+                });
+            });
+    
+            // Cacher l'image si la fenêtre est redimensionnée sur une largeur mobile
+            window.addEventListener('resize', () => {
+                if (isMobileDevice()) {
+                    hoverImage.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+
+
+
+</body>
+
+</html>
