@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Sur les nuages</title>
+    <title>Article - Sur les nuages</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/f1818ff38c.js" crossorigin="anonymous"></script>
@@ -55,77 +55,37 @@
         </div>
     </nav>
 
-    <!-- En-tête de bienvenue -->
-    <header class="container mt-5 text-center">
-        <h1 class="display-4">Bienvenue sur les nuages !</h1>
-        <p class="lead">Découvrez mes derniers articles sur l'administration système, le cloud, et bien plus encore !</p>
-    </header>
-
-    <!-- Section Articles -->
-    <section id="articles" class="container mt-5">
-        <div class="section-header">
-            <h1 class="hover-underline-animation">Articles récents</h1>
+    <!-- Section de l'article -->
+    <article class="container mt-5">
+        <div class="article-container p-4">
+            <header class="text-center mb-4">
+                <h1 class="display-5">Titre de l'article</h1>
+                <p class="text-muted">Publié le : 01/10/2024</p>
+                <img src="assets/article1.jpg" class="img-fluid rounded mb-4" alt="Image de l'article">
+            </header>
+    
+            <section class="content">
+                <p>Bienvenue dans cet article où nous explorons [sujet de l'article]. Cet article couvre des aspects
+                    intéressants sur le sujet, offrant des détails et des perspectives utiles.</p>
+                <h2>Sous-titre de section</h2>
+                <p>Voici quelques informations détaillées sur le sujet, incluant des points clés et des exemples
+                    pratiques.</p>
+                <blockquote class="blockquote">
+                    <p class="mb-0">"Voici une citation importante ou un conseil pertinent en relation avec le sujet."</p>
+                    <footer class="blockquote-footer">Auteur ou Source</footer>
+                </blockquote>
+                <h3>Sous-sous-titre</h3>
+                <p>Pour ceux qui souhaitent explorer davantage, voici des liens vers des ressources additionnelles et des
+                    idées pour les prochaines étapes. Vous pouvez également consulter d'autres articles pour enrichir votre
+                    compréhension.</p>
+            </section>
         </div>
-        <div class="row">
-            <!-- Carte Article -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="assets/article1.jpg" class="card-img-top" alt="Image de l'article">
-                    <div class="card-body">
-                        <h5 class="card-title">Titre de l'article 1</h5>
-                        <p class="card-text">Un court extrait de l'article pour attirer l'intérêt du lecteur...</p>
-                        <p class="text-muted">Publié le : 01/10/2024</p>
-                        <a href="article.html" class="btn btn-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Répéter les cartes d'article selon les besoins -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="assets/article2.jpg" class="card-img-top" alt="Image de l'article">
-                    <div class="card-body">
-                        <h5 class="card-title">Titre de l'article 2</h5>
-                        <p class="card-text">Un court extrait de l'article pour attirer l'intérêt du lecteur...</p>
-                        <p class="text-muted">Publié le : 15/09/2024</p>
-                        <a href="article2.html" class="btn btn-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="assets/article3.jpg" class="card-img-top" alt="Image de l'article">
-                    <div class="card-body">
-                        <h5 class="card-title">Titre de l'article 3</h5>
-                        <p class="card-text">Un court extrait de l'article pour attirer l'intérêt du lecteur...</p>
-                        <p class="text-muted">Publié le : 05/09/2024</p>
-                        <a href="article3.html" class="btn btn-primary">Lire plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </article>
 
-    <!-- Sidebar (optionnelle) -->
-    <aside class="container mt-5">
-        <h3 class="hover-underline-animation">À découvrir aussi</h3>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <a href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank"><i class="fab fa-linkedin"></i>
-                    LinkedIn <i
-                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
-            </li>
-            <li class="list-group-item">
-                <a href="https://github.com/Arnaud-Ferriere" target="_blank"><i class="fab fa-github"></i> GitHub <i
-                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
-            </li>
-            <li class="list-group-item">
-                <a href="apropos.html#certifications"><i class="fas fa-cloud"></i> Voir mes certifications</a>
-            </li>
-        </ul>
-    </aside>
+    
 
- <!--FOOTER-->
- <div>
+<!--FOOTER-->
+<div>
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:svgjs="http://svgjs.dev/svgjs" width="4096" height="560" preserveAspectRatio="none"
         viewBox="0 0 4096 560">
