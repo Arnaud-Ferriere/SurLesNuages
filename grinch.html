@@ -3,27 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employé du Mois - Le Grinch</title>
+    <title>Employé du Mois</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffcc00, #ff6600);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header {
+            background: #e60012;
+            color: white;
+            padding: 20px;
+            animation: slide-in 1s ease-in-out;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .main-content {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fade-in 2s ease-in-out;
+        }
+
+        .profile-pic-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background: #ddd;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            animation: zoom-in 1.5s ease-out;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoom-in {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>🎉 Employé du Mois 🎉</h1>
-    </header>
-    <main>
-        <section class="profile">
-            <h2>Le Grinch</h2>
-            <div class="profile-picture" id="profile-picture">
-                <img src="download.jpg"></img><!-- Placeholder for profile picture -->
-            </div>
-            <p>
-                Cette année, nous célébrons notre employé du mois : le Grinch ! Avec une ruse ingénieuse, il a trouvé une idée exceptionnelle pour empêcher les gens de s'offrir des jeux vidéo en cadeau. Grâce à sa stratégie astucieuse et sa persévérance, il a mis en place un système qui... eh bien, disons qu'il a chamboulé toutes les festivités et changé la manière dont nous voyons le partage. Un mélange de génie et d'espièglerie, le Grinch continue de nous inspirer à penser différemment (même si cela signifie parfois voler Noël 😜).
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>Merci de votre visite dans notre coin Nintendo, où même les idées "grinch-esques" sont les bienvenues !</p>
-    </footer>
+    <div class="container">
+        <header class="header">
+            <h1>Félicitations à notre Employé du Mois !</h1>
+        </header>
+        <main class="main-content">
+            <section class="profile">
+                <div class="profile-pic-placeholder">
+                    <!-- Image placeholder -->
+                </div>
+                <h2>Le Grinch</h2>
+                <p class="description">
+                    Cette année, notre employé du mois a fait preuve d'une ingéniosité remarquable. Le Grinch, connu pour ses idées aussi étonnantes qu'audacieuses, a développé une stratégie géniale pour empêcher les gens d'offrir des jeux. En proposant une mise à jour qui désactive les options de partage de cadeaux pendant les périodes de vacances, il a réussi à réduire drastiquement les échanges de jeux, permettant ainsi d'augmenter les ventes directes. Son ingéniosité a été applaudie par l'équipe dirigeante et restera dans les annales comme une innovation marquante. Bravo, Grinch, pour votre contribution exceptionnelle !
+                </p>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Nintendo-Inspired Fun Page</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            header.addEventListener('mouseover', () => {
+                header.style.backgroundColor = '#ffcc00';
+                header.style.color = '#333';
+            });
+            header.addEventListener('mouseout', () => {
+                header.style.backgroundColor = '#e60012';
+                header.style.color = 'white';
+            });
+
+            const profilePlaceholder = document.querySelector('.profile-pic-placeholder');
+            profilePlaceholder.addEventListener('click', () => {
+                profilePlaceholder.style.backgroundColor = '#ff6600';
+                profilePlaceholder.style.boxShadow = '0 0 15px #ff6600';
+                setTimeout(() => {
+                    profilePlaceholder.style.backgroundColor = '#ddd';
+                    profilePlaceholder.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.3)';
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>
