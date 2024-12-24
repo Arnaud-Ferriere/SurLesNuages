@@ -3,116 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employé du Mois</title>
-    <style>
-        /* Colors inspired by Nintendo's shop */
-        :root {
-            --main-bg-color: #e60012; /* Nintendo red */
-            --text-color: #ffffff;
-            --highlight-color: #ffd700; /* Gold for highlights */
-            --green-accent: #2ecc71; /* Green accent */
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--main-bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(to bottom, var(--main-bg-color), var(--green-accent));
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: var(--highlight-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .grinch {
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
-            border-radius: 50%;
-            background: var(--highlight-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .grinch img {
-            width: 100%;
-            height: auto;
-        }
-
-        .confetti {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .confetti span {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: var(--highlight-color);
-            animation: fall 3s linear infinite;
-            border-radius: 50%;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh) rotate(0);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-    </style>
+    <title>Employé du Mois - Le Grinch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Employé du Mois</h1>
-        <h2>Le Grinch</h2>
-        <div class="grinch">
-            <!-- Add your image here -->
-            <img src="download.jpg" alt="Photo du Grinch">
-        </div>
-        <p>Félicitations au Grinch pour ses efforts exceptionnels ce mois-ci ! 🎉</p>
-        <p>Un grand bravo au Grinch, qui a décidé que personne ne pouvait offrir de jeux à quelqu'un d'autre. Une initiative audacieuse qui reflète bien son caractère unique !</p>
-    </div>
-
-    <div class="confetti"></div>
-
-    <script>
-        // JavaScript to create confetti effect
-        const confettiContainer = document.querySelector('.confetti');
-
-        for (let i = 0; i < 100; i++) {
-            const confetti = document.createElement('span');
-            confetti.style.left = Math.random() * 100 + 'vw';
-            confetti.style.animationDelay = Math.random() * 3 + 's';
-            confettiContainer.appendChild(confetti);
-        }
-    </script>
+    <header>
+        <h1>🎉 Employé du Mois 🎉</h1>
+    </header>
+    <main>
+        <section class="profile">
+            <h2>Le Grinch</h2>
+            <div class="profile-picture" id="profile-picture">
+                <img src="download.jpg"></img><!-- Placeholder for profile picture -->
+            </div>
+            <p>
+                Cette année, nous célébrons notre employé du mois : le Grinch ! Avec une ruse ingénieuse, il a trouvé une idée exceptionnelle pour empêcher les gens de s'offrir des jeux vidéo en cadeau. Grâce à sa stratégie astucieuse et sa persévérance, il a mis en place un système qui... eh bien, disons qu'il a chamboulé toutes les festivités et changé la manière dont nous voyons le partage. Un mélange de génie et d'espièglerie, le Grinch continue de nous inspirer à penser différemment (même si cela signifie parfois voler Noël 😜).
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Merci de votre visite dans notre coin Nintendo, où même les idées "grinch-esques" sont les bienvenues !</p>
+    </footer>
 </body>
 </html>
