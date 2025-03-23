@@ -22,7 +22,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
     <script src="https://kit.fontawesome.com/f1818ff38c.js" crossorigin="anonymous"></script>
 
 
@@ -712,13 +712,16 @@
         <div class="section-content stacked-cards">
             <div class="stacked-card">
                 <div class="stacked-card-body">
-                    <ul>
-                        <li><strong>Anglais :</strong> Courant, TOEIC 965/990 - <a
-                                href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
-                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
-                        <li><strong>Espagnol :</strong> Notions</li>
-                    </ul>
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain.png"
+                        alt="great-britain" /> <strong>Anglais :</strong> Courant (C1), TOEIC 965/990 - <a
+                        href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
+                        target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
+                            class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a><br />
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png" alt="spain" />
+                    <strong>Espagnol :</strong> Lu, parlé, niveau B1<br/>
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/netherlands.png" alt="netherlands"/> <strong>Néerlandais  :</strong> Notions<br/>
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/japan.png" alt="japan"/> <strong>Japonais  :</strong> Notions<br/>
+    
                 </div>
             </div>
         </div>
@@ -745,6 +748,8 @@
                     </p>
 
                 </div>
+                
+                
             </div>
         </div>
     </div>
@@ -791,6 +796,17 @@
 
         </div>
     </footer>
+
+    <!-- Modal Bootstrap pour afficher les images des intérêts en grand -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content position-relative">
+            <div class="modal-body p-0">
+              <img id="modalImage" src="" alt="Image agrandie" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -940,43 +956,56 @@
             const hoverImage = document.createElement('img');
             hoverImage.classList.add('hover-image');
             document.body.appendChild(hoverImage);
-
+        
             // Détection des appareils mobiles
             function isMobileDevice() {
-                return window.innerWidth <= 768; // Vous pouvez ajuster la largeur selon ce que vous considérez comme "mobile"
+                return window.innerWidth <= 768; // Vous pouvez ajuster la largeur selon votre définition de "mobile"
             }
-
+        
             // Sélectionne tous les éléments avec la classe interest
             const interests = document.querySelectorAll('.interest');
-
+        
             interests.forEach(interest => {
+                // Affichage de l'image au survol
                 interest.addEventListener('mouseover', (event) => {
-                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    if (isMobileDevice()) return;
                     const imageUrl = interest.getAttribute('data-image');
                     hoverImage.src = imageUrl;
                     hoverImage.style.display = 'block';
                 });
-
+        
                 interest.addEventListener('mousemove', (event) => {
-                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
-                    hoverImage.style.top = (event.clientY + 20) + 'px'; // Ajuster la position Y pour l'image
-                    hoverImage.style.left = (event.clientX + 20) + 'px'; // Ajuster la position X pour l'image
+                    if (isMobileDevice()) return;
+                    hoverImage.style.top = (event.clientY + 20) + 'px';
+                    hoverImage.style.left = (event.clientX + 20) + 'px';
                 });
-
+        
                 interest.addEventListener('mouseout', () => {
-                    if (isMobileDevice()) return; // Ne rien faire sur les appareils mobiles
+                    if (isMobileDevice()) return;
                     hoverImage.style.display = 'none';
                 });
+        
+                // Affichage du modal en cliquant sur l'élément
+                interest.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const imageUrl = interest.getAttribute('data-image');
+                    // Mise à jour de l'image dans le modal
+                    document.getElementById('modalImage').src = imageUrl;
+                    // Afficher le modal (en supposant que Bootstrap JS est chargé)
+                    var modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                    modal.show();
+                });
             });
-
-            // Cacher l'image si la fenêtre est redimensionnée sur une largeur mobile
+        
+            // Cacher l'image de survol si la fenêtre est redimensionnée sur mobile
             window.addEventListener('resize', () => {
                 if (isMobileDevice()) {
                     hoverImage.style.display = 'none';
                 }
             });
         });
-    </script>
+        </script>
+        
 
 
 

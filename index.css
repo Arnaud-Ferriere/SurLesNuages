@@ -432,7 +432,7 @@
   .hover-image {
     position: fixed;
     width: auto;
-    height: 250px;
+    height: 350px;
     border: 1px solid rgba(0, 59, 130, 0.2);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -551,4 +551,60 @@
     height: auto;
 
 
+}
+
+/* Style personnalisé pour le modal Bootstrap */
+.modal-content {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  border: none;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: var(--spacing-base);
+  background-color: #fff;
+}
+
+.modal-header .modal-title {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.modal-header .btn-close {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  padding: var(--spacing-base);
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.modal-body img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Personnalisation de la superposition (backdrop) du modal */
+.modal-backdrop.show {
+  opacity: 0.8;
+  background-color: rgba(8, 26, 52, 0.5);
+}
+
+.modal-content .btn-close {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.modal-body {
+  position: relative;
 }
