@@ -3,7 +3,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Back to top
         var backToTopButton = document.getElementById('back-to-top');
         window.onscroll = function () {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -15,26 +14,5 @@
         backToTopButton.onclick = function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
-
-        // Dark mode toggle
-        var toggle = document.getElementById('darkModeToggle');
-        var icon = document.getElementById('darkModeIcon');
-        function applyTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            if (icon) {
-                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            }
-        }
-        // Sync icon with current theme
-        var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        applyTheme(currentTheme);
-
-        if (toggle) {
-            toggle.addEventListener('click', function () {
-                var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                applyTheme(next);
-                localStorage.setItem('theme', next);
-            });
-        }
     });
 </script>
