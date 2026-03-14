@@ -1,0 +1,29 @@
+title: Sur les nuages
+description: >-
+  Consultant en administration systèmes, spécialisé dans les environnements
+  hybrides, la gestion des identités, les solutions Microsoft 365 et
+  l'automatisation. Découvrez mes articles, projets et certifications.
+url: "https://surlesnuages.fr"
+baseurl: ""
+lang: fr
+
+permalink: /articles/:title/
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .claude
+  - .vscode
+  - backend
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<!-- En-tête de bienvenue -->
+<header class="container mt-5 text-center">
+    <h1 class="display-4">Bienvenue sur les nuages !</h1>
+    <p class="lead">Découvrez mes derniers articles sur l'administration système, le cloud, et bien plus encore !</p>
+</header>
+
+<!-- Section Articles -->
+<section id="articles" class="container mt-5">
+    <div class="section-header">
+        <h1 class="hover-underline-animation">Articles récents</h1>
+    </div>
+    <div class="row">
+        {% for post in site.posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if post.image %}
+                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    <p class="text-muted">Publié le : {{ post.date | date: "%d/%m/%Y" }}</p>
+                    <a href="{{ post.url | relative_url }}" class="btn btn-primary">Lire plus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% if site.posts.size == 0 %}
+<section class="container mt-3 text-center">
+    <p class="text-muted">Aucun article pour le moment. Revenez bientôt !</p>
+</section>
+{% endif %}
+
+<!-- Sidebar -->
+<aside class="container mt-5">
+    <h3 class="hover-underline-animation">À découvrir aussi</h3>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank"><i class="fab fa-linkedin"></i>
+                LinkedIn <i class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Arnaud-Ferriere" target="_blank"><i class="fab fa-github"></i> GitHub <i
+                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{ '/apropos.html' | relative_url }}#certifications"><i class="fas fa-cloud"></i> Voir mes certifications</a>
+        </li>
+    </ul>
+</aside>
+
+{{ content }}
