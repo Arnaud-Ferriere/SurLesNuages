@@ -441,13 +441,95 @@
     object-fit: cover;
   }
   
-  /* Footer */
+  /* Footer - CSS Clouds */
+  .css-cloud-footer {
+    position: relative;
+    background: linear-gradient(to bottom, var(--color-background) 0%, #87CEEB 40%, #00CDFF 100%);
+    padding-top: 120px;
+    overflow: hidden;
+  }
+
+  .cloud-layer {
+    position: relative;
+    height: 80px;
+    margin-top: -30px;
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+  }
+
+  .cloud::before,
+  .cloud::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+  }
+
+  /* Layer 1 - back (dark blue) */
+  .cloud-layer-1 { z-index: 1; }
+  .cloud-layer-1 .cloud {
+    background: rgba(58, 95, 147, 1);
+  }
+  .cloud-layer-1 .cloud::before {
+    background: rgba(58, 95, 147, 1);
+    width: 60%;
+    height: 140%;
+    left: 15%;
+  }
+  .cloud-layer-1 .cloud::after {
+    background: rgba(58, 95, 147, 1);
+    width: 50%;
+    height: 120%;
+    right: 10%;
+  }
+
+  /* Layer 2 - middle (medium blue) */
+  .cloud-layer-2 { z-index: 2; }
+  .cloud-layer-2 .cloud {
+    background: rgba(103, 132, 172, 1);
+  }
+  .cloud-layer-2 .cloud::before {
+    background: rgba(103, 132, 172, 1);
+    width: 55%;
+    height: 150%;
+    left: 10%;
+  }
+  .cloud-layer-2 .cloud::after {
+    background: rgba(103, 132, 172, 1);
+    width: 50%;
+    height: 130%;
+    right: 15%;
+  }
+
+  /* Layer 3 - front (light blue-grey, matches page bg) */
+  .cloud-layer-3 { z-index: 3; }
+  .cloud-layer-3 .cloud {
+    background: var(--color-background);
+  }
+  .cloud-layer-3 .cloud::before {
+    background: var(--color-background);
+    width: 60%;
+    height: 160%;
+    left: 12%;
+  }
+  .cloud-layer-3 .cloud::after {
+    background: var(--color-background);
+    width: 55%;
+    height: 140%;
+    right: 10%;
+  }
+
   .footer-text {
+    position: relative;
+    z-index: 4;
     background-color: var(--color-background);
     color: var(--color-primary);
     text-align: center;
     padding: 1rem 0;
-    margin-top: -2px;
     line-height: normal;
   }
 
