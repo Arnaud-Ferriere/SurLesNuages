@@ -40,7 +40,7 @@
     box-shadow: none;
   }
   
-  a,
+  .navbar a,
   .navbar-brand,
   .nav-link {
     color: #fff;

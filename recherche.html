@@ -55,10 +55,10 @@ permalink: /recherche/
         var html = '<div class="row">';
         results.forEach(function (post) {
             html += '<div class="col-md-6 mb-3">' +
-                '<div class="card p-3">' +
-                '<h5 class="card-title"><a href="' + post.url + '">' + post.title + '</a></h5>' +
+                '<div class="card p-3 h-100" style="position:relative;cursor:pointer;">' +
+                '<h5 class="card-title"><a href="' + post.url + '" class="stretched-link text-decoration-none">' + post.title + '</a></h5>' +
                 '<p class="card-text">' + post.excerpt + '</p>' +
-                '<p class="text-muted">' + post.date + '</p>' +
+                '<p class="text-muted small mb-0">' + post.date + '</p>' +
                 '</div></div>';
         });
         html += '</div>';
