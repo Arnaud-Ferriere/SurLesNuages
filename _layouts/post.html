@@ -14,7 +14,7 @@ layout: default
 
         {% if page.placeholder %}
         <div class="alert-placeholder">
-            <i class="fas fa-robot"></i> Généré par IA comme placeholder — pas encore un vrai article.
+            <i class="fas fa-robot" aria-hidden="true"></i> Généré par IA comme placeholder — pas encore un vrai article.
         </div>
         {% endif %}
 
@@ -26,7 +26,7 @@ layout: default
         <div class="post-tags">
             {% for tag in page.tags %}
             <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag-badge">
-                <i class="fas fa-tag"></i> {{ tag }}
+                <i class="fas fa-tag" aria-hidden="true"></i> {{ tag }}
             </a>
             {% endfor %}
         </div>
