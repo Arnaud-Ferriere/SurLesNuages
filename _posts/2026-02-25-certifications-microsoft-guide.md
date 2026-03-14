@@ -2,6 +2,7 @@
 title: "Certifications Microsoft : comment s'y préparer efficacement"
 date: 2026-02-25
 image: /assets/article2.webp
+tags: [Certifications, Microsoft]
 placeholder: true
 excerpt: "Mon retour d'expérience sur la préparation aux certifications Microsoft et les ressources que je recommande."
 ---

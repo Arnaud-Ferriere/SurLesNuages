@@ -2,6 +2,7 @@
 title: "10 quick wins pour sécuriser votre tenant Microsoft 365"
 date: 2026-02-18
 image: /assets/article3.webp
+tags: [Sécurité, Microsoft 365]
 placeholder: true
 excerpt: "Des actions concrètes et rapides à mettre en place pour renforcer la sécurité de votre environnement Microsoft 365."
 ---

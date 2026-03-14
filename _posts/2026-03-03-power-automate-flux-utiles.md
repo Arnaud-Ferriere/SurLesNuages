@@ -2,6 +2,7 @@
 title: "3 flux Power Automate pour gagner du temps au bureau"
 date: 2026-03-03
 image: /assets/article1.webp
+tags: [Power Automate, Microsoft 365, Automatisation]
 placeholder: true
 excerpt: "Des exemples concrets de flux Power Automate pour automatiser vos tâches quotidiennes sans écrire une ligne de code."
 ---

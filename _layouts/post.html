@@ -21,5 +21,15 @@ layout: default
         <section class="content">
             {{ content }}
         </section>
+
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+            <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag-badge">
+                <i class="fas fa-tag"></i> {{ tag }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 </article>

@@ -2,6 +2,7 @@
 title: "5 scripts PowerShell indispensables pour un admin sys"
 date: 2026-03-10
 image: /assets/article2.webp
+tags: [PowerShell, Administration]
 placeholder: true
 excerpt: "Une sélection de scripts PowerShell que j'utilise au quotidien pour gagner du temps en administration système."
 ---
