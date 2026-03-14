@@ -443,7 +443,7 @@
   
   /* Footer */
   .footer {
-    background-color: rgba(237, 247, 255, 1);
+    background-color: var(--color-background);
     color: var(--color-primary);
     padding: 0;
     margin: 0;
