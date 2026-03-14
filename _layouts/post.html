@@ -71,21 +71,6 @@ layout: default
         </div>
         {% endif %}
 
-        <!-- Share buttons -->
-        <div class="share-buttons">
-            <span class="share-label">Partager</span>
-            <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
-               target="_blank" rel="noopener" class="share-btn share-btn--x" aria-label="Partager sur X">
-                <i class="fab fa-x-twitter"></i> Partager
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
-               target="_blank" rel="noopener" class="share-btn share-btn--linkedin" aria-label="Partager sur LinkedIn">
-                <i class="fab fa-linkedin-in"></i> Partager
-            </a>
-            <button class="share-btn share-btn--copy" onclick="copyLink()" aria-label="Copier le lien">
-                <i class="fas fa-link"></i> <span id="copy-label">Copier le lien</span>
-            </button>
-        </div>
     </div>
 </article>
 
@@ -151,12 +136,4 @@ layout: default
     document.getElementById('toc-wrapper').style.display = 'block';
 })();
 
-// Copy link to clipboard
-function copyLink() {
-    navigator.clipboard.writeText(window.location.href).then(function() {
-        var label = document.getElementById('copy-label');
-        label.textContent = 'Copié !';
-        setTimeout(function() { label.textContent = 'Copier le lien'; }, 2000);
-    });
-}
 </script>

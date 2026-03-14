@@ -401,6 +401,7 @@
     color: var(--color-secondary);
     margin-top: 1.5rem;
     font-weight: 600;
+    scroll-margin-top: 110px;
   }
   
   article .content p {
@@ -733,72 +734,6 @@ article .content pre code {
 .highlight .na { color: #89b4fa; }
 .highlight .nt { color: #cba6f7; }
 .highlight .err { color: #f38ba8; }
-
-/* Share buttons — contours fins */
-.share-buttons {
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 59, 130, 0.1);
-}
-
-.share-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-right: 0.25rem;
-}
-
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 25px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-decoration: none;
-  background: transparent;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.share-btn:hover {
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-.share-btn--x {
-  color: #000;
-  border: 1.5px solid #000;
-}
-.share-btn--x:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.share-btn--linkedin {
-  color: #0A66C2;
-  border: 1.5px solid #0A66C2;
-}
-.share-btn--linkedin:hover {
-  background-color: #0A66C2;
-  color: #fff;
-}
-
-.share-btn--copy {
-  color: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
-  cursor: pointer;
-}
-.share-btn--copy:hover {
-  background-color: var(--color-primary);
-  color: #fff;
-}
 
 /* Table of contents — bandeau discret */
 .toc-container {
