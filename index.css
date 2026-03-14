@@ -467,6 +467,10 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
   
+  .article-container .display-5 {
+    font-weight: 600;
+  }
+
   .article-container img {
     max-height: 300px;
     width: auto;
@@ -834,15 +838,3 @@ article .content pre code {
   color: #aaa;
 }
 
-@media (max-width: 768px) {
-  .share-buttons {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .share-label {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 0.25rem;
-  }
-}
