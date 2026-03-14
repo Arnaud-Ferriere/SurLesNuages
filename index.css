@@ -355,6 +355,15 @@
     margin-bottom: 1rem;
     color: #333;
   }
+
+  article .content a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+
+  article .content a:hover {
+    color: var(--color-primary);
+  }
   
   .blockquote {
     border-left: 5px solid var(--color-secondary);
