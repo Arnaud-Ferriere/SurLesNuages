@@ -7,6 +7,12 @@ url: "https://surlesnuages.fr"
 baseurl: ""
 lang: fr
 
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 permalink: /articles/:title/
 
 plugins:

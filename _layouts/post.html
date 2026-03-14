@@ -2,18 +2,138 @@
 layout: default
 ---
 
+{% assign words = content | number_of_words %}
+{% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
+
+<!-- Breadcrumbs JSON-LD (invisible, SEO only) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% if page.tags.size > 0 %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.tags | first }}",
+      "item": "{{ '/tags/' | absolute_url }}"
+    }{% endif %}
+  ]
+}
+</script>
+
 <article class="container mt-5">
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }}</p>
+            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} · ⏱ {{ reading_time }} min de lecture</p>
             {% if page.image %}
-            <img src="{{ page.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}">
+            <img src="{{ page.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}" loading="lazy">
             {% endif %}
         </header>
+
+        <!-- Table des matières (auto-generated via JS, shown only if 3+ headings) -->
+        <div id="toc-wrapper" style="display: none;">
+            <details class="toc-container" open>
+                <summary>Table des matières</summary>
+                <ol class="toc-list" id="toc-list"></ol>
+            </details>
+        </div>
 
         <section class="content">
             {{ content }}
         </section>
+
+        <!-- Share buttons -->
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
+               target="_blank" rel="noopener" class="share-btn share-btn--x" aria-label="Partager sur X">
+                <i class="fab fa-x-twitter"></i> Partager
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+               target="_blank" rel="noopener" class="share-btn share-btn--linkedin" aria-label="Partager sur LinkedIn">
+                <i class="fab fa-linkedin-in"></i> Partager
+            </a>
+            <button class="share-btn share-btn--copy" onclick="copyLink()" aria-label="Copier le lien">
+                <i class="fas fa-link"></i> <span id="copy-label">Copier le lien</span>
+            </button>
+        </div>
+
+        <!-- Related articles -->
+        {% assign related_posts = "" | split: "" %}
+        {% for post in site.posts %}
+          {% unless post.url == page.url %}
+            {% assign common = 0 %}
+            {% for tag in post.tags %}
+              {% if page.tags contains tag %}{% assign common = common | plus: 1 %}{% endif %}
+            {% endfor %}
+            {% if common >= 1 %}{% assign related_posts = related_posts | push: post %}{% endif %}
+          {% endunless %}
+        {% endfor %}
+        {% assign related_posts = related_posts | slice: 0, 3 %}
+
+        {% if related_posts.size > 0 %}
+        <section class="mt-5">
+            <h3>Articles liés</h3>
+            <div class="row">
+                {% for post in related_posts %}
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        {% if post.image %}
+                        <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <a href="{{ post.url | relative_url }}" class="btn btn-primary btn-sm">Lire</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
     </div>
 </article>
+
+<script>
+// Auto-generate TOC from h2 and h3 inside the article
+(function() {
+    var content = document.querySelector('article .content');
+    if (!content) return;
+    var headings = content.querySelectorAll('h2, h3');
+    if (headings.length < 3) return;
+
+    var tocList = document.getElementById('toc-list');
+    headings.forEach(function(h, i) {
+        if (!h.id) h.id = 'heading-' + i;
+        var li = document.createElement('li');
+        if (h.tagName === 'H3') li.classList.add('toc-h3');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+    });
+    document.getElementById('toc-wrapper').style.display = 'block';
+})();
+
+// Copy link to clipboard
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+        var label = document.getElementById('copy-label');
+        label.textContent = 'Copié !';
+        setTimeout(function() { label.textContent = 'Copier le lien'; }, 2000);
+    });
+}
+</script>
