@@ -2,13 +2,16 @@
 layout: default
 ---
 
+{% assign words = content | number_of_words %}
+{% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
+
 <article class="container mt-5">
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }}</p>
+            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min de lecture</p>
             {% if page.image %}
-            <img src="{{ page.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}">
+            <img src="{{ page.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}" loading="lazy">
             {% endif %}
         </header>
 
@@ -33,3 +36,43 @@ layout: default
         {% endif %}
     </div>
 </article>
+
+{% assign related_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% unless post.url == page.url %}
+    {% assign common = 0 %}
+    {% for tag in post.tags %}
+      {% if page.tags contains tag %}
+        {% assign common = common | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if common >= 1 %}
+      {% assign related_posts = related_posts | push: post %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+{% assign related_posts = related_posts | slice: 0, 3 %}
+
+{% if related_posts.size > 0 %}
+<section class="container mt-4 mb-5">
+    <div class="section-header">
+        <h2 class="hover-underline-animation">Articles similaires</h2>
+    </div>
+    <div class="row">
+        {% for post in related_posts %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if post.image %}
+                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="btn btn-primary">Lire plus</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

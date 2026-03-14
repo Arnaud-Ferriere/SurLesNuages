@@ -14,22 +14,57 @@ layout: default
         <h1 class="hover-underline-animation">Articles récents</h1>
     </div>
     <div class="row">
-        {% for post in site.posts %}
+        {% assign posts_list = paginator.posts | default: site.posts %}
+        {% for post in posts_list %}
+        {% assign words = post.content | number_of_words %}
+        {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
         <div class="col-md-4 mb-4">
             <div class="card">
                 {% if post.image %}
-                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
+                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-                    <p class="text-muted">Publié le : {{ post.date | date: "%d/%m/%Y" }}</p>
+                    <p class="text-muted">Publié le : {{ post.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min</p>
                     <a href="{{ post.url | relative_url }}" class="btn btn-primary">Lire plus</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    {% if paginator.total_pages > 1 %}
+    <nav aria-label="Pagination des articles" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if paginator.previous_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Plus récents</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo; Plus récents</span></li>
+            {% endif %}
+
+            {% for i in (1..paginator.total_pages) %}
+            <li class="page-item {% if paginator.page == i %}active{% endif %}">
+                {% if i == 1 %}
+                <a class="page-link" href="{{ '/' | relative_url }}">{{ i }}</a>
+                {% else %}
+                <a class="page-link" href="{{ site.paginate_path | replace: ':num', i | relative_url }}">{{ i }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+
+            {% if paginator.next_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Plus anciens &raquo;</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Plus anciens &raquo;</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </section>
 
 {% if site.posts.size == 0 %}
@@ -52,6 +87,9 @@ layout: default
         </li>
         <li class="list-group-item">
             <a href="{{ '/apropos.html' | relative_url }}#certifications"><i class="fas fa-cloud"></i> Voir mes certifications</a>
+        </li>
+        <li class="list-group-item">
+            <a href="{{ '/feed.xml' | relative_url }}"><i class="fas fa-rss"></i> Flux RSS</a>
         </li>
     </ul>
 </aside>

@@ -3,11 +3,94 @@
     --color-secondary: #003b82;
     --color-navbar-bg: rgba(8, 26, 52, 0.95);
     --color-background: #eef2f3;
+    --color-card-bg: #ffffff;
+    --color-text: #333;
+    --color-text-muted: #6c757d;
+    --color-border: #dee2e6;
     --font-main: 'Poppins', sans-serif;
     --spacing-base: 1rem;
     --border-radius: 15px;
     --box-shadow-light: 0 6px 12px rgba(0, 0, 0, 0.05);
     --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  [data-theme="dark"] {
+    --color-primary: #c8d8f0;
+    --color-secondary: #7baaf7;
+    --color-navbar-bg: rgba(5, 12, 25, 0.98);
+    --color-background: #0f1923;
+    --color-card-bg: #162333;
+    --color-text: #d0dce8;
+    --color-text-muted: #8a9bb0;
+    --color-border: #2a3a4a;
+    --box-shadow-light: 0 6px 12px rgba(0, 0, 0, 0.3);
+    --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  [data-theme="dark"] body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+
+  [data-theme="dark"] .card {
+    background-color: var(--color-card-bg);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] .card-title,
+  [data-theme="dark"] .card-text {
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] .text-muted {
+    color: var(--color-text-muted) !important;
+  }
+
+  [data-theme="dark"] .article-container {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] .list-group-item {
+    background-color: var(--color-card-bg);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] .list-group-item a {
+    color: var(--color-secondary);
+  }
+
+  [data-theme="dark"] h1, [data-theme="dark"] h2,
+  [data-theme="dark"] h3, [data-theme="dark"] h4,
+  [data-theme="dark"] h5, [data-theme="dark"] p {
+    color: var(--color-text);
+  }
+
+  [data-theme="dark"] .section-header h1 {
+    color: var(--color-primary);
+  }
+
+  [data-theme="dark"] .alert-placeholder {
+    background-color: #1e2f45;
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+  }
+
+  /* Bouton dark mode */
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .dark-mode-toggle:hover {
+    transform: rotate(20deg);
   }
   
   body {
