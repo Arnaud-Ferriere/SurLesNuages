@@ -2,6 +2,7 @@
 title: "Monter un homelab : pourquoi et comment commencer"
 date: 2026-02-10
 image: /assets/article1.webp
+placeholder: true
 excerpt: "Comment j'ai monté mon homelab pour pratiquer et expérimenter, et pourquoi c'est un atout majeur pour un admin sys."
 ---
 

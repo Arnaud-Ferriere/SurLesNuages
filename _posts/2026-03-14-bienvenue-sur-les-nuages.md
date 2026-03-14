@@ -2,6 +2,7 @@
 title: "Bienvenue sur les nuages !"
 date: 2026-03-14
 image: /assets/article1.webp
+placeholder: true
 excerpt: "Premier article du blog ! Découvrez comment ce site a été migré vers Jekyll pour faciliter la publication d'articles en Markdown."
 ---
 

@@ -2,6 +2,7 @@
 title: "Entra ID : par où commencer ?"
 date: 2026-03-07
 image: /assets/article3.webp
+placeholder: true
 excerpt: "Un guide pour comprendre les bases de Microsoft Entra ID et démarrer avec la gestion des identités cloud."
 ---
 

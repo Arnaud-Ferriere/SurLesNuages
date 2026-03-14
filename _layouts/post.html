@@ -12,6 +12,12 @@ layout: default
             {% endif %}
         </header>
 
+        {% if page.placeholder %}
+        <div class="alert-placeholder">
+            <i class="fas fa-robot"></i> Généré par IA comme placeholder — pas encore un vrai article.
+        </div>
+        {% endif %}
+
         <section class="content">
             {{ content }}
         </section>
