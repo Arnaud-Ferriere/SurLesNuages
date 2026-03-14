@@ -311,12 +311,39 @@
   
   /* Card titles and text */
   .card-title {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-weight: 600;
   }
-  
+
+  .card-title a {
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .card-title a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
   .card-text {
     color: #333;
+  }
+
+  /* Pagination */
+  .page-link {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  .page-item.active .page-link {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff;
+  }
+
+  .page-link:hover {
+    color: var(--color-primary);
   }
   
   /* Sidebar */
