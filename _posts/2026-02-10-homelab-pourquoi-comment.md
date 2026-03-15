@@ -1,5 +1,5 @@
 ---
-title: 2026-02-10-homelab-pourquoi-comment
+title: Un Homelab, pourquoi faire ?
 date: 2026-03-15
 image: ""
 tags:
