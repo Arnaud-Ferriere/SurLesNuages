@@ -12,7 +12,7 @@ Cet article sert à tester les différents comportements d'affichage des images 
 
 Sans aucune classe, une image s'affiche centrée avec une légère ombre :
 
-![Paysage nuageux](https://images.unsplash.com/photo-1504608524841-42584120d94c?w=800&q=80)
+![Paysage nuageux](https://picsum.photos/seed/clouds/800/450)
 
 Le texte reprend normalement après l'image, sans chevauchement.
 
@@ -20,7 +20,7 @@ Le texte reprend normalement après l'image, sans chevauchement.
 
 Avec la classe `.img-full`, l'image prend toute la largeur de l'article :
 
-![Datacenter](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80){: .img-full}
+![Datacenter](https://picsum.photos/seed/datacenter/1200/400){: .img-full}
 
 Idéal pour les captures d'écran ou les schémas qui nécessitent beaucoup de place.
 
@@ -28,7 +28,7 @@ Idéal pour les captures d'écran ou les schémas qui nécessitent beaucoup de p
 
 Avec `.img-left`, le texte s'écoule à droite de l'image. Pratique pour illustrer un paragraphe sans interrompre la lecture.
 
-![Logo cloud](https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80){: .img-left}
+![Logo cloud](https://picsum.photos/seed/azure/400/300){: .img-left}
 
 Microsoft Azure est une plateforme de cloud computing qui propose une large gamme de services : calcul, stockage, bases de données, intelligence artificielle, réseaux, et bien plus encore. Les entreprises l'adoptent massivement pour sa flexibilité et son intégration native avec l'écosystème Microsoft 365 et Active Directory. Ce paragraphe est suffisamment long pour que l'effet de flottant soit bien visible autour de l'image positionnée à gauche.
 
@@ -36,7 +36,7 @@ Microsoft Azure est une plateforme de cloud computing qui propose une large gamm
 
 Même principe avec `.img-right` — l'image se positionne à droite et le texte s'écoule à gauche.
 
-![Serveurs](https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=400&q=80){: .img-right}
+![Serveurs](https://picsum.photos/seed/servers/400/300){: .img-right}
 
 L'administration système moderne ne se limite plus à gérer des serveurs physiques. Les architectures hybrides combinent infrastructure on-premise et services cloud, nécessitant une expertise transversale : réseau, sécurité, automatisation, surveillance. Ce paragraphe illustre bien le comportement du texte qui entoure une image flottante à droite.
 
@@ -44,9 +44,9 @@ L'administration système moderne ne se limite plus à gérer des serveurs physi
 
 Il est aussi possible d'insérer plusieurs images consécutives. Elles s'affichent chacune centrée, avec une marge verticale entre elles :
 
-![Image 1](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80)
+![Image 1](https://picsum.photos/seed/network/600/350)
 
-![Image 2](https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80)
+![Image 2](https://picsum.photos/seed/linux/600/350)
 
 ## Conclusion
 
