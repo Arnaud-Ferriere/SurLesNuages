@@ -1,11 +1,18 @@
 ---
-title: "Monter un homelab : pourquoi et comment commencer"
-date: 2026-02-10
-image: /assets/article1.webp
-tags: [Homelab, Virtualisation, Administration]
+title: 2026-02-10-homelab-pourquoi-comment
+date: 2026-03-15
+image: ""
+tags:
+  - Homelab
+  - Virtualisation
+  - Administration
 placeholder: true
-excerpt: "Comment j'ai monté mon homelab pour pratiquer et expérimenter, et pourquoi c'est un atout majeur pour un admin sys."
+excerpt: ""
+layout: post
+banner: ""
 ---
+
+Contenu de l'article ici.
 
 Un homelab, c'est un environnement informatique personnel où l'on peut expérimenter librement. Voici pourquoi j'en ai monté un et comment vous pouvez faire pareil.
 

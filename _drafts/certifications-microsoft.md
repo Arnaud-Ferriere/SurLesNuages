@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Titre"
-date: 2026-03-14
-image: /assets/article2.webp
+title: certifications-microsoft
+date: 2026-03-15
+image: ""
 tags:
   - Tag
   - Tag2
   - Tag3
 placeholder: false
-excerpt: Mon retour d'expérience sur la préparation aux certifications Microsoft et les ressources que je recommande.
+excerpt: ""
+banner: ""
 ---
 
 
@@ -22,6 +23,8 @@ Microsoft propose trois niveaux :
 - **Fundamentals** : pour découvrir un domaine (AZ-900, SC-900, MS-900...)
 - **Associate** : pour valider des compétences pratiques (AZ-104, MS-102...)
 - **Expert** : pour les architectes et profils seniors
+
+Contenu de l'article ici.
 
 Mon conseil : commencez par les Fundamentals même si vous avez déjà de l'expérience. Ça pose les bases du vocabulaire Microsoft et ça booste la confiance.
 
