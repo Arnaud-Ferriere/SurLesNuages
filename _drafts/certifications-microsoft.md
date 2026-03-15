@@ -15,7 +15,7 @@ banner: ""
 
 
 Après plusieurs certifications Microsoft passées (Fundamentals et Associate), voici mon retour d'expérience et mes conseils pour bien se préparer.
-![Image](assets\applied-skill.svg)
+![Image](/assets/applied-skill.svg)
 
 ## Choisir la bonne certification
 
