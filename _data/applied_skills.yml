@@ -1,0 +1,38 @@
+- name: "Get started with identities and access using Microsoft Entra"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/AEA41E9E25391AFC?sharingId=F8FF919B676DA62B"
+
+- name: "Build a natural language processing solution with Azure AI Language"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/13F734D4E152BE14?sharingId=F8FF919B676DA62B"
+
+- name: "Configure secure access to your workloads using Azure networking"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/1EBB01152017BCF3?sharingId=F8FF919B676DA62B"
+
+- name: "Create an intelligent document processing solution with Azure AI Document Intelligence"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/A1822585C2333905?sharingId=F8FF919B676DA62B"
+
+- name: "Implement information protection and data loss prevention by using Microsoft Purview"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/DC640DFF037F1EF9?sharingId=F8FF919B676DA62B"
+
+- name: "Implement retention, eDiscovery, and Communication Compliance in Microsoft Purview"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/D88A96D98C23A57E?sharingId=F8FF919B676DA62B"
+
+- name: "Deploy and configure Azure Monitor"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/773981EC65E9B80?sharingId=F8FF919B676DA62B"
+
+- name: "Defend against cyberthreats with Microsoft Defender XDR"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/BA3C594E6DED71FD?sharingId=F8FF919B676DA62B"
+
+- name: "Deploy and manage Microsoft Azure Arc-enabled servers"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/D841A489BB729D30?sharingId=F8FF919B676DA62B"
+
+- name: "Create and manage model-driven apps with Power Apps and Dataverse"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/63CE7DE458BC4A4?sharingId=F8FF919B676DA62B"
+
+- name: "Create and manage canvas apps with Power Apps"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/CC0A45372F09A65E?sharingId=F8FF919B676DA62B"
+
+- name: "Administer Active Directory Domain Services"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/685B28DE7B4568D5?sharingId=F8FF919B676DA62B"
+
+- name: "Create and manage automated processes by using Power Automate"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/7E4C4B66520D8770?sharingId=F8FF919B676DA62B"

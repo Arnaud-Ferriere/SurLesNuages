@@ -1,0 +1,165 @@
+- company: "Metsys"
+  logo: "assets/metsys-logo.svg"
+  period: "Depuis 2023"
+  title: "Consultant Active Directory, Microsoft 365 et Automatisation"
+  description: >-
+    Metsys se positionne comme un acteur clé des services numériques, offrant des solutions sur
+    mesure pour accompagner ses clients dans leur transformation digitale. Fondée sur des valeurs
+    humaines telles que l'intégrité et la proximité, l'entreprise met l'accent sur une relation de
+    confiance avec ses clients afin de déployer des solutions innovantes, pertinentes et adaptées
+    aux défis technologiques de demain.<br /><br />
+    Au sein de Metsys, je mets à profit mon expertise en gestion des identités, administration
+    systèmes et gestion des infrastructures hybrides pour accompagner nos clients dans la
+    sécurisation, l'optimisation et l'automatisation de leurs environnements IT.
+  missions:
+    - client: "Groupe La Poste"
+      logo: "assets/groupeLaPoste-logo.svg"
+      period: "Depuis 2023"
+      context: >-
+        Service « Administration .com1 » de la Direction des Services Collaboratifs du groupe La
+        Poste. 250 000 utilisateurs, 80 domaines. Environnement hybride : Gestionnaire d'identité,
+        ADFS, Entra, IdP multiples. Mission d'administration, support, maintenance continue et
+        automatisation/amélioration de l'existant.
+      responsibilities:
+        - category: "Formation et leadership"
+          items:
+            - "Lead technique de l'équipe et formation des nouveaux arrivants"
+            - "Lead technique et formation des nouveaux arrivants. Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle"
+            - "Rationalisation et refonte de la base de connaissances SharePoint Online du service (regroupement des connaissances sur un seul site, amélioration de la recherche avec ajout de catégories/tags, mise en place de revues périodiques, agent IA RAG)"
+            - "Formation des équipes aux bonnes pratiques d'alimentation et de maintenance des bases de connaissances"
+            - "Aide à la mise en place de bases de connaissances similaires dans des services connexes intéressés par le projet"
+        - category: "Administration et support"
+          items:
+            - "Gestion des identités et des droits (AD, Entra Connect Sync, groupes, licences, MFA, accès conditionnels)"
+            - "Surveillance préventive des API de gestion des identités, résolution des erreurs"
+            - "Support N2/N3 en renfort des équipes N1 sur les identités et l'environnement 365 (Exchange, Teams, SharePoint Online, OneDrive...)"
+            - "Revue des tickets et formation des supports N1 pour la montée en compétence"
+        - category: "Automatisation et amélioration des outils"
+          items:
+            - "Automatisation et amélioration via PowerAutomate et PowerShell : gestion de licences avec groupes dynamiques et provisionnement SCIM (-35% d'un ETP), gestion de licences pour une appli métier via API REST (-1 ETP)"
+            - "Optimisation des flux existants (réduction des actions et temps d'exécution, gestion et suivi des erreurs), mise en place de systèmes d'approbations modulaires, etc"
+            - "Maintenance des formulaires, listes et types de contenus SharePoint Online utilisés par l'outil de tickets du service"
+            - "Propositions et améliorations de l'outil de support Power Apps (filtres par opérateur, lien vers la demande complète, filtres par statuts...)"
+            - "Analyse fonctionnelle, cahier des charges et proposition d'architecture pour la refonte de l'outil de support PowerApps (Power Apps + SPO + Power Automate, env. Dev/Prod)"
+            - "Suivi projet et accompagnement des développeurs Power Platform jusqu'à la mise en production"
+            - "Rédaction des Documents d'Architecture Technique (DAT) des automatisations et outils réalisés"
+        - category: "Gestion de crise"
+          items:
+            - "Interlocuteur clé pour le diagnostic, la transmission d'informations entre services et la mise en place de remédiations de masse"
+      tech: "Active Directory, Entra ID, Power Platform, PowerShell, Microsoft 365"
+
+- company: "Net-Plus"
+  logo: "assets/netplus-logo.png"
+  period: "2019 - 2023"
+  title: "Administrateur systèmes"
+  description: >-
+    Net-Plus est une entreprise française spécialisée dans les services de propreté et d'entretien,
+    intervenant auprès des entreprises, collectivités et particuliers. Forte de plus de 25 ans
+    d'expérience, elle se distingue par son engagement envers la qualité, le bien-être de ses
+    collaborateurs et des pratiques respectueuses de l'environnement.<br /><br />En tant
+    qu'administrateur systèmes, j'étais chargé de maintenir et faire évoluer l'infrastructure IT
+    pendant la croissance rapide de l'entreprise, qui est passée de 150 à 300 collaborateurs après
+    la crise du COVID.<br /> Sous la direction d'une DSI à temps partagé, je gérais un environnement
+    hybride incluant 27 agences et le siège social, tout en assurant l'intégration régulière des
+    acquisitions. J'ai formé un alternant qui a pu me remplacer sur le support N1.
+  context: >-
+    Gestion d'un parc informatique varié et réseau de 27 agences + siège social.
+    Environnement hybride : ferme RDS, Office 2013, Office 2019, Office 365.
+  responsibilities:
+    - category: "Administration AD"
+      items:
+        - "Création et maintenance des GPO"
+        - "Mise en place et maintien des permissions de fichiers (méthode AGDLP)"
+        - "Gestion du cycle de vie des comptes utilisateurs"
+        - "Scripting PowerShell (onboarding, notification mail pour les mots de passes expirés, les comptes expirés / inactifs, notification Teams lorsqu'un compte est verrouillé, suppression des comptes)"
+    - category: "M365 et Exchange Online"
+      items:
+        - "Migration de l'infra interne à hybride"
+        - "Attribution de licences, gestion de groupes dynamiques pour automatiser l'attribution"
+        - "Sécurisation de l'infrastructure, activation du MFA, mise en place des accès conditionnel"
+        - "MCO Exchange Online (création de boites partagées, liste de distribution etc)"
+        - "Création de règles Exchange (par exemple, avertissement pour les messages externes, purge automatique des mails anciens, etc)"
+        - "Administration Teams et One Drive"
+        - "Intégration de domaines et infrastructures (AD, logiciels tiers, parc etc), lors d'acquisitions"
+    - category: "Développement PowerApps"
+      items:
+        - "Autoformation sur Power Apps/Power Platform"
+        - "Création d'une application d'annuaire interne"
+    - category: "Maintenance serveurs et réseau"
+      items:
+        - "Administration et préparation de serveurs Windows / Debian"
+        - "Mises à jour et patching Windows"
+        - "Installation et configuration de rôles (AD DS, fichiers, impressions, broker, ferme rds...)"
+        - "Mise en place du VPN Fortinet durant la période COVID pour permettre le télétravail"
+        - "Brassage des baies des nouvelles agences / siège, configuration des switchs"
+    - category: "Support utilisateurs"
+      items:
+        - "Support sur site et à distance N1 / N2"
+        - "Diagnostic des incidents réseaux"
+        - "Mise en place de GLPI et gestion des tickets + inventaires (Fusion Inventory)"
+        - "Création d'une base de connaissance SharePoint Online"
+        - "Formation utilisateurs, sensibilisations à la sécurité et bonnes pratiques"
+        - "Tuteur d'un alternant, formation \"technicien systèmes et réseau\""
+  tech: "AD DS / Entra ID, Windows server 2008 à 2020, GPO, RDS, Office (toutes versions), Microsoft 365, Power Platform, PowerShell, GLPI, Fortinet"
+
+- company: "Nomotech"
+  logo: "assets/nomotech-logo.webp"
+  period: "2017-2018"
+  title: "Administrateur ERP Sage"
+  description: >-
+    Nomotech est une entreprise française spécialisée dans les services d'accès à Internet haut
+    débit en zones rurales et peu denses. Elle propose des solutions de connectivité sans fil,
+    permettant aux habitants et aux entreprises de bénéficier d'un accès Internet fiable et rapide,
+    contribuant ainsi à réduire la fracture numérique en France.<br /><br />J'étais en charge de la
+    gestion des processus quotidiens, de la résolution des incidents, et de la rédaction de
+    procédures pour les utilisateurs. <br />J'ai également développé des macros en VBA pour
+    automatiser certaines tâches et rédigé des requêtes SQL pour les analyses de données.
+  context: >-
+    CDD dans le cadre d'un remplacement temporaire en urgence.
+    200 utilisateurs, 5 agences, en charge de l'administration et support de l'ERP SageX3, en
+    soutien du DSI du service le premier mois puis en autonomie.
+  responsibilities:
+    - category: "Administration de l'ERP SAGEX3"
+      items:
+        - "Gestion des process quotidiens d'exploitation"
+        - "Résolution d'incidents"
+        - "Requêtes SQL / Crystal Reports"
+        - "Rédaction de procédures à destination des utilisateurs et autres administrateurs SI"
+        - "Réalisation des macros Excel en VBA"
+        - "Gestion de tickets sur GLPI"
+        - "Soutien ponctuel aux équipes d'administration serveurs et postes de travail."
+  tech: "Windows 7 – 10, Sage X3, MySQL, Crystal Reports, Office 2013, Macros VBA"
+
+- company: "Freelance"
+  logo: "assets/freelance-logo.webp"
+  period: "2015 - 2017"
+  title: "Freelance polyvalent"
+  description: >-
+    Durant cette période, j'ai travaillé en tant que freelance sur plusieurs projets de
+    crowdsourcing, notamment pour des plateformes telles que UHRS (Microsoft), Mturk (Amazon),
+    Lionbridge, et DefinedCrowd. Mes missions incluaient la saisie de données, leur traitement et
+    leur classification, ainsi que des travaux de transcription et d'analyse.
+  key_skills:
+    - "Autonomie et gestion de projet : gérer plusieurs projets de manière indépendante, avec des deadlines strictes et des exigences précises."
+    - "Adaptabilité : adaptation rapide à des outils et technologies variés en fonction des missions."
+    - "Collaboration à distance : Expérience de travail avec des équipes internationales via des plateformes en ligne."
+
+- company: "TNT Special Services"
+  logo: "assets/tnt-logo.webp"
+  period: "2008 - 2011"
+  title: "Technicien de support polyvalent"
+  description: >-
+    TNT Special Services est une division de TNT Express, spécialisée dans la gestion de livraisons
+    urgentes et de transport de marchandises sensibles. Elle offre des solutions logistiques sur
+    mesure, garantissant la rapidité, la sécurité et la traçabilité des envois, répondant aux
+    besoins spécifiques des clients dans divers secteurs industriels.<br /><br />En tant que
+    technicien de support polyvalent chez TNT Express, j'assurais le support technique de
+    niveaux 1 et 2 pour les collaborateurs (livreurs devant effectuer des prestations techniques sans
+    formation préalable). <br />J'étais responsable de la gestion des incidents techniques, de la
+    transmission d'informations aux fournisseurs, ainsi que de la rédaction de fiches techniques et
+    de modes opératoires pour les équipes support.
+  key_skills:
+    - "Support technique N1/N2 sur des matériels de types variés (du TPE - terminal de paiement électronique - à la baie de serveur en passant par les imprimantes)."
+    - "Transmissions d'informations entre intervenants et fournisseurs."
+    - "Gestion de conflits intervenants / clients finaux."
+    - "Création de fiches techniques et modes opératoires."

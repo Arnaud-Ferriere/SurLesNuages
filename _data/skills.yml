@@ -1,0 +1,20 @@
+- name: "Gestion des identités et accès, gouvernance"
+  level: "Expert"
+
+- name: "Annuaires : Active directory, Microsoft Entra ID"
+  level: "Maitrise"
+
+- name: "Automatisation : PowerShell, PowerApps, Power Automate"
+  level: "Maitrise"
+
+- name: "Cloud & Collaboration : Microsoft 365, Teams, SharePoint, Exchange"
+  level: "Maitrise"
+
+- name: "Microsoft Exchange (Online)"
+  level: "Maitrise"
+
+- name: "Sécurité : Accès conditionnels, bonnes pratiques ANSSI"
+  level: "Pratique"
+
+- name: "Développement (HTML/CSS, Python, Markdown, Git)"
+  level: "Pratique"

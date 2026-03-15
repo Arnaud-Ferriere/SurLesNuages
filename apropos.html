@@ -43,58 +43,21 @@ permalink: /apropos.html
         </div>
         <div class="section-content">
             <div class="certifications-grid">
+                {% for cert in site.data.certifications %}
                 <div class="card">
                     <div class="card-icon">
-                        <img src="assets/microsoft-certified-associate-badge.svg" alt="SC-300 certification badge">
+                        <img src="{{ cert.badge }}" alt="{{ cert.name }} badge">
                     </div>
                     <div class="card-body">
-                        <h4>SC-300 – Identity and Access Administrator Associate</h4>
-                        <h6>Septembre 2024</h6>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/DB312FBD462463D1"
+                        <h4>{{ cert.name }}</h4>
+                        <h6>{{ cert.date }}</h6>
+                        <a href="{{ cert.url }}"
                             target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-square-up-right"></i>
-                            <span class="sr-only">(ouvre la page de la certification SC-300)</span></a>
+                                class="fa-solid fa-square-up-right" aria-hidden="true"></i>
+                            <span class="sr-only">(ouvre la page de la certification {{ cert.name }})</span></a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/microsoft-certified-associate-badge.svg" alt="AI-102 certification badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>AI-102 – Azure AI Engineer Associate</h4>
-                        <h6>Juin 2025</h6>
-                        <a href="https://learn.microsoft.com/en-us/users/arnaud-ferriere/credentials/835bb93b2669893e"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-square-up-right"></i>
-                            <span class="sr-only">(ouvre la page de la certification AI-102)</span></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="PL-900 certification badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>PL-900 – Power Platform Fundamentals</h4>
-                        <h6>Octobre 2024</h6>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/55B523EABF8799AB?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification PL-900)</span></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="AI-900 certification badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>AI-900 – Azure AI Fundamentals</h4>
-                        <h6>Juin 2024</h6>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/2FC051060EE5B751?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification AI-900)</span></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -119,42 +82,14 @@ permalink: /apropos.html
                         </tr>
                     </thead>
                     <tbody>
+                        {% for skill in site.data.skills %}
                         <tr>
-                            <td>Gestion des identités et accès, gouvernance</td>
-                            <td>Expert</td>
+                            <td>{{ skill.name }}</td>
+                            <td>{{ skill.level }}</td>
                         </tr>
-                        <tr>
-                            <td>Annuaires : Active directory, Microsoft Entra ID</td>
-                            <td>Maitrise</td>
-                        </tr>
-                        <tr>
-                            <td>Automatisation : PowerShell, PowerApps, Power Automate</td>
-                            <td>Maitrise</td>
-                        </tr>
-                        <tr>
-                            <td>Cloud & Collaboration : Microsoft 365, Teams, SharePoint, Exchange</td>
-                            <td>Maitrise</td>
-                        </tr>
-
-                        <tr>
-                            <td>Microsoft Exchange (Online)</td>
-                            <td>Maitrise</td>
-                        </tr>
-
-                        <tr>
-                            <td>Sécurité : Accès conditionnels, bonnes pratiques ANSSI </td>
-                            <td>Pratique</td>
-                        </tr>
-                        <tr>
-                            <td>Développement (HTML/CSS, Python, Markdown, Git) </td>
-                            <td>Pratique</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
-
-
-
-
             </div>
         </div>
     </div>
@@ -169,374 +104,103 @@ permalink: /apropos.html
             <h1 class="hover-underline-animation">Expériences professionnelles</h1>
         </div>
         <div class="section-content stacked-cards">
-            <!-- METSYS -->
+            {% for exp in site.data.experiences %}
             <div class="stacked-card">
                 <!-- Section du poste -->
                 <div class="poste-section">
                     <div class="poste-header">
-                        <img src="assets/metsys-logo.svg" alt="Logo Metsys" class="poste-logo">
-                        <h4 class="poste-title"><strong>Depuis 2023 : </strong> Consultant Active Directory, Microsoft
-                            365 et Automatisation</h4>
+                        <img src="{{ exp.logo }}" alt="Logo {{ exp.company }}" class="poste-logo">
+                        <h4 class="poste-title"><strong>{{ exp.period }} : </strong> {{ exp.title }}</h4>
                     </div>
-                    <p class="poste-description">
-                        Metsys se positionne comme un acteur clé des services numériques, offrant des solutions sur
-                        mesure pour accompagner ses clients dans leur transformation digitale. Fondée sur des valeurs
-                        humaines telles que l'intégrité et la proximité, l’entreprise met l'accent sur une relation de
-                        confiance avec ses clients afin de déployer des solutions innovantes, pertinentes et adaptées
-                        aux défis technologiques de demain.<br /><br />
-                        Au sein de Metsys, je mets à profit mon expertise en gestion des identités, administration
-                        systèmes et gestion des infrastructures hybrides pour accompagner nos clients dans la
-                        sécurisation, l’optimisation et l'automatisation de leurs environnements IT.
-                    </p>
+                    <p class="poste-description">{{ exp.description }}</p>
                 </div>
 
+                {% if exp.missions %}
                 <!-- Séparateur -->
                 <hr class="section-separator">
 
                 <!-- Section Missions -->
                 <div class="missions-section">
                     <h5 class="missions-title">Missions :</h5>
+                    {% for mission in exp.missions %}
                     <div class="mission">
                         <div class="mission-header">
-                            <img src="assets/groupeLaPoste-logo.svg" alt="Logo Groupe La Poste" class="mission-logo">
-                            <h5 class="mission-title"><strong>Depuis 2023 : </strong> Groupe La Poste</h5>
+                            <img src="{{ mission.logo }}" alt="Logo {{ mission.client }}" class="mission-logo">
+                            <h5 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
                         </div>
 
-                        <!-- Description de la mission -->
                         <div class="mission-description">
                             <p>
-                                Le Groupe La Poste est un acteur majeur dans le secteur des services publics, offrant
-                                une large gamme de services allant de la distribution du courrier à la logistique, en
-                                passant par les solutions numériques et bancaires. Engagé dans la transformation
-                                digitale, le groupe place l'innovation et la proximité au cœur de sa stratégie pour
-                                répondre aux besoins évolutifs de ses clients et accompagner les entreprises dans leur
-                                transition numérique.<br /><br />
-                                J'y ai conçu et implémenté des solutions d'automatisation avec Power Apps, Power
-                                Automate
-                                et PowerShell pour améliorer les processus métiers, tout en assurant le support N2/N3
-                                sur Microsoft 365. J'ai également participé à organiser la documentation, à former des
-                                équipes N1, des nouveaux arrivants de l'équipe ".com1", et à l'optimisation des outils
-                                de collaboration (Exchange, Teams, SharePoint).
-                            </p>
-                            <p><br />
                                 <strong>Contexte Projet / Service :</strong>
-                                Service « Administration .com1 » de la Direction des Services Collaboratifs du groupe La
-                                Poste.
-                                250 000 utilisateurs, 80 domaines. Environnement hybride : Gestionnaire d'identité,
-                                ADFS, Entra, IdP multiples.
-                                Mission d'administration, support, maintenance continue et automatisation/amélioration
-                                de l'existant.
+                                {{ mission.context }}
                             </p>
 
                             <p><br /><strong>Responsabilités / Missions :</strong></p>
 
                             <ul>
+                                {% for resp in mission.responsibilities %}
                                 <li>
-                                    Formation et leadership :
+                                    {{ resp.category }} :
                                     <ul>
-                                        <li>Lead technique de l'équipe et formation des nouveaux arrivants</li>
-                                        <li>Lead technique et formation des nouveaux arrivants
-                                            Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle</li>
-                                        <li>Rationalisation et refonte de la base de connaissances SharePoint Online du
-                                            service (regroupement des connaissances sur un seul site, amélioration de la
-                                            recherche avec ajout de catégories/tags, mise en place de revues
-                                            périodiques, agent IA RAG)</li>
-                                        <li>Formation des équipes aux bonnes pratiques d'alimentation et de maintenance
-                                            des bases de connaissances</li>
-                                        <li>Aide à la mise en place de bases de connaissances similaires dans des
-                                            services connexes intéressés par le projet</li>
+                                        {% for item in resp.items %}
+                                        <li>{{ item }}</li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
-
-                                <li>
-                                    Administration et support :
-                                    <ul>
-                                        <li>Gestion des identités et des droits (AD, Entra Connect Sync, groupes,
-                                            licences, MFA, accès conditionnels)</li>
-                                        <li>Surveillance préventive des API de gestion des identités, résolution des
-                                            erreurs</li>
-                                        <li>Support N2/N3 en renfort des équipes N1 sur les identités et l'environnement
-                                            365 (Exchange, Teams, SharePoint Online, OneDrive...)</li>
-                                        <li>Revue des tickets et formation des supports N1 pour la montée en compétence
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    Automatisation et amélioration des outils :
-                                    <ul>
-                                        <li>Automatisation et amélioration via PowerAutomate et PowerShell : gestion de licences avec groupes dynamiques et provisionnement SCIM (-35% d'un ETP), gestion de licences pour une appli métier via API REST (-1 ETP)</li>
-                                        <li>Optimisation des flux existants (réduction des actions et temps d'exécution, gestion et suivi des erreurs), mise en place de systèmes d'approbations modulaires, etc 
-                                        </li>
-                                        <li>Maintenance des formulaires, listes et types de contenus SharePoint Online
-                                            utilisés par l'outil de tickets du service</li>
-                                        <li>Propositions et améliorations de l'outil de support Power Apps (filtres par
-                                            opérateur, lien vers la demande complète, filtres par statuts…)</li>
-                                        <li>Analyse fonctionnelle, cahier des charges et proposition d'architecture pour
-                                            la refonte de l'outil de support PowerApps (Power Apps + SPO + Power
-                                            Automate, env. Dev/Prod)</li>
-                                        <li>Suivi projet et accompagnement des développeurs Power Platform jusqu'à la
-                                            mise en production</li>
-                                        <li>Rédaction des Documents d'Architecture Technique (DAT) des automatisations
-                                            et outils réalisés</li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    Gestion de crise :
-                                    <ul>
-                                        <li>Interlocuteur clé pour le diagnostic, la transmission d'informations entre
-                                            services et la mise en place de remédiations de masse</li>
-                                    </ul>
-                                </li>
+                                {% endfor %}
                             </ul>
 
                             <p><br />
                                 <strong>Environnement technique / Technologies principales utilisées :</strong>
-                                Active Directory, Entra ID, Power Platform, PowerShell, Microsoft 365
+                                {{ mission.tech }}
                             </p>
                         </div>
-
-
                     </div>
+                    {% endfor %}
                 </div>
-            </div>
+                {% endif %}
 
-            <!-- NET-PLUS -->
-            <div class="stacked-card">
-                <!-- Section du poste -->
-                <div class="poste-section">
-                    <div class="poste-header">
-                        <img src="assets/netplus-logo.png" alt="Logo Net-Plus" class="poste-logo">
-                        <h4 class="poste-title"><strong>2019 - 2023 : </strong> Administrateur systèmes</h4>
-                    </div>
-                    <p class="poste-description">
-                        Net-Plus est une entreprise française spécialisée dans les services de propreté et d'entretien,
-                        intervenant auprès des entreprises, collectivités et particuliers. Forte de plus de 25 ans
-                        d'expérience, elle se distingue par son engagement envers la qualité, le bien-être de ses
-                        collaborateurs et des pratiques respectueuses de l'environnement.<br /><br />En tant
-                        qu’administrateur systèmes, j'étais chargé de maintenir et faire évoluer l'infrastructure IT
-                        pendant la croissance rapide de l'entreprise, qui est passée de 150 à 300 collaborateurs après
-                        la crise du COVID.<br /> Sous la direction d'une DSI à temps partagé, je gérais un environnement
-                        hybride incluant 27 agences et le siège social, tout en assurant l'intégration régulière des
-                        acquisitions. J'ai formé un alternant qui a pu me remplacer sur le support N1.
-                    </p>
-                </div>
+                {% if exp.context %}
                 <div class="mission-description">
                     <p>
                         <strong>Contexte Projet / Service :</strong>
-                        Gestion d'un parc informatique varié et réseau de 27 agences + siège social
-                        Environnement hybride : ferme RDS, Office 2013, Office 2019, Office 365.
-
+                        {{ exp.context }}
                     </p>
 
                     <p><br /><strong>Responsabilités / Missions :</strong></p>
 
                     <ul>
+                        {% for resp in exp.responsibilities %}
                         <li>
-                            Administration AD :
+                            {{ resp.category }} :
                             <ul>
-                                <li>Création et maintenance des GPO</li>
-                                <li>Mise en place et maintien des permissions de fichiers (méthode AGDLP)</li>
-                                <li>Gestion du cycle de vie des comptes utilisateurs</li>
-                                <li>Scripting PowerShell (onboarding, notification mail pour les mots de passes expirés,
-                                    les comptes expirés / inactifs, notification Teams lorsqu’un compte est verrouillé,
-                                    suppression des comptes)
-                                </li>
+                                {% for item in resp.items %}
+                                <li>{{ item }}</li>
+                                {% endfor %}
                             </ul>
                         </li>
-
-                        <li>
-                            M365 et Exchange Online :
-                            <ul>
-                                <li>Migration de l’infra interne à hybride </li>
-                                <li>Attribution de licences, gestion de groupes dynamiques pour automatiser
-                                    l'attribution</li>
-                                <li>Sécurisation de l'infrastructure, activation du MFA, mise en place des accès
-                                    conditionnel</li>
-                                <li>MCO Exchange Online (création de boites partagées, liste de distribution etc)</li>
-                                <li>Création de règles Exchange (par exemple, avertissement pour les messages externes,
-                                    purge automatique des mails anciens, etc)</li>
-                                <li>Administration Teams et One Drive</li>
-                                <li>Intégration de domaines et infrastructures (AD, logiciels tiers, parc etc), lors
-                                    d'acquisitions</li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            Développement PowerApps :
-                            <ul>
-                                <li>Autoformation sur Power Apps/Power Platform</li>
-                                <li>Création d’une application d’annuaire interne</li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            Maintenance serveurs et réseau :
-                            <ul>
-                                <li>Administration et préparation de serveurs Windows / Debian</li>
-                                <li>Mises à jour et patching Windows</li>
-                                <li>Installation et configuration de rôles (AD DS, fichiers, impressions, broker, ferme
-                                    rds…)</li>
-                                <li>Mise en place du VPN Fortinet durant la période COVID pour permettre le télétravail
-                                </li>
-                                <li>Brassage des baies des nouvelles agences / siège, configuration des switchs
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            Support utilisateurs :
-                            <ul>
-                                <li>Support sur site et à distance N1 / N2</li>
-                                <li>Diagnostic des incidents réseaux</li>
-                                <li>Mise en place de GLPI et gestion des tickets + inventaires (Fusion Inventory)</li>
-                                <li>Création d’une base de connaissance SharePoint Online</li>
-                                <li>Formation utilisateurs, sensibilisations à la sécurité et bonnes pratiques</li>
-                                <li>Tuteur d’un alternant, formation "technicien systèmes et réseau"</li>
-
-
-                            </ul>
-                        </li>
+                        {% endfor %}
                     </ul>
 
                     <p><br />
                         <strong>Environnement technique / Technologies principales utilisées :</strong>
-                        AD DS / Entra ID, Windows server 2008 à 2020, GPO, RDS, Office (toutes versions), Microsoft 365,
-                        Power Platform, PowerShell, GLPI, Fortinet
-
+                        {{ exp.tech }}
                     </p>
                 </div>
+                {% endif %}
 
-            </div>
-
-            <!-- NOMOTECH -->
-            <div class="stacked-card">
-                <!-- Section du poste -->
-                <div class="poste-section">
-                    <div class="poste-header">
-                        <img src="assets/nomotech-logo.webp" alt="Logo Nomotech" class="poste-logo">
-                        <h4 class="poste-title"><strong>2017-2018 : </strong>Administrateur ERP Sage</h4>
-                    </div>
-                    <p class="poste-description">
-                        Nomotech est une entreprise française spécialisée dans les services d'accès à Internet haut
-                        débit en zones rurales et peu denses. Elle propose des solutions de connectivité sans fil,
-                        permettant aux habitants et aux entreprises de bénéficier d'un accès Internet fiable et rapide,
-                        contribuant ainsi à réduire la fracture numérique en France.<br /><br />J'étais en charge de la
-                        gestion des processus quotidiens, de la résolution des incidents, et de la rédaction de
-                        procédures pour les utilisateurs. <br />J'ai également développé des macros en VBA pour
-                        automatiser certaines tâches et rédigé des requêtes SQL pour les analyses de données.
-                    </p>
-                </div>
-                <div class="mission-description">
-                    <p>
-                        <strong>Contexte Projet / Service :</strong>
-                        CDD dans le cadre d’un remplacement temporaire en urgence.
-                        200 utilisateurs, 5 agences, en charge de l’administration et support de l’ERP SageX3, en
-                        soutien du DSI du service le premier mois puis en autonomie.
-
-
-                    </p>
-
-                    <p><br /><strong>Responsabilités / Missions :</strong></p>
-
-                    <ul>
-                        <li>
-                            Administration de l’ERP SAGEX3 :
-                            <ul>
-                                <li>Gestion des process quotidiens d’exploitation</li>
-                                <li>Résolution d’incidents</li>
-                                <li>Requêtes SQL / Crystal Reports</li>
-                                <li>Rédaction de procédures à destination des utilisateurs et autres administrateurs SI
-                                </li>
-                                <li>Réalisation des macros Excel en VBA</li>
-                                <li>Gestion de tickets sur GLPI</li>
-                                <li>Soutien ponctuel aux équipes d’administration serveurs et postes de travail.</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <p><br />
-                        <strong>Environnement technique / Technologies principales utilisées :</strong>
-                        Windows 7 – 10, Sage X3, MySQL, Crystal Reports, Office 2013, Macros VBA
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- FREELANCE -->
-            <div class="stacked-card">
-                <!-- Section du poste -->
-                <div class="poste-section">
-                    <div class="poste-header">
-                        <img src="assets/freelance-logo.webp" alt="Logo Freelance" class="poste-logo">
-                        <h4 class="poste-title"><strong>2015 -2017 : </strong>Freelance polyvalent</h4>
-                    </div>
-                    <p class="poste-description">
-                        Durant cette période, j'ai travaillé en tant que freelance sur plusieurs projets de
-                        crowdsourcing, notamment pour des plateformes telles que UHRS (Microsoft), Mturk (Amazon),
-                        Lionbridge, et DefinedCrowd. Mes missions incluaient la saisie de données, leur traitement et
-                        leur classification, ainsi que des travaux de transcription et d'analyse.
-                    </p>
-                </div>
+                {% if exp.key_skills %}
                 <div class="mission-description">
                     <p><br /><strong>Compétences clés :</strong></p>
-
                     <ul>
-                        <li>Autonomie et gestion de projet : gérer plusieurs projets de manière indépendante, avec des
-                            deadlines strictes et des exigences précises.</li>
-                        <li>Adaptabilité : adaptation rapide à des outils et technologies variés en fonction des
-                            missions.
-                        </li>
-                        <li>Collaboration à distance : Expérience de travail avec des équipes internationales via des
-                            plateformes en ligne.</li>
-
+                        {% for skill in exp.key_skills %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
                     </ul>
-
                 </div>
-
+                {% endif %}
             </div>
-
-            <!-- TNT SPARE -->
-            <div class="stacked-card">
-                <!-- Section du poste -->
-                <div class="poste-section">
-                    <div class="poste-header">
-                        <img src="assets/tnt-logo.webp" alt="Logo TNT" class="poste-logo">
-                        <h4 class="poste-title"><strong>2008 - 2011 : </strong>Technicien de support polyvalent</h4>
-                    </div>
-                    <p class="poste-description">
-                        TNT Special Services est une division de TNT Express, spécialisée dans la gestion de livraisons
-                        urgentes et de transport de marchandises sensibles. Elle offre des solutions logistiques sur
-                        mesure, garantissant la rapidité, la sécurité et la traçabilité des envois, répondant aux
-                        besoins spécifiques des clients dans divers secteurs industriels.<br /><br />En tant que
-                        technicien de support polyvalent chez TNT Express, j'assurais le support technique de
-                        niveaux 1 et 2 pour les collaborateurs (livreurs devant effectuer des prestations techniques
-                        sans
-                        formation préalable). <br />J'étais responsable de la gestion des incidents techniques, de la
-                        transmission d'informations aux fournisseurs, ainsi que de la rédaction de fiches techniques et
-                        de modes opératoires pour les équipes support.
-                    </p>
-                </div>
-                <div class="mission-description">
-                    <p><br /><strong>Compétences clés :</strong></p>
-
-                    <ul>
-                        <li>Support technique N1/N2 sur des matériels de types variés (du TPE - terminal de paiement
-                            électronique - à la baie de serveur en passant par les imprimantes).</li>
-                        <li>Transmissions d'informations entre intervenants et fournisseurs.
-                        </li>
-                        <li>Gestion de conflits intervenants / clients finaux.</li>
-                        <li>Création de fiches techniques et modes opératoires.</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-
-
-
+            {% endfor %}
         </div>
     </div>
 
@@ -550,174 +214,20 @@ permalink: /apropos.html
         </div>
         <div class="section-content">
             <div class="applied-skills-grid">
+                {% for skill in site.data.applied_skills %}
                 <div class="card">
                     <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Entra ID skill badge">
+                        <img src="assets/applied-skill.svg" alt="{{ skill.name }} badge">
                     </div>
                     <div class="card-body">
-                        <h4>Get started with identities and access using Microsoft Entra</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/AEA41E9E25391AFC?sharingId=F8FF919B676DA62B"
+                        <h4>{{ skill.name }}</h4>
+                        <a href="{{ skill.url }}"
                             target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
+                                class="fa-solid fa-square-up-right" aria-hidden="true"></i>
                             <span class="sr-only">(ouvre la page de la certification)</span></a>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Azure AI Language skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Build a natural language processing solution with Azure AI Language</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/13F734D4E152BE14?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Azure Networking skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Configure secure access to your workloads using Azure networking</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/1EBB01152017BCF3?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Azure AI Document Intelligence skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Create an intelligent document processing solution with Azure AI Document Intelligence</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/A1822585C2333905?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Purview skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Implement information protection and data loss prevention by using Microsoft Purview</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/DC640DFF037F1EF9?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Purview skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Implement retention, eDiscovery, and Communication Compliance in Microsoft Purview</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/D88A96D98C23A57E?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Azure Monitor skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Deploy and configure Azure Monitor</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/773981EC65E9B80?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Defender XDR skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Defend against cyberthreats with Microsoft Defender XDR</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/BA3C594E6DED71FD?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Azure Arc skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Deploy and manage Microsoft Azure Arc–enabled servers </h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/D841A489BB729D30?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Power Apps and Dataverse skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Create and manage model-driven apps with Power Apps and Dataverse</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/63CE7DE458BC4A4?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Canvas apps skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Create and manage canvas apps with Power Apps</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/CC0A45372F09A65E?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Active Directory skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Administer Active Directory Domain Services</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/685B28DE7B4568D5?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="Power Automate skill badge">
-                    </div>
-                    <div class="card-body">
-                        <h4>Create and manage automated processes by using Power Automate</h4>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/7E4C4B66520D8770?sharingId=F8FF919B676DA62B"
-                            target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i>
-                            <span class="sr-only">(ouvre la page de la certification)</span></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -734,14 +244,12 @@ permalink: /apropos.html
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <ul>
-                        <li><strong>2024 :</strong> Microsoft Power Up - Low code Maker Course - <a
-                                href="https://www.credly.com/badges/9a01771e-a5e3-44ba-9f65-d156e97935f6/public_url"
-                                target="_blank" rel="noopener noreferrer" class="cert-link">Voir le badge Credly <i
-                                    class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a></li>
-                        <li><strong>2023 :</strong> Autoformation "SecNumacadémie" - Bases de cybersécurité</li>
-                        <li><strong>2022 :</strong> ENI Formation - Microsoft 365 Identity & Services (MS100)</li>
-                        <li><strong>2021 :</strong> Autoformation développement PowerApps / PowerPlatform</li>
-                        <li><strong>2006 - 2008 :</strong> Classes préparatoires PSI (Physique/Informatique)</li>
+                        {% for f in site.data.formations %}
+                        <li><strong>{{ f.year }} :</strong> {{ f.name }}{% if f.url %} - <a
+                                href="{{ f.url }}"
+                                target="_blank" rel="noopener noreferrer" class="cert-link">{{ f.link_text }} <i
+                                    class="fa-solid fa-square-up-right" aria-hidden="true"></i></a>{% endif %}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -760,18 +268,13 @@ permalink: /apropos.html
         <div class="section-content stacked-cards">
             <div class="stacked-card">
                 <div class="stacked-card-body">
-                    <img width="48" height="48" src="assets/great-britain.png" alt="great-britain" /> <strong>Anglais
-                        :</strong> Courant (C1), TOEIC 965/990 - <a
-                        href="https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
-                        target="_blank" rel="noopener noreferrer" class="cert-link">Voir la certification <i
-                            class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a><br />
-                    <img width="48" height="48" src="assets/spain.png" alt="spain" />
-                    <strong>Espagnol :</strong> Lu, parlé, niveau B1<br />
-                    <img width="48" height="48" src="assets/netherlands.png" alt="netherlands" /> <strong>Néerlandais
-                        :</strong> Notions<br />
-                    <img width="48" height="48" src="assets/japan.png" alt="japan" /> <strong>Japonais :</strong>
-                    Notions<br />
-
+                    {% for lang in site.data.languages %}
+                    <img width="48" height="48" src="{{ lang.flag }}" alt="{{ lang.name }}" />
+                    <strong>{{ lang.name }} :</strong> {{ lang.level }}{% if lang.url %} - <a
+                        href="{{ lang.url }}"
+                        target="_blank" rel="noopener noreferrer" class="cert-link">{{ lang.link_text }} <i
+                            class="fa-solid fa-square-up-right" aria-hidden="true"></i></a>{% endif %}<br />
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -814,9 +317,6 @@ permalink: /apropos.html
             </div>
         </div>
     </div>
-
-
-
 
 
     <!--Arrow to hide a section-->
