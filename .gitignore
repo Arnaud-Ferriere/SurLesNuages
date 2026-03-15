@@ -3,4 +3,5 @@ _site/
 .sass-cache/
 .vscode/
 .obsidian/
+Templates/
 Gemfile.lock
