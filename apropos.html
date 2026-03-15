@@ -12,7 +12,7 @@ permalink: /apropos.html
                     alt="Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique">
             </div>
             <div class="col-md-9">
-                <h2>Qui suis-je ?</h2>
+                <h1>Qui suis-je ?</h1>
                 <p>Je suis tombé dans l'informatique tout petit avec un bon vieux 286 sur MS-DOS 6.22. J'ai grandi avec
                     et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation
                     (jamais dans le même ordre !) jusqu'au développement actuel des IA... et de tout ce qui viendra !
@@ -39,7 +39,7 @@ permalink: /apropos.html
                 aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Certifications</h1>
+            <h2 class="hover-underline-animation">Certifications</h2>
         </div>
         <div class="section-content">
             <div class="certifications-grid">
@@ -68,17 +68,17 @@ permalink: /apropos.html
             <button class="toggle-section-btn btn btn-link" aria-label="Toggle Skills section" aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Compétences techniques</h1>
+            <h2 class="hover-underline-animation">Compétences techniques</h2>
         </div>
         <div class="section-content stacked-cards">
             <div class="stacked-card">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0, this)" id="comp-header">Compétence <i
-                                    class="sort-arrow fas fa-chevron-up"></i></th>
-                            <th onclick="sortTable(1, this)" id="niveau-header">Niveau <i
-                                    class="sort-arrow fas fa-chevron-up"></i></th>
+                            <th scope="col" tabindex="0" role="button" id="comp-header">Compétence <i
+                                    class="sort-arrow fas fa-chevron-up" aria-hidden="true"></i></th>
+                            <th scope="col" tabindex="0" role="button" id="niveau-header">Niveau <i
+                                    class="sort-arrow fas fa-chevron-up" aria-hidden="true"></i></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -101,7 +101,7 @@ permalink: /apropos.html
                 aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Expériences professionnelles</h1>
+            <h2 class="hover-underline-animation">Expériences professionnelles</h2>
         </div>
         <div class="section-content stacked-cards">
             {% for exp in site.data.experiences %}
@@ -210,7 +210,7 @@ permalink: /apropos.html
             <button class="toggle-section-btn btn btn-link" aria-label="Toggle Formations section" aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Compétences Appliquées</h1>
+            <h2 class="hover-underline-animation">Compétences Appliquées</h2>
         </div>
         <div class="section-content">
             <div class="applied-skills-grid">
@@ -238,7 +238,7 @@ permalink: /apropos.html
             <button class="toggle-section-btn btn btn-link" aria-label="Toggle Formations section" aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Formations</h1>
+            <h2 class="hover-underline-animation">Formations</h2>
         </div>
         <div class="section-content stacked-cards">
             <div class="stacked-card">
@@ -263,7 +263,7 @@ permalink: /apropos.html
             <button class="toggle-section-btn btn btn-link" aria-label="Toggle Langues section" aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Langues</h1>
+            <h2 class="hover-underline-animation">Langues</h2>
         </div>
         <div class="section-content stacked-cards">
             <div class="stacked-card">
@@ -287,17 +287,17 @@ permalink: /apropos.html
                 aria-expanded="true">
                 <i class="fas fa-chevron-up"></i>
             </button>
-            <h1 class="hover-underline-animation">Centres d'Intérêt</h1>
+            <h2 class="hover-underline-animation">Centres d'Intérêt</h2>
         </div>
         <div class="section-content stacked-cards">
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <p>
-                        <span class="interest" data-image="assets/cuisine.webp">Cuisine</span>,
-                        <span class="interest" data-image="assets/jardinage.webp">jardinage d'intérieur
+                        <span class="interest" tabindex="0" role="button" data-image="assets/cuisine.webp">Cuisine</span>,
+                        <span class="interest" tabindex="0" role="button" data-image="assets/jardinage.webp">jardinage d'intérieur
                             (hydroponie)</span>...
-                        <span class="interest" data-image="assets/jardinageexterieur.webp"> et d'extérieur</span>,
-                        <span class="interest" data-image="assets/menuiserie.webp">menuiserie (ébénisterie)</span>.
+                        <span class="interest" tabindex="0" role="button" data-image="assets/jardinageexterieur.webp"> et d'extérieur</span>,
+                        <span class="interest" tabindex="0" role="button" data-image="assets/menuiserie.webp">menuiserie (ébénisterie)</span>.
                     </p>
 
                 </div>
@@ -327,7 +327,7 @@ permalink: /apropos.html
             toggleButtons.forEach(function (button) {
                 var section = button.closest('.container');
                 var content = section.querySelector('.section-content');
-                var title = section.querySelector('h1');
+                var title = section.querySelector('h2');
 
                 function toggleContent() {
                     if (content.classList.contains('hidden')) {
@@ -368,22 +368,21 @@ permalink: /apropos.html
     <!--Table sorting-->
     <script>
         function sortTable(n, header) {
-            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            var table, rows, switching, i, x, y, shouldSwitch, dir;
             table = document.querySelector(".table");
             switching = true;
-            // Set the sorting direction to ascending by default:
             dir = header.getAttribute("data-dir") === "desc" ? "asc" : "desc";
 
-            // Remove active sort indicators from all columns
-            const headers = document.querySelectorAll("th");
-            headers.forEach(h => {
+            var headers = document.querySelectorAll("th[role='button']");
+            headers.forEach(function(h) {
                 h.setAttribute("data-dir", "");
+                h.setAttribute("aria-sort", "none");
                 h.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
-                h.querySelector(".sort-arrow").classList.add("fa-chevron-up"); // Reset all arrows to up
+                h.querySelector(".sort-arrow").classList.add("fa-chevron-up");
             });
 
-            // Set the active sort indicator for the clicked header
             header.setAttribute("data-dir", dir);
+            header.setAttribute("aria-sort", dir === "asc" ? "ascending" : "descending");
             if (dir === "asc") {
                 header.querySelector(".sort-arrow").classList.remove("fa-chevron-down");
                 header.querySelector(".sort-arrow").classList.add("fa-chevron-up");
@@ -395,13 +394,10 @@ permalink: /apropos.html
             while (switching) {
                 switching = false;
                 rows = table.rows;
-                // Loop through all rows except the first (header):
                 for (i = 1; i < (rows.length - 1); i++) {
                     shouldSwitch = false;
-                    // Compare the two elements in the given column:
                     x = rows[i].getElementsByTagName("TD")[n];
                     y = rows[i + 1].getElementsByTagName("TD")[n];
-                    // Check if the rows should switch place based on direction:
                     if (dir == "asc") {
                         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                             shouldSwitch = true;
@@ -415,13 +411,25 @@ permalink: /apropos.html
                     }
                 }
                 if (shouldSwitch) {
-                    // Make the switch and mark that a switch has been made:
                     rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
-                    switchcount++;
                 }
             }
         }
+
+        // Attach click and keyboard events to sortable headers
+        document.addEventListener('DOMContentLoaded', function() {
+            var sortableHeaders = document.querySelectorAll("th[role='button']");
+            sortableHeaders.forEach(function(th, index) {
+                th.addEventListener('click', function() { sortTable(index, th); });
+                th.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        sortTable(index, th);
+                    }
+                });
+            });
+        });
     </script>
 
 
@@ -461,15 +469,22 @@ permalink: /apropos.html
                     hoverImage.style.display = 'none';
                 });
 
-                // Affichage du modal en cliquant sur l'élément
-                interest.addEventListener('click', (event) => {
+                // Affichage du modal en cliquant ou via clavier (Enter/Space)
+                function openInterestModal(event) {
                     event.preventDefault();
                     const imageUrl = interest.getAttribute('data-image');
-                    // Mise à jour de l'image dans le modal
-                    document.getElementById('modalImage').src = imageUrl;
-                    // Afficher le modal (en supposant que Bootstrap JS est chargé)
+                    const interestName = interest.textContent.trim();
+                    var modalImg = document.getElementById('modalImage');
+                    modalImg.src = imageUrl;
+                    modalImg.alt = interestName;
                     var modal = new bootstrap.Modal(document.getElementById('imageModal'));
                     modal.show();
+                }
+                interest.addEventListener('click', openInterestModal);
+                interest.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        openInterestModal(event);
+                    }
                 });
             });
 

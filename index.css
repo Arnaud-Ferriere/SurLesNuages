@@ -218,6 +218,7 @@
   
   /* Headers */
   h1,
+  h2,
   h4 {
     color: var(--color-primary);
     margin-bottom: 20px;
@@ -252,7 +253,8 @@
     font-size: 1.8rem;
   }
   
-  .section-header h1 {
+  .section-header h1,
+  .section-header h2 {
     margin: 0;
     margin-left: 10px;
   }
@@ -267,7 +269,9 @@
   }
   
   .toggle-section-btn:focus {
-    outline: none;
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
   
   .toggle-section-btn i {
@@ -684,6 +688,11 @@
     padding-right: 20px;
   }
   
+  th[role="button"]:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: -2px;
+  }
+
   th .sort-arrow {
     font-size: 0.8em;
     margin-left: 5px;
@@ -704,8 +713,15 @@
     transition: color 0.3s ease;
   }
   
-  .interest:hover {
+  .interest:hover,
+  .interest:focus {
     color: #0056b3;
+  }
+
+  .interest:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
   
   /* Initial style for hover image */
@@ -1011,5 +1027,15 @@ article .content pre code {
 .toc-list .toc-h3::before {
   content: '–';
   color: #aaa;
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
