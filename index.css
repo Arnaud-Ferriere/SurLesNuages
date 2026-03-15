@@ -334,6 +334,7 @@
   .page-link {
     color: var(--color-secondary);
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .page-item.active .page-link {
