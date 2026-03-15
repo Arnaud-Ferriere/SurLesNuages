@@ -38,8 +38,12 @@ layout: default
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
             <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min de lecture</p>
-            {% if page.image %}
-            <img src="{{ page.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ page.title }}" loading="lazy">
+            {% assign banner_src = page.banner | default: site.default_banner %}
+            {% assign cover_src = page.image | default: site.default_image %}
+            {% if banner_src and banner_src != "" %}
+            <img src="{{ banner_src | relative_url }}" class="article-banner" alt="{{ page.title }}" loading="lazy">
+            {% elsif cover_src and cover_src != "" %}
+            <img src="{{ cover_src | relative_url }}" class="article-cover" alt="{{ page.title }}" loading="lazy">
             {% endif %}
         </header>
 

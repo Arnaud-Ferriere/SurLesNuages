@@ -493,13 +493,25 @@
     font-weight: 600;
   }
 
-  /* Image de couverture (header de l'article) */
-  .article-container header img {
+  /* Bannière pleine largeur (champ "banner:" dans le front matter) */
+  .article-banner {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
     border-radius: var(--border-radius);
     margin-bottom: 1.5rem;
+  }
+
+  /* Image de couverture centrée (champ "image:" sans banner) */
+  .article-cover {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
   }
 
   /* Images dans le contenu : centrées par défaut */

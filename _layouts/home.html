@@ -20,8 +20,9 @@ layout: default
         {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
         <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card h-100" style="cursor:pointer;">
-                {% if post.image %}
-                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                {% assign card_image = post.image | default: site.default_image %}
+                {% if card_image and card_image != "" %}
+                <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">
