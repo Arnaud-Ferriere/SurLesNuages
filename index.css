@@ -493,10 +493,57 @@
     font-weight: 600;
   }
 
-  .article-container img {
-    max-height: 300px;
-    width: auto;
+  /* Image de couverture (header de l'article) */
+  .article-container header img {
+    width: 100%;
+    max-height: 400px;
     object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Images dans le contenu : centrées par défaut */
+  article .content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+  }
+
+  /* Classes d'alignement (syntaxe kramdown : ![alt](img.png){: .img-left}) */
+  article .content img.img-left {
+    float: left;
+    margin: 0.25rem 1.5rem 1rem 0;
+    max-width: 45%;
+  }
+
+  article .content img.img-right {
+    float: right;
+    margin: 0.25rem 0 1rem 1.5rem;
+    max-width: 45%;
+  }
+
+  article .content img.img-full {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  /* Clearfix après un flottant */
+  article .content p:has(img.img-left),
+  article .content p:has(img.img-right) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 576px) {
+    article .content img.img-left,
+    article .content img.img-right {
+      float: none;
+      max-width: 100%;
+      margin: 1rem auto;
+    }
   }
   
   /* Footer - SVG as background image (no gap possible) */
