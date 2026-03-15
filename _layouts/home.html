@@ -85,20 +85,22 @@ layout: default
         placeholder="Tapez votre recherche...">
     <div id="home-search-results"></div>
 
-    <div class="discover-grid mt-4">
-        <a href="{{ '/apropos.html' | relative_url }}" class="discover-card">
-            <i class="fas fa-user" aria-hidden="true"></i>
-            <span>À propos</span>
+    {% if site.tags.size > 0 %}
+    <div class="tag-cloud mt-4">
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags %}
+        {% assign count = tag[1].size %}
+        {% if count >= 5 %}{% assign tag_size = "tag-xl" %}
+        {% elsif count >= 3 %}{% assign tag_size = "tag-lg" %}
+        {% elsif count >= 2 %}{% assign tag_size = "tag-md" %}
+        {% else %}{% assign tag_size = "tag-sm" %}
+        {% endif %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}" class="tag-cloud-item {{ tag_size }}">
+            {{ tag[0] }} <span class="tag-count">{{ count }}</span>
         </a>
-        <a href="{{ '/apropos.html' | relative_url }}#certifications" class="discover-card">
-            <i class="fas fa-certificate" aria-hidden="true"></i>
-            <span>Certifications</span>
-        </a>
-        <a href="{{ '/tags/' | relative_url }}" class="discover-card">
-            <i class="fas fa-tags" aria-hidden="true"></i>
-            <span>Tags</span>
-        </a>
+        {% endfor %}
     </div>
+    {% endif %}
 </aside>
 
 <script>
