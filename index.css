@@ -157,6 +157,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     overflow: hidden;
+    will-change: transform;
   }
   
   .card:hover {
@@ -237,12 +238,6 @@
   /* Container and layout */
   .container {
     margin-bottom: 4em;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
-  }
-  
-  .container:hover {
-    background-color: rgba(8, 26, 52, 0.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
   
   /* Section Headers */
@@ -302,6 +297,7 @@
     box-shadow: var(--box-shadow-light);
     border: 1px solid rgba(0, 59, 130, 0.2);
     margin-bottom: 10px;
+    contain: content;
   }
   
   .stacked-card:hover {

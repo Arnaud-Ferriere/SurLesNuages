@@ -4,13 +4,20 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        };
+
+        // Debounce : attend que le scroll soit terminé avant de réagir
+        var scrollTimeout;
+        window.addEventListener('scroll', function () {
+            if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+            scrollTimeout = requestAnimationFrame(function () {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+        }, { passive: true });
+
         backToTopButton.onclick = function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };

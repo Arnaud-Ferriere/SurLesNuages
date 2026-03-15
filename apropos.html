@@ -8,7 +8,7 @@ permalink: /apropos.html
     <div id="description" class="container mt-5">
         <div class="row">
             <div class="col-md-3">
-                <img src="assets/photo.webp" class="img-thumbnail rounded"
+                <img src="assets/photo.webp" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high"
                     alt="Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique">
             </div>
             <div class="col-md-9">
@@ -46,7 +46,7 @@ permalink: /apropos.html
                 {% for cert in site.data.certifications %}
                 <div class="card">
                     <div class="card-icon">
-                        <img src="{{ cert.badge }}" alt="{{ cert.name }} badge">
+                        <img src="{{ cert.badge }}" alt="{{ cert.name }} badge" width="80" height="80" loading="lazy">
                     </div>
                     <div class="card-body">
                         <h4>{{ cert.name }}</h4>
@@ -109,7 +109,7 @@ permalink: /apropos.html
                 <!-- Section du poste -->
                 <div class="poste-section">
                     <div class="poste-header">
-                        <img src="{{ exp.logo }}" alt="Logo {{ exp.company }}" class="poste-logo">
+                        <img src="{{ exp.logo }}" alt="Logo {{ exp.company }}" class="poste-logo" width="80" height="80" loading="lazy">
                         <h4 class="poste-title"><strong>{{ exp.period }} : </strong> {{ exp.title }}</h4>
                     </div>
                     <p class="poste-description">{{ exp.description }}</p>
@@ -125,7 +125,7 @@ permalink: /apropos.html
                     {% for mission in exp.missions %}
                     <div class="mission">
                         <div class="mission-header">
-                            <img src="{{ mission.logo }}" alt="Logo {{ mission.client }}" class="mission-logo">
+                            <img src="{{ mission.logo }}" alt="Logo {{ mission.client }}" class="mission-logo" width="80" height="80" loading="lazy">
                             <h5 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
                         </div>
 
@@ -217,7 +217,7 @@ permalink: /apropos.html
                 {% for skill in site.data.applied_skills %}
                 <div class="card">
                     <div class="card-icon">
-                        <img src="assets/applied-skill.svg" alt="{{ skill.name }} badge">
+                        <img src="assets/applied-skill.svg" alt="{{ skill.name }} badge" width="80" height="80" loading="lazy">
                     </div>
                     <div class="card-body">
                         <h4>{{ skill.name }}</h4>
@@ -458,11 +458,19 @@ permalink: /apropos.html
                     hoverImage.style.display = 'block';
                 });
 
+                // Throttle via requestAnimationFrame pour limiter les recalculs de position
+                let ticking = false;
                 interest.addEventListener('mousemove', (event) => {
                     if (isMobileDevice()) return;
-                    hoverImage.style.top = (event.clientY + 20) + 'px';
-                    hoverImage.style.left = (event.clientX + 20) + 'px';
-                });
+                    if (!ticking) {
+                        ticking = true;
+                        requestAnimationFrame(() => {
+                            hoverImage.style.top = (event.clientY + 20) + 'px';
+                            hoverImage.style.left = (event.clientX + 20) + 'px';
+                            ticking = false;
+                        });
+                    }
+                }, { passive: true });
 
                 interest.addEventListener('mouseout', () => {
                     if (isMobileDevice()) return;
@@ -493,6 +501,6 @@ permalink: /apropos.html
                 if (isMobileDevice()) {
                     hoverImage.style.display = 'none';
                 }
-            });
+            }, { passive: true });
         });
     </script>
