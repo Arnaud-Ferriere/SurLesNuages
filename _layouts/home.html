@@ -11,7 +11,7 @@ layout: default
 <!-- Section Articles -->
 <section id="articles" class="container mt-5">
     <div class="section-header">
-        <h1 class="hover-underline-animation">Articles récents</h1>
+        <h2 class="hover-underline-animation">Articles récents</h2>
     </div>
     <div class="row">
         {% assign posts_list = paginator.posts | default: site.posts %}
@@ -81,6 +81,7 @@ layout: default
         <h3 class="hover-underline-animation">Rechercher un article</h3>
     </div>
 
+    <label for="home-search-input" class="visually-hidden">Rechercher un article</label>
     <input type="text" id="home-search-input" class="form-control form-control-lg mb-3"
         placeholder="Tapez votre recherche...">
     <div id="home-search-results"></div>

@@ -96,9 +96,12 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     {% include navbar.html %}
 
-    {{ content }}
+    <main id="main-content">
+        {{ content }}
+    </main>
 
     {% include footer.html %}
     {% include back-to-top.html %}
