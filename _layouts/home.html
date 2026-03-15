@@ -18,7 +18,7 @@ layout: default
         {% for post in posts_list %}
         {% assign words = post.content | number_of_words %}
         {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
-        <div class="col-sm-6 col-md-4 mb-4">
+        <div class="col-sm-6 col-lg-4 mb-4">
             <div class="card h-100" style="cursor:pointer;">
                 {% if post.image %}
                 <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
@@ -74,22 +74,33 @@ layout: default
 </section>
 {% endif %}
 
-<!-- Sidebar -->
-<aside class="container mt-5">
-    <h3 class="hover-underline-animation">À découvrir aussi</h3>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank"><i class="fab fa-linkedin"></i>
-                LinkedIn <i class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
-        </li>
-        <li class="list-group-item">
-            <a href="https://github.com/Arnaud-Ferriere" target="_blank"><i class="fab fa-github"></i> GitHub <i
-                class="fa-solid fa-solid fa-square-up-right" aria-hidden="true"></i></a>
-        </li>
-        <li class="list-group-item">
-            <a href="{{ '/apropos.html' | relative_url }}#certifications"><i class="fas fa-cloud"></i> Voir mes certifications</a>
-        </li>
-    </ul>
+<!-- À découvrir aussi -->
+<aside class="container mt-5 mb-5">
+    <div class="section-header">
+        <h3 class="hover-underline-animation">À découvrir aussi</h3>
+    </div>
+    <div class="discover-grid">
+        <a href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank" rel="noopener" class="discover-card">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/Arnaud-Ferriere" target="_blank" rel="noopener" class="discover-card">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="{{ '/apropos.html' | relative_url }}" class="discover-card">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span>À propos</span>
+        </a>
+        <a href="{{ '/apropos.html' | relative_url }}#certifications" class="discover-card">
+            <i class="fas fa-certificate" aria-hidden="true"></i>
+            <span>Certifications</span>
+        </a>
+        <a href="{{ '/recherche/' | relative_url }}" class="discover-card">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span>Recherche</span>
+        </a>
+    </div>
 </aside>
 
 {{ content }}
