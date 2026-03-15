@@ -5,3 +5,4 @@ _site/
 .obsidian/
 Templates/
 Gemfile.lock
+.claude/
