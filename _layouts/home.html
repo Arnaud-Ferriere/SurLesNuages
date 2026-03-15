@@ -122,13 +122,8 @@ layout: default
     var input = document.getElementById('home-search-input');
     var results = document.getElementById('home-search-results');
 
-    // Debounce : attend 300ms après la dernière frappe avant de filtrer
-    var debounceTimer;
     input.addEventListener('input', function() {
-        var self = this;
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function() {
-        var query = self.value.toLowerCase().trim();
+        var query = this.value.toLowerCase().trim();
         if (query.length < 2) { results.innerHTML = ''; return; }
 
         var found = posts.filter(function(p) {
@@ -154,7 +149,6 @@ layout: default
         });
         html += '</div>';
         results.innerHTML = html;
-        }, 300);
     });
 })();
 </script>
