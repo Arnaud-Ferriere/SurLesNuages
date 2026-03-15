@@ -114,6 +114,16 @@
     }
   }
   
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
   /* Card styles */
   .card {
     background-color: #fff;
