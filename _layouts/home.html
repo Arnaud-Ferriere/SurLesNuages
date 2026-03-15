@@ -75,20 +75,17 @@ layout: default
 </section>
 {% endif %}
 
-<!-- À découvrir aussi -->
+<!-- Rechercher & Découvrir -->
 <aside class="container mt-5 mb-5">
-    <div class="section-header">
-        <h3 class="hover-underline-animation">À découvrir aussi</h3>
+    <div class="section-header mb-3">
+        <h3 class="hover-underline-animation">Rechercher un article</h3>
     </div>
-    <div class="discover-grid">
-        <a href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank" rel="noopener" class="discover-card">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-            <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/Arnaud-Ferriere" target="_blank" rel="noopener" class="discover-card">
-            <i class="fab fa-github" aria-hidden="true"></i>
-            <span>GitHub</span>
-        </a>
+
+    <input type="text" id="home-search-input" class="form-control form-control-lg mb-3"
+        placeholder="Tapez votre recherche...">
+    <div id="home-search-results"></div>
+
+    <div class="discover-grid mt-4">
         <a href="{{ '/apropos.html' | relative_url }}" class="discover-card">
             <i class="fas fa-user" aria-hidden="true"></i>
             <span>À propos</span>
@@ -97,11 +94,60 @@ layout: default
             <i class="fas fa-certificate" aria-hidden="true"></i>
             <span>Certifications</span>
         </a>
-        <a href="{{ '/recherche/' | relative_url }}" class="discover-card">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <span>Recherche</span>
+        <a href="{{ '/tags/' | relative_url }}" class="discover-card">
+            <i class="fas fa-tags" aria-hidden="true"></i>
+            <span>Tags</span>
         </a>
     </div>
 </aside>
+
+<script>
+(function() {
+    var posts = [
+        {% for post in site.posts %}
+        {
+            title: {{ post.title | jsonify }},
+            url: {{ post.url | relative_url | jsonify }},
+            date: "{{ post.date | date: '%d/%m/%Y' }}",
+            excerpt: {{ post.excerpt | strip_html | truncate: 150 | jsonify }},
+            tags: {{ post.tags | jsonify }},
+            content: {{ post.content | strip_html | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ];
+
+    var input = document.getElementById('home-search-input');
+    var results = document.getElementById('home-search-results');
+
+    input.addEventListener('input', function() {
+        var query = this.value.toLowerCase().trim();
+        if (query.length < 2) { results.innerHTML = ''; return; }
+
+        var found = posts.filter(function(p) {
+            return p.title.toLowerCase().includes(query) ||
+                   p.excerpt.toLowerCase().includes(query) ||
+                   p.content.toLowerCase().includes(query) ||
+                   p.tags.some(function(t) { return t.toLowerCase().includes(query); });
+        });
+
+        if (found.length === 0) {
+            results.innerHTML = '<p class="text-muted">Aucun article trouvé.</p>';
+            return;
+        }
+
+        var html = '<div class="row">';
+        found.forEach(function(p) {
+            html += '<div class="col-md-6 mb-3">' +
+                '<div class="card p-3 h-100" style="cursor:pointer;">' +
+                '<h5 class="card-title"><a href="' + p.url + '" class="stretched-link">' + p.title + '</a></h5>' +
+                '<p class="card-text text-muted">' + p.excerpt + '</p>' +
+                '<p class="text-muted small mb-0">' + p.date + '</p>' +
+                '</div></div>';
+        });
+        html += '</div>';
+        results.innerHTML = html;
+    });
+})();
+</script>
 
 {{ content }}
