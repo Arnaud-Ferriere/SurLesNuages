@@ -23,8 +23,7 @@
       responsibilities:
         - category: "Formation et leadership"
           items:
-            - "Lead technique de l'équipe et formation des nouveaux arrivants"
-            - "Lead technique et formation des nouveaux arrivants. Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle"
+            - "Lead technique de l'équipe et formation des nouveaux arrivants. Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle"
             - "Rationalisation et refonte de la base de connaissances SharePoint Online du service (regroupement des connaissances sur un seul site, amélioration de la recherche avec ajout de catégories/tags, mise en place de revues périodiques, agent IA RAG)"
             - "Formation des équipes aux bonnes pratiques d'alimentation et de maintenance des bases de connaissances"
             - "Aide à la mise en place de bases de connaissances similaires dans des services connexes intéressés par le projet"
