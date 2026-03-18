@@ -294,7 +294,11 @@
     margin-bottom: 0.6cm !important;
   }
 
-  /* Contenu : texte */
+  /* Contenu : texte — Arial pour éviter le rendu fin de Poppins à l'impression */
+  article .content,
+  article .content * {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
   article .content {
     font-size: 10.5pt !important;
     line-height: 1.5 !important;
