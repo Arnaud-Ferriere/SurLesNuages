@@ -25,7 +25,8 @@
     <meta property="og:title" content="{{ page.title | default: site.title }}">
     <meta property="og:description" content="{{ page_desc }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    {% if page.date %}
+    {% capture page_date_str %}{{ page.date }}{% endcapture %}
+    {% if page_date_str != "{}" and page_date_str != "" %}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
     {% else %}
@@ -48,7 +49,7 @@
     {% endif %}
 
     <!-- JSON-LD (données structurées) -->
-    {% if page.date %}
+    {% if page_date_str != "{}" and page_date_str != "" %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -98,7 +99,7 @@
     <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"></noscript>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ '/index.css' | relative_url }}?v2.3">
+    <link rel="stylesheet" type="text/css" href="{{ '/index.css' | relative_url }}?v2.4">
 </head>
 
 <body>
