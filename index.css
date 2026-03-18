@@ -306,7 +306,8 @@
   article .content h2 {
     font-size: 13pt !important;
     color: #003b82 !important;
-    margin-top: 0.6cm !important;
+    margin-top: 0.3cm !important;
+    margin-bottom: 0.1cm !important;
     border-bottom: 1px solid #003b82;
     padding-bottom: 2pt !important;
     break-after: avoid !important;
@@ -315,6 +316,7 @@
   article .content h3 {
     font-size: 11pt !important;
     color: #003b82 !important;
+    margin-top: 0.2cm !important;
     break-after: avoid !important;
     page-break-after: avoid !important;
   }
