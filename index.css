@@ -319,6 +319,24 @@
     page-break-after: avoid !important;
   }
 
+  /* Évite les lignes orphelines/veuves dans les paragraphes */
+  article .content p,
+  article .content li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Garde le premier paragraphe après un titre sur la même page */
+  article .content h2 + p,
+  article .content h2 + ul,
+  article .content h2 + ol,
+  article .content h3 + p,
+  article .content h3 + ul,
+  article .content h3 + ol {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
   /* Images dans le contenu */
   article .content img {
     max-width: 80% !important;
