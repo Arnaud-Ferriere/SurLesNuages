@@ -37,7 +37,7 @@ layout: default
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min de lecture</p>
+            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min de lecture &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="Enregistrer en PDF"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</button></p>
             {% assign banner_src = page.banner | default: site.default_banner %}
             {% assign cover_src = page.image | default: site.default_image %}
             {% if banner_src and banner_src != "" %}
@@ -95,7 +95,7 @@ layout: default
 {% assign related_posts = related_posts | slice: 0, 3 %}
 
 {% if related_posts.size > 0 %}
-<section class="container mt-4 mb-5">
+<section class="container mt-4 mb-5 related-posts">
     <div class="section-header">
         <h2 class="hover-underline-animation">Articles similaires</h2>
     </div>

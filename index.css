@@ -1,5 +1,5 @@
 /* ============================================================
-   IMPRESSION (Ctrl+P) — Page À propos uniquement
+   IMPRESSION (Ctrl+P) — Page À propos & Articles
    ============================================================ */
 
 /* En-tête visible uniquement à l'impression */
@@ -21,6 +21,7 @@
     color: #222 !important;
     font-size: 10pt !important;
     line-height: 1.4 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
   }
 
   /* Empêcher le navigateur d'imprimer les URLs après les liens */
@@ -70,19 +71,26 @@
   .card-icon,
   .poste-logo,
   .mission-logo,
-  .sort-arrow { display: none !important; }
+  .sort-arrow,
+  /* Articles */
+  .article-banner,
+  .article-cover,
+  #toc-wrapper,
+  .related-posts,
+  .post-tags,
+  .print-btn { display: none !important; }
 
   /* === CONTAINERS === */
   .container {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
+    margin: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
     width: 100% !important;
   }
+  .container + .container { margin-top: 0.6em !important; }
 
-  /* Neutralise Bootstrap mt-5 */
-  .mt-5 { margin-top: 0 !important; }
+  /* Neutralise Bootstrap mt-5 / mt-4 */
+  .mt-5, .mt-4 { margin-top: 0 !important; }
 
   /* Wrapper stacked-cards */
   .stacked-cards {
@@ -259,6 +267,98 @@
     font-weight: normal !important;
     cursor: default !important;
   }
+
+  /* -------------------------------------------------------
+     ARTICLES
+  ------------------------------------------------------- */
+
+  /* Supprime le style card (ombre, arrondi, hover) */
+  .article-container {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Titre de l'article */
+  article h1.display-5 {
+    font-size: 20pt !important;
+    color: #111 !important;
+    margin-bottom: 4pt !important;
+  }
+
+  /* Ligne date / temps de lecture */
+  article header .text-muted {
+    font-size: 9pt !important;
+    color: #666 !important;
+    margin-bottom: 0.6cm !important;
+  }
+
+  /* Contenu : texte */
+  article .content {
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+  article .content h2 {
+    font-size: 13pt !important;
+    color: #003b82 !important;
+    margin-top: 0.6cm !important;
+    border-bottom: 1px solid #003b82;
+    padding-bottom: 2pt !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  article .content h3 {
+    font-size: 11pt !important;
+    color: #003b82 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Images dans le contenu */
+  article .content img {
+    max-width: 80% !important;
+    page-break-inside: avoid !important;
+    display: block !important;
+    margin: 0.4cm auto !important;
+  }
+
+  /* Blocs de code — conserver le style sombre, forcer l'impression des couleurs */
+  .highlighter-rouge,
+  .highlight,
+  .highlight pre,
+  pre.highlight {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    white-space: pre-wrap !important;
+    page-break-inside: avoid !important;
+    font-size: 8pt !important;
+    border-radius: 4pt !important;
+    box-shadow: none !important;
+  }
+
+}
+
+/* Bouton PDF (articles) — style cohérent avec .tag-badge */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--color-primary);
+  color: #fff !important;
+  border: none;
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  vertical-align: middle;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.print-btn:hover {
+  background-color: var(--color-secondary);
+  color: #fff !important;
 }
 
 /* Skip link — masqué, visible uniquement au focus clavier (Tab) */
