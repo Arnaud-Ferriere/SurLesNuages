@@ -1,0 +1,116 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+
+<div class="container mt-5">
+    <h1 class="display-5 mb-4">Articles</h1>
+
+    <!-- Sélecteur de vue -->
+    <div class="articles-view-toggle mb-4" role="group" aria-label="Mode d'affichage">
+        <button id="btn-chrono" class="view-toggle-btn active" aria-pressed="true">
+            <i class="fas fa-list" aria-hidden="true"></i> Chronologique
+        </button>
+        <button id="btn-tags" class="view-toggle-btn" aria-pressed="false">
+            <i class="fas fa-tags" aria-hidden="true"></i> Par tags
+        </button>
+    </div>
+
+    <!-- Vue chronologique -->
+    <div id="view-chrono">
+        {% assign posts_chrono = site.posts | sort: 'date' | reverse %}
+        {% if posts_chrono.size == 0 %}
+        <p class="text-muted">Aucun article publié pour l'instant.</p>
+        {% else %}
+        {% assign posts_by_year = posts_chrono | group_by_exp: "post", "post.date | date: '%Y'" %}
+        {% for year_group in posts_by_year %}
+        <div class="tags-page-section">
+            <h2><i class="fas fa-calendar-alt" aria-hidden="true"></i> {{ year_group.name }}</h2>
+            <ul class="list-group">
+                {% for post in year_group.items %}
+                <li class="list-group-item articles-chrono-item">
+                    <div class="articles-chrono-main">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        <span class="text-muted"> — {{ post.date | date: "%d/%m/%Y" }}</span>
+                    </div>
+                    {% if post.tags.size > 0 %}
+                    <span class="articles-chrono-tags">
+                        {% for tag in post.tags %}
+                        <a href="#{{ tag | slugify }}" class="tag-badge tag-badge-sm" onclick="switchToTagsView(event, '{{ tag | slugify }}')">{{ tag }}</a>
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Vue par tags -->
+    <div id="view-tags" style="display:none;">
+        <div class="mb-4">
+            {% assign sorted_tags = site.tags | sort %}
+            {% for tag in sorted_tags %}
+            <a href="#{{ tag[0] | slugify }}" class="tag-badge">
+                <i class="fas fa-tag" aria-hidden="true"></i> {{ tag[0] }} ({{ tag[1].size }})
+            </a>
+            {% endfor %}
+        </div>
+
+        {% if sorted_tags.size == 0 %}
+        <p class="text-muted">Aucun article publié pour l'instant.</p>
+        {% else %}
+        {% for tag in sorted_tags %}
+        <div class="tags-page-section" id="{{ tag[0] | slugify }}">
+            <h2><i class="fas fa-tag" aria-hidden="true"></i> {{ tag[0] }}</h2>
+            <ul class="list-group">
+                {% for post in tag[1] %}
+                <li class="list-group-item">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    <span class="text-muted"> — {{ post.date | date: "%d/%m/%Y" }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    const btnChrono = document.getElementById('btn-chrono');
+    const btnTags = document.getElementById('btn-tags');
+    const viewChrono = document.getElementById('view-chrono');
+    const viewTags = document.getElementById('view-tags');
+
+    btnChrono.addEventListener('click', function () {
+        viewChrono.style.display = '';
+        viewTags.style.display = 'none';
+        btnChrono.classList.add('active');
+        btnChrono.setAttribute('aria-pressed', 'true');
+        btnTags.classList.remove('active');
+        btnTags.setAttribute('aria-pressed', 'false');
+    });
+
+    btnTags.addEventListener('click', function () {
+        viewChrono.style.display = 'none';
+        viewTags.style.display = '';
+        btnTags.classList.add('active');
+        btnTags.setAttribute('aria-pressed', 'true');
+        btnChrono.classList.remove('active');
+        btnChrono.setAttribute('aria-pressed', 'false');
+    });
+
+    // Utilisé par les liens de tags depuis la vue chronologique
+    function switchToTagsView(event, anchor) {
+        event.preventDefault();
+        btnTags.click();
+        setTimeout(function () {
+            var target = document.getElementById(anchor);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+    }
+</script>
