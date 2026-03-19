@@ -101,7 +101,7 @@
         - "Tuteur d'un alternant, formation \"technicien systèmes et réseau\""
   tech: "AD DS / Entra ID, Windows server 2008 à 2020, GPO, RDS, Office (toutes versions), Microsoft 365, Power Platform, PowerShell, GLPI, Fortinet"
 
-- company: "Nomotech"
+- company: "Stelogy (anciennement Nomotech)"
   logo: "assets/nomotech-logo.webp"
   period: "2017-2018"
   title: "Administrateur ERP Sage"
