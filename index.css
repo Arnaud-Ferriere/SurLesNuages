@@ -898,6 +898,7 @@
 
   .tags-page-section {
     margin-bottom: 2rem;
+    scroll-margin-top: 80px;
   }
 
   .tags-page-section h2 {
