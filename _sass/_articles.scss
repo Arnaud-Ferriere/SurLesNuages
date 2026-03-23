@@ -1,0 +1,118 @@
+/* ARTICLES */
+article h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+}
+
+article .content h2,
+article .content h3 {
+  color: var(--color-secondary);
+  margin-top: 1.5rem;
+  font-weight: 600;
+  scroll-margin-top: 110px;
+}
+
+article .content p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+article .content a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+article .content a:hover {
+  color: var(--color-primary);
+}
+
+.blockquote {
+  border-left: 5px solid var(--color-secondary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-muted);
+}
+
+/* Article container */
+.article-container {
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  padding: 25px;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.article-container .display-5 {
+  font-weight: 600;
+}
+
+/* Banniere pleine largeur (champ "banner:" dans le front matter) */
+.article-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+/* Image de couverture centree (champ "image:" sans banner) */
+.article-cover {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+}
+
+/* Images dans le contenu : centrees par defaut */
+article .content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+}
+
+/* Classes d'alignement (syntaxe kramdown : ![alt](img.png){: .img-left}) */
+article .content img.img-left {
+  float: left;
+  margin: 0.25rem 1.5rem 1rem 0;
+  max-width: 45%;
+}
+
+article .content img.img-right {
+  float: right;
+  margin: 0.25rem 0 1rem 1.5rem;
+  max-width: 45%;
+}
+
+article .content img.img-full {
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--border-radius);
+}
+
+/* Clearfix apres un flottant */
+article .content p:has(img.img-left),
+article .content p:has(img.img-right) {
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  article .content img.img-left,
+  article .content img.img-right {
+    float: none;
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+}

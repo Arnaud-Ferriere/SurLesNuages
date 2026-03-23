@@ -14,7 +14,7 @@ layout: default
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Accueil",
+      "name": "{{ site.data.ui.nav_home }}",
       "item": "{{ site.url }}"
     },
     {
@@ -27,7 +27,7 @@ layout: default
       "@type": "ListItem",
       "position": 3,
       "name": "{{ page.tags | first }}",
-      "item": "{{ '/tags/' | absolute_url }}"
+      "item": "{{ '/articles/' | absolute_url }}"
     }{% endif %}
   ]
 }
@@ -37,7 +37,7 @@ layout: default
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">Publié le : {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min de lecture &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="Enregistrer en PDF"><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</button></p>
+            <p class="text-muted">{{ site.data.ui.post_published }} {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
             {% assign banner_src = page.banner | default: site.default_banner %}
             {% assign cover_src = page.image | default: site.default_image %}
             {% if banner_src and banner_src != "" %}
@@ -49,14 +49,14 @@ layout: default
 
         {% if page.placeholder %}
         <div class="alert-placeholder">
-            <i class="fas fa-robot" aria-hidden="true"></i> Généré par IA comme placeholder — pas encore un vrai article.
+            <i class="fas fa-robot" aria-hidden="true"></i> {{ site.data.ui.post_ai_disclaimer }}
         </div>
         {% endif %}
 
-        <!-- Table des matières (auto-generated via JS, shown only if 3+ headings) -->
+        <!-- Table des matières (auto-générée via JS, affichée uniquement si 3+ titres) -->
         <div id="toc-wrapper" style="display: none;">
             <details class="toc-container" open>
-                <summary>Table des matières</summary>
+                <summary>{{ site.data.ui.post_toc }}</summary>
                 <ol class="toc-list" id="toc-list"></ol>
             </details>
         </div>
@@ -68,7 +68,7 @@ layout: default
         {% if page.tags.size > 0 %}
         <div class="post-tags">
             {% for tag in page.tags %}
-            <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag-badge">
+            <a href="{{ '/articles/' | relative_url }}#{{ tag | slugify }}" class="tag-badge">
                 <i class="fas fa-tag" aria-hidden="true"></i> {{ tag }}
             </a>
             {% endfor %}
@@ -97,7 +97,7 @@ layout: default
 {% if related_posts.size > 0 %}
 <section class="container mt-4 mb-5 related-posts">
     <div class="section-header">
-        <h2 class="hover-underline-animation">Articles similaires</h2>
+        <h2 class="hover-underline-animation">{{ site.data.ui.post_related }}</h2>
     </div>
     <div class="row">
         {% for post in related_posts %}
@@ -109,7 +109,7 @@ layout: default
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.excerpt | strip_html | truncate: 100 }}</p>
-                    <a href="{{ post.url | relative_url }}" class="btn btn-primary">Lire plus</a>
+                    <a href="{{ post.url | relative_url }}" class="btn btn-primary">{{ site.data.ui.post_read_more }}</a>
                 </div>
             </div>
         </div>
@@ -118,26 +118,4 @@ layout: default
 </section>
 {% endif %}
 
-<script>
-// Auto-generate TOC from h2 and h3 inside the article
-(function() {
-    var content = document.querySelector('article .content');
-    if (!content) return;
-    var headings = content.querySelectorAll('h2, h3');
-    if (headings.length < 3) return;
-
-    var tocList = document.getElementById('toc-list');
-    headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'heading-' + i;
-        var li = document.createElement('li');
-        if (h.tagName === 'H3') li.classList.add('toc-h3');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-    });
-    document.getElementById('toc-wrapper').style.display = 'block';
-})();
-
-</script>
+<script src="{{ '/assets/js/post.js' | relative_url }}" defer></script>

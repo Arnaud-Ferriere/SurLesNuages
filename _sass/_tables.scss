@@ -1,0 +1,23 @@
+/* Styling for sortable table headers with Font Awesome icons */
+th {
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+}
+
+th[role="button"]:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: -2px;
+}
+
+th .sort-arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+  visibility: hidden;
+  transition: visibility 0.2s;
+}
+
+th:hover .sort-arrow,
+th[data-dir] .sort-arrow {
+  visibility: visible;
+}

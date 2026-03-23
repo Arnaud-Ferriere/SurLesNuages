@@ -1,24 +1,23 @@
 ---
-title: "Bienvenue sur les nuages !"
-date: 2026-03-14
+title: Bienvenue sur les nuages !
+date: 2026-03-23
 image: /assets/article1.webp
-tags: [Jekyll, GitHub Pages]
+tags:
+  - Jekyll
+  - GitHubPages
+  - SurLesNuages
 placeholder: true
-excerpt: "Premier article du blog ! Découvrez comment ce site a été migré vers Jekyll pour faciliter la publication d'articles en Markdown."
+excerpt: Pourquoi ce site et les idées derrière sa conception.
 ---
+## Pourquoi ce site ?
 
-Bienvenue sur **Sur les nuages**, mon espace dédié à l'administration système, au cloud Azure et à l'automatisation.
-
-## Pourquoi ce blog ?
-
-En tant que consultant en administration systèmes, je rencontre régulièrement des problématiques intéressantes que j'ai envie de partager. Ce blog me permet de documenter mes découvertes et d'aider la communauté.
 
 ## Ce que vous trouverez ici
 
 - Des articles sur **Microsoft 365** et **Azure**
-- Des tutoriels sur **PowerShell** et l'automatisation
+- Des tutoriels sur **PowerShell**, la Power Platform et l'automatisation en général
 - Des retours d'expérience sur les **certifications Microsoft**
-- Des guides pratiques sur la gestion des identités hybrides
+- Ma dernière lubie du moment...
 
 ## Comment ce site fonctionne
 

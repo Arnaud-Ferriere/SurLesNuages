@@ -1,0 +1,119 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Collapsible sections ──────────────────────────────────────────────────
+    var toggleButtons = document.querySelectorAll('.toggle-section-btn');
+    toggleButtons.forEach(function (button) {
+        var section = button.closest('.container');
+        var content = section.querySelector('.section-content');
+        var title   = section.querySelector('h2');
+
+        function toggleContent() {
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i>';
+                button.setAttribute('aria-expanded', 'true');
+                content.style.height = content.scrollHeight + 'px';
+                content.addEventListener('transitionend', function handler() {
+                    content.style.height = 'auto';
+                    content.removeEventListener('transitionend', handler);
+                });
+            } else {
+                button.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                button.setAttribute('aria-expanded', 'false');
+                content.style.height = content.scrollHeight + 'px';
+                requestAnimationFrame(function () { content.style.height = '0'; });
+                content.classList.add('hidden');
+            }
+        }
+
+        button.addEventListener('click', toggleContent);
+        title.addEventListener('click', toggleContent);
+    });
+
+    // ── Table sorting ─────────────────────────────────────────────────────────
+    function sortTable(n, header) {
+        var table = document.querySelector('.table');
+        var dir   = header.getAttribute('data-dir') === 'desc' ? 'asc' : 'desc';
+        var switching = true;
+
+        document.querySelectorAll("th[role='button']").forEach(function (h) {
+            h.setAttribute('data-dir', '');
+            h.setAttribute('aria-sort', 'none');
+            h.querySelector('.sort-arrow').classList.replace('fa-chevron-down', 'fa-chevron-up');
+        });
+
+        header.setAttribute('data-dir', dir);
+        header.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending');
+        header.querySelector('.sort-arrow').classList.replace(
+            dir === 'asc' ? 'fa-chevron-down' : 'fa-chevron-up',
+            dir === 'asc' ? 'fa-chevron-up'   : 'fa-chevron-down'
+        );
+
+        while (switching) {
+            switching = false;
+            var rows = table.rows;
+            for (var i = 1; i < rows.length - 1; i++) {
+                var x = rows[i].getElementsByTagName('TD')[n].innerHTML.toLowerCase();
+                var y = rows[i + 1].getElementsByTagName('TD')[n].innerHTML.toLowerCase();
+                if ((dir === 'asc' && x > y) || (dir === 'desc' && x < y)) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    document.querySelectorAll("th[role='button']").forEach(function (th, index) {
+        th.addEventListener('click', function () { sortTable(index, th); });
+        th.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sortTable(index, th); }
+        });
+    });
+
+    // ── Interest hover image + modal ──────────────────────────────────────────
+    var hoverImage = document.createElement('img');
+    hoverImage.classList.add('hover-image');
+    document.body.appendChild(hoverImage);
+
+    function isMobile() { return window.innerWidth <= 768; }
+
+    document.querySelectorAll('.interest').forEach(function (interest) {
+        interest.addEventListener('mouseover', function () {
+            if (isMobile()) return;
+            hoverImage.src = interest.getAttribute('data-image');
+            hoverImage.style.display = 'block';
+        });
+
+        var ticking = false;
+        interest.addEventListener('mousemove', function (e) {
+            if (isMobile() || ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                hoverImage.style.top  = (e.clientY + 20) + 'px';
+                hoverImage.style.left = (e.clientX + 20) + 'px';
+                ticking = false;
+            });
+        }, { passive: true });
+
+        interest.addEventListener('mouseout', function () {
+            if (!isMobile()) hoverImage.style.display = 'none';
+        });
+
+        function openModal(e) {
+            e.preventDefault();
+            var modalImg = document.getElementById('modalImage');
+            modalImg.src = interest.getAttribute('data-image');
+            modalImg.alt = interest.textContent.trim();
+            new bootstrap.Modal(document.getElementById('imageModal')).show();
+        }
+        interest.addEventListener('click', openModal);
+        interest.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') openModal(e);
+        });
+    });
+
+    window.addEventListener('resize', function () {
+        if (isMobile()) hoverImage.style.display = 'none';
+    }, { passive: true });
+});

@@ -1,0 +1,71 @@
+/* Table of contents — bandeau discret */
+.toc-container {
+  background: rgba(8, 26, 52, 0.04);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.toc-container summary {
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.toc-container summary::-webkit-details-marker { display: none; }
+
+.toc-container summary::before {
+  content: '\f0ca';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+
+.toc-container[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 0.25rem 0;
+}
+
+.toc-list li::before {
+  content: '\00B7';
+  color: var(--color-secondary);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.toc-list li a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.toc-list li a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.toc-list .toc-h3 {
+  padding-left: 1.5rem;
+}
+
+.toc-list .toc-h3::before {
+  content: '\2013';
+  color: #aaa;
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ site.lang | default: 'en' }}">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ '/favicon.png' | relative_url }}" type="image/x-icon">
+    <meta name="theme-color" content="#081a34" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1923" media="(prefers-color-scheme: dark)">
 
     <!-- SEO de base -->
     {% assign page_desc = page.excerpt | default: page.description | default: site.description | strip_html | truncate: 160 %}
@@ -99,11 +101,15 @@
     <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"></noscript>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ '/index.css' | relative_url }}?v2.4">
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- User customization — edit custom.css to override colors, fonts, etc. -->
+    <link rel="stylesheet" type="text/css" href="{{ '/custom.css' | relative_url }}">
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    {% include dark-mode.html %}
+    <a href="#main-content" class="skip-link">{{ site.data.ui.a11y_skip }}</a>
     {% include navbar.html %}
 
     <main id="main-content">

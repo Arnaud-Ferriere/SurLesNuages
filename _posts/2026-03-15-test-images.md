@@ -44,9 +44,8 @@ L'administration système moderne ne se limite plus à gérer des serveurs physi
 
 Il est aussi possible d'insérer plusieurs images consécutives. Elles s'affichent chacune centrée, avec une marge verticale entre elles :
 
-![Image 1](https://picsum.photos/seed/anetwork/600/350)
-
-![Image 2](https://picsum.photos/seed/linux/600/350)
+![Image 1](https://picsum.photos/seed/anetwork/600/350){: .img-left}
+![Image 2](https://picsum.photos/seed/linux/600/350){: .img-right}
 
 ## Conclusion
 

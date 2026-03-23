@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="{{ site.data.ui.a11y_toggle_nav }}">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -9,43 +9,48 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link hover-underline-animation" href="{{ '/' | relative_url }}">Accueil</a>
+                <a class="nav-link hover-underline-animation" href="{{ '/' | relative_url }}">{{ site.data.ui.nav_home }}</a>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link hover-underline-animation" href="{{ '/articles/' | relative_url }}">Articles</a>
+                <a class="nav-link hover-underline-animation" href="{{ '/articles/' | relative_url }}">{{ site.data.ui.nav_articles }}</a>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link hover-underline-animation" href="{{ '/apropos.html' | relative_url }}">À propos</a>
+                <a class="nav-link hover-underline-animation" href="{{ '/about/' | relative_url }}">{{ site.data.ui.nav_about }}</a>
             </li>
         </ul>
         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="{{ site.data.author.linkedin }}" target="_blank"
                     title="LinkedIn" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i><span class="sr-only">(ouvre ma page LinkedIn)</span>
+                    <i class="fab fa-linkedin"></i><span class="sr-only">(ouvre mon profil LinkedIn)</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ site.data.author.github }}" target="_blank" title="GitHub"
                     rel="noopener noreferrer">
-                    <i class="fab fa-github"></i><span class="sr-only">(ouvre ma page GitHub)</span>
+                    <i class="fab fa-github"></i><span class="sr-only">(ouvre mon profil GitHub)</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="mailto:{{ site.data.author.email_user }}@{{ site.data.author.email_domain }}" title="Envoyer un e-mail"
                     rel="noopener noreferrer">
-                    <i class="fas fa-envelope"></i><span class="sr-only">(ouvre l'application de mail pour m'envoyer
-                        un mail)</span>
+                    <i class="fas fa-envelope"></i><span class="sr-only">(ouvre l'application de mail pour m'envoyer un mail)</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ '/feed.xml' | relative_url }}" title="Flux RSS" rel="noopener noreferrer">
                     <i class="fas fa-rss"></i><span class="sr-only">(flux RSS du blog)</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <button id="theme-toggle" class="nav-link"
+                        title="{{ site.data.ui.a11y_toggle_dark }}" aria-label="{{ site.data.ui.a11y_toggle_dark }}">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
             </li>
         </ul>
     </div>

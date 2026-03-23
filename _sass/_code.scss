@@ -1,0 +1,51 @@
+/* Syntax highlighting (Rouge - base16.dark) */
+.highlight {
+  background: #1e1e2e;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: var(--box-shadow-light);
+}
+
+.highlight pre {
+  margin: 0;
+  color: #cdd6f4;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.highlight code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+article .content code {
+  background: #e8edf2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--color-secondary);
+}
+
+article .content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Rouge token colors */
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #6c7086; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #cba6f7; }
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 { color: #a6e3a1; }
+.highlight .nb, .highlight .bp { color: #89b4fa; }
+.highlight .nf, .highlight .nx { color: #89b4fa; }
+.highlight .nc, .highlight .nn { color: #f9e2af; }
+.highlight .no, .highlight .nv, .highlight .vi, .highlight .vc, .highlight .vg { color: #fab387; }
+.highlight .o, .highlight .ow { color: #89dceb; }
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo { color: #fab387; }
+.highlight .p { color: #cdd6f4; }
+.highlight .na { color: #89b4fa; }
+.highlight .nt { color: #cba6f7; }
+.highlight .err { color: #f38ba8; }

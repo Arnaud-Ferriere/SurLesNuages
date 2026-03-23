@@ -1,0 +1,35 @@
+/* Footer */
+.cloud-footer {
+  background-image: url('/assets/clouds-footer.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: var(--color-background);
+  padding-top: 15vw;
+  text-align: center;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.footer-wave { display: none; }
+
+.footer-content {
+  padding: 0.5rem 1rem 1.25rem;
+}
+
+.cloud-footer p {
+  margin: 0;
+  padding: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.cloud-footer a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cloud-footer a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

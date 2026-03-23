@@ -11,7 +11,7 @@ layout: default
 <!-- Section Articles -->
 <section id="articles" class="container mt-5">
     <div class="section-header">
-        <h2 class="hover-underline-animation">Articles récents</h2>
+        <h2 class="hover-underline-animation">{{ site.data.ui.home_recent }}</h2>
     </div>
     <div class="row">
         {% assign posts_list = paginator.posts | default: site.posts %}
@@ -29,7 +29,7 @@ layout: default
                         <a href="{{ post.url | relative_url }}" class="stretched-link text-decoration-none">{{ post.title }}</a>
                     </h5>
                     <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-                    <p class="text-muted small mb-0">Publié le : {{ post.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} min</p>
+                    <p class="text-muted small mb-0">{{ site.data.ui.home_published }} {{ post.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.home_min }}</p>
                 </div>
             </div>
         </div>
@@ -41,10 +41,10 @@ layout: default
         <ul class="pagination justify-content-center">
             {% if paginator.previous_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Plus récents</a>
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; {{ site.data.ui.pagination_newer }}</a>
             </li>
             {% else %}
-            <li class="page-item disabled"><span class="page-link">&laquo; Plus récents</span></li>
+            <li class="page-item disabled"><span class="page-link">&laquo; {{ site.data.ui.pagination_newer }}</span></li>
             {% endif %}
 
             {% for i in (1..paginator.total_pages) %}
@@ -59,10 +59,10 @@ layout: default
 
             {% if paginator.next_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Plus anciens &raquo;</a>
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">{{ site.data.ui.pagination_older }} &raquo;</a>
             </li>
             {% else %}
-            <li class="page-item disabled"><span class="page-link">Plus anciens &raquo;</span></li>
+            <li class="page-item disabled"><span class="page-link">{{ site.data.ui.pagination_older }} &raquo;</span></li>
             {% endif %}
         </ul>
     </nav>
@@ -71,19 +71,19 @@ layout: default
 
 {% if site.posts.size == 0 %}
 <section class="container mt-3 text-center">
-    <p class="text-muted">Aucun article pour le moment. Revenez bientôt !</p>
+    <p class="text-muted">{{ site.data.ui.home_no_articles }}</p>
 </section>
 {% endif %}
 
 <!-- Rechercher & Découvrir -->
 <aside class="container mt-5 mb-5">
     <div class="section-header mb-3">
-        <h3 class="hover-underline-animation">Rechercher un article</h3>
+        <h3 class="hover-underline-animation">{{ site.data.ui.home_search }}</h3>
     </div>
 
-    <label for="home-search-input" class="visually-hidden">Rechercher un article</label>
+    <label for="home-search-input" class="visually-hidden">{{ site.data.ui.home_search }}</label>
     <input type="text" id="home-search-input" class="form-control form-control-lg mb-3"
-        placeholder="Tapez votre recherche...">
+        placeholder="{{ site.data.ui.home_search_placeholder }}">
     <div id="home-search-results"></div>
 
     {% if site.tags.size > 0 %}
@@ -104,53 +104,7 @@ layout: default
     {% endif %}
 </aside>
 
-<script>
-(function() {
-    var posts = [
-        {% for post in site.posts %}
-        {
-            title: {{ post.title | jsonify }},
-            url: {{ post.url | relative_url | jsonify }},
-            date: "{{ post.date | date: '%d/%m/%Y' }}",
-            excerpt: {{ post.excerpt | strip_html | truncate: 150 | jsonify }},
-            tags: {{ post.tags | jsonify }},
-            content: {{ post.content | strip_html | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-    ];
-
-    var input = document.getElementById('home-search-input');
-    var results = document.getElementById('home-search-results');
-
-    input.addEventListener('input', function() {
-        var query = this.value.toLowerCase().trim();
-        if (query.length < 2) { results.innerHTML = ''; return; }
-
-        var found = posts.filter(function(p) {
-            return p.title.toLowerCase().includes(query) ||
-                   p.excerpt.toLowerCase().includes(query) ||
-                   p.content.toLowerCase().includes(query) ||
-                   p.tags.some(function(t) { return t.toLowerCase().includes(query); });
-        });
-
-        if (found.length === 0) {
-            results.innerHTML = '<p class="text-muted">Aucun article trouvé.</p>';
-            return;
-        }
-
-        var html = '<div class="row">';
-        found.forEach(function(p) {
-            html += '<div class="col-md-6 mb-3">' +
-                '<div class="card p-3 h-100" style="cursor:pointer;">' +
-                '<h5 class="card-title"><a href="' + p.url + '" class="stretched-link">' + p.title + '</a></h5>' +
-                '<p class="card-text text-muted">' + p.excerpt + '</p>' +
-                '<p class="text-muted small mb-0">' + p.date + '</p>' +
-                '</div></div>';
-        });
-        html += '</div>';
-        results.innerHTML = html;
-    });
-})();
-</script>
+<script>window.SiteSearch = { noResults: {{ site.data.ui.home_no_results | jsonify }}, searchUrl: {{ '/search.json' | relative_url | jsonify }} };</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
 
 {{ content }}

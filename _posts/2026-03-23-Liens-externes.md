@@ -1,15 +1,22 @@
 ---
 layout: post
-title: Untitled
-date: 2026-03-15
-excerpt: ""
-tags: []
-image: ""
+title: Mes ressources préférées
+date: 2026-03-23
+excerpt: Une petite liste non exhaustive des pages que j'aime parcourir et où apprendre plein de choses !
+tags:
+  - Veille
+  - Liens
+  - Auteurs
+  - Experts
+image: /assets/repertoire.png
 banner: ""
-placeholder: false
 ---
 
-Contenu de l'article ici.
+## Azure
+
+### Power Platform
+
+
 
 <!--
 FRONT MATTER :

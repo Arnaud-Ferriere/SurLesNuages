@@ -1,0 +1,73 @@
+# ──────────────────────────────────────────────────────────────
+# Chaînes UI — modifier ce fichier pour traduire tout le site
+# ──────────────────────────────────────────────────────────────
+
+# Navigation
+nav_home: "Accueil"
+nav_articles: "Articles"
+nav_about: "À propos"
+
+# Page d'accueil
+home_recent: "Articles récents"
+home_search: "Rechercher un article"
+home_search_placeholder: "Tapez votre recherche..."
+home_no_articles: "Aucun article pour le moment. Revenez bientôt !"
+home_no_results: "Aucun article trouvé."
+home_published: "Publié le :"
+home_min: "min"
+
+# Pagination
+pagination_newer: "Plus récents"
+pagination_older: "Plus anciens"
+
+# Article
+post_published: "Publié le :"
+post_min_read: "min"
+post_pdf: "PDF"
+post_save_pdf: "Enregistrer en PDF"
+post_toc: "Table des matières"
+post_related: "Articles connexes"
+post_read_more: "Lire l'article"
+post_ai_disclaimer: "Généré par IA comme placeholder — pas encore un vrai article."
+
+# Page À propos
+about_who: "Qui suis-je ?"
+about_certifications: "Certifications"
+about_view_cert: "Voir la certification"
+about_skills: "Compétences techniques"
+about_skill_col: "Compétence"
+about_level_col: "Niveau"
+about_experience: "Expériences professionnelles"
+about_missions: "Missions :"
+about_context: "Contexte du projet / service :"
+about_responsibilities: "Responsabilités / Missions :"
+about_tech: "Environnement technique / Principales technologies utilisées :"
+about_key_skills: "Compétences clés :"
+about_applied_skills: "Applied Skills"
+about_education: "Formations"
+about_languages: "Langues"
+about_interests: "Centres d'intérêt"
+about_interest_image: "Image du centre d'intérêt"
+
+# Page Articles
+articles_title: "Articles"
+articles_chronological: "Chronologique"
+articles_by_tags: "Par tags"
+articles_no_articles: "Aucun article publié pour l'instant."
+
+# Page 404
+error_404_title: "404"
+error_404_heading: "Cette page s'est perdue dans les nuages..."
+error_404_message: "La page que vous cherchez n'existe pas ou a été déplacée."
+error_404_encouragement: "Heureusement, il fait toujours beau au-dessus des nuages !"
+error_404_back: "Retour à l'accueil"
+
+# Pied de page
+footer_based_on: "Basé sur"
+footer_by: "par"
+
+# Accessibilité
+a11y_skip: "Aller au contenu principal"
+a11y_back_to_top: "Retour en haut"
+a11y_toggle_dark: "Basculer le mode sombre"
+a11y_toggle_nav: "Afficher/masquer la navigation"

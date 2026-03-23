@@ -1,0 +1,31 @@
+/* Bouton PDF (articles) — style cohérent avec .tag-badge */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--color-primary);
+  color: #fff !important;
+  border: none;
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  vertical-align: middle;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.print-btn:hover {
+  background-color: var(--color-secondary);
+  color: #fff !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
