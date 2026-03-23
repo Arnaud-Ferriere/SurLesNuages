@@ -96,7 +96,7 @@ layout: default
         {% elsif count >= 2 %}{% assign tag_size = "tag-md" %}
         {% else %}{% assign tag_size = "tag-sm" %}
         {% endif %}
-        <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}" class="tag-cloud-item {{ tag_size }}">
+        <a href="{{ '/articles/' | relative_url }}#{{ tag[0] | slugify }}" class="tag-cloud-item {{ tag_size }}">
             {{ tag[0] }} <span class="tag-count">{{ count }}</span>
         </a>
         {% endfor %}

@@ -113,4 +113,14 @@ permalink: /articles/
             if (target) target.scrollIntoView({ behavior: 'smooth' });
         }, 50);
     }
+
+    // Arrivée depuis une autre page avec un ancre (#tag) → activer la vue Tags et scroller
+    if (window.location.hash) {
+        var anchor = window.location.hash.slice(1);
+        btnTags.click();
+        setTimeout(function () {
+            var target = document.getElementById(anchor);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+    }
 </script>
