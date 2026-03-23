@@ -192,13 +192,23 @@
     border-color: var(--color-border);
   }
 
-  /* Footer — stays dark, but adjust link contrast */
+  /* Footer — dark mode: night sky SVG */
   .cloud-footer {
+    background-image: url('/assets/clouds-footer-dark.svg');
     background-color: #060e1a;
+    color: #d4d8dd;
+  }
+
+  .cloud-footer p {
+    color: #d4d8dd;
   }
 
   .cloud-footer a {
     color: #7ab3f0;
+  }
+
+  .cloud-footer a:hover {
+    color: #fff;
   }
 
   /* Stacked card hover shadow */
@@ -358,11 +368,21 @@
     }
 
     .cloud-footer {
+      background-image: url('/assets/clouds-footer-dark.svg');
       background-color: #060e1a;
+      color: #d4d8dd;
+    }
+
+    .cloud-footer p {
+      color: #d4d8dd;
     }
 
     .cloud-footer a {
       color: #7ab3f0;
+    }
+
+    .cloud-footer a:hover {
+      color: #fff;
     }
 
     .stacked-card:hover {
