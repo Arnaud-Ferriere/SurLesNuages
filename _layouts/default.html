@@ -11,7 +11,7 @@
     {% assign page_desc = page.excerpt | default: page.description | default: site.description | strip_html | truncate: 160 %}
     <meta name="description" content="{{ page_desc }}">
     {% if page.title %}
-    <title>{{ page.title }} - Sur les nuages</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
     {% else %}
     <title>{{ site.title }}</title>
     {% endif %}
@@ -35,7 +35,7 @@
     {% if page.image %}
     <meta property="og:image" content="{{ page.image | absolute_url }}">
     {% else %}
-    <meta property="og:image" content="{{ '/assets/photo.webp' | absolute_url }}">
+    <meta property="og:image" content="{{ site.default_image | absolute_url }}">
     {% endif %}
 
     <!-- Twitter Card -->
@@ -45,7 +45,7 @@
     {% if page.image %}
     <meta name="twitter:image" content="{{ page.image | absolute_url }}">
     {% else %}
-    <meta name="twitter:image" content="{{ '/assets/photo.webp' | absolute_url }}">
+    <meta name="twitter:image" content="{{ site.default_image | absolute_url }}">
     {% endif %}
 
     <!-- JSON-LD (données structurées) -->
@@ -60,7 +60,7 @@
       "url": "{{ page.url | absolute_url }}",
       "author": {
         "@type": "Person",
-        "name": "Arnaud Ferriere",
+        "name": "{{ site.data.author.name }}",
         "url": "{{ site.url }}"
       }{% if page.image %},
       "image": "{{ page.image | absolute_url }}"{% endif %}

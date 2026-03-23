@@ -4,7 +4,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="{{ '/' | relative_url }}"><i class="fas fa-cloud" aria-hidden="true"></i> Sur les nuages</a>
+    <a class="navbar-brand" href="{{ '/' | relative_url }}"><i class="fas fa-cloud" aria-hidden="true"></i> {{ site.title }}</a>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -24,19 +24,19 @@
         </ul>
         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="https://www.linkedin.com/in/ferrierearnaud/" target="_blank"
+                <a class="nav-link" href="{{ site.data.author.linkedin }}" target="_blank"
                     title="LinkedIn" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i><span class="sr-only">(ouvre ma page LinkedIn)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://github.com/Arnaud-Ferriere" target="_blank" title="GitHub"
+                <a class="nav-link" href="{{ site.data.author.github }}" target="_blank" title="GitHub"
                     rel="noopener noreferrer">
                     <i class="fab fa-github"></i><span class="sr-only">(ouvre ma page GitHub)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#114;&#110;&#46;&#102;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Envoyer un e-mail"
+                <a class="nav-link" href="mailto:{{ site.data.author.email_user }}@{{ site.data.author.email_domain }}" title="Envoyer un e-mail"
                     rel="noopener noreferrer">
                     <i class="fas fa-envelope"></i><span class="sr-only">(ouvre l'application de mail pour m'envoyer
                         un mail)</span>

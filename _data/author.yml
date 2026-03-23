@@ -1,0 +1,36 @@
+name: Arnaud Ferriere
+name_display: Arnaud FERRIERE
+role: Consultant & Administrateur Systèmes
+tagline: "Gestion des identités | Active Directory – Entra ID | Microsoft 365 | Automatisation"
+photo: assets/photo.webp
+photo_alt: "Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique"
+linkedin: https://www.linkedin.com/in/ferrierearnaud/
+github: https://github.com/Arnaud-Ferriere
+email_user: arn.fer
+email_domain: gmail.com
+bio: >-
+  Je suis tombé dans l'informatique tout petit avec un bon vieux 286 sur MS-DOS 6.22. J'ai grandi avec
+  et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation
+  (jamais dans le même ordre !) jusqu'au développement actuel des IA... et de tout ce qui viendra !
+  <br />
+  Aujourd'hui, je suis consultant et Administrateur systèmes spécialisé dans la gestion des identités
+  et les environnements hybrides Active Directory - Entra ID et les outils collaboratifs Microsoft 365.
+  A côté de ça j'ai développé mes compétences en automatisation sur la Power Platform de Microsoft et
+  PowerShell, me permettant de contribuer à des projets où l'innovation et l'amélioration continue
+  sont des priorités.<br />
+  J'ai beaucoup appris en ligne et j'ai créé ce site pour essayer de contribuer, à mon tour et à ma
+  façon, à partager mon expérience.
+sign_off: "J'espère vous retrouver bientôt, sur les nuages ! - Arnaud FERRIERE"
+interests:
+  - label: Cuisine
+    image: assets/cuisine.webp
+    separator: ","
+  - label: "jardinage d'intérieur (hydroponie)"
+    image: assets/jardinage.webp
+    separator: "..."
+  - label: "et d'extérieur"
+    image: assets/jardinageexterieur.webp
+    separator: ","
+  - label: "menuiserie (ébénisterie)"
+    image: assets/menuiserie.webp
+    separator: "."

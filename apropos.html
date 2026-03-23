@@ -6,35 +6,22 @@ permalink: /apropos.html
 
     <!-- En-tête visible uniquement à l'impression -->
     <div class="print-header">
-        <h1>Arnaud Ferriere</h1>
-        <p class="print-subtitle">Consultant &amp; Administrateur Systèmes</p>
-        <p class="print-tagline">Gestion des identités | Active Directory – Entra ID | Microsoft 365 | Automatisation</p>
+        <h1>{{ site.data.author.name }}</h1>
+        <p class="print-subtitle">{{ site.data.author.role }}</p>
+        <p class="print-tagline">{{ site.data.author.tagline }}</p>
     </div>
 
     <!--DESCRIPTION-->
     <div id="description" class="container mt-5">
         <div class="row">
             <div class="col-md-3">
-                <img src="assets/photo.webp" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high"
-                    alt="Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique">
+                <img src="{{ site.data.author.photo }}" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high"
+                    alt="{{ site.data.author.photo_alt }}">
             </div>
             <div class="col-md-9">
                 <h1>Qui suis-je ?</h1>
-                <p>Je suis tombé dans l'informatique tout petit avec un bon vieux 286 sur MS-DOS 6.22. J'ai grandi avec
-                    et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation
-                    (jamais dans le même ordre !) jusqu'au développement actuel des IA... et de tout ce qui viendra !
-                    <br />
-                    Aujourd'hui, je suis consultant et Administrateur systèmes spécialisé dans la gestion des identités
-                    et les environnements hybrides Active Directory - Entra ID et les outils collaboratifs Microsoft
-                    365.
-                    A côté de ça j'ai développé mes compétences en automatisation sur la Power Platform de Microsoft et
-                    PowerShell, me permettant de contribuer à des projets où l'innovation et l'amélioration continue
-                    sont des priorités.<br />
-                    J'ai beaucoup appris en ligne et j'ai créé ce site pour essayer de contribuer, à mon tour et à ma
-                    façon, à partager mon expérience.
-
-                </p>
-                <h5>J'espère vous retrouver bientôt, sur les nuages ! - Arnaud FERRIERE</h5>
+                <p>{{ site.data.author.bio }}</p>
+                <h5>{{ site.data.author.sign_off }}</h5>
             </div>
         </div>
     </div>
@@ -300,11 +287,8 @@ permalink: /apropos.html
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <p>
-                        <span class="interest" tabindex="0" role="button" data-image="assets/cuisine.webp">Cuisine</span>,
-                        <span class="interest" tabindex="0" role="button" data-image="assets/jardinage.webp">jardinage d'intérieur
-                            (hydroponie)</span>...
-                        <span class="interest" tabindex="0" role="button" data-image="assets/jardinageexterieur.webp"> et d'extérieur</span>,
-                        <span class="interest" tabindex="0" role="button" data-image="assets/menuiserie.webp">menuiserie (ébénisterie)</span>.
+                        {% for interest in site.data.author.interests %}<span class="interest" tabindex="0" role="button" data-image="{{ interest.image }}">{{ interest.label }}</span>{{ interest.separator }}
+                        {% endfor %}
                     </p>
 
                 </div>
