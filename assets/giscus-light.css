@@ -93,39 +93,6 @@ main {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 main { font-family: 'Poppins', sans-serif; }
 
-/* Rounded borders + shadows to match site style */
-main .gsc-comment-box,
-main .gsc-comment,
-main .gsc-reply,
-main .gsc-main .gsc-reactions-button,
-main .gsc-main textarea,
-main .gsc-comment-box-tabs,
-main .gsc-comment-box-main {
-  border-radius: 12px;
-}
-
-main .gsc-comment-box,
-main .gsc-comment {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease;
-}
-
-main .gsc-comment:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-main .gsc-comment-box-tabs {
-  border-radius: 12px 12px 0 0;
-}
-
-main .gsc-reply-box {
-  border-radius: 0 0 12px 12px;
-}
-
-main .gsc-social-reaction-summary-item {
-  border-radius: 20px;
-}
-
 main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
 }
