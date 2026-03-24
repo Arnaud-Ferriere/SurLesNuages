@@ -93,6 +93,17 @@
   .print-btn,
   .giscus-comments { display: none !important; }
 
+  /* Belt-and-suspenders: some PDF renderers ignore display:none on elements with background-image */
+  .cloud-footer,
+  footer {
+    background: none !important;
+    background-image: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
   /* === CONTAINERS === */
   .container {
     margin: 0 !important;
