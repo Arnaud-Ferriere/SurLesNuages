@@ -93,16 +93,25 @@
   .print-btn,
   .giscus-comments { display: none !important; }
 
-  /* Belt-and-suspenders: some PDF renderers ignore display:none on elements with background-image */
+  /* Nuclear hide: some PDF renderers + dark OS ignore display:none on bg-image elements */
   .cloud-footer,
-  footer {
+  footer,
+  footer.cloud-footer {
+    display: none !important;
     background: none !important;
     background-image: none !important;
+    background-color: transparent !important;
     height: 0 !important;
+    max-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
     overflow: hidden !important;
+    visibility: hidden !important;
   }
+
+  /* Hide all iframes (Giscus, embeds) in print */
+  iframe,
+  .giscus { display: none !important; }
 
   /* === CONTAINERS === */
   .container {

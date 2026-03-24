@@ -222,8 +222,8 @@
   }
 }
 
-/* Same overrides for OS auto-detection */
-@media (prefers-color-scheme: dark) {
+/* Same overrides for OS auto-detection — excluded from print */
+@media (prefers-color-scheme: dark) and (not print) {
   :root:not([data-theme="light"]) {
     .text-muted { color: var(--color-text-muted) !important; }
 
