@@ -90,7 +90,8 @@
   #toc-wrapper,
   .related-posts,
   .post-tags,
-  .print-btn { display: none !important; }
+  .print-btn,
+  .giscus-comments { display: none !important; }
 
   /* === CONTAINERS === */
   .container {
