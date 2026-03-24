@@ -40,7 +40,7 @@ Pour les formations, un fichier YAML ressemble à ça :
 ```
 et ainsi de suite pour chaque ligne de formation. De cette manière si je veux mettre à jour mes formations, pas de HTML à toucher, juste le contenu du fichier YAML. GitHub Action fera alors le build automatiquement et la modification sera visible ~1 minute après.
 
-Lors de la rédaction des articles en Markdown, ceux-ci ont un petit en-tête comprenant les propriétés de l'en-tête, qui permettent de construire la page de l'article :
+Lors de la rédaction des articles en Markdown, ceux-ci ont un petit en-tête comprenant les propriétés qui permettent de construire la page de l'article :
 ```
 ---
 layout: post
