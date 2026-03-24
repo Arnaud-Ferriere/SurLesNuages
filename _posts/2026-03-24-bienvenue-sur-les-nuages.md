@@ -27,7 +27,7 @@ J'avais aussi envie de découvrir un peu plus le fonctionnement de Git et faire 
 
 Le site est "statique" et est construit à l'aide de Jekyll et GitHub Actions (qui construisent les pages à partir de layouts, de documents contenant les données et de mes articles en Markdown).
 
-Sur la page "A propos" par exemple, le contenu de toutes les cartes est généré à partir de petits [documents YAML](https://github.com/Arnaud-Ferriere/SurLesNuages/tree/main/_data).
+Sur la page "A propos" par exemple, le contenu de toutes les cartes est généré à partir de petits [documents YAML](https://github.com/Arnaud-Ferriere/SurLesNuages/tree/main/_data).  
 Pour les formations, un fichier YAML ressemble à ça :
 ```yaml
 - year: "2024"
@@ -56,8 +56,9 @@ banner: /assets/my-banner.jpg     # full-width header (overrides image)
 
 En pratique : j'écris dans Obsidian, je clique sur "Stage all → Commit → Push" dans le plugin Git, et l'article est en ligne en moins d'une minute.
 
-Comme je ne fais jamais les choses à moitié, c'est devenu un projet complet où tout est configurable et je le mets en libre disposition sous forme de template Github : [Cirrus](https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll)
+Comme je ne fais jamais les choses à moitié, c'est devenu un projet complet où tout est configurable et je le mets en libre disposition sous forme de template Github : [Cirrus](https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll)  
 Le ReadMe rentre plus en détail dans le fonctionnement, n'hésitez pas à l'essayer et me faire des retours via les commentaires, des Issues ou sur LinkedIn.
 
 
-La liste des sujets que j'ai envie de couvrir est déjà longue, il est temps de s'y mettre. À bientôt pour le premier vrai article !
+La liste des sujets que j'ai envie de couvrir est déjà longue, il est temps de s'y mettre !  
+À bientôt pour le premier vrai article !
