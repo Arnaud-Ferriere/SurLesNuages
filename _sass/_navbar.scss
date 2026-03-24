@@ -74,18 +74,14 @@
   filter: blur(0) opacity(1);
 }
 
-/* Theme toggle button */
+/* Theme toggle button — match <a class="nav-link"> sizing exactly */
 #theme-toggle {
   background: none;
   border: none;
-  padding: 0.5rem;
-  font-size: 1rem;
-  line-height: 1;
-  color: #fff;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 #theme-toggle:hover {
   color: #f0f0f0;
@@ -97,7 +93,7 @@
   box-shadow: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .navbar { padding: 0.8rem 1.5rem; }
   .navbar-toggler { padding: 0.6rem; font-size: 1.2rem; }
 }
