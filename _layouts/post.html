@@ -79,6 +79,28 @@ layout: default
 </article>
 
 <div class="giscus-comments container mt-4 mb-2">
+    <script>
+    (function() {
+        var LIGHT = '{{ site.url }}/assets/giscus-light.css';
+        var DARK  = '{{ site.url }}/assets/giscus-dark.css';
+        function isDark() {
+            var t = document.documentElement.getAttribute('data-theme');
+            return t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        // Set correct theme on the Giscus script tag before it initialises
+        var gs = document.currentScript.nextElementSibling;
+        gs.setAttribute('data-theme', isDark() ? DARK : LIGHT);
+        // Sync on manual toggle
+        new MutationObserver(function() {
+            var dark = isDark();
+            var f = document.querySelector('iframe.giscus-frame');
+            if (f) f.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: dark ? DARK : LIGHT } } },
+                'https://giscus.app'
+            );
+        }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+    </script>
     <script src="https://giscus.app/client.js"
         data-repo="Arnaud-Ferriere/SurLesNuages"
         data-repo-id="R_kgDOMh5m0A"
@@ -89,12 +111,12 @@ layout: default
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="catppuccin_frappe"
+        data-theme=""
         data-lang="fr"
         data-loading="lazy"
         crossorigin="anonymous"
         async>
-</script>
+    </script>
 </div>
 
 {% assign related_posts = "" | split: "" %}
