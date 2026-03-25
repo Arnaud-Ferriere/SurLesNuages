@@ -222,6 +222,14 @@
   .article-container:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
+
+  /* Company/mission logos: white pill to keep transparent logos readable */
+  .poste-logo,
+  .mission-logo {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2px;
+  }
 }
 
 /* Same overrides for OS auto-detection — excluded from print */
@@ -394,6 +402,14 @@
 
     .article-container:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Company/mission logos: white pill to keep transparent logos readable */
+    .poste-logo,
+    .mission-logo {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 2px;
     }
   }
 }
