@@ -161,4 +161,18 @@ layout: default
 </section>
 {% endif %}
 
+<!-- Image zoom modal -->
+<div class="modal fade modal-zoom" id="imageModal" tabindex="-1" role="dialog" aria-label="Image agrandie" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-zoom-inner">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="{{ '/assets/js/post.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

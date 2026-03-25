@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var modalImg = document.getElementById('modalImage');
             modalImg.src = interest.getAttribute('data-image');
             modalImg.alt = interest.textContent.trim();
-            new bootstrap.Modal(document.getElementById('imageModal')).show();
+            bootstrap.Modal.getOrCreateInstance(document.getElementById('imageModal')).show();
         }
         interest.addEventListener('click', openModal);
         interest.addEventListener('keydown', function (e) {

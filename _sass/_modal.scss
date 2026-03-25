@@ -59,3 +59,48 @@ svg {
 .modal-body {
   position: relative;
 }
+
+/* Modal zoom image (articles) */
+.modal-zoom .modal-dialog {
+  max-width: 95vw;
+}
+
+.modal-zoom .modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.modal-zoom .modal-body {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-zoom-inner {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.modal-zoom-inner img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-hover);
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+}
+
+.modal-zoom-inner .btn-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  opacity: 1;
+  filter: invert(1) grayscale(1) brightness(2);
+}

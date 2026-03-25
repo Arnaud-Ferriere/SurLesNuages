@@ -299,15 +299,14 @@ permalink: /about/
     </div>
 
     <!-- Bootstrap modal to display interest images full size -->
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content position-relative">
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title sr-only" id="imageModalLabel">{{ site.data.ui.about_interest_image }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <img id="modalImage" src="" alt="" class="img-fluid">
+    <div class="modal fade modal-zoom" id="imageModal" tabindex="-1" role="dialog" aria-label="{{ site.data.ui.about_interest_image }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-zoom-inner">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <img id="modalImage" src="" alt="" class="img-fluid">
+                    </div>
                 </div>
             </div>
         </div>
