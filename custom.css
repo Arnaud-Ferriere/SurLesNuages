@@ -12,6 +12,10 @@
 
 :root {
 
+    /* Teinte de fond pour les en-têtes de tableau
+       = couleur secondaire (#003b82) à faible opacité → bleu clair    */
+    --table-header-bg: rgba(0, 59, 130, 0.12);
+
     /* ── COLORS ──────────────────────────────────────────────── */
 
     /* Main dark color: navbar, headings, buttons */
@@ -69,3 +73,101 @@
    Add your own custom styles below this line.
    Example: change the footer font size, tweak card padding, etc.
    ───────────────────────────────────────────────────────────── */
+
+
+/* ─────────────────────────────────────────────────────────────
+   TABLES — Style "Carte"
+   Articles  : wrapper .table-wrapper/.table-scroll injecté par post.js
+   À propos  : override Bootstrap .table dans .stacked-card
+   ─────────────────────────────────────────────────────────────
+*/
+
+/* Wrapper articles : outer = coins arrondis + ombre,
+   inner = scroll horizontal sans casser les coins         */
+.content .table-wrapper {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--box-shadow-light);
+    margin: 1.5rem 0;
+}
+.content .table-scroll {
+    overflow-x: auto;
+}
+
+/* Base commune ─────────────────────────────────────────── */
+.content .table-wrapper table,
+.stacked-card table.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.92em;
+}
+
+/* En-tête : teinte légère de --color-primary sur fond carte,
+   texte --color-primary comme les titres du site,
+   séparateur en bas pour ancrer la ligne de header         */
+.content .table-wrapper table thead th,
+.stacked-card table.table thead th {
+    background-color: var(--table-header-bg) !important;
+    color: var(--color-primary) !important;
+    padding: 10px 16px;
+    font-weight: 700;
+    border: none !important;
+    border-bottom: 2px solid var(--color-primary) !important;
+    border-right: 1px solid var(--color-border) !important;
+    text-align: left;
+}
+.content .table-wrapper table thead th:last-child,
+.stacked-card table.table thead th:last-child {
+    border-right: none !important;
+}
+
+/* Cellules du corps ─────────────────────────────────────── */
+.content .table-wrapper table tbody td,
+.stacked-card table.table tbody td {
+    padding: 9px 16px;
+    border: none;
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    color: var(--color-text);
+    background-color: var(--color-card-bg);
+}
+.content .table-wrapper table tbody td:last-child,
+.stacked-card table.table tbody td:last-child {
+    border-right: none;
+}
+
+/* Lignes paires : --color-background est toujours différent
+   de --color-card-bg dans les deux modes → contraste garanti */
+.content .table-wrapper table tbody tr:nth-child(even) td,
+.stacked-card table.table tbody tr:nth-child(even) td {
+    background-color: var(--color-background);
+}
+
+/* Hover ─────────────────────────────────────────────────── */
+.content .table-wrapper table tbody tr:hover td,
+.stacked-card table.table tbody tr:hover td {
+    background-color: rgba(0, 59, 130, 0.14);
+}
+
+/* Dark mode : variable header + hover ───────────────────── */
+[data-theme="dark"] {
+    --table-header-bg: rgba(168, 196, 232, 0.12);
+}
+
+[data-theme="dark"] .content .table-wrapper table tbody tr:hover td,
+[data-theme="dark"] .stacked-card table.table tbody tr:hover td {
+    background-color: rgba(74, 158, 255, 0.1);
+}
+
+/* Miroir pour prefers-color-scheme (sans toggle manuel) ── */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --table-header-bg: rgba(168, 196, 232, 0.12);
+    }
+    :root:not([data-theme="light"]) .content .table-wrapper table tbody tr:hover td,
+    :root:not([data-theme="light"]) .stacked-card table.table tbody tr:hover td {
+        background-color: rgba(74, 158, 255, 0.1);
+    }
+}

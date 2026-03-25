@@ -26,11 +26,14 @@ article .content a:hover {
   color: var(--color-primary);
 }
 
-.blockquote {
+.blockquote,
+article .content blockquote {
   border-left: 5px solid var(--color-secondary);
-  padding-left: 1rem;
+  background-color: rgba(0, 59, 130, 0.07);
+  padding: 0.75rem 1rem;
   margin: 1.5rem 0;
   color: var(--color-text-muted);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
 /* Article container */

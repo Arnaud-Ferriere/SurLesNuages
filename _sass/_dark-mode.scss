@@ -61,12 +61,7 @@
   }
 
   .table > thead > tr > th {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .table-striped > tbody > tr:nth-of-type(odd) > * {
-    --bs-table-striped-bg: rgba(255, 255, 255, 0.04);
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: var(--table-header-bg);
   }
 
   /* Badges & buttons — outline style for dark mode (better contrast ~5:1) */
@@ -125,6 +120,13 @@
   article .content code {
     background: #1e2a3a;
     color: #89b4fa;
+  }
+
+  /* Blockquotes */
+  .blockquote,
+  article .content blockquote {
+    background-color: rgba(168, 196, 232, 0.07);
+    border-left-color: var(--color-primary);
   }
 
   /* Alert placeholder (AI disclaimer) */
@@ -248,12 +250,7 @@
     }
 
     .table > thead > tr > th {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .table-striped > tbody > tr:nth-of-type(odd) > * {
-      --bs-table-striped-bg: rgba(255, 255, 255, 0.04);
-      background-color: rgba(255, 255, 255, 0.04);
+      background-color: var(--table-header-bg);
     }
 
     .tag-badge {
@@ -309,6 +306,12 @@
     article .content code {
       background: #1e2a3a;
       color: #89b4fa;
+    }
+
+    .blockquote,
+    article .content blockquote {
+      background-color: rgba(168, 196, 232, 0.07);
+      border-left-color: var(--color-primary);
     }
 
     .alert-placeholder {
