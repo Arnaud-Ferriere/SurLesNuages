@@ -6,3 +6,4 @@ _site/
 Templates/
 Gemfile.lock
 .claude/
+_drafts/
