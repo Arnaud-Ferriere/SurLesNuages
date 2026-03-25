@@ -2,7 +2,11 @@
 (function() {
     var html = document.documentElement;
     var stored = localStorage.getItem('theme');
-    if (stored) html.setAttribute('data-theme', stored);
+    if (stored) {
+        html.setAttribute('data-theme', stored);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.setAttribute('data-theme', 'dark');
+    }
 
     document.addEventListener('DOMContentLoaded', function() {
         var toggle = document.getElementById('theme-toggle');
