@@ -5,6 +5,124 @@ function getTheme() {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
 }
 
+/* ── Modal pan/zoom ── */
+function createModal() {
+  var modal = document.createElement('div');
+  modal.id = 'mermaid-modal';
+  modal.innerHTML =
+    '<div class="mermaid-modal-backdrop"></div>' +
+    '<div class="mermaid-modal-inner">' +
+      '<button class="mermaid-modal-close" aria-label="Fermer"><i class="fas fa-times"></i></button>' +
+      '<p class="mermaid-modal-hint">Molette pour zoomer · Cliquer-glisser pour déplacer</p>' +
+      '<div class="mermaid-modal-svg"></div>' +
+    '</div>';
+  document.body.appendChild(modal);
+  modal.querySelector('.mermaid-modal-backdrop').addEventListener('click', closeModal);
+  modal.querySelector('.mermaid-modal-close').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  return modal;
+}
+
+function closeModal() {
+  var modal = document.getElementById('mermaid-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+function openModal(svg) {
+  var modal = document.getElementById('mermaid-modal') || createModal();
+  var container = modal.querySelector('.mermaid-modal-svg');
+  container.innerHTML = '';
+  var clone = svg.cloneNode(true);
+  clone.removeAttribute('width');
+  clone.removeAttribute('height');
+  clone.style.transformOrigin = '0 0';
+  container.appendChild(clone);
+  modal.style.display = 'flex';
+  initPanZoom(container, clone);
+}
+
+function initPanZoom(container, el) {
+  var scale = 1, panX = 0, panY = 0;
+  var dragging = false, startX = 0, startY = 0;
+
+  function apply() {
+    el.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')';
+  }
+  apply();
+
+  container.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    var rect = container.getBoundingClientRect();
+    var mx = e.clientX - rect.left - panX;
+    var my = e.clientY - rect.top  - panY;
+    var d  = e.deltaY > 0 ? 0.85 : 1.15;
+    var ns = Math.min(Math.max(scale * d, 0.1), 15);
+    panX  -= mx * (ns - scale);
+    panY  -= my * (ns - scale);
+    scale  = ns;
+    apply();
+  }, { passive: false });
+
+  container.addEventListener('mousedown', function(e) {
+    dragging = true;
+    startX = e.clientX - panX;
+    startY = e.clientY - panY;
+    container.style.cursor = 'grabbing';
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    panX = e.clientX - startX;
+    panY = e.clientY - startY;
+    apply();
+  });
+  document.addEventListener('mouseup', function() {
+    dragging = false;
+    container.style.cursor = 'grab';
+  });
+
+  var lastDist = 0;
+  container.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      dragging = true;
+      startX = e.touches[0].clientX - panX;
+      startY = e.touches[0].clientY - panY;
+    } else if (e.touches.length === 2) {
+      lastDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    }
+  }, { passive: true });
+  container.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    if (e.touches.length === 1 && dragging) {
+      panX = e.touches[0].clientX - startX;
+      panY = e.touches[0].clientY - startY;
+      apply();
+    } else if (e.touches.length === 2) {
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      scale = Math.min(Math.max(scale * (d / lastDist), 0.1), 15);
+      lastDist = d;
+      apply();
+    }
+  }, { passive: false });
+  container.addEventListener('touchend', function() { dragging = false; });
+}
+
+/* ── Bouton plein écran ── */
+function addMermaidButtons() {
+  document.querySelectorAll('.mermaid[data-processed]').forEach(function(el) {
+    if (el.querySelector('.mermaid-fullscreen-btn')) return;
+    var btn = document.createElement('button');
+    btn.className = 'mermaid-fullscreen-btn';
+    btn.setAttribute('aria-label', 'Ouvrir en plein écran');
+    btn.innerHTML = '<i class="fas fa-expand" aria-hidden="true"></i>';
+    btn.addEventListener('click', function() {
+      var svg = el.querySelector('svg');
+      if (svg) openModal(svg);
+    });
+    el.appendChild(btn);
+  });
+}
+
+/* ── Rendu ── */
 function convertAndRender() {
   document.querySelectorAll('code.language-mermaid').forEach(function(el) {
     var wrapper = el.closest('.highlighter-rouge') || el.parentElement;
@@ -14,7 +132,7 @@ function convertAndRender() {
     div.textContent = el.textContent.trim();
     wrapper.replaceWith(div);
   });
-  mermaid.run();
+  mermaid.run().then(addMermaidButtons);
 }
 
 mermaid.initialize({ startOnLoad: false, theme: getTheme() });
@@ -31,7 +149,7 @@ new MutationObserver(function() {
     el.textContent = el.dataset.src;
     el.removeAttribute('data-processed');
   });
-  mermaid.run();
+  mermaid.run().then(addMermaidButtons);
 }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
 async function reRenderMermaid(theme) {
@@ -41,6 +159,7 @@ async function reRenderMermaid(theme) {
     el.removeAttribute('data-processed');
   });
   await mermaid.run();
+  if (theme !== 'default') addMermaidButtons();
 }
 
 window.mermaidReRender = reRenderMermaid;
