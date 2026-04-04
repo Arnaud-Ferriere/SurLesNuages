@@ -27,8 +27,32 @@ Je présente dans cet article les types de diagramme que j'utilise le plus fréq
 Toute la documentation est disponible sur le site https://mermaid.ai/open-source/intro/syntax-reference.html
 
 ## Exemples de diagrammes et schémas
+### Un peu de camembert pour commencer ?
+
+Je pense qu'il se passe de présentation, le classique pour représenter visuellement des quantités :
+
+```mermaid
+pie title Répartition des tickets support (T1 2026)
+    "Accès & droits" : 38
+    "Messagerie" : 22
+    "Matériel" : 18
+    "Applications" : 14
+    "Autre" : 8
+```
+
+Le code :  
+```text
+pie title Répartition des tickets support (T1 2026)
+    "Accès & droits" : 38
+    "Messagerie" : 22
+    "Matériel" : 18
+    "Applications" : 14
+    "Autre" : 8
+```
+---
+
 ### Flowchart
-Pour commencer, le diagramme le plus courant. Idéal pour modéliser un **processus**, un **algorithme** ou un **flux de décision**.
+Ensuite l'un des diagrammes les plus courants. Idéal pour modéliser un **processus**, un **algorithme** ou un **flux de décision**.
 
 ```mermaid
 flowchart TD
@@ -49,6 +73,41 @@ flowchart TD
     C -- Non --> E[Notifier le refus]
     D --> F([Fin])
     E --> F
+```
+---
+### Gantt
+
+Le classique de la **planification de projet**. Il représente les tâches, leurs durées et leurs dépendances sur un axe temporel (la barre rouge est le jour actuel).
+
+```mermaid
+gantt
+    title Migration vers Microsoft 365
+    dateFormat  YYYY-MM-DD
+    section Préparation
+    Audit de l'existant         :a1, 2026-04-01, 10d
+    Plan de migration           :a2, after a1, 7d
+    section Déploiement
+    Pilote (50 utilisateurs)    :b1, after a2, 14d
+    Déploiement général         :b2, after b1, 21d
+    section Clôture
+    Formation utilisateurs      :c1, after b1, 14d
+    Bilan & documentation       :c2, after b2, 5d
+```
+
+Le code :  
+```text
+gantt
+    title Migration vers Microsoft 365
+    dateFormat  YYYY-MM-DD
+    section Préparation
+    Audit de l'existant         :a1, 2026-04-01, 10d
+    Plan de migration           :a2, after a1, 7d
+    section Déploiement
+    Pilote (50 utilisateurs)    :b1, after a2, 14d
+    Déploiement général         :b2, after b1, 21d
+    section Clôture
+    Formation utilisateurs      :c1, after b1, 14d
+    Bilan & documentation       :c2, after b2, 5d
 ```
 ---
 
@@ -132,66 +191,6 @@ stateDiagram-v2
 ```
 ---
 
-### Gantt
-
-Le classique de la **planification de projet**. Il représente les tâches, leurs durées et leurs dépendances sur un axe temporel (la barre rouge est le jour actuel).
-
-```mermaid
-gantt
-    title Migration vers Microsoft 365
-    dateFormat  YYYY-MM-DD
-    section Préparation
-    Audit de l'existant         :a1, 2026-04-01, 10d
-    Plan de migration           :a2, after a1, 7d
-    section Déploiement
-    Pilote (50 utilisateurs)    :b1, after a2, 14d
-    Déploiement général         :b2, after b1, 21d
-    section Clôture
-    Formation utilisateurs      :c1, after b1, 14d
-    Bilan & documentation       :c2, after b2, 5d
-```
-
-Le code :  
-```text
-gantt
-    title Migration vers Microsoft 365
-    dateFormat  YYYY-MM-DD
-    section Préparation
-    Audit de l'existant         :a1, 2026-04-01, 10d
-    Plan de migration           :a2, after a1, 7d
-    section Déploiement
-    Pilote (50 utilisateurs)    :b1, after a2, 14d
-    Déploiement général         :b2, after b1, 21d
-    section Clôture
-    Formation utilisateurs      :c1, after b1, 14d
-    Bilan & documentation       :c2, after b2, 5d
-```
----
-
-### Un peu de camembert pour la route ?
-
-Je pense qu'il se passe de présentation 😄🥖
-
-```mermaid
-pie title Répartition des tickets support (T1 2026)
-    "Accès & droits" : 38
-    "Messagerie" : 22
-    "Matériel" : 18
-    "Applications" : 14
-    "Autre" : 8
-```
-
-Le code :  
-```text
-pie title Répartition des tickets support (T1 2026)
-    "Accès & droits" : 38
-    "Messagerie" : 22
-    "Matériel" : 18
-    "Applications" : 14
-    "Autre" : 8
-```
----
-
 ### Timeline
 
 Représente des **événements dans le temps**, par exemple l'historique d'un projet, l'évolution d'une technologie, les jalons clés...
@@ -227,6 +226,69 @@ timeline
 > [!WARNING] 
 > Voici d'autres exemples de diagrammes. Attention, ils sont en préversion, leur utilisation peut changer sur les futures version de Mermaid !
 
+### Architecture Diagram
+
+Représente des **composants d'infrastructure** et leurs connexions — cloud, on-premise, réseaux, services.
+
+[Documentation →](https://mermaid.js.org/syntax/architecture.html)
+
+```mermaid
+architecture-beta
+    group cloud(cloud)[Azure]
+
+    service api(server)[API Management] in cloud
+    service func(server)[Azure Functions] in cloud
+    service db(database)[Azure SQL] in cloud
+    service storage(disk)[Blob Storage] in cloud
+
+    api:R --> L:func
+    func:R --> L:db
+    func:B --> T:storage
+```
+Le code :  
+```text
+architecture-beta
+    group cloud(cloud)[Azure]
+
+    service api(server)[API Management] in cloud
+    service func(server)[Azure Functions] in cloud
+    service db(database)[Azure SQL] in cloud
+    service storage(disk)[Blob Storage] in cloud
+
+    api:R --> L:func
+    func:R --> L:db
+    func:B --> T:storage
+```
+---
+
+### Kanban
+
+Classique de la gestion de projet, par exemple pour documenter un état d'avancement dans une note ou un README.
+
+```mermaid
+kanban
+  todo
+    Audit des acces["Audit des accès Azure AD"]
+    Doc onboarding["Documentation onboarding"]
+  in-progress
+    Migration Teams["Migration vers Teams 2.0"]
+  done
+    Export SharePoint["Export SharePoint vers Excel"]
+    Dark mode["Dark mode du site"]
+```
+Le code :  
+```text
+kanban
+  todo
+    Audit des acces["Audit des accès Azure AD"]
+    Doc onboarding["Documentation onboarding"]
+  in-progress
+    Migration Teams["Migration vers Teams 2.0"]
+  done
+    Export SharePoint["Export SharePoint vers Excel"]
+    Dark mode["Dark mode du site"]
+```
+---
 
 ### Sankey
 
@@ -284,69 +346,6 @@ xychart-beta
 ```
 ---
 
-### Kanban
-
-Classique de la gestion de projet, par exemple pour documenter un état d'avancement dans une note ou un README.
-
-```mermaid
-kanban
-  todo
-    Audit des acces["Audit des accès Azure AD"]
-    Doc onboarding["Documentation onboarding"]
-  in-progress
-    Migration Teams["Migration vers Teams 2.0"]
-  done
-    Export SharePoint["Export SharePoint vers Excel"]
-    Dark mode["Dark mode du site"]
-```
-Le code :  
-```text
-kanban
-  todo
-    Audit des acces["Audit des accès Azure AD"]
-    Doc onboarding["Documentation onboarding"]
-  in-progress
-    Migration Teams["Migration vers Teams 2.0"]
-  done
-    Export SharePoint["Export SharePoint vers Excel"]
-    Dark mode["Dark mode du site"]
-```
----
-
-### Architecture Diagram
-
-Représente des **composants d'infrastructure** et leurs connexions — cloud, on-premise, réseaux, services.
-
-[Documentation →](https://mermaid.js.org/syntax/architecture.html)
-
-```mermaid
-architecture-beta
-    group cloud(cloud)[Azure]
-
-    service api(server)[API Management] in cloud
-    service func(server)[Azure Functions] in cloud
-    service db(database)[Azure SQL] in cloud
-    service storage(disk)[Blob Storage] in cloud
-
-    api:R --> L:func
-    func:R --> L:db
-    func:B --> T:storage
-```
-Le code :  
-```text
-architecture-beta
-    group cloud(cloud)[Azure]
-
-    service api(server)[API Management] in cloud
-    service func(server)[Azure Functions] in cloud
-    service db(database)[Azure SQL] in cloud
-    service storage(disk)[Blob Storage] in cloud
-
-    api:R --> L:func
-    func:R --> L:db
-    func:B --> T:storage
-```
----
 ## Intégration dans Obsidian
 
 J'en parlais dans mon premier article, j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
