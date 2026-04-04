@@ -26,6 +26,8 @@ Je présente dans cet article les types de diagramme que j'utilise le plus fréq
 
 Toute la documentation est disponible sur le site https://mermaid.ai/open-source/intro/syntax-reference.html
 
+---
+
 ## Exemples de diagrammes et schémas
 ### Un peu de camembert pour commencer ?
 
