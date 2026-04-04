@@ -7,15 +7,16 @@ tags:
   - Obsidian
   - Documentation
   - Diagrammes
+  - Schémas
 mermaid: true
 placeholder: false
-excerpt: "Outil de création de diagrammes à partir de texte : syntaxe, cas d'usage, et utilisation sur Obsidian"
+excerpt: "Outil de création de diagrammes à partir de texte : sa syntaxe, cas d'usage, et son utilisation sur Obsidian"
 layout: post
 ---
-[Mermaid](https://mermaid.ai/) est une bibliothèque JavaScript qui permet de générer des diagrammes et schémas à partir de texte, inspiré par Markdown.  
+[Mermaid](https://mermaid.ai/open-source/) est une bibliothèque JavaScript qui permet de générer des diagrammes et schémas à partir de texte, inspiré par Markdown.  
 
 J'aime particulièrement m'en servir pour de la documentation technique ou la rédaction d'articles (je vais m'en servir assez souvent sur ce site !), mais c'est aussi souvent utilisé pour des spécifications fonctionnelles, de la gestion de projet ou simplement pour visualiser une idée rapidement.  
-Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/, soit via sont intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
+Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/, soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
 
 Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple, pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possiblité d'ajouter des commentaires directement dans le code.
 
@@ -45,6 +46,7 @@ flowchart TD
     D --> F([Fin])
     E --> F
 ```
+---
 
 ### Sequence Diagram
 
@@ -94,6 +96,7 @@ sequenceDiagram
     App-->>WB: Cookie de session
     EID->>WB: Cookie pour le domaine Entra ID
 ```
+---
 
 ### State Diagram
 
@@ -123,6 +126,7 @@ stateDiagram-v2
     Résolu --> EnCours : Réouverture
     Fermé --> [*]
 ```
+---
 
 ### Gantt
 
@@ -158,6 +162,7 @@ gantt
     Formation utilisateurs      :c1, after b1, 14d
     Bilan & documentation       :c2, after b2, 5d
 ```
+---
 
 ### Un peu de camembert pour la route ?
 
@@ -181,6 +186,7 @@ pie title Répartition des tickets support (T1 2026)
     "Applications" : 14
     "Autre" : 8
 ```
+---
 
 ### Timeline
 
@@ -210,10 +216,12 @@ timeline
     2021 : Power Fx (langage low-code)
     2023 : Intégration de Copilot dans tous les outils
 ```
+---
 
 ## Diagrammes en "pré-version".
 
-> [!WARNING] > Voici d'autres exemples de diagrammes. Attention, ils sont en préversion, leur utilisation peut changer sur les futures version de Mermaid !
+> [!WARNING] 
+> Voici d'autres exemples de diagrammes. Attention, ils sont en préversion, leur utilisation peut changer sur les futures version de Mermaid !
 ### Sankey
 
 Représente des **flux et leurs proportions**, répartition de licences, flux financiers, transferts de données, consommation d'énergie...
@@ -244,7 +252,6 @@ E5,Teams,80
 E5,Defender,80
 E3,SharePoint,300
 ```
-
 ---
 
 ### XY Chart
@@ -269,6 +276,7 @@ xychart-beta
     bar [78, 92, 105, 88, 97, 110]
     line [78, 92, 105, 88, 97, 110]
 ```
+---
 
 ### Kanban
 
@@ -297,6 +305,7 @@ kanban
     Export SharePoint["Export SharePoint vers Excel"]
     Dark mode["Dark mode du site"]
 ```
+---
 
 ### Architecture Diagram
 
@@ -331,7 +340,7 @@ architecture-beta
     func:R --> L:db
     func:B --> T:storage
 ```
-
+---
 ## Intégration dans Obsidian
 
 J'en parlais dans mon premier article, j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
@@ -346,6 +355,7 @@ flowchart LR
 
 Le diagramme s'affiche directement dans la vue lecture. 
 
+---
 ### Plugin communautaire : Mermaid Tools
 
 En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](https://obsidian.md/plugins?id=mermaid-tools) ([page Github](https://github.com/dartungar/obsidian-mermaid?tab=readme-ov-file)) qui apporte une barre d'outils dédiée dans l'éditeur Obsidian.
@@ -366,3 +376,8 @@ Comme pour la plupart des plugins Obsidian, l'installation est simple :
 
 Le bouton s'ajoute alors sur la toolbar sur la gauche d'Obsidian.
 ![Emplacement du bouton pour utiliser Mermaid Toolbar](/assets/articles/toolbarmermaid.png)
+
+---
+
+Avez-vous déjà utilisé Mermaid ? Dans quels cas d'usages et sur quels outils ?  
+N'hésitez pas à me dire si cet article vous a fait découvrir l'outil et si il peut vous être utile !
