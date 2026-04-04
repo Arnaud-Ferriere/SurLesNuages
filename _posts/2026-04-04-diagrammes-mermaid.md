@@ -13,12 +13,16 @@ placeholder: false
 excerpt: "Outil de création de diagrammes à partir de texte : sa syntaxe, cas d'usage, et son utilisation sur Obsidian"
 layout: post
 ---
+## Qu'est-ce que Mermaid et pourquoi l'utiliser ?
+
 [Mermaid](https://mermaid.ai/open-source/) est une bibliothèque JavaScript qui permet de générer des diagrammes et schémas à partir de texte, inspiré par Markdown.  
 
 J'aime particulièrement m'en servir pour de la documentation technique ou la rédaction d'articles (je vais m'en servir assez souvent sur ce site !), mais c'est aussi souvent utilisé pour des spécifications fonctionnelles, de la gestion de projet ou simplement pour visualiser une idée rapidement.  
 Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/, soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
 
-Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple, pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possiblité d'ajouter des commentaires directement dans le code.
+Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple: pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possibilité d'ajouter des commentaires directement dans le code.
+
+Je présente dans cet article les types de diagramme que j'utilise le plus fréquemment ainsi que la façon dont j'utilise Mermaid sur Obisidian.
 
 Toute la documentation est disponible sur le site https://mermaid.ai/open-source/intro/syntax-reference.html
 
@@ -222,6 +226,8 @@ timeline
 
 > [!WARNING] 
 > Voici d'autres exemples de diagrammes. Attention, ils sont en préversion, leur utilisation peut changer sur les futures version de Mermaid !
+
+
 ### Sankey
 
 Représente des **flux et leurs proportions**, répartition de licences, flux financiers, transferts de données, consommation d'énergie...
