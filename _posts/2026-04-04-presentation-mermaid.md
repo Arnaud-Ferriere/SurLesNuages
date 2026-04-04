@@ -18,7 +18,7 @@ layout: post
 [Mermaid](https://mermaid.ai/open-source/) est une bibliothèque JavaScript qui permet de générer des diagrammes et schémas à partir de texte, inspiré par Markdown.  
 
 J'aime particulièrement m'en servir pour de la documentation technique ou la rédaction d'articles (je vais m'en servir assez souvent sur ce site !), mais c'est aussi souvent utilisé pour des spécifications fonctionnelles, de la gestion de projet ou simplement pour visualiser une idée rapidement.  
-Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/, soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
+Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/ , soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
 
 Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple: pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possibilité d'ajouter des commentaires directement dans le code.
 
