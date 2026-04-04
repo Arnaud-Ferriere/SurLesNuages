@@ -1,0 +1,191 @@
+<svg width="100%" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Labels Phase -->
+  <text x="150" y="22" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#c0392b">Boucle na&#xEF;ve</text>
+  <text x="450" y="22" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#e67e22">Optimis&#xE9;</text>
+  <text x="740" y="22" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#27ae60">Robuste</text>
+
+  <!-- Counts -->
+  <text x="150" y="250" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="11" fill="#7a8a9a">8 000 actions</text>
+  <text x="450" y="250" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="11" fill="#7a8a9a">~20 actions</text>
+  <text x="740" y="250" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="11" fill="#7a8a9a">~20 actions, sans limite</text>
+
+  <!-- Sol -->
+  <line x1="20" y1="228" x2="880" y2="228" stroke="#7a8a9a" stroke-width="0.8"/>
+
+  <!-- Separators -->
+  <line x1="300" y1="30" x2="300" y2="240" stroke="#5a7a9a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="590" y1="30" x2="590" y2="240" stroke="#5a7a9a" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Fleches entre phases -->
+  <polygon points="305,124 305,136 318,130" fill="#7a8a9a"/>
+  <polygon points="595,124 595,136 608,130" fill="#7a8a9a"/>
+
+
+  <!-- ============================================================ -->
+  <!--                    PHASE 1 : Boucle naive                     -->
+  <!-- ============================================================ -->
+
+  <!-- Grande pile source (SharePoint) -->
+  <rect x="50" y="164" width="52" height="14" rx="3" fill="#4a9eff" stroke="#3a87db" stroke-width="0.8"/>
+  <rect x="53" y="150" width="46" height="14" rx="3" fill="#5cacff" stroke="#4a9eff" stroke-width="0.8"/>
+  <rect x="56" y="136" width="40" height="14" rx="3" fill="#6eb8ff" stroke="#5cacff" stroke-width="0.8"/>
+  <rect x="59" y="122" width="34" height="14" rx="3" fill="#80c4ff" stroke="#6eb8ff" stroke-width="0.8"/>
+  <rect x="62" y="108" width="28" height="14" rx="3" fill="#92d0ff" stroke="#80c4ff" stroke-width="0.8"/>
+  <rect x="65" y="94" width="22" height="14" rx="3" fill="#a4dcff" stroke="#92d0ff" stroke-width="0.8"/>
+  <rect x="68" y="80" width="16" height="14" rx="3" fill="#b6e8ff" stroke="#a4dcff" stroke-width="0.8"/>
+  <rect x="71" y="66" width="10" height="14" rx="3" fill="#c8f0ff" stroke="#b6e8ff" stroke-width="0.8"/>
+  <text x="76" y="195" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#4a9eff" opacity="0.8">SPO list</text>
+
+  <!-- Petit perso fatigue qui porte un bloc -->
+  <circle cx="165" cy="118" r="12" fill="#f0c888" stroke="#c08848" stroke-width="1"/>
+  <!-- Yeux fatigues -->
+  <line x1="160" y1="115" x2="163" y2="117" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="167" y1="115" x2="170" y2="117" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Bouche triste -->
+  <path d="M160 124 Q165 121 170 124" fill="none" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Gouttes de sueur -->
+  <ellipse cx="178" cy="112" rx="2" ry="3" fill="#88ccff" opacity="0.9"/>
+  <ellipse cx="180" cy="118" rx="1.5" ry="2.5" fill="#88ccff" opacity="0.6"/>
+  <!-- Corps -->
+  <rect x="159" y="130" width="12" height="28" rx="4" fill="#6699ee" stroke="#4477cc" stroke-width="0.8"/>
+  <!-- Bras gauche (porte un bloc) -->
+  <line x1="161" y1="137" x2="150" y2="105" stroke="#6699ee" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Bloc porte -->
+  <rect x="140" y="96" width="18" height="11" rx="2" fill="#4a9eff" stroke="#3a87db" stroke-width="0.8"/>
+  <!-- Bras droit -->
+  <line x1="169" y1="137" x2="175" y2="105" stroke="#6699ee" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Jambes -->
+  <line x1="162" y1="158" x2="158" y2="218" stroke="#4477cc" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="168" y1="158" x2="172" y2="218" stroke="#4477cc" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Petits points de chemin -->
+  <circle cx="120" cy="180" r="2" fill="#4a9eff" opacity="0.3"/>
+  <circle cx="130" cy="170" r="2" fill="#4a9eff" opacity="0.3"/>
+  <circle cx="140" cy="160" r="2" fill="#4a9eff" opacity="0.3"/>
+
+  <!-- Fichier Excel destination -->
+  <rect x="220" y="190" width="40" height="34" rx="4" fill="#e8f0e8" fill-opacity="0.85" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="240" y="210" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#27ae60">X</text>
+  <rect x="225" y="196" width="12" height="5" rx="1" fill="#4a9eff" opacity="0.4"/>
+  <text x="240" y="237" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#27ae60">Excel</text>
+
+  <!-- Indicateur de repetition -->
+  <path d="M200 90 C215 75 230 75 240 85" fill="none" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <text x="225" y="72" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#c0392b" opacity="0.6">x4000</text>
+
+
+  <!-- ============================================================ -->
+  <!--                    PHASE 2 : Optimise                         -->
+  <!-- ============================================================ -->
+
+  <!-- Pile source -->
+  <rect x="340" y="164" width="52" height="14" rx="3" fill="#4a9eff" stroke="#3a87db" stroke-width="0.8"/>
+  <rect x="343" y="150" width="46" height="14" rx="3" fill="#5cacff" stroke="#4a9eff" stroke-width="0.8"/>
+  <rect x="346" y="136" width="40" height="14" rx="3" fill="#6eb8ff" stroke="#5cacff" stroke-width="0.8"/>
+  <rect x="349" y="122" width="34" height="14" rx="3" fill="#80c4ff" stroke="#6eb8ff" stroke-width="0.8"/>
+  <rect x="352" y="108" width="28" height="14" rx="3" fill="#92d0ff" stroke="#80c4ff" stroke-width="0.8"/>
+  <text x="366" y="195" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#4a9eff">SPO list</text>
+  <text x="366" y="205" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="7" fill="#e67e22" opacity="0.7">&lt;5000</text>
+
+  <!-- Tapis roulant -->
+  <rect x="400" y="172" width="110" height="8" rx="4" fill="#e67e22" opacity="0.25"/>
+  <rect x="400" y="172" width="110" height="8" rx="4" fill="none" stroke="#e67e22" stroke-width="1"/>
+  <!-- Roues -->
+  <circle cx="410" cy="184" r="5" fill="#8a8a8a" stroke="#6a6a6a" stroke-width="0.8"/>
+  <circle cx="500" cy="184" r="5" fill="#8a8a8a" stroke="#6a6a6a" stroke-width="0.8"/>
+  <!-- Blocs sur le tapis -->
+  <rect x="408" y="158" width="14" height="12" rx="2" fill="#4a9eff" stroke="#3a87db" stroke-width="0.8"/>
+  <rect x="424" y="158" width="14" height="12" rx="2" fill="#5cacff" stroke="#4a9eff" stroke-width="0.8"/>
+  <rect x="440" y="158" width="14" height="12" rx="2" fill="#6eb8ff" stroke="#5cacff" stroke-width="0.8"/>
+  <rect x="456" y="158" width="14" height="12" rx="2" fill="#80c4ff" stroke="#6eb8ff" stroke-width="0.8"/>
+  <rect x="472" y="158" width="14" height="12" rx="2" fill="#92d0ff" stroke="#80c4ff" stroke-width="0.8"/>
+  <!-- Fleche mouvement -->
+  <polygon points="515,176 525,172 525,180" fill="#e67e22" opacity="0.5"/>
+
+  <!-- Perso content -->
+  <circle cx="455" cy="108" r="12" fill="#f0c888" stroke="#c08848" stroke-width="1"/>
+  <path d="M449 105 Q452 102 455 105" fill="none" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M457 105 Q460 102 463 105" fill="none" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M449 113 Q455 119 461 113" fill="none" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="449" y="120" width="12" height="26" rx="4" fill="#6699ee" stroke="#4477cc" stroke-width="0.8"/>
+  <line x1="451" y1="127" x2="438" y2="155" stroke="#6699ee" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="459" y1="127" x2="472" y2="155" stroke="#6699ee" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="452" y1="146" x2="448" y2="218" stroke="#4477cc" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="458" y1="146" x2="462" y2="218" stroke="#4477cc" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Excel destination -->
+  <rect x="530" y="178" width="40" height="46" rx="4" fill="#e8f0e8" fill-opacity="0.85" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="550" y="205" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#27ae60">X</text>
+  <rect x="535" y="184" width="12" height="5" rx="1" fill="#4a9eff" opacity="0.5"/>
+  <rect x="535" y="191" width="12" height="5" rx="1" fill="#5cacff" opacity="0.5"/>
+  <rect x="535" y="198" width="12" height="5" rx="1" fill="#6eb8ff" opacity="0.5"/>
+  <rect x="535" y="205" width="12" height="5" rx="1" fill="#80c4ff" opacity="0.5"/>
+  <rect x="535" y="212" width="12" height="5" rx="1" fill="#92d0ff" opacity="0.5"/>
+  <text x="550" y="237" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#27ae60">Excel</text>
+
+
+  <!-- ============================================================ -->
+  <!--                    PHASE 3 : Robuste                          -->
+  <!-- ============================================================ -->
+
+  <!-- Enorme pile source -->
+  <rect x="625" y="164" width="56" height="14" rx="3" fill="#4a9eff" stroke="#3a87db" stroke-width="0.8"/>
+  <rect x="627" y="150" width="52" height="14" rx="3" fill="#5cacff" stroke="#4a9eff" stroke-width="0.8"/>
+  <rect x="629" y="136" width="48" height="14" rx="3" fill="#6eb8ff" stroke="#5cacff" stroke-width="0.8"/>
+  <rect x="631" y="122" width="44" height="14" rx="3" fill="#80c4ff" stroke="#6eb8ff" stroke-width="0.8"/>
+  <rect x="633" y="108" width="40" height="14" rx="3" fill="#92d0ff" stroke="#80c4ff" stroke-width="0.8"/>
+  <rect x="635" y="94" width="36" height="14" rx="3" fill="#a4dcff" stroke="#92d0ff" stroke-width="0.8"/>
+  <rect x="637" y="80" width="32" height="14" rx="3" fill="#b6e8ff" stroke="#a4dcff" stroke-width="0.8"/>
+  <rect x="639" y="66" width="28" height="14" rx="3" fill="#c8f0ff" stroke="#b6e8ff" stroke-width="0.8"/>
+  <rect x="641" y="52" width="24" height="14" rx="3" fill="#d8f4ff" stroke="#c8f0ff" stroke-width="0.8"/>
+  <rect x="643" y="38" width="20" height="14" rx="3" fill="#e8f8ff" stroke="#d8f4ff" stroke-width="0.8"/>
+  <text x="653" y="195" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#4a9eff">SPO list</text>
+  <text x="653" y="206" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="10" fill="#27ae60">&#8734;</text>
+
+  <!-- Camion -->
+  <rect x="720" y="190" width="60" height="34" rx="5" fill="#27ae60" stroke="#1e8449" stroke-width="1"/>
+  <rect x="758" y="194" width="18" height="14" rx="3" fill="#8ac8a8" stroke="#1e8449" stroke-width="0.8"/>
+  <!-- Roues -->
+  <circle cx="732" cy="228" r="7" fill="#5a5a5a" stroke="#7a7a7a" stroke-width="1"/>
+  <circle cx="732" cy="228" r="3" fill="#8a8a8a"/>
+  <circle cx="768" cy="228" r="7" fill="#5a5a5a" stroke="#7a7a7a" stroke-width="1"/>
+  <circle cx="768" cy="228" r="3" fill="#8a8a8a"/>
+  <!-- Benne avec blocs -->
+  <rect x="718" y="176" width="38" height="16" rx="2" fill="none" stroke="#1e8449" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="722" y="178" width="8" height="5" rx="1" fill="#4a9eff" opacity="0.6"/>
+  <rect x="731" y="178" width="8" height="5" rx="1" fill="#5cacff" opacity="0.6"/>
+  <rect x="740" y="178" width="8" height="5" rx="1" fill="#6eb8ff" opacity="0.6"/>
+  <rect x="722" y="184" width="8" height="5" rx="1" fill="#80c4ff" opacity="0.6"/>
+  <rect x="731" y="184" width="8" height="5" rx="1" fill="#92d0ff" opacity="0.6"/>
+  <rect x="740" y="184" width="8" height="5" rx="1" fill="#a4dcff" opacity="0.6"/>
+
+  <!-- Conducteur content -->
+  <circle cx="767" cy="187" r="9" fill="#f0c888" stroke="#c08848" stroke-width="1"/>
+  <path d="M762 185 Q765 182 768 185" fill="none" stroke="#8a5828" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M769 185 Q772 182 775 185" fill="none" stroke="#8a5828" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M762 191 Q767 197 772 191" fill="none" stroke="#8a5828" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Joues roses -->
+  <ellipse cx="761" cy="192" rx="3" ry="1.5" fill="#ff9999" opacity="0.4"/>
+  <ellipse cx="773" cy="192" rx="3" ry="1.5" fill="#ff9999" opacity="0.4"/>
+
+  <!-- Fleche vers Excel -->
+  <polygon points="795,208 808,204 808,212" fill="#27ae60" opacity="0.5"/>
+
+  <!-- Excel destination bien rempli -->
+  <rect x="815" y="170" width="45" height="54" rx="4" fill="#e8f0e8" fill-opacity="0.85" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="838" y="200" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#27ae60">X</text>
+  <rect x="820" y="176" width="10" height="4" rx="1" fill="#4a9eff" opacity="0.5"/>
+  <rect x="820" y="182" width="10" height="4" rx="1" fill="#5cacff" opacity="0.5"/>
+  <rect x="820" y="188" width="10" height="4" rx="1" fill="#6eb8ff" opacity="0.5"/>
+  <rect x="820" y="194" width="10" height="4" rx="1" fill="#80c4ff" opacity="0.5"/>
+  <rect x="820" y="200" width="10" height="4" rx="1" fill="#92d0ff" opacity="0.5"/>
+  <rect x="820" y="206" width="10" height="4" rx="1" fill="#a4dcff" opacity="0.5"/>
+  <rect x="820" y="212" width="10" height="4" rx="1" fill="#b6e8ff" opacity="0.5"/>
+  <text x="838" y="237" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="8" fill="#27ae60">Excel</text>
+
+  <!-- Check -->
+  <circle cx="855" cy="170" r="8" fill="none" stroke="#27ae60" stroke-width="1.2"/>
+  <path d="M850 170 L854 174 L861 166" fill="none" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+</svg>
