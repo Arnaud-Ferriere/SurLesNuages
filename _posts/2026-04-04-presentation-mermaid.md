@@ -18,13 +18,13 @@ layout: post
 [Mermaid](https://mermaid.ai/open-source/) est une bibliothèque JavaScript qui permet de générer des diagrammes et schémas à partir de texte, inspiré par Markdown.  
 
 J'aime particulièrement m'en servir pour de la documentation technique ou la rédaction d'articles (je vais m'en servir assez souvent sur ce site !), mais c'est aussi souvent utilisé pour des spécifications fonctionnelles, de la gestion de projet ou simplement pour visualiser une idée rapidement.  
-Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermaid.ai/live/ , soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
+Son utilisation est très simple, soit via l'[éditeur gratuit](https://mermaid.ai/live/) , soit via son intégration dans certains outils : sur Obsidian, Github, VSCode, Notion... [la liste est longue](https://mermaid.ai/open-source/ecosystem/integrations-community.html#productivity-tools) !  
 
 Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple: pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possibilité d'ajouter des commentaires directement dans le code.
 
 Je présente dans cet article les types de diagramme que j'utilise le plus fréquemment ainsi que la façon dont j'utilise Mermaid sur Obsidian.
 
-Toute la documentation est disponible sur le site https://mermaid.ai/open-source/intro/syntax-reference.html
+N'hésitez pas à aller consulter sa [documentation](https://mermaid.ai/open-source/intro/syntax-reference.html) qui est complète et claire. 
 
 ---
 
@@ -43,7 +43,8 @@ pie title Répartition des tickets support (T1 2026)
 ```
 
 Le code, difficile de faire plus simple :  
-```text
+~~~markdown
+```mermaid
 pie title Répartition des tickets support (T1 2026)
     "Accès & droits" : 38
     "Messagerie" : 22
@@ -51,6 +52,7 @@ pie title Répartition des tickets support (T1 2026)
     "Applications" : 14
     "Autre" : 8
 ```
+~~~
 ---
 
 ### Flowchart
@@ -67,8 +69,8 @@ flowchart TD
 ```
 
 Le code, on note en particulier l'utilisation de ```-- résultat -->``` pour décrire une branche :
-``` :  
-```text
+~~~markdown
+```mermaid
 flowchart TD
     A([Nouvelle demande]) --> B[Vérifier les droits]
     B --> C{Droits suffisants ?}
@@ -77,6 +79,7 @@ flowchart TD
     D --> F([Fin])
     E --> F
 ```
+~~~
 ---
 ### Gantt
 
@@ -98,7 +101,8 @@ gantt
 ```
 
 Le code, les sections se créent dans l'ordre de rédaction :  
-```text
+~~~markdown
+```mermaid
 gantt
     title Migration vers Microsoft 365
     dateFormat  YYYY-MM-DD
@@ -112,6 +116,7 @@ gantt
     Formation utilisateurs      :c1, after b1, 14d
     Bilan & documentation       :c2, after b2, 5d
 ```
+~~~
 ---
 
 ### Sequence Diagram
@@ -141,8 +146,8 @@ sequenceDiagram
 ```
 
 Et le code, où on peut noter les **alias** ainsi que les flèches continues représentées par ```->>``` et discontinues représentées par ```-->>``` :
-``` :  
-```text
+~~~markdown
+```mermaid
 sequenceDiagram
     actor U as Utilisateur
     participant WB as Web browser
@@ -163,6 +168,7 @@ sequenceDiagram
     App-->>WB: Cookie de session
     EID->>WB: Cookie pour le domaine Entra ID
 ```
+~~~
 ---
 
 ### State Diagram
@@ -182,7 +188,8 @@ stateDiagram-v2
 ```
 
 Le code :  
-```text
+~~~markdown
+```mermaid
 stateDiagram-v2
     [*] --> Nouveau
     Nouveau --> EnCours : Assignation
@@ -193,6 +200,7 @@ stateDiagram-v2
     Résolu --> EnCours : Réouverture
     Fermé --> [*]
 ```
+~~~
 ---
 
 ### Timeline
@@ -212,7 +220,8 @@ timeline
 ```
 
 Le code, il suffit d'ajouter une ligne sans année pour empiler l'évènement sur l'année précédente :  
-```text
+~~~markdown
+```mermaid
 timeline
     title Évolution de Power Platform
     2016 : Lancement de PowerApps
@@ -223,6 +232,7 @@ timeline
     2021 : Power Fx (langage low-code)
     2023 : Intégration de Copilot dans tous les outils
 ```
+~~~
 ---
 
 ## Diagrammes en "pré-version".
@@ -248,7 +258,8 @@ architecture-beta
     func:B --> T:storage
 ```
 Le code, on note les icones qui sont déjà inclues et les ```L / R / B / T``` pour ```Left / Right / Top / Bottom``` décrivant simplement le sens des flèches :  
-```text
+~~~markdown
+```mermaid
 architecture-beta
     group cloud(cloud)[Azure]
 
@@ -261,6 +272,7 @@ architecture-beta
     func:R --> L:db
     func:B --> T:storage
 ```
+~~~
 ---
 
 ### Kanban
@@ -279,7 +291,8 @@ kanban
     Dark mode["Dark mode du site"]
 ```
 Le code, avec un nom par colonne  :  
-```text
+~~~markdown
+```mermaid
 kanban
   todo
     Audit des acces["Audit des accès Azure AD"]
@@ -290,6 +303,7 @@ kanban
     Export SharePoint["Export SharePoint vers Excel"]
     Dark mode["Dark mode du site"]
 ```
+~~~
 ---
 
 ### Sankey
@@ -311,7 +325,8 @@ E3,SharePoint,300
 ```
 
 Le code, où on répète juste la source pour lui ajouter une nouvelle destination :  
-```text
+~~~markdown
+```mermaid
 sankey-beta
 Licences M365,E1,120
 Licences M365,E3,350
@@ -322,6 +337,7 @@ E5,Teams,80
 E5,Defender,80
 E3,SharePoint,300
 ```
+~~~
 ---
 
 ### XY Chart
@@ -338,7 +354,8 @@ xychart-beta
 ```
 
 Le code :  
-```text
+~~~markdown
+```mermaid
 xychart-beta
     title "Tickets crees par mois (2026)"
     x-axis [Jan, Fev, Mar, Avr, Mai, Jun]
@@ -346,8 +363,186 @@ xychart-beta
     bar [78, 92, 105, 88, 97, 110]
     line [78, 92, 105, 88, 97, 110]
 ```
+~~~
 ---
+## Et ça peut faire des schémas complexes ?
 
+Sans problème !
+
+```mermaid
+flowchart TD
+    A([Nouvelle demande soumise<br/>via Power Apps]) --> B[Création item<br/>liste SPO Demandes]
+    B --> C[Flux principal déclenché<br/>on item created]
+    C --> D[Récupérer les métadonnées<br/>de la demande]
+    D --> E{Type de<br/>demande ?}
+
+    E -- Achat matériel --> F[Récupérer référent<br/>depuis liste SPO<br/>Référents-Matériel]
+    E -- Accès applicatif --> G[Récupérer référent<br/>depuis liste SPO<br/>Référents-Applicatif]
+    E -- Dérogation sécurité --> H[Récupérer référent<br/>depuis liste SPO<br/>Référents-Sécurité]
+
+    F --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
+    G --> I
+    H --> I
+
+    I --> J[Déclencher flux enfant<br/>Child-Approbation-N1]
+
+    subgraph CHILD1 [Flux enfant - Approbation N1]
+        J1([Réception des paramètres<br/>ID demande + Référent N1]) --> J2[Envoyer approbation Teams<br/>au référent N1]
+        J2 --> J3{Réponse<br/>dans 48h ?}
+        J3 -- Non --> J4[Relance automatique<br/>par email]
+        J4 --> J5{Réponse<br/>dans 24h ?}
+        J5 -- Non --> J6[Escalade manager<br/>+ notification Teams]
+        J6 --> J7{Réponse<br/>manager ?}
+        J7 -- Non --> J8([Retourner : Expiré])
+        J3 -- Oui --> J9{Décision ?}
+        J5 -- Oui --> J9
+        J7 -- Oui --> J9
+        J9 -- Approuvé --> J10([Retourner : Approuvé N1<br/>+ commentaires])
+        J9 -- Refusé --> J11([Retourner : Refusé<br/>+ motif])
+    end
+
+    J10 --> K{Montant ou<br/>niveau de risque ?}
+    J11 --> R
+
+    K -- Moins de 1000 euros<br/>ou risque faible --> L[Mettre à jour SPO<br/>Statut : Approuvé N1]
+    K -- Plus de 1000 euros<br/>ou risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
+
+    M --> N[Déclencher flux enfant<br/>Child-Approbation-N2]
+
+    subgraph CHILD2 [Flux enfant - Approbation N2]
+        N1([Réception des paramètres<br/>ID demande + Approbateur N2]) --> N2[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
+        N2 --> N3{Réponse<br/>dans 72h ?}
+        N3 -- Non --> N4[Relance email<br/>+ notification Teams]
+        N4 --> N5{Réponse<br/>dans 48h ?}
+        N5 -- Non --> N6([Retourner : Expiré])
+        N3 -- Oui --> N7{Décision ?}
+        N5 -- Oui --> N7
+        N7 -- Approuvé --> N8([Retourner : Approuvé N2<br/>+ commentaires])
+        N7 -- Refusé --> N9([Retourner : Refusé N2<br/>+ motif])
+    end
+
+    N8 --> L
+    N9 --> R
+
+    L --> O[Déclencher flux enfant<br/>Child-Notification-Validation]
+
+    subgraph CHILD3 [Flux enfant - Notifications]
+        O1([Réception statut final<br/>+ historique approbations]) --> O2[Mettre à jour item SPO<br/>Statut : Approuvé<br/>Date + Approbateurs]
+        O2 --> O3[Envoyer email récapitulatif<br/>au demandeur]
+        O3 --> O4[Poster message Teams<br/>dans canal Demandes]
+        O4 --> O5{Accès applicatif<br/>ou matériel ?}
+        O5 -- Oui --> O6[Déclencher flux enfant<br/>Child-Provisioning]
+        O5 -- Non --> O7([Fin notifications])
+        O6 --> O7
+    end
+
+    subgraph CHILD4 [Flux enfant - Provisioning]
+        P1([Réception type<br/>et détails demande]) --> P2{Type ?}
+        P2 -- Accès applicatif --> P3[Ajouter utilisateur<br/>au groupe Entra ID]
+        P2 -- Achat matériel --> P4[Créer item<br/>liste SPO Commandes-IT]
+        P3 --> P5[Journaliser<br/>dans liste SPO Historique]
+        P4 --> P5
+        P5 --> P6([Fin provisioning])
+    end
+
+    R[Mettre à jour SPO<br/>Statut : Refusé<br/>+ motif] --> S[Déclencher flux enfant<br/>Child-Notification-Refus]
+
+    subgraph CHILD5 [Flux enfant - Notification Refus]
+        S1([Réception motif<br/>+ historique]) --> S2[Envoyer email au demandeur<br/>avec motif détaillé]
+        S2 --> S3[Mettre à jour item SPO<br/>Date clôture + Motif]
+        S3 --> S4([Fin])
+    end
+```
+
+Et à mon avis le code n'est pas plus compliqué pour autant :
+~~~markdown
+```mermaid
+flowchart TD
+    A([Nouvelle demande soumise<br/>via Power Apps]) --> B[Création item<br/>liste SPO Demandes]
+    B --> C[Flux principal déclenché<br/>on item created]
+    C --> D[Récupérer les métadonnées<br/>de la demande]
+    D --> E{Type de<br/>demande ?}
+
+    E -- Achat matériel --> F[Récupérer référent<br/>depuis liste SPO<br/>Référents-Matériel]
+    E -- Accès applicatif --> G[Récupérer référent<br/>depuis liste SPO<br/>Référents-Applicatif]
+    E -- Dérogation sécurité --> H[Récupérer référent<br/>depuis liste SPO<br/>Référents-Sécurité]
+
+    F --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
+    G --> I
+    H --> I
+
+    I --> J[Déclencher flux enfant<br/>Child-Approbation-N1]
+
+    subgraph CHILD1 [Flux enfant - Approbation N1]
+        J1([Réception des paramètres<br/>ID demande + Référent N1]) --> J2[Envoyer approbation Teams<br/>au référent N1]
+        J2 --> J3{Réponse<br/>dans 48h ?}
+        J3 -- Non --> J4[Relance automatique<br/>par email]
+        J4 --> J5{Réponse<br/>dans 24h ?}
+        J5 -- Non --> J6[Escalade manager<br/>+ notification Teams]
+        J6 --> J7{Réponse<br/>manager ?}
+        J7 -- Non --> J8([Retourner : Expiré])
+        J3 -- Oui --> J9{Décision ?}
+        J5 -- Oui --> J9
+        J7 -- Oui --> J9
+        J9 -- Approuvé --> J10([Retourner : Approuvé N1<br/>+ commentaires])
+        J9 -- Refusé --> J11([Retourner : Refusé<br/>+ motif])
+    end
+
+    J10 --> K{Montant ou<br/>niveau de risque ?}
+    J11 --> R
+
+    K -- Moins de 1000 euros<br/>ou risque faible --> L[Mettre à jour SPO<br/>Statut : Approuvé N1]
+    K -- Plus de 1000 euros<br/>ou risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
+
+    M --> N[Déclencher flux enfant<br/>Child-Approbation-N2]
+
+    subgraph CHILD2 [Flux enfant - Approbation N2]
+        N1([Réception des paramètres<br/>ID demande + Approbateur N2]) --> N2[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
+        N2 --> N3{Réponse<br/>dans 72h ?}
+        N3 -- Non --> N4[Relance email<br/>+ notification Teams]
+        N4 --> N5{Réponse<br/>dans 48h ?}
+        N5 -- Non --> N6([Retourner : Expiré])
+        N3 -- Oui --> N7{Décision ?}
+        N5 -- Oui --> N7
+        N7 -- Approuvé --> N8([Retourner : Approuvé N2<br/>+ commentaires])
+        N7 -- Refusé --> N9([Retourner : Refusé N2<br/>+ motif])
+    end
+
+    N8 --> L
+    N9 --> R
+
+    L --> O[Déclencher flux enfant<br/>Child-Notification-Validation]
+
+    subgraph CHILD3 [Flux enfant - Notifications]
+        O1([Réception statut final<br/>+ historique approbations]) --> O2[Mettre à jour item SPO<br/>Statut : Approuvé<br/>Date + Approbateurs]
+        O2 --> O3[Envoyer email récapitulatif<br/>au demandeur]
+        O3 --> O4[Poster message Teams<br/>dans canal Demandes]
+        O4 --> O5{Accès applicatif<br/>ou matériel ?}
+        O5 -- Oui --> O6[Déclencher flux enfant<br/>Child-Provisioning]
+        O5 -- Non --> O7([Fin notifications])
+        O6 --> O7
+    end
+
+    subgraph CHILD4 [Flux enfant - Provisioning]
+        P1([Réception type<br/>et détails demande]) --> P2{Type ?}
+        P2 -- Accès applicatif --> P3[Ajouter utilisateur<br/>au groupe Entra ID]
+        P2 -- Achat matériel --> P4[Créer item<br/>liste SPO Commandes-IT]
+        P3 --> P5[Journaliser<br/>dans liste SPO Historique]
+        P4 --> P5
+        P5 --> P6([Fin provisioning])
+    end
+
+    R[Mettre à jour SPO<br/>Statut : Refusé<br/>+ motif] --> S[Déclencher flux enfant<br/>Child-Notification-Refus]
+
+    subgraph CHILD5 [Flux enfant - Notification Refus]
+        S1([Réception motif<br/>+ historique]) --> S2[Envoyer email au demandeur<br/>avec motif détaillé]
+        S2 --> S3[Mettre à jour item SPO<br/>Date clôture + Motif]
+        S3 --> S4([Fin])
+    end
+```
+~~~
+
+---
 ## Intégration dans Obsidian
 
 J'en parlais dans mon premier article, j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
