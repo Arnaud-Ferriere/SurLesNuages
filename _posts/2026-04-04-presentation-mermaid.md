@@ -42,7 +42,7 @@ pie title Répartition des tickets support (T1 2026)
     "Autre" : 8
 ```
 
-Le code :  
+Le code, difficile de faire plus simple :  
 ```text
 pie title Répartition des tickets support (T1 2026)
     "Accès & droits" : 38
@@ -66,7 +66,8 @@ flowchart TD
     E --> F
 ```
 
-Le code :  
+Le code, on note en particulier l'utilisation de ```-- résultat -->``` pour décrire une branche :
+``` :  
 ```text
 flowchart TD
     A([Nouvelle demande]) --> B[Vérifier les droits]
@@ -96,7 +97,7 @@ gantt
     Bilan & documentation       :c2, after b2, 5d
 ```
 
-Le code :  
+Le code, les sections se créent dans l'ordre de rédaction :  
 ```text
 gantt
     title Migration vers Microsoft 365
@@ -115,7 +116,7 @@ gantt
 
 ### Sequence Diagram
 
-Un classique pour représenter des échanges entre différents acteurs dans le temps. Par exemple voici le diagramme d'authentification d'une app sur Entra ID ([original sur Microsoft Learn](https://learn.microsoft.com/fr-fr/entra/identity-platform/app-sign-in-flow)) :
+Un classique pour représenter des **échanges entre différents acteurs dans le temps**. Par exemple voici le diagramme d'authentification d'une app sur Entra ID ([original sur Microsoft Learn](https://learn.microsoft.com/fr-fr/entra/identity-platform/app-sign-in-flow)) :
 
 ```mermaid
 sequenceDiagram
@@ -139,7 +140,8 @@ sequenceDiagram
     EID->>WB: Cookie pour le domaine Entra ID
 ```
 
-Et le code :  
+Et le code, où on peut noter les **alias** ainsi que les flèches continues représentées par ```->>``` et discontinues représentées par ```-->>``` :
+``` :  
 ```text
 sequenceDiagram
     actor U as Utilisateur
@@ -209,7 +211,7 @@ timeline
     2023 : Intégration de Copilot dans tous les outils
 ```
 
-Le code :  
+Le code, il suffit d'ajouter une ligne sans année pour empiler l'évènement sur l'année précédente :  
 ```text
 timeline
     title Évolution de Power Platform
@@ -230,9 +232,7 @@ timeline
 
 ### Architecture Diagram
 
-Représente des **composants d'infrastructure** et leurs connexions — cloud, on-premise, réseaux, services.
-
-[Documentation →](https://mermaid.js.org/syntax/architecture.html)
+Représente des **composants d'infrastructure** et leurs connexions, cloud, on-premise, réseaux, services...
 
 ```mermaid
 architecture-beta
@@ -247,7 +247,7 @@ architecture-beta
     func:R --> L:db
     func:B --> T:storage
 ```
-Le code :  
+Le code, on note les icones qui sont déjà inclues et les ```L / R / B / T``` pour ```Left / Right / Top / Bottom``` décrivant simplement le sens des flèches :  
 ```text
 architecture-beta
     group cloud(cloud)[Azure]
@@ -265,7 +265,7 @@ architecture-beta
 
 ### Kanban
 
-Classique de la gestion de projet, par exemple pour documenter un état d'avancement dans une note ou un README.
+Classique de la gestion de projet, par exemple pour **documenter un état d'avancement** dans une note ou un README.
 
 ```mermaid
 kanban
@@ -278,7 +278,7 @@ kanban
     Export SharePoint["Export SharePoint vers Excel"]
     Dark mode["Dark mode du site"]
 ```
-Le code :  
+Le code, avec un nom par colonne  :  
 ```text
 kanban
   todo
@@ -310,7 +310,7 @@ E5,Defender,80
 E3,SharePoint,300
 ```
 
-Le code :  
+Le code, où on répète juste la source pour lui ajouter une nouvelle destination :  
 ```text
 sankey-beta
 Licences M365,E1,120
