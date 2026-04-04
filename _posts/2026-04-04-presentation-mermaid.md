@@ -42,7 +42,7 @@ pie title Répartition des tickets support (T1 2026)
     "Autre" : 8
 ```
 
-Le code, difficile de faire plus simple :  
+Le code, difficile de faire plus simple :
 ~~~markdown
 ```mermaid
 pie title Répartition des tickets support (T1 2026)
@@ -100,7 +100,7 @@ gantt
     Bilan & documentation       :c2, after b2, 5d
 ```
 
-Le code, les sections se créent dans l'ordre de rédaction :  
+Le code, les sections se créent dans l'ordre de rédaction :
 ~~~markdown
 ```mermaid
 gantt
@@ -187,7 +187,7 @@ stateDiagram-v2
     Fermé --> [*]
 ```
 
-Le code :  
+Le code :
 ~~~markdown
 ```mermaid
 stateDiagram-v2
@@ -219,7 +219,7 @@ timeline
     2023 : Intégration de Copilot dans tous les outils
 ```
 
-Le code, il suffit d'ajouter une ligne sans année pour empiler l'évènement sur l'année précédente :  
+Le code, il suffit d'ajouter une ligne sans année pour empiler l'évènement sur l'année précédente :
 ~~~markdown
 ```mermaid
 timeline
@@ -257,7 +257,7 @@ architecture-beta
     func:R --> L:db
     func:B --> T:storage
 ```
-Le code, on note les icones qui sont déjà inclues et les ```L / R / B / T``` pour ```Left / Right / Top / Bottom``` décrivant simplement le sens des flèches :  
+Le code, on note les icones qui sont déjà inclues et les ```L / R / B / T``` pour ```Left / Right / Top / Bottom``` décrivant simplement le sens des flèches :
 ~~~markdown
 ```mermaid
 architecture-beta
@@ -282,7 +282,7 @@ Classique de la gestion de projet, par exemple pour **documenter un état d'avan
 ```mermaid
 kanban
   todo
-    Audit des acces["Audit des accès Azure AD"]
+    Audit des acces["Audit des accès Entra ID"]
     Doc onboarding["Documentation onboarding"]
   in-progress
     Migration Teams["Migration vers Teams 2.0"]
@@ -290,12 +290,12 @@ kanban
     Export SharePoint["Export SharePoint vers Excel"]
     Dark mode["Dark mode du site"]
 ```
-Le code, avec un nom par colonne  :  
+Le code, avec un nom par colonne  :
 ~~~markdown
 ```mermaid
 kanban
   todo
-    Audit des acces["Audit des accès Azure AD"]
+    Audit des acces["Audit des accès Entra ID"]
     Doc onboarding["Documentation onboarding"]
   in-progress
     Migration Teams["Migration vers Teams 2.0"]
@@ -324,7 +324,7 @@ E5,Defender,80
 E3,SharePoint,300
 ```
 
-Le code, où on répète juste la source pour lui ajouter une nouvelle destination :  
+Le code, où on répète juste la source pour lui ajouter une nouvelle destination :
 ~~~markdown
 ```mermaid
 sankey-beta
@@ -353,7 +353,7 @@ xychart-beta
     line [78, 92, 105, 88, 97, 110]
 ```
 
-Le code :  
+Le code :
 ~~~markdown
 ```mermaid
 xychart-beta
@@ -553,7 +553,6 @@ flowchart TD
 
 J'en parlais dans mon premier article, j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
 Il suffit d'utiliser un bloc de code avec le langage `mermaid` :
-
 ~~~markdown
 ```mermaid
 flowchart LR
