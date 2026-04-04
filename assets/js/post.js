@@ -47,6 +47,20 @@
         bq.insertBefore(header, bq.firstChild);
     });
 
+    // Intercepte le bouton PDF : re-rend Mermaid en thème clair avant d'imprimer
+    var printBtn = document.querySelector('.print-btn');
+    if (printBtn) {
+        printBtn.onclick = async function() {
+            if (window.mermaidReRender) {
+                await window.mermaidReRender('default');
+                window.print();
+                await window.mermaidReRender(window.mermaidGetTheme ? window.mermaidGetTheme() : 'default');
+            } else {
+                window.print();
+            }
+        };
+    }
+
     var headings = content.querySelectorAll('h2, h3');
     if (headings.length < 3) return;
 
