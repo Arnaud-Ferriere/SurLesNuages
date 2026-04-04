@@ -551,7 +551,7 @@ flowchart TD
 ---
 ## Intégration dans Obsidian
 
-J'en parlais dans mon premier article, j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
+J'en parlais dans [mon premier article](https://surlesnuages.fr/articles/bienvenue-sur-les-nuages/), j'utilise Obsidian pour la rédaction. Il intègre **nativement** la visualisation de Mermaid, sans configuration préalable. 
 Il suffit d'utiliser un bloc de code avec le langage `mermaid` :
 ~~~markdown
 ```mermaid
