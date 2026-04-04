@@ -380,78 +380,81 @@ flowchart TD
     E -- Accès applicatif --> G[Récupérer référent<br/>depuis liste SPO<br/>Référents-Applicatif]
     E -- Dérogation sécurité --> H[Récupérer référent<br/>depuis liste SPO<br/>Référents-Sécurité]
 
-    F --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
-    G --> I
-    H --> I
-
+    F & G & H --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
     I --> J[Déclencher flux enfant<br/>Child-Approbation-N1]
 
     subgraph CHILD1 [Flux enfant - Approbation N1]
-        J1([Réception des paramètres<br/>ID demande + Référent N1]) --> J2[Envoyer approbation Teams<br/>au référent N1]
-        J2 --> J3{Réponse<br/>dans 48h ?}
-        J3 -- Non --> J4[Relance automatique<br/>par email]
-        J4 --> J5{Réponse<br/>dans 24h ?}
-        J5 -- Non --> J6[Escalade manager<br/>+ notification Teams]
-        J6 --> J7{Réponse<br/>manager ?}
-        J7 -- Non --> J8([Retourner : Expiré])
-        J3 -- Oui --> J9{Décision ?}
-        J5 -- Oui --> J9
-        J7 -- Oui --> J9
-        J9 -- Approuvé --> J10([Retourner : Approuvé N1<br/>+ commentaires])
-        J9 -- Refusé --> J11([Retourner : Refusé<br/>+ motif])
+        direction TB
+        J1[Envoyer approbation Teams<br/>au référent N1]
+        J1 --> J2{Réponse<br/>dans 48h ?}
+        J2 -- Non --> J3[Relance automatique<br/>par email]
+        J3 --> J4{Réponse<br/>dans 24h ?}
+        J4 -- Non --> J5[Escalade manager<br/>+ notification Teams]
+        J5 --> J6{Réponse<br/>manager ?}
+        J6 -- Non --> J7([Retourner : Expiré])
+        J2 -- Oui --> J8{Décision ?}
+        J4 -- Oui --> J8
+        J6 -- Oui --> J8
+        J8 -- Approuvé --> J9([Retourner : Approuvé N1<br/>+ commentaires])
+        J8 -- Refusé --> J10([Retourner : Refusé<br/>+ motif])
     end
 
-    J10 --> K{Montant ou<br/>niveau de risque ?}
-    J11 --> R
+    J --> J1
+    J9 --> K{Montant ou<br/>niveau de risque ?}
+    J10 --> REFUS
 
-    K -- Moins de 1000 euros<br/>ou risque faible --> L[Mettre à jour SPO<br/>Statut : Approuvé N1]
-    K -- Plus de 1000 euros<br/>ou risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
-
+    K -- Moins de 1000 euros / risque faible --> VALID
+    K -- Plus de 1000 euros / risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
     M --> N[Déclencher flux enfant<br/>Child-Approbation-N2]
 
     subgraph CHILD2 [Flux enfant - Approbation N2]
-        N1([Réception des paramètres<br/>ID demande + Approbateur N2]) --> N2[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
-        N2 --> N3{Réponse<br/>dans 72h ?}
-        N3 -- Non --> N4[Relance email<br/>+ notification Teams]
-        N4 --> N5{Réponse<br/>dans 48h ?}
-        N5 -- Non --> N6([Retourner : Expiré])
-        N3 -- Oui --> N7{Décision ?}
-        N5 -- Oui --> N7
-        N7 -- Approuvé --> N8([Retourner : Approuvé N2<br/>+ commentaires])
-        N7 -- Refusé --> N9([Retourner : Refusé N2<br/>+ motif])
+        direction TB
+        N1[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
+        N1 --> N2{Réponse<br/>dans 72h ?}
+        N2 -- Non --> N3[Relance email<br/>+ notification Teams]
+        N3 --> N4{Réponse<br/>dans 48h ?}
+        N4 -- Non --> N5([Retourner : Expiré])
+        N2 -- Oui --> N6{Décision ?}
+        N4 -- Oui --> N6
+        N6 -- Approuvé --> N7([Retourner : Approuvé N2<br/>+ commentaires])
+        N6 -- Refusé --> N8([Retourner : Refusé N2<br/>+ motif])
     end
 
-    N8 --> L
-    N9 --> R
+    N --> N1
+    N7 --> VALID
+    N8 --> REFUS
 
-    L --> O[Déclencher flux enfant<br/>Child-Notification-Validation]
+    VALID[Mettre à jour SPO<br/>Statut : Approuvé<br/>Date + Approbateurs] --> O_START[Déclencher flux enfant<br/>Child-Notification-Validation]
+    REFUS[Mettre à jour SPO<br/>Statut : Refusé + motif] --> S_START[Déclencher flux enfant<br/>Child-Notification-Refus]
 
-    subgraph CHILD3 [Flux enfant - Notifications]
-        O1([Réception statut final<br/>+ historique approbations]) --> O2[Mettre à jour item SPO<br/>Statut : Approuvé<br/>Date + Approbateurs]
-        O2 --> O3[Envoyer email récapitulatif<br/>au demandeur]
-        O3 --> O4[Poster message Teams<br/>dans canal Demandes]
-        O4 --> O5{Accès applicatif<br/>ou matériel ?}
-        O5 -- Oui --> O6[Déclencher flux enfant<br/>Child-Provisioning]
-        O5 -- Non --> O7([Fin notifications])
-        O6 --> O7
+    subgraph CHILD3 [Flux enfant - Notifications validation]
+        direction TB
+        O1[Envoyer email récapitulatif<br/>au demandeur]
+        O1 --> O2[Poster message Teams<br/>dans canal Demandes]
+        O2 --> O3{Accès applicatif<br/>ou matériel ?}
+        O3 -- Non --> O4([Fin notifications])
+        O3 -- Oui --> P_START[Déclencher flux enfant<br/>Child-Provisioning]
     end
 
     subgraph CHILD4 [Flux enfant - Provisioning]
-        P1([Réception type<br/>et détails demande]) --> P2{Type ?}
-        P2 -- Accès applicatif --> P3[Ajouter utilisateur<br/>au groupe Entra ID]
-        P2 -- Achat matériel --> P4[Créer item<br/>liste SPO Commandes-IT]
-        P3 --> P5[Journaliser<br/>dans liste SPO Historique]
-        P4 --> P5
-        P5 --> P6([Fin provisioning])
+        direction TB
+        P1{Type ?}
+        P1 -- Accès applicatif --> P2[Ajouter utilisateur<br/>au groupe Entra ID]
+        P1 -- Achat matériel --> P3[Créer item<br/>liste SPO Commandes-IT]
+        P2 & P3 --> P4[Journaliser<br/>dans liste SPO Historique]
+        P4 --> P5([Fin provisioning])
     end
 
-    R[Mettre à jour SPO<br/>Statut : Refusé<br/>+ motif] --> S[Déclencher flux enfant<br/>Child-Notification-Refus]
-
-    subgraph CHILD5 [Flux enfant - Notification Refus]
-        S1([Réception motif<br/>+ historique]) --> S2[Envoyer email au demandeur<br/>avec motif détaillé]
-        S2 --> S3[Mettre à jour item SPO<br/>Date clôture + Motif]
-        S3 --> S4([Fin])
+    subgraph CHILD5 [Flux enfant - Notification refus]
+        direction TB
+        S1[Envoyer email au demandeur<br/>avec motif détaillé]
+        S1 --> S2[Mettre à jour item SPO<br/>Date clôture + Motif]
+        S2 --> S3([Fin])
     end
+
+    O_START --> O1
+    P_START --> P1
+    S_START --> S1
 ```
 
 Et à mon avis le code n'est pas plus compliqué pour autant :
@@ -467,78 +470,81 @@ flowchart TD
     E -- Accès applicatif --> G[Récupérer référent<br/>depuis liste SPO<br/>Référents-Applicatif]
     E -- Dérogation sécurité --> H[Récupérer référent<br/>depuis liste SPO<br/>Référents-Sécurité]
 
-    F --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
-    G --> I
-    H --> I
-
+    F & G & H --> I[Mettre à jour item SPO<br/>Statut : En cours<br/>Référent : nom récupéré]
     I --> J[Déclencher flux enfant<br/>Child-Approbation-N1]
 
     subgraph CHILD1 [Flux enfant - Approbation N1]
-        J1([Réception des paramètres<br/>ID demande + Référent N1]) --> J2[Envoyer approbation Teams<br/>au référent N1]
-        J2 --> J3{Réponse<br/>dans 48h ?}
-        J3 -- Non --> J4[Relance automatique<br/>par email]
-        J4 --> J5{Réponse<br/>dans 24h ?}
-        J5 -- Non --> J6[Escalade manager<br/>+ notification Teams]
-        J6 --> J7{Réponse<br/>manager ?}
-        J7 -- Non --> J8([Retourner : Expiré])
-        J3 -- Oui --> J9{Décision ?}
-        J5 -- Oui --> J9
-        J7 -- Oui --> J9
-        J9 -- Approuvé --> J10([Retourner : Approuvé N1<br/>+ commentaires])
-        J9 -- Refusé --> J11([Retourner : Refusé<br/>+ motif])
+        direction TB
+        J1[Envoyer approbation Teams<br/>au référent N1]
+        J1 --> J2{Réponse<br/>dans 48h ?}
+        J2 -- Non --> J3[Relance automatique<br/>par email]
+        J3 --> J4{Réponse<br/>dans 24h ?}
+        J4 -- Non --> J5[Escalade manager<br/>+ notification Teams]
+        J5 --> J6{Réponse<br/>manager ?}
+        J6 -- Non --> J7([Retourner : Expiré])
+        J2 -- Oui --> J8{Décision ?}
+        J4 -- Oui --> J8
+        J6 -- Oui --> J8
+        J8 -- Approuvé --> J9([Retourner : Approuvé N1<br/>+ commentaires])
+        J8 -- Refusé --> J10([Retourner : Refusé<br/>+ motif])
     end
 
-    J10 --> K{Montant ou<br/>niveau de risque ?}
-    J11 --> R
+    J --> J1
+    J9 --> K{Montant ou<br/>niveau de risque ?}
+    J10 --> REFUS
 
-    K -- Moins de 1000 euros<br/>ou risque faible --> L[Mettre à jour SPO<br/>Statut : Approuvé N1]
-    K -- Plus de 1000 euros<br/>ou risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
-
+    K -- Moins de 1000 euros / risque faible --> VALID
+    K -- Plus de 1000 euros / risque élevé --> M[Mettre à jour SPO<br/>Statut : En attente N2]
     M --> N[Déclencher flux enfant<br/>Child-Approbation-N2]
 
     subgraph CHILD2 [Flux enfant - Approbation N2]
-        N1([Réception des paramètres<br/>ID demande + Approbateur N2]) --> N2[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
-        N2 --> N3{Réponse<br/>dans 72h ?}
-        N3 -- Non --> N4[Relance email<br/>+ notification Teams]
-        N4 --> N5{Réponse<br/>dans 48h ?}
-        N5 -- Non --> N6([Retourner : Expiré])
-        N3 -- Oui --> N7{Décision ?}
-        N5 -- Oui --> N7
-        N7 -- Approuvé --> N8([Retourner : Approuvé N2<br/>+ commentaires])
-        N7 -- Refusé --> N9([Retourner : Refusé N2<br/>+ motif])
+        direction TB
+        N1[Envoyer approbation Teams<br/>avec résumé N1 + pièces jointes]
+        N1 --> N2{Réponse<br/>dans 72h ?}
+        N2 -- Non --> N3[Relance email<br/>+ notification Teams]
+        N3 --> N4{Réponse<br/>dans 48h ?}
+        N4 -- Non --> N5([Retourner : Expiré])
+        N2 -- Oui --> N6{Décision ?}
+        N4 -- Oui --> N6
+        N6 -- Approuvé --> N7([Retourner : Approuvé N2<br/>+ commentaires])
+        N6 -- Refusé --> N8([Retourner : Refusé N2<br/>+ motif])
     end
 
-    N8 --> L
-    N9 --> R
+    N --> N1
+    N7 --> VALID
+    N8 --> REFUS
 
-    L --> O[Déclencher flux enfant<br/>Child-Notification-Validation]
+    VALID[Mettre à jour SPO<br/>Statut : Approuvé<br/>Date + Approbateurs] --> O_START[Déclencher flux enfant<br/>Child-Notification-Validation]
+    REFUS[Mettre à jour SPO<br/>Statut : Refusé + motif] --> S_START[Déclencher flux enfant<br/>Child-Notification-Refus]
 
-    subgraph CHILD3 [Flux enfant - Notifications]
-        O1([Réception statut final<br/>+ historique approbations]) --> O2[Mettre à jour item SPO<br/>Statut : Approuvé<br/>Date + Approbateurs]
-        O2 --> O3[Envoyer email récapitulatif<br/>au demandeur]
-        O3 --> O4[Poster message Teams<br/>dans canal Demandes]
-        O4 --> O5{Accès applicatif<br/>ou matériel ?}
-        O5 -- Oui --> O6[Déclencher flux enfant<br/>Child-Provisioning]
-        O5 -- Non --> O7([Fin notifications])
-        O6 --> O7
+    subgraph CHILD3 [Flux enfant - Notifications validation]
+        direction TB
+        O1[Envoyer email récapitulatif<br/>au demandeur]
+        O1 --> O2[Poster message Teams<br/>dans canal Demandes]
+        O2 --> O3{Accès applicatif<br/>ou matériel ?}
+        O3 -- Non --> O4([Fin notifications])
+        O3 -- Oui --> P_START[Déclencher flux enfant<br/>Child-Provisioning]
     end
 
     subgraph CHILD4 [Flux enfant - Provisioning]
-        P1([Réception type<br/>et détails demande]) --> P2{Type ?}
-        P2 -- Accès applicatif --> P3[Ajouter utilisateur<br/>au groupe Entra ID]
-        P2 -- Achat matériel --> P4[Créer item<br/>liste SPO Commandes-IT]
-        P3 --> P5[Journaliser<br/>dans liste SPO Historique]
-        P4 --> P5
-        P5 --> P6([Fin provisioning])
+        direction TB
+        P1{Type ?}
+        P1 -- Accès applicatif --> P2[Ajouter utilisateur<br/>au groupe Entra ID]
+        P1 -- Achat matériel --> P3[Créer item<br/>liste SPO Commandes-IT]
+        P2 & P3 --> P4[Journaliser<br/>dans liste SPO Historique]
+        P4 --> P5([Fin provisioning])
     end
 
-    R[Mettre à jour SPO<br/>Statut : Refusé<br/>+ motif] --> S[Déclencher flux enfant<br/>Child-Notification-Refus]
-
-    subgraph CHILD5 [Flux enfant - Notification Refus]
-        S1([Réception motif<br/>+ historique]) --> S2[Envoyer email au demandeur<br/>avec motif détaillé]
-        S2 --> S3[Mettre à jour item SPO<br/>Date clôture + Motif]
-        S3 --> S4([Fin])
+    subgraph CHILD5 [Flux enfant - Notification refus]
+        direction TB
+        S1[Envoyer email au demandeur<br/>avec motif détaillé]
+        S1 --> S2[Mettre à jour item SPO<br/>Date clôture + Motif]
+        S2 --> S3([Fin])
     end
+
+    O_START --> O1
+    P_START --> P1
+    S_START --> S1
 ```
 ~~~
 
