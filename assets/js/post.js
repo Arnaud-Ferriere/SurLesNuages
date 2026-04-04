@@ -47,6 +47,37 @@
         bq.insertBefore(header, bq.firstChild);
     });
 
+    // Autolink des URLs brutes (https://...) dans les noeuds texte
+    (function autolinkUrls(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            var urlRegex = /(https?:\/\/[^\s<>'")\]]+)/g;
+            if (!urlRegex.test(node.textContent)) return;
+            var span = document.createElement('span');
+            span.innerHTML = node.textContent.replace(/(https?:\/\/[^\s<>'")\]]+)/g, function(url) {
+                return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
+            });
+            node.parentNode.replaceChild(span, node);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            var tag = node.tagName;
+            if (tag === 'A' || tag === 'CODE' || tag === 'PRE' || tag === 'SCRIPT') return;
+            Array.from(node.childNodes).forEach(autolinkUrls);
+        }
+    })(content);
+
+    // Icône + target="_blank" sur tous les liens externes
+    content.querySelectorAll('a[href^="http"]').forEach(function(a) {
+        try { if (new URL(a.href).hostname === window.location.hostname) return; } catch(e) { return; }
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+        if (!a.querySelector('.fa-square-up-right')) {
+            var icon = document.createElement('i');
+            icon.className = 'fa-solid fa-square-up-right';
+            icon.setAttribute('aria-hidden', 'true');
+            icon.style.cssText = 'margin-left:0.25em;font-size:0.75em;vertical-align:middle;';
+            a.appendChild(icon);
+        }
+    });
+
     // Intercepte le bouton PDF : re-rend Mermaid en thème clair avant d'imprimer
     var printBtn = document.querySelector('.print-btn');
     if (printBtn) {
