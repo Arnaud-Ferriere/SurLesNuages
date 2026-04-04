@@ -235,7 +235,7 @@ timeline
 ~~~
 ---
 
-## Diagrammes en "pré-version".
+## Diagrammes en "pré-version"
 
 > [!WARNING] 
 > Voici d'autres exemples de diagrammes. Attention, ils sont en préversion, leur utilisation peut changer sur les futures version de Mermaid !
