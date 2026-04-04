@@ -175,4 +175,5 @@ layout: default
     </div>
 </div>
 
+{% if page.mermaid %}{% include mermaid.html %}{% endif %}
 <script src="{{ '/assets/js/post.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

@@ -35,6 +35,18 @@ article .content pre code {
   color: inherit;
 }
 
+/* Mermaid diagrams */
+.mermaid {
+  text-align: center;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Rouge token colors */
 .highlight .c, .highlight .cm, .highlight .c1, .highlight .cs { color: #6c7086; font-style: italic; }
 .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt { color: #cba6f7; }
