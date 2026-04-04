@@ -22,7 +22,7 @@ Son utilisation est très simple, soit via l'éditeur gratuit sur https://mermai
 
 Je trouve que les schémas faits de cette façon sont bien plus simples à maintenir que sur Visio par exemple: pas de schéma qui décale tout quand on veut rajouter une action, pas de logiciel ou appli web lourde, et la possibilité d'ajouter des commentaires directement dans le code.
 
-Je présente dans cet article les types de diagramme que j'utilise le plus fréquemment ainsi que la façon dont j'utilise Mermaid sur Obisidian.
+Je présente dans cet article les types de diagramme que j'utilise le plus fréquemment ainsi que la façon dont j'utilise Mermaid sur Obsidian.
 
 Toute la documentation est disponible sur le site https://mermaid.ai/open-source/intro/syntax-reference.html
 
@@ -104,7 +104,7 @@ sequenceDiagram
 
 ### State Diagram
 
-Il est souvent utiliser pour représenter le **cycle de vie** d'un objet ou d'un processus, par exemple un ticket de support, une commande, une demande d'accès…
+Il est souvent utilisé pour représenter le **cycle de vie** d'un objet ou d'un processus, par exemple un ticket de support, une commande, une demande d'accès…
 
 ```mermaid
 stateDiagram-v2
@@ -386,4 +386,4 @@ Le bouton s'ajoute alors sur la toolbar sur la gauche d'Obsidian.
 ---
 
 Avez-vous déjà utilisé Mermaid ? Dans quels cas d'usages et sur quels outils ?  
-N'hésitez pas à me dire si cet article vous a fait découvrir l'outil et si il peut vous être utile !
+N'hésitez pas à me dire si cet article vous a fait découvrir l'outil et si Mermaid peut vous être utile !
