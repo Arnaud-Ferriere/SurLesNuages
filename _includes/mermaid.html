@@ -33,4 +33,16 @@ new MutationObserver(function() {
   });
   mermaid.run();
 }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+function reRenderMermaid(theme) {
+  mermaid.initialize({ startOnLoad: false, theme: theme });
+  document.querySelectorAll('.mermaid[data-processed]').forEach(function(el) {
+    el.textContent = el.dataset.src;
+    el.removeAttribute('data-processed');
+  });
+  mermaid.run();
+}
+
+window.addEventListener('beforeprint', function() { reRenderMermaid('default'); });
+window.addEventListener('afterprint', function() { reRenderMermaid(getTheme()); });
 </script>

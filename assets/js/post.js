@@ -24,6 +24,29 @@
         });
     });
 
+    // Obsidian-style callouts : > [!WARNING], > [!NOTE], > [!TIP], > [!IMPORTANT], > [!CAUTION]
+    var calloutTypes = {
+        'NOTE':      { icon: 'ℹ️',  label: 'Note' },
+        'TIP':       { icon: '💡', label: 'Astuce' },
+        'WARNING':   { icon: '⚠️', label: 'Attention' },
+        'IMPORTANT': { icon: '❗', label: 'Important' },
+        'CAUTION':   { icon: '🔴', label: 'Mise en garde' }
+    };
+    content.querySelectorAll('blockquote').forEach(function(bq) {
+        var firstP = bq.querySelector('p');
+        if (!firstP) return;
+        var match = firstP.textContent.match(/^\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]/i);
+        if (!match) return;
+        var type = match[1].toUpperCase();
+        var info = calloutTypes[type];
+        firstP.innerHTML = firstP.innerHTML.replace(/^\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]\s*/i, '');
+        bq.classList.add('callout', 'callout-' + type.toLowerCase());
+        var header = document.createElement('div');
+        header.className = 'callout-header';
+        header.textContent = info.icon + ' ' + info.label;
+        bq.insertBefore(header, bq.firstChild);
+    });
+
     var headings = content.querySelectorAll('h2, h3');
     if (headings.length < 3) return;
 
