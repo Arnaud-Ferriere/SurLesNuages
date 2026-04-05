@@ -1,3 +1,49 @@
+/* Badges de difficulté */
+.difficulty-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.2em 0.7em;
+  border-radius: 2em;
+  margin-bottom: 0.5rem;
+}
+.difficulty-debutant     { background: rgba(255, 200, 50,  0.15); color: #a07800; }
+.difficulty-intermediaire{ background: rgba(100, 160, 220, 0.15); color: #2a6496; }
+.difficulty-avance       { background: rgba(80,  120, 200, 0.18); color: #1a4a80; }
+.difficulty-expert       { background: rgba(150,  60, 180, 0.15); color: #7a2090; }
+
+/* Bloc série */
+.series-block {
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background-color: rgba(0, 59, 130, 0.07);
+  padding: 0.75rem 1rem;
+  margin-top: 2rem;
+
+  .series-intro {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+    i { margin-right: 0.3rem; }
+  }
+
+  .series-title {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .series-list {
+    margin: 0;
+    padding-left: 1.4rem;
+    font-size: 0.9rem;
+
+    li { margin-bottom: 0.2rem; }
+    li.series-current { font-weight: 700; list-style-type: "▶ "; }
+    a { color: var(--color-secondary); }
+    a:hover { color: var(--color-primary); }
+  }
+}
+
 /* ARTICLES */
 article h1 {
   font-size: 2.5rem;

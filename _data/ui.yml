@@ -21,6 +21,18 @@ home_min: "min"
 pagination_newer: "Plus récents"
 pagination_older: "Plus anciens"
 
+# Niveaux de difficulté
+diff_debutant: "Débutant"
+diff_intermediaire: "Intermédiaire"
+diff_avance: "Avancé"
+diff_expert: "Expert"
+
+# Série
+post_series: "Série"
+post_series_part: "Partie"
+post_series_on: "sur"
+post_series_intro: "Cet article fait partie d'une série"
+
 # Article
 post_published: "Publié le :"
 post_updated: "Mis à jour le :"

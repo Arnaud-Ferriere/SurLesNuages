@@ -37,7 +37,7 @@ layout: default
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">{{ site.data.ui.post_published }} {{ page.date | date: "%d/%m/%Y" }}{% if page.last_modified_at %} &nbsp;·&nbsp; <i class="fas fa-pen-to-square" aria-hidden="true"></i> {{ site.data.ui.post_updated }} {{ page.last_modified_at | date: "%d/%m/%Y" }}{% endif %} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
+            <p class="text-muted">{% if page.difficulty %}{% case page.difficulty %}{% when "debutant" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_debutant %}{% when "intermediaire" %}{% assign diff_icon = "☁️" %}{% assign diff_label = site.data.ui.diff_intermediaire %}{% when "avance" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_avance %}{% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}{% endcase %}<span class="difficulty-badge difficulty-{{ page.difficulty }}">{{ diff_icon }} {{ diff_label }}</span> &nbsp;·&nbsp; {% endif %}{{ site.data.ui.post_published }} {{ page.date | date: "%d/%m/%Y" }}{% if page.last_modified_at %} &nbsp;·&nbsp; <i class="fas fa-pen-to-square" aria-hidden="true"></i> {{ site.data.ui.post_updated }} {{ page.last_modified_at | date: "%d/%m/%Y" }}{% endif %} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
             {% assign banner_src = page.banner | default: site.default_banner %}
             {% assign cover_src = page.image | default: site.default_image %}
             {% if banner_src and banner_src != "" %}
@@ -64,6 +64,24 @@ layout: default
         <section class="content">
             {{ content }}
         </section>
+
+        {% if page.series %}
+        {% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+        {% if series_posts.size > 0 %}
+        <div class="series-block mt-4">
+            <p class="series-intro"><i class="fas fa-layer-group" aria-hidden="true"></i> {{ site.data.ui.post_series_intro }}</p>
+            <p class="series-title"><strong>{{ page.series }}</strong> &mdash; {{ site.data.ui.post_series_part }} {{ page.series_part }} {{ site.data.ui.post_series_on }} {{ series_posts.size }}</p>
+            <ol class="series-list">
+                {% for s_post in series_posts %}
+                <li class="{% if s_post.url == page.url %}series-current{% endif %}">
+                    {% if s_post.url == page.url %}<span>{{ s_post.title }}</span>
+                    {% else %}<a href="{{ s_post.url | relative_url }}">{{ s_post.title }}</a>{% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        {% endif %}
+        {% endif %}
 
         {% if page.tags.size > 0 %}
         <div class="post-tags">
