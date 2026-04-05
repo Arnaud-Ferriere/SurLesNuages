@@ -37,7 +37,7 @@ layout: default
     <div class="article-container p-4">
         <header class="text-center mb-4">
             <h1 class="display-5">{{ page.title }}</h1>
-            <p class="text-muted">{{ site.data.ui.post_published }} {{ page.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
+            <p class="text-muted">{{ site.data.ui.post_published }} {{ page.date | date: "%d/%m/%Y" }}{% if page.last_modified_at %} &nbsp;·&nbsp; <i class="fas fa-pen-to-square" aria-hidden="true"></i> {{ site.data.ui.post_updated }} {{ page.last_modified_at | date: "%d/%m/%Y" }}{% endif %} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.post_min_read }} &nbsp;·&nbsp; <button class="print-btn" onclick="window.print()" aria-label="{{ site.data.ui.post_save_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> {{ site.data.ui.post_pdf }}</button></p>
             {% assign banner_src = page.banner | default: site.default_banner %}
             {% assign cover_src = page.image | default: site.default_image %}
             {% if banner_src and banner_src != "" %}

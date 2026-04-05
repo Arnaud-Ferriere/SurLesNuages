@@ -23,6 +23,7 @@ pagination_older: "Plus anciens"
 
 # Article
 post_published: "Publié le :"
+post_updated: "Mis à jour le :"
 post_min_read: "min"
 post_pdf: "PDF"
 post_save_pdf: "Enregistrer en PDF"
