@@ -8,6 +8,7 @@ tags:
   - Documentation
   - Diagrammes
   - Schémas
+difficulty: debutant
 mermaid: true
 placeholder: false
 excerpt: "Outil de création de diagrammes à partir de texte : sa syntaxe, cas d'usage, et son utilisation sur Obsidian"
