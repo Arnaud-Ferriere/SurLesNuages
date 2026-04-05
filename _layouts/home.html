@@ -28,7 +28,7 @@ layout: default
                     <h5 class="card-title">
                         <a href="{{ post.url | relative_url }}" class="stretched-link text-decoration-none">{{ post.title }}</a>
                     </h5>
-                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 160 }}</p>
                     <p class="text-muted small mb-0">{{ site.data.ui.home_published }} {{ post.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.home_min }}</p>
                 </div>
             </div>

@@ -35,6 +35,7 @@ exclude:
   - .vscode
   - backend
   - node_modules
+  - Templates
 
 defaults:
   - scope:

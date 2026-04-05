@@ -146,12 +146,13 @@ layout: default
         {% for post in related_posts %}
         <div class="col-md-4 mb-4">
             <div class="card">
-                {% if post.image %}
-                <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+                {% assign related_img = post.image | default: site.default_image %}
+                {% if related_img and related_img != "" %}
+                <img src="{{ related_img | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                    <p class="card-text">{{ post.excerpt | strip_html | truncate: 160 }}</p>
                     <a href="{{ post.url | relative_url }}" class="btn btn-primary">{{ site.data.ui.post_read_more }}</a>
                 </div>
             </div>
