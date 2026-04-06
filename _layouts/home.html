@@ -35,7 +35,7 @@ layout: default
                       {% when "avance" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_avance %}
                       {% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}
                     {% endcase %}
-                    <span class="difficulty-badge difficulty-{{ post.difficulty }} mb-2 d-inline-block">{{ diff_icon }} {{ diff_label }}</span>
+                    <span class="difficulty-badge difficulty-{{ post.difficulty }} mb-2 d-inline-block" aria-label="{{ site.data.ui.diff_aria_prefix }} {{ diff_label }}"><span aria-hidden="true">{{ diff_icon }} </span>{{ diff_label }}</span>
                     {% endif %}
                     <p class="card-text">{{ post.excerpt | strip_html | truncate: 160 }}</p>
                     <p class="text-muted small mb-0">{{ site.data.ui.home_published }} {{ post.date | date: "%d/%m/%Y" }} &nbsp;·&nbsp; <i class="fas fa-clock" aria-hidden="true"></i> {{ reading_time }} {{ site.data.ui.home_min }}</p>

@@ -26,6 +26,7 @@ diff_debutant: "Débutant"
 diff_intermediaire: "Intermédiaire"
 diff_avance: "Avancé"
 diff_expert: "Expert"
+diff_aria_prefix: "Niveau :"
 
 # Série
 post_series: "Série"
