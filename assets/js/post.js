@@ -92,19 +92,67 @@
         };
     }
 
+    // TOC — généré avant les boutons collapse pour que textContent soit propre
     var headings = content.querySelectorAll('h2, h3');
-    if (headings.length < 3) return;
+    if (headings.length >= 3) {
+        var tocList = document.getElementById('toc-list');
+        headings.forEach(function (h, i) {
+            if (!h.id) h.id = 'heading-' + i;
+            var li = document.createElement('li');
+            if (h.tagName === 'H3') li.classList.add('toc-h3');
+            var a = document.createElement('a');
+            a.href = '#' + h.id;
+            a.textContent = h.textContent;
+            li.appendChild(a);
+            tocList.appendChild(li);
+        });
+        document.getElementById('toc-wrapper').style.display = 'block';
+    }
 
-    var tocList = document.getElementById('toc-list');
-    headings.forEach(function (h, i) {
-        if (!h.id) h.id = 'heading-' + i;
-        var li = document.createElement('li');
-        if (h.tagName === 'H3') li.classList.add('toc-h3');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
+    // Sections H2 repliables — Bootstrap collapse (accessibilité native)
+    content.querySelectorAll('h2').forEach(function (h2, idx) {
+        var siblings = [];
+        var next = h2.nextElementSibling;
+        while (next && next.tagName !== 'H2') {
+            siblings.push(next);
+            next = next.nextElementSibling;
+        }
+        if (siblings.length === 0) return;
+
+        var wrapperId = 'section-collapse-' + idx;
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'collapse show';
+        wrapper.id = wrapperId;
+        h2.parentNode.insertBefore(wrapper, siblings[0]);
+        siblings.forEach(function (el) { wrapper.appendChild(el); });
+
+        var btn = document.createElement('button');
+        btn.className = 'collapse-section-btn';
+        btn.setAttribute('type', 'button');
+        btn.setAttribute('data-bs-toggle', 'collapse');
+        btn.setAttribute('data-bs-target', '#' + wrapperId);
+        btn.setAttribute('aria-controls', wrapperId);
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'Réduire la section');
+        btn.innerHTML = '<i class="fas fa-chevron-up" aria-hidden="true"></i>';
+        h2.appendChild(btn);
+
+        // Sync l'icône avec les événements Bootstrap
+        wrapper.addEventListener('hide.bs.collapse', function () {
+            btn.querySelector('i').className = 'fas fa-chevron-down';
+            btn.setAttribute('aria-label', 'Développer la section');
+        });
+        wrapper.addEventListener('show.bs.collapse', function () {
+            btn.querySelector('i').className = 'fas fa-chevron-up';
+            btn.setAttribute('aria-label', 'Réduire la section');
+        });
+
+        // Clic sur le H2 (hors bouton) déclenche aussi le collapse
+        h2.addEventListener('click', function (e) {
+            if (e.target === btn || btn.contains(e.target)) return;
+            bootstrap.Collapse.getOrCreateInstance(wrapper).toggle();
+        });
+        h2.style.cursor = 'pointer';
     });
-    document.getElementById('toc-wrapper').style.display = 'block';
 })();
