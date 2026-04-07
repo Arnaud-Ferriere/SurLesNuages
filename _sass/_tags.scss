@@ -66,18 +66,21 @@
 
 .tag-badge {
   display: inline-block;
-  background-color: var(--color-primary);
-  color: #fff !important;
+  background: var(--color-card-bg);
+  color: var(--color-secondary) !important;
+  border: 1.5px solid rgba(0, 59, 130, 0.25);
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
   font-size: 0.85rem;
+  font-weight: 600;
   margin: 0.25rem;
   text-decoration: none !important;
-  transition: background-color 0.3s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .tag-badge:hover {
   background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
   color: #fff !important;
 }
 
@@ -131,24 +134,39 @@
 }
 
 .articles-chrono-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.25rem;
   margin-bottom: 0.5rem !important;
   border-radius: 6px !important;
 }
 
 .articles-chrono-main {
-  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  a { font-weight: 600; }
+  .difficulty-badge { margin-bottom: 0; }
+}
+
+.articles-chrono-meta {
+  font-size: 0.85rem;
+}
+
+.articles-chrono-excerpt {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.45;
 }
 
 .articles-chrono-tags {
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .tag-badge-sm {

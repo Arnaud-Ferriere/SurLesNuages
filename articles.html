@@ -32,8 +32,14 @@ permalink: /articles/
                 <li class="list-group-item articles-chrono-item">
                     <div class="articles-chrono-main">
                         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        <span class="text-muted"> — {{ post.date | date: "%d/%m/%Y" }}</span>
+                        <span class="text-muted articles-chrono-meta">{{ post.date | date: "%d/%m/%Y" }}{% if post.last_modified_at %} &nbsp;·&nbsp; <i class="fas fa-pen-to-square" aria-hidden="true"></i> {{ post.last_modified_at | date: "%d/%m/%Y" }}{% endif %}</span>
+                        {% if post.difficulty %}{% case post.difficulty %}{% when "debutant" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_debutant %}{% when "intermediaire" %}{% assign diff_icon = "☁️" %}{% assign diff_label = site.data.ui.diff_intermediaire %}{% when "avance" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_avance %}{% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}{% endcase %}
+                        <span class="difficulty-badge difficulty-{{ post.difficulty }}" aria-label="{{ site.data.ui.diff_aria_prefix }} {{ diff_label }}"><span aria-hidden="true">{{ diff_icon }} </span>{{ diff_label }}</span>{% endif %}
                     </div>
+                    {% assign excerpt_text = post.excerpt | strip_html | strip_newlines | truncate: 160 %}
+                    {% if excerpt_text != "" %}
+                    <p class="articles-chrono-excerpt">{{ excerpt_text }}</p>
+                    {% endif %}
                     {% if post.tags.size > 0 %}
                     <span class="articles-chrono-tags">
                         {% for tag in post.tags %}
