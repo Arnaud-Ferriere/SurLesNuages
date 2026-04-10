@@ -51,11 +51,37 @@ article h1 {
 }
 
 article .content h2,
-article .content h3 {
-  color: var(--color-secondary);
+article .content h3,
+article .content h4 {
   margin-top: 1.5rem;
-  font-weight: 600;
   scroll-margin-top: 110px;
+}
+
+article .content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-secondary) 30%, transparent);
+  text-underline-offset: 0.35rem;
+  text-decoration-thickness: 2px;
+  transition: text-decoration-color 0.3s ease;
+
+  &:hover {
+    text-decoration-color: var(--color-secondary);
+  }
+}
+
+article .content h3 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-secondary) 55%, var(--color-primary));
+}
+
+article .content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-secondary) 30%, var(--color-primary));
 }
 
 article .content h2 {
