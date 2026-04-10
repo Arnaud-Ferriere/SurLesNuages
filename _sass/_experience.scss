@@ -39,11 +39,12 @@
   margin-top: 10px;
 }
 
-.section-content.hidden {
-  height: 0;
+/* Bootstrap collapse handles show/hide — keep overflow visible when open */
+.section-content.collapse:not(.show) {
+  display: none;
 }
 
-.section-content:not(.hidden) {
+.section-content.collapse.show {
   height: auto;
 }
 

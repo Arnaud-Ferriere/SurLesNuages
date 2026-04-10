@@ -29,13 +29,14 @@ permalink: /about/
     <!--CERTIFICATIONS-->
     <div id="certifications" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_certifications }} section"
-                aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-certifications"
+                aria-controls="collapse-certifications" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_certifications }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_certifications }}</h2>
         </div>
-        <div class="section-content">
+        <div id="collapse-certifications" class="section-content collapse show">
             <div class="certifications-grid">
                 {% for cert in site.data.certifications %}
                 <div class="card">
@@ -59,12 +60,14 @@ permalink: /about/
     <!--SKILLS-->
     <div id="skills" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_skills }} section" aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-skills"
+                aria-controls="collapse-skills" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_skills }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_skills }}</h2>
         </div>
-        <div class="section-content stacked-cards">
+        <div id="collapse-skills" class="section-content stacked-cards collapse show">
             <div class="stacked-card">
                 <table class="table">
                     <thead>
@@ -91,13 +94,14 @@ permalink: /about/
     <!--EXPERIENCES CARDS-->
     <div id="stacked-experiences" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_experience }} section"
-                aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-experiences"
+                aria-controls="collapse-experiences" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_experience }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_experience }}</h2>
         </div>
-        <div class="section-content stacked-cards">
+        <div id="collapse-experiences" class="section-content stacked-cards collapse show">
             {% for exp in site.data.experiences %}
             <div class="stacked-card">
                 <!-- Section du poste -->
@@ -201,12 +205,14 @@ permalink: /about/
 
     <div id="applied-skills" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_applied_skills }} section" aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-applied-skills"
+                aria-controls="collapse-applied-skills" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_applied_skills }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_applied_skills }}</h2>
         </div>
-        <div class="section-content">
+        <div id="collapse-applied-skills" class="section-content collapse show">
             <div class="applied-skills-grid">
                 {% for skill in site.data.applied_skills %}
                 <div class="card">
@@ -229,12 +235,14 @@ permalink: /about/
 
     <div id="education" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_education }} section" aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-education"
+                aria-controls="collapse-education" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_education }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_education }}</h2>
         </div>
-        <div class="section-content stacked-cards">
+        <div id="collapse-education" class="section-content stacked-cards collapse show">
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <ul>
@@ -254,12 +262,14 @@ permalink: /about/
 
     <div id="langues" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_languages }} section" aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-langues"
+                aria-controls="collapse-langues" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_languages }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_languages }}</h2>
         </div>
-        <div class="section-content stacked-cards">
+        <div id="collapse-langues" class="section-content stacked-cards collapse show">
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     {% for lang in site.data.languages %}
@@ -277,13 +287,14 @@ permalink: /about/
 
     <div id="interets" class="container mt-5">
         <div class="section-header">
-            <button class="toggle-section-btn btn btn-link" aria-label="Toggle {{ site.data.ui.about_interests }} section"
-                aria-expanded="true">
+            <button class="toggle-section-btn btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-interets"
+                aria-controls="collapse-interets" aria-expanded="true"
+                aria-label="Toggle {{ site.data.ui.about_interests }} section">
                 <i class="fas fa-chevron-up"></i>
             </button>
             <h2 class="hover-underline-animation">{{ site.data.ui.about_interests }}</h2>
         </div>
-        <div class="section-content stacked-cards">
+        <div id="collapse-interets" class="section-content stacked-cards collapse show">
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     <p>

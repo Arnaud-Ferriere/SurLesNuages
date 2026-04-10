@@ -3,10 +3,9 @@
    Auto (OS) + manual toggle via [data-theme] attribute
    ============================================================ */
 
-/* Mixin-like approach: define dark variables once, use in both selectors */
-
-/* Manual toggle: user clicked the button */
-[data-theme="dark"] {
+/* Single mixin: all dark-mode declarations in one place */
+@mixin dark-mode-styles {
+  /* --- CSS custom properties --- */
   --color-primary: #a8c4e8;
   --color-secondary: #4a9eff;
   --color-navbar-bg: rgba(10, 20, 40, 0.98);
@@ -17,27 +16,8 @@
   --color-border: #2a3544;
   --box-shadow-light: 0 6px 12px rgba(0, 0, 0, 0.3);
   --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
 
-/* Auto (OS preference): applies unless user explicitly chose light */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-primary: #a8c4e8;
-    --color-secondary: #4a9eff;
-    --color-navbar-bg: rgba(10, 20, 40, 0.98);
-    --color-background: #0f1923;
-    --color-card-bg: #1a2636;
-    --color-text: #d4d8dd;
-    --color-text-muted: #8a929b;
-    --color-border: #2a3544;
-    --box-shadow-light: 0 6px 12px rgba(0, 0, 0, 0.3);
-    --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.4);
-  }
-}
-
-/* --- Bootstrap class overrides for dark mode --- */
-
-[data-theme="dark"] {
+  /* --- Bootstrap class overrides --- */
   .text-muted { color: var(--color-text-muted) !important; }
 
   .list-group-item {
@@ -248,195 +228,14 @@
   }
 }
 
-/* Same overrides for OS auto-detection — excluded from print */
+/* Manual toggle: user clicked the button */
+[data-theme="dark"] {
+  @include dark-mode-styles;
+}
+
+/* Auto (OS preference): applies unless user explicitly chose light — excluded from print */
 @media (prefers-color-scheme: dark) and (not print) {
   :root:not([data-theme="light"]) {
-    .text-muted { color: var(--color-text-muted) !important; }
-
-    .list-group-item {
-      background-color: var(--color-card-bg);
-      border-color: var(--color-border);
-      color: var(--color-text);
-    }
-
-    .table {
-      color: var(--color-text);
-      --bs-table-color: var(--color-text);
-      --bs-table-bg: var(--color-card-bg);
-      --bs-table-border-color: var(--color-border);
-      background-color: var(--color-card-bg);
-    }
-
-    .table > :not(caption) > * > * {
-      background-color: var(--color-card-bg);
-      color: var(--color-text);
-      border-color: var(--color-border);
-    }
-
-    .table > thead > tr > th {
-      background-color: var(--table-header-bg);
-    }
-
-    .tag-badge {
-      background-color: transparent;
-      border: 1.5px solid var(--color-secondary);
-      color: var(--color-secondary) !important;
-    }
-
-    .tag-badge:hover {
-      background-color: var(--color-secondary);
-      color: #fff !important;
-    }
-
-    .print-btn {
-      background-color: transparent;
-      border: 1.5px solid var(--color-secondary);
-      color: var(--color-secondary) !important;
-    }
-
-    .print-btn:hover {
-      background-color: var(--color-secondary);
-      color: #fff !important;
-    }
-
-    .view-toggle-btn {
-      border-color: var(--color-secondary);
-      color: var(--color-secondary);
-    }
-
-    .view-toggle-btn.active,
-    .view-toggle-btn:hover {
-      background: var(--color-secondary);
-      color: #fff;
-    }
-
-    .form-control {
-      background-color: var(--color-card-bg);
-      color: var(--color-text);
-      border-color: var(--color-border);
-    }
-
-    .form-control::placeholder {
-      color: var(--color-text-muted);
-    }
-
-    .btn-close { filter: invert(1); }
-
-    .img-thumbnail {
-      border-color: var(--color-border);
-      background-color: var(--color-card-bg);
-    }
-
-    article .content code {
-      background: #1e2a3a;
-      color: #89b4fa;
-    }
-
-    .blockquote,
-    article .content blockquote {
-      background-color: rgba(168, 196, 232, 0.07);
-      border-left-color: var(--color-primary);
-    }
-
-    .alert-placeholder {
-      background-color: #3d2e00;
-      border-left-color: #ffc107;
-      color: #ffd75e;
-    }
-
-    .toc-container {
-      background: rgba(168, 196, 232, 0.08);
-    }
-
-    .toc-list .toc-h3::before {
-      color: #555;
-    }
-
-    .tag-cloud-item {
-      border-color: rgba(74, 158, 255, 0.25);
-    }
-
-    .tag-cloud-item .tag-count {
-      background: rgba(74, 158, 255, 0.15);
-    }
-
-    .modal-backdrop.show {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .modal-content .btn-close {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .navbar-brand:hover {
-      color: #cce5ff;
-    }
-
-    .page-link {
-      background-color: var(--color-card-bg);
-      border-color: var(--color-border);
-    }
-
-    .page-item.active .page-link {
-      background-color: var(--color-secondary);
-      border-color: var(--color-secondary);
-    }
-
-    .section-separator {
-      border-top-color: var(--color-border);
-    }
-
-    .post-tags {
-      border-top-color: var(--color-border);
-    }
-
-    /* Series block */
-    .series-block {
-      background: rgba(168, 196, 232, 0.07);
-    }
-
-    /* Difficulty badges — brighter text for dark backgrounds */
-    .difficulty-debutant      { background: rgba(255, 200, 50,  0.12); color: #f0c040; }
-    .difficulty-intermediaire { background: rgba(100, 160, 220, 0.15); color: #7ab3f0; }
-    .difficulty-avance        { background: rgba(80,  120, 200, 0.15); color: #6fa0e8; }
-    .difficulty-expert        { background: rgba(180,  80, 220, 0.15); color: #c070e8; }
-
-    .hover-image {
-      border-color: var(--color-border);
-    }
-
-    .cloud-footer {
-      background-image: url('/assets/clouds-footer-dark.svg');
-      background-color: #060e1a;
-      color: #d4d8dd;
-    }
-
-    .cloud-footer p {
-      color: #d4d8dd;
-    }
-
-    .cloud-footer a {
-      color: #7ab3f0;
-    }
-
-    .cloud-footer a:hover {
-      color: #fff;
-    }
-
-    .stacked-card:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .article-container:hover {
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Company/mission logos: white pill to keep transparent logos readable */
-    .poste-logo,
-    .mission-logo {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 2px;
-    }
+    @include dark-mode-styles;
   }
 }

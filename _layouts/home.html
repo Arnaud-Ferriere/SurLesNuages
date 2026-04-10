@@ -113,7 +113,7 @@ layout: default
     {% endif %}
 </aside>
 
-<script>window.SiteSearch = { noResults: {{ site.data.ui.home_no_results | jsonify }}, searchUrl: {{ '/search.json' | relative_url | jsonify }} };</script>
+<script>window.SiteSearch = { noResults: {{ site.data.ui.home_no_results | jsonify }}, searchUrl: {{ '/search.json' | relative_url | jsonify }}, unavailable: {{ site.data.ui.home_search_unavailable | jsonify }} };</script>
 <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
 
 {{ content }}
