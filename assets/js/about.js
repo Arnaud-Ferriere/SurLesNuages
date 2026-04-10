@@ -1,33 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── Collapsible sections ──────────────────────────────────────────────────
-    var toggleButtons = document.querySelectorAll('.toggle-section-btn');
-    toggleButtons.forEach(function (button) {
+    // ── Collapsible sections — Bootstrap collapse (native accessibility) ────
+    document.querySelectorAll('.toggle-section-btn').forEach(function (button) {
         var section = button.closest('.container');
         var content = section.querySelector('.section-content');
         var title   = section.querySelector('h2');
 
-        function toggleContent() {
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                button.innerHTML = '<i class="fas fa-chevron-up"></i>';
-                button.setAttribute('aria-expanded', 'true');
-                content.style.height = content.scrollHeight + 'px';
-                content.addEventListener('transitionend', function handler() {
-                    content.style.height = 'auto';
-                    content.removeEventListener('transitionend', handler);
-                });
-            } else {
-                button.innerHTML = '<i class="fas fa-chevron-down"></i>';
-                button.setAttribute('aria-expanded', 'false');
-                content.style.height = content.scrollHeight + 'px';
-                requestAnimationFrame(function () { content.style.height = '0'; });
-                content.classList.add('hidden');
-            }
-        }
+        // Sync icon with Bootstrap collapse events
+        content.addEventListener('hide.bs.collapse', function () {
+            button.querySelector('i').className = 'fas fa-chevron-down';
+        });
+        content.addEventListener('show.bs.collapse', function () {
+            button.querySelector('i').className = 'fas fa-chevron-up';
+        });
 
-        button.addEventListener('click', toggleContent);
-        title.addEventListener('click', toggleContent);
+        // Click on h2 text (outside button) also toggles
+        title.addEventListener('click', function (e) {
+            if (e.target === button || button.contains(e.target)) return;
+            bootstrap.Collapse.getOrCreateInstance(content).toggle();
+        });
+        title.style.cursor = 'pointer';
     });
 
     // ── Table sorting ─────────────────────────────────────────────────────────

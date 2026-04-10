@@ -41,5 +41,8 @@
     fetch(cfg.searchUrl || '/search.json')
         .then(function (r) { return r.json(); })
         .then(function (data) { posts = data; })
-        .catch(function () { /* search silently unavailable */ });
+        .catch(function () {
+            input.disabled = true;
+            input.placeholder = cfg.unavailable || 'Search unavailable.';
+        });
 })();
