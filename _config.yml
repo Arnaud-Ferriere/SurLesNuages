@@ -29,6 +29,7 @@ paginate_path: "/page:num/"
 
 exclude:
   - README.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
   - .claude

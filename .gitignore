@@ -6,4 +6,5 @@ _site/
 Templates/
 Gemfile.lock
 .claude/
+CLAUDE.md
 _drafts/
