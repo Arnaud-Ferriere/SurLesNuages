@@ -127,6 +127,12 @@
         h2.parentNode.insertBefore(wrapper, siblings[0]);
         siblings.forEach(function (el) { wrapper.appendChild(el); });
 
+        // Wrapper le contenu texte du H2 dans un span pour le styling
+        var span = document.createElement('span');
+        span.className = 'h2-text';
+        while (h2.firstChild) span.appendChild(h2.firstChild);
+        h2.appendChild(span);
+
         var btn = document.createElement('button');
         btn.className = 'collapse-section-btn';
         btn.setAttribute('type', 'button');
