@@ -6,13 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var content = section.querySelector('.section-content');
         var title   = section.querySelector('h2');
 
-        // Sync icon with Bootstrap collapse events
-        content.addEventListener('hide.bs.collapse', function () {
-            button.querySelector('i').className = 'fas fa-chevron-down';
-        });
-        content.addEventListener('show.bs.collapse', function () {
-            button.querySelector('i').className = 'fas fa-chevron-up';
-        });
+        // Sync icon + aria-* avec les événements Bootstrap (shared.js)
+        window.setupCollapseSync(content, button);
 
         // Click on h2 text (outside button) also toggles
         title.addEventListener('click', function (e) {
@@ -94,10 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function openModal(e) {
             e.preventDefault();
-            var modalImg = document.getElementById('modalImage');
-            modalImg.src = interest.getAttribute('data-image');
-            modalImg.alt = interest.textContent.trim();
-            bootstrap.Modal.getOrCreateInstance(document.getElementById('imageModal')).show();
+            window.openImageModal(interest.getAttribute('data-image'), interest.textContent.trim());
         }
         interest.addEventListener('click', openModal);
         interest.addEventListener('keydown', function (e) {

@@ -20,10 +20,7 @@
         root.querySelectorAll('img').forEach(function (img) {
             img.style.cursor = 'zoom-in';
             img.addEventListener('click', function () {
-                var modalImg = document.getElementById('modalImage');
-                modalImg.src = img.src;
-                modalImg.alt = img.alt;
-                bootstrap.Modal.getOrCreateInstance(document.getElementById('imageModal')).show();
+                window.openImageModal(img.src, img.alt);
             });
         });
     }
@@ -157,15 +154,8 @@
             btn.innerHTML = '<i class="fas fa-chevron-up" aria-hidden="true"></i>';
             h2.appendChild(btn);
 
-            // Sync l'icône avec les événements Bootstrap
-            wrapper.addEventListener('hide.bs.collapse', function () {
-                btn.querySelector('i').className = 'fas fa-chevron-down';
-                btn.setAttribute('aria-label', 'Développer la section');
-            });
-            wrapper.addEventListener('show.bs.collapse', function () {
-                btn.querySelector('i').className = 'fas fa-chevron-up';
-                btn.setAttribute('aria-label', 'Réduire la section');
-            });
+            // Sync l'icône chevron + aria-* avec les événements Bootstrap (shared.js)
+            window.setupCollapseSync(wrapper, btn);
 
             // Clic sur le H2 (hors bouton) déclenche aussi le collapse
             h2.addEventListener('click', function (e) {
