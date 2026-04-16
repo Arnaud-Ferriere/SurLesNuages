@@ -1,7 +1,16 @@
 <script>
 (function() {
     var html = document.documentElement;
-    var stored = localStorage.getItem('theme');
+
+    // localStorage peut jeter (navigation privée, stockage désactivé, contexte file://).
+    function readTheme() {
+        try { return localStorage.getItem('theme'); } catch (e) { return null; }
+    }
+    function writeTheme(value) {
+        try { localStorage.setItem('theme', value); } catch (e) { /* silencieux */ }
+    }
+
+    var stored = readTheme();
     if (stored) {
         html.setAttribute('data-theme', stored);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -27,12 +36,12 @@
         toggle.addEventListener('click', function() {
             var next = isDark() ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+            writeTheme(next);
             updateIcon();
         });
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-            if (!localStorage.getItem('theme')) updateIcon();
+            if (!readTheme()) updateIcon();
         });
     });
 })();
