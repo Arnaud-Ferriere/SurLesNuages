@@ -1,7 +1,7 @@
 ---
 title: Mermaid, c'est quoi ?
 date: 2026-04-04
-image: /assets/articles/mermaid.webp
+image: /assets/articles/presentation-mermaid/mermaid.webp
 tags:
   - Mermaid
   - Obsidian
@@ -571,8 +571,8 @@ En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](ht
 Voici une petite animation de démonstration:
 
 <video autoplay loop muted playsinline preload="metadata" width="1008" height="792" style="max-width:100%;height:auto;">
-  <source src="/assets/articles/mermaidtoolsdemo.webm" type="video/webm">
-  <source src="/assets/articles/mermaidtoolsdemo.mp4" type="video/mp4">
+  <source src="/assets/articles/presentation-mermaid/mermaidtoolsdemo.webm" type="video/webm">
+  <source src="/assets/articles/presentation-mermaid/mermaidtoolsdemo.mp4" type="video/mp4">
 </video>
 
 Ce qu'il m'apporte :
@@ -588,7 +588,7 @@ Comme pour la plupart des plugins Obsidian, l'installation est simple :
 4. Installer et ne pas oublier de l'activer (c'est fréquent quand on débute sur Obsidian)
 
 Le bouton s'ajoute alors sur la toolbar sur la gauche d'Obsidian.
-![Emplacement du bouton pour utiliser Mermaid Toolbar](/assets/articles/toolbarmermaid.png)
+![Emplacement du bouton pour utiliser Mermaid Toolbar](/assets/articles/presentation-mermaid/toolbarmermaid.png)
 
 ---
 

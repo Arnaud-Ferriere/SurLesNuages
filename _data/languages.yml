@@ -1,17 +1,17 @@
 - name: "Anglais"
-  flag: "assets/great-britain.png"
+  flag: "assets/about/great-britain.png"
   level: "Courant (C1), TOEIC 965/990"
   url: "https://www.etsglobal.org/fr/en/digital-score-report/625E28263BF46D954937F337FEEE61EA25129A9EDFC2602090FB0A0C987B3A27VXFiNlk4UnRmTnZHV1ovdC9LQnVoNkpzK2lUOXY2WnJYem51MGw2cVY2S3lUcVBY"
   link_text: "Voir la certification"
 
 - name: "Espagnol"
-  flag: "assets/spain.png"
+  flag: "assets/about/spain.png"
   level: "Lu, parlé, niveau B1"
 
 - name: "Néerlandais"
-  flag: "assets/netherlands.png"
+  flag: "assets/about/netherlands.png"
   level: "Notions"
 
 - name: "Japonais"
-  flag: "assets/japan.png"
+  flag: "assets/about/japan.png"
   level: "Notions"

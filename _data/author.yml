@@ -2,7 +2,7 @@ name: Arnaud Ferriere
 name_display: Arnaud FERRIERE
 role: Consultant & Administrateur Systèmes
 tagline: "Gestion des identités | Active Directory – Entra ID | Microsoft 365 | Automatisation"
-photo: assets/photo.webp
+photo: assets/about/photo.webp
 photo_alt: "Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique"
 linkedin: https://www.linkedin.com/in/ferrierearnaud/
 github: https://github.com/Arnaud-Ferriere
@@ -23,14 +23,14 @@ bio: >-
 sign_off: "J'espère vous retrouver bientôt, sur les nuages ! - Arnaud FERRIERE"
 interests:
   - label: Cuisine
-    image: assets/cuisine.webp
+    image: assets/about/cuisine.webp
     separator: ","
   - label: "jardinage d'intérieur (hydroponie)"
-    image: assets/jardinage.webp
+    image: assets/about/jardinage.webp
     separator: "..."
   - label: "et d'extérieur"
-    image: assets/jardinageexterieur.webp
+    image: assets/about/jardinageexterieur.webp
     separator: ","
   - label: "menuiserie (ébénisterie)"
-    image: assets/menuiserie.webp
+    image: assets/about/menuiserie.webp
     separator: "."

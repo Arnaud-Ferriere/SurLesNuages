@@ -1,5 +1,5 @@
 - company: "Metsys"
-  logo: "assets/metsys-logo.svg"
+  logo: "assets/about/metsys-logo.svg"
   period: "Depuis 2023"
   title: "Consultant Active Directory, Microsoft 365 et Automatisation"
   description: >-
@@ -13,7 +13,7 @@
     sécurisation, l'optimisation et l'automatisation de leurs environnements IT.
   missions:
     - client: "Groupe La Poste"
-      logo: "assets/groupeLaPoste-logo.svg"
+      logo: "assets/about/groupeLaPoste-logo.svg"
       period: "Depuis 2023"
       context: >-
         Service « Administration .com1 » de la Direction des Services Collaboratifs du groupe La
@@ -48,7 +48,7 @@
       tech: "Active Directory, Entra ID, Power Platform, PowerShell, Microsoft 365"
 
 - company: "Net-Plus"
-  logo: "assets/netplus-logo.png"
+  logo: "assets/about/netplus-logo.png"
   period: "2019 - 2023"
   title: "Administrateur systèmes"
   description: >-
@@ -102,7 +102,7 @@
   tech: "AD DS / Entra ID, Windows server 2008 à 2020, GPO, RDS, Office (toutes versions), Microsoft 365, Power Platform, PowerShell, GLPI, Fortinet"
 
 - company: "Stelogy (anciennement Nomotech)"
-  logo: "assets/nomotech-logo.webp"
+  logo: "assets/about/nomotech-logo.webp"
   period: "2017-2018"
   title: "Administrateur ERP Sage"
   description: >-
@@ -130,7 +130,7 @@
   tech: "Windows 7 – 10, Sage X3, MySQL, Crystal Reports, Office 2013, Macros VBA"
 
 - company: "Freelance"
-  logo: "assets/freelance-logo.webp"
+  logo: "assets/about/freelance-logo.webp"
   period: "2015 - 2017"
   title: "Freelance polyvalent"
   description: >-
@@ -144,7 +144,7 @@
     - "Collaboration à distance : Expérience de travail avec des équipes internationales via des plateformes en ligne."
 
 - company: "TNT Special Services"
-  logo: "assets/tnt-logo.webp"
+  logo: "assets/about/tnt-logo.webp"
   period: "2008 - 2011"
   title: "Technicien de support polyvalent"
   description: >-

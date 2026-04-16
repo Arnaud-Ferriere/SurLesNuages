@@ -1,19 +1,19 @@
 - name: "SC-300 – Identity and Access Administrator Associate"
   date: "Septembre 2024"
-  badge: "assets/microsoft-certified-associate-badge.svg"
+  badge: "assets/about/microsoft-certified-associate-badge.svg"
   url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/DB312FBD462463D1"
 
 - name: "AI-102 – Azure AI Engineer Associate"
   date: "Juin 2025"
-  badge: "assets/microsoft-certified-associate-badge.svg"
+  badge: "assets/about/microsoft-certified-associate-badge.svg"
   url: "https://learn.microsoft.com/en-us/users/arnaud-ferriere/credentials/835bb93b2669893e"
 
 - name: "PL-900 – Power Platform Fundamentals"
   date: "Octobre 2024"
-  badge: "assets/microsoft-certified-fundamentals-badge.svg"
+  badge: "assets/about/microsoft-certified-fundamentals-badge.svg"
   url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/55B523EABF8799AB?sharingId=F8FF919B676DA62B"
 
 - name: "AI-900 – Azure AI Fundamentals"
   date: "Juin 2024"
-  badge: "assets/microsoft-certified-fundamentals-badge.svg"
+  badge: "assets/about/microsoft-certified-fundamentals-badge.svg"
   url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/2FC051060EE5B751?sharingId=F8FF919B676DA62B"
