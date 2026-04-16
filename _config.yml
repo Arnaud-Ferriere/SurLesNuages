@@ -19,6 +19,9 @@ kramdown:
 
 permalink: /articles/:title/
 
+sass:
+  style: compressed
+
 plugins:
   - jekyll-sitemap
   - jekyll-feed
