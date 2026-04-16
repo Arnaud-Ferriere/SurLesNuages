@@ -87,6 +87,19 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isMobile()) hoverImage.style.display = 'none';
         });
 
+        // Keyboard: show preview on focus (same as hover)
+        interest.addEventListener('focus', function () {
+            if (isMobile()) return;
+            hoverImage.src = interest.getAttribute('data-image');
+            var rect = interest.getBoundingClientRect();
+            hoverImage.style.top  = (rect.bottom + window.scrollY + 10) + 'px';
+            hoverImage.style.left = (rect.left + window.scrollX) + 'px';
+            hoverImage.style.display = 'block';
+        });
+        interest.addEventListener('blur', function () {
+            if (!isMobile()) hoverImage.style.display = 'none';
+        });
+
         function openModal(e) {
             e.preventDefault();
             window.openImageModal(interest.getAttribute('data-image'), interest.textContent.trim());
