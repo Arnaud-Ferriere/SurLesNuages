@@ -93,7 +93,7 @@ layout: default
     <label for="home-search-input" class="visually-hidden">{{ site.data.ui.home_search }}</label>
     <input type="text" id="home-search-input" class="form-control form-control-lg mb-3"
         placeholder="{{ site.data.ui.home_search_placeholder }}">
-    <div id="home-search-results"></div>
+    <div id="home-search-results" aria-live="polite" aria-atomic="true"></div>
 
     {% if site.tags.size > 0 %}
     <div class="tag-cloud mt-4">
