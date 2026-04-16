@@ -5,6 +5,7 @@
     if (!input || !results) return;
 
     var posts = null;
+    var loading = false;
 
     function render(found) {
         if (found.length === 0) {
@@ -36,13 +37,24 @@
         render(found);
     }
 
-    input.addEventListener('input', function () { search(this.value); });
+    function ensureLoaded() {
+        if (posts || loading) return;
+        loading = true;
+        fetch(cfg.searchUrl || '/search.json')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                posts = data;
+                loading = false;
+                // If user already typed while we were loading, run the search now
+                if (input.value.length >= 2) search(input.value);
+            })
+            .catch(function () {
+                loading = false;
+                input.disabled = true;
+                input.placeholder = cfg.unavailable || 'Search unavailable.';
+            });
+    }
 
-    fetch(cfg.searchUrl || '/search.json')
-        .then(function (r) { return r.json(); })
-        .then(function (data) { posts = data; })
-        .catch(function () {
-            input.disabled = true;
-            input.placeholder = cfg.unavailable || 'Search unavailable.';
-        });
+    input.addEventListener('focus', ensureLoaded);
+    input.addEventListener('input', function () { search(this.value); });
 })();
