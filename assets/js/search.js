@@ -57,4 +57,12 @@
 
     input.addEventListener('focus', ensureLoaded);
     input.addEventListener('input', function () { search(this.value); });
+
+    // Support ?q= URL parameter (for SearchAction schema)
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+        input.value = q;
+        ensureLoaded();
+    }
 })();
