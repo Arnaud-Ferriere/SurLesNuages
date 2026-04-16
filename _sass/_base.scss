@@ -1,3 +1,6 @@
+/* Print-only header — hidden on screen, shown via print.css */
+.print-header { display: none; }
+
 html {
   background-color: var(--color-navbar-bg);
 }
