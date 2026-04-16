@@ -84,6 +84,10 @@
                 icon.setAttribute('aria-hidden', 'true');
                 icon.style.cssText = 'margin-left:0.25em;font-size:0.75em;vertical-align:middle;';
                 a.appendChild(icon);
+                var srText = document.createElement('span');
+                srText.className = 'sr-only';
+                srText.textContent = ' (ouvre dans une nouvelle fenêtre)';
+                a.appendChild(srText);
             }
         });
     }
