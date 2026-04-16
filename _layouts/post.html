@@ -54,12 +54,12 @@ layout: default
         {% endif %}
 
         <!-- Table des matières (auto-générée via JS, affichée uniquement si 3+ titres) -->
-        <div id="toc-wrapper" style="display: none;">
+        <nav id="toc-wrapper" style="display: none;" aria-label="{{ site.data.ui.post_toc }}">
             <details class="toc-container" open>
                 <summary>{{ site.data.ui.post_toc }}</summary>
                 <ol class="toc-list" id="toc-list"></ol>
             </details>
-        </div>
+        </nav>
 
         <section class="content">
             {{ content }}
