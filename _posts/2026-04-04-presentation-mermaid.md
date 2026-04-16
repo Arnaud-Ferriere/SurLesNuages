@@ -1,7 +1,7 @@
 ---
 title: Mermaid, c'est quoi ?
 date: 2026-04-04
-image: /assets/articles/mermaid.jpg
+image: /assets/articles/mermaid.webp
 tags:
   - Mermaid
   - Obsidian
