@@ -45,23 +45,14 @@
   }
 
   /* Badges & buttons — outline style for dark mode (better contrast ~5:1) */
-  .tag-badge {
-    background-color: transparent;
-    border: 1.5px solid var(--color-secondary);
-    color: var(--color-secondary) !important;
-  }
-
-  .tag-badge:hover {
-    background-color: var(--color-secondary);
-    color: #fff !important;
-  }
-
+  .tag-badge,
   .print-btn {
     background-color: transparent;
     border: 1.5px solid var(--color-secondary);
     color: var(--color-secondary) !important;
   }
 
+  .tag-badge:hover,
   .print-btn:hover {
     background-color: var(--color-secondary);
     color: #fff !important;

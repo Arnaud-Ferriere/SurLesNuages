@@ -1,23 +1,19 @@
 /* Bouton PDF (articles) — style cohérent avec .tag-badge */
 .print-btn {
-  display: inline-flex;
+  @include badge-style(
+    $bg-color: var(--color-primary),
+    $border-color: transparent,
+    $text-color: #fff,
+    $padding: 0.2rem 0.7rem,
+    $font-size: 0.82rem,
+    $display: inline-flex,
+    $border-width: 0
+  );
   align-items: center;
   gap: 0.35rem;
-  background-color: var(--color-primary);
-  color: #fff !important;
-  border: none;
-  border-radius: 20px;
-  padding: 0.2rem 0.7rem;
-  font-size: 0.82rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
   vertical-align: middle;
   line-height: 1.4;
-  text-decoration: none;
-}
-.print-btn:hover {
-  background-color: var(--color-secondary);
-  color: #fff !important;
+  cursor: pointer;
 }
 
 /* Buttons */

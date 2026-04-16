@@ -65,23 +65,8 @@
 }
 
 .tag-badge {
-  display: inline-block;
-  background: var(--color-card-bg);
-  color: var(--color-secondary) !important;
-  border: 1.5px solid rgba(0, 59, 130, 0.25);
-  padding: 0.3rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  @include badge-style;
   margin: 0.25rem;
-  text-decoration: none !important;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.tag-badge:hover {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  color: #fff !important;
 }
 
 .tags-page-section {
