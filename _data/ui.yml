@@ -6,7 +6,6 @@
 nav_home: "Accueil"
 nav_articles: "Articles"
 nav_about: "À propos"
-nav_theme_toggle: "Thème"
 
 # Page d'accueil
 home_recent: "Articles récents"
@@ -30,7 +29,6 @@ diff_expert: "Expert"
 diff_aria_prefix: "Niveau :"
 
 # Série
-post_series: "Série"
 post_series_part: "Partie"
 post_series_on: "sur"
 post_series_intro: "Cet article fait partie d'une série"
@@ -59,7 +57,7 @@ about_context: "Contexte du projet / service :"
 about_responsibilities: "Responsabilités / Missions :"
 about_tech: "Environnement technique / Principales technologies utilisées :"
 about_key_skills: "Compétences clés :"
-about_applied_skills: "Applied Skills"
+about_applied_skills: "Compétences appliquées"
 about_education: "Formations"
 about_languages: "Langues"
 about_interests: "Centres d'intérêt"
@@ -79,8 +77,8 @@ error_404_encouragement: "Heureusement, il fait toujours beau au-dessus des nuag
 error_404_back: "Retour à l'accueil"
 
 # Pied de page
-footer_based_on: "Basé sur"
-footer_by: "par"
+footer_cirrus_prefix: "Basé sur"
+footer_cirrus_suffix: "mon template open source —"
 
 # Accessibilité
 a11y_skip: "Aller au contenu principal"
