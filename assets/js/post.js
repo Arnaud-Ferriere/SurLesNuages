@@ -9,6 +9,9 @@
             wrapper.className = 'table-wrapper';
             var scroll = document.createElement('div');
             scroll.className = 'table-scroll';
+            scroll.setAttribute('role', 'region');
+            scroll.setAttribute('aria-label', 'Tableau défilant');
+            scroll.setAttribute('tabindex', '0');
             table.parentNode.insertBefore(wrapper, table);
             wrapper.appendChild(scroll);
             scroll.appendChild(table);
