@@ -10,7 +10,11 @@
   background-color: transparent;
 }
 
-.navbar-toggler:focus,
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  box-shadow: none;
+}
 .navbar-toggler:active {
   outline: none;
   box-shadow: none;
@@ -28,12 +32,20 @@
   color: #99cff0;
 }
 
-.navbar-brand:focus,
+.navbar-brand:focus-visible {
+  color: #99cff0;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
 .navbar-brand:active {
   color: #99cff0;
   outline: none;
 }
-.nav-link:focus,
+.nav-link:focus-visible {
+  color: #fff;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
 .nav-link:active {
   color: #fff;
   outline: none;
@@ -86,7 +98,11 @@
 #theme-toggle:hover {
   color: #f0f0f0;
 }
-#theme-toggle:focus,
+#theme-toggle:focus-visible {
+  color: #fff;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
 #theme-toggle:active {
   color: #fff;
   outline: none;

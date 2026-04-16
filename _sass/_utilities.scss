@@ -49,6 +49,11 @@
 #back-to-top:hover {
   background-color: var(--color-secondary);
 }
+#back-to-top:focus-visible {
+  background-color: var(--color-secondary);
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
 
 /* Back to top adjustments on mobile */
 @media (max-width: 767px) {
