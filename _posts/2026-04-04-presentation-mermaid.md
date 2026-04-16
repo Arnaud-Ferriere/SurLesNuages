@@ -568,7 +568,12 @@ Le diagramme s'affiche directement dans la vue lecture.
 
 En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](https://obsidian.md/plugins?id=mermaid-tools) ([page Github](https://github.com/dartungar/obsidian-mermaid?tab=readme-ov-file)) qui apporte une barre d'outils dédiée dans l'éditeur Obsidian.
 
-Voici une petite animation de démonstration:  ![Image de démonstration de Mermaid Tools](/assets/articles/mermaidtoolsdemo.gif)
+Voici une petite animation de démonstration:
+
+<video autoplay loop muted playsinline preload="metadata" width="1008" height="792" style="max-width:100%;height:auto;">
+  <source src="/assets/articles/mermaidtoolsdemo.webm" type="video/webm">
+  <source src="/assets/articles/mermaidtoolsdemo.mp4" type="video/mp4">
+</video>
 
 Ce qu'il m'apporte :
 - Une **barre d'outils visuelle** avec un bouton par type de diagramme
