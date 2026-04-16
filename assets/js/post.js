@@ -166,12 +166,20 @@
         });
     }
 
+    // Fonctions non-critiques différées après le premier paint
+    var defer = window.requestIdleCallback || function(cb) { setTimeout(cb, 1); };
+
     wrapTables(content);
     setupImageZoom(content);
     parseObsidianCallouts(content);
-    autolinkUrls(content);
-    decorateExternalLinks(content);
     setupPrintButton();
     generateTOC(content);     // AVANT setupH2Collapse (dépendance textContent)
     setupH2Collapse(content);
+
+    // autolinkUrls et decorateExternalLinks sont visuellement non-critiques
+    // (pas d'impact sur la structure/layout). Différés pour libérer le thread.
+    defer(function() {
+        autolinkUrls(content);
+        decorateExternalLinks(content);
+    });
 })();
