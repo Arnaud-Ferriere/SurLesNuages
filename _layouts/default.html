@@ -89,6 +89,12 @@
     </script>
     {% endif %}
 
+    <!-- Preload LCP image — discovered before CSS blocks render -->
+    {% if page.banner or page.image %}
+    {% assign lcp_image = page.banner | default: page.image %}
+    <link rel="preload" as="image" href="{{ lcp_image | relative_url }}" fetchpriority="high">
+    {% endif %}
+
     <!-- Preconnect to external origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
