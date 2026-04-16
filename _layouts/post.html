@@ -41,9 +41,9 @@ layout: default
             {% assign banner_src = page.banner | default: site.default_banner %}
             {% assign cover_src = page.image | default: site.default_image %}
             {% if banner_src and banner_src != "" %}
-            <img src="{{ banner_src | relative_url }}" class="article-banner" alt="{{ page.title }}" loading="lazy">
+            <img src="{{ banner_src | relative_url }}" class="article-banner" alt="{{ page.title }}" fetchpriority="high" decoding="async">
             {% elsif cover_src and cover_src != "" %}
-            <img src="{{ cover_src | relative_url }}" class="article-cover" alt="{{ page.title }}" loading="lazy">
+            <img src="{{ cover_src | relative_url }}" class="article-cover" alt="{{ page.title }}" fetchpriority="high" decoding="async">
             {% endif %}
         </header>
 
