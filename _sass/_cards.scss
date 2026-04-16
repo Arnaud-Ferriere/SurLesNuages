@@ -70,9 +70,13 @@
   padding: 10px;
 }
 
-/* Card images */
+/* Card images — aspect-ratio reserves space before the image loads (CLS fix) */
 .card-img-top {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
 /* Card titles and text */
