@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+
+        // Announce sort change to screen readers
+        var announcement = document.getElementById('sort-announcement');
+        if (announcement) {
+            var colName = header.textContent.trim();
+            announcement.textContent = 'Tableau trié par ' + colName + ', ordre ' + (dir === 'asc' ? 'croissant' : 'décroissant');
+        }
     }
 
     document.querySelectorAll("th[role='button']").forEach(function (th, index) {
