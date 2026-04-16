@@ -11,9 +11,14 @@ function getTheme() {
 }
 
 /* ── Modal pan/zoom ── */
+var modalTrigger = null; /* element that opened the modal, for focus restore */
+
 function createModal() {
   var modal = document.createElement('div');
   modal.id = 'mermaid-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Diagramme en plein écran');
   modal.innerHTML =
     '<div class="mermaid-modal-backdrop"></div>' +
     '<div class="mermaid-modal-inner">' +
@@ -24,16 +29,31 @@ function createModal() {
   document.body.appendChild(modal);
   modal.querySelector('.mermaid-modal-backdrop').addEventListener('click', closeModal);
   modal.querySelector('.mermaid-modal-close').addEventListener('click', closeModal);
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+    /* Focus trap — only close button is interactive */
+    if (e.key === 'Tab' && modal.style.display === 'flex') {
+      e.preventDefault();
+      modal.querySelector('.mermaid-modal-close').focus();
+    }
+  });
   return modal;
 }
 
 function closeModal() {
   var modal = document.getElementById('mermaid-modal');
-  if (modal) modal.style.display = 'none';
+  if (modal) {
+    modal.style.display = 'none';
+    /* Restore background accessibility */
+    var main = document.getElementById('main-content');
+    if (main) main.removeAttribute('aria-hidden');
+    /* Restore focus to trigger element */
+    if (modalTrigger) { modalTrigger.focus(); modalTrigger = null; }
+  }
 }
 
-function openModal(svg) {
+function openModal(svg, trigger) {
+  modalTrigger = trigger || null;
   var modal = document.getElementById('mermaid-modal') || createModal();
   var container = modal.querySelector('.mermaid-modal-svg');
   container.innerHTML = '';
@@ -43,6 +63,11 @@ function openModal(svg) {
   clone.style.transformOrigin = '0 0';
   container.appendChild(clone);
   modal.style.display = 'flex';
+  /* Hide background from screen readers */
+  var main = document.getElementById('main-content');
+  if (main) main.setAttribute('aria-hidden', 'true');
+  /* Focus the close button */
+  modal.querySelector('.mermaid-modal-close').focus();
   initPanZoom(container, clone);
 }
 
@@ -121,7 +146,7 @@ function addMermaidButtons() {
     btn.innerHTML = '<i class="fas fa-expand" aria-hidden="true"></i>';
     btn.addEventListener('click', function() {
       var svg = el.querySelector('svg');
-      if (svg) openModal(svg);
+      if (svg) openModal(svg, btn);
     });
     el.appendChild(btn);
   });
