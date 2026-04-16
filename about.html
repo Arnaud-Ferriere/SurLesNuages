@@ -6,7 +6,7 @@ permalink: /about/
 
     <!-- Print-only header -->
     <div class="print-header">
-        <h1>{{ site.data.author.name }}</h1>
+        <p class="print-name">{{ site.data.author.name }}</p>
         <p class="print-subtitle">{{ site.data.author.role }}</p>
         <p class="print-tagline">{{ site.data.author.tagline }}</p>
     </div>
@@ -44,8 +44,8 @@ permalink: /about/
                         <img src="{{ cert.badge | relative_url }}" alt="{{ cert.name }} badge" width="80" height="80" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h4>{{ cert.name }}</h4>
-                        <h6>{{ cert.date }}</h6>
+                        <h3>{{ cert.name }}</h3>
+                        <p class="cert-date">{{ cert.date }}</p>
                         <a href="{{ cert.url }}"
                             target="_blank" rel="noopener noreferrer" class="cert-link">{{ site.data.ui.about_view_cert }} <i
                                 class="fa-solid fa-square-up-right" aria-hidden="true"></i>
@@ -108,7 +108,7 @@ permalink: /about/
                 <div class="poste-section">
                     <div class="poste-header">
                         <img src="{{ exp.logo | relative_url }}" alt="Logo {{ exp.company }}" class="poste-logo" width="80" height="80" loading="lazy">
-                        <h4 class="poste-title"><strong>{{ exp.period }} : </strong> {{ exp.title }}</h4>
+                        <h3 class="poste-title"><strong>{{ exp.period }} : </strong> {{ exp.title }}</h4>
                     </div>
                     <p class="poste-description">{{ exp.description }}</p>
                 </div>
@@ -119,12 +119,12 @@ permalink: /about/
 
                 <!-- Section Missions -->
                 <div class="missions-section">
-                    <h5 class="missions-title">{{ site.data.ui.about_missions }}</h5>
+                    <h4 class="missions-title">{{ site.data.ui.about_missions }}</h5>
                     {% for mission in exp.missions %}
                     <div class="mission">
                         <div class="mission-header">
                             <img src="{{ mission.logo | relative_url }}" alt="Logo {{ mission.client }}" class="mission-logo" width="80" height="80" loading="lazy">
-                            <h5 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
+                            <h4 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
                         </div>
 
                         <div class="mission-description">
@@ -220,7 +220,7 @@ permalink: /about/
                         <img src="{{ '/assets/about/applied-skill.svg' | relative_url }}" alt="{{ skill.name }} badge" width="80" height="80" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h4>{{ skill.name }}</h4>
+                        <h3>{{ skill.name }}</h3>
                         <a href="{{ skill.url }}"
                             target="_blank" rel="noopener noreferrer" class="cert-link">{{ site.data.ui.about_view_cert }} <i
                                 class="fa-solid fa-square-up-right" aria-hidden="true"></i>
