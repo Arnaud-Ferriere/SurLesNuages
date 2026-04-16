@@ -27,15 +27,16 @@ plugins:
 paginate: 6
 paginate_path: "/page:num/"
 
+# Jekyll 3 : spécifier `exclude` remplace les defaults — on doit donc
+# redéclarer les entrées importantes (Gemfile, node_modules, vendor/…).
+# Les dot-files (.claude, .vscode, .obsidian…) sont auto-exclus.
 exclude:
-  - README.md
-  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
-  - .claude
-  - .vscode
-  - backend
   - node_modules
+  - vendor
+  - README.md
+  - CLAUDE.md
   - Templates
 
 defaults:
