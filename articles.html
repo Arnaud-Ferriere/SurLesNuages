@@ -7,7 +7,12 @@ permalink: /articles/
 <div class="container mt-5">
     <h1 class="display-5 mb-4">{{ site.data.ui.articles_title }}</h1>
 
-    {% assign any_series = site.posts | where_exp: "p", "p.series" | size %}
+    {% comment %}Count series pages that have at least one published post{% endcomment %}
+    {% assign any_series = 0 %}
+    {% for sp in site.series %}
+      {% assign sc = site.posts | where: "series", sp.series_name | size %}
+      {% if sc > 0 %}{% assign any_series = any_series | plus: 1 %}{% endif %}
+    {% endfor %}
     <!-- Sélecteur de vue -->
     <div class="articles-view-toggle mb-4" role="group" aria-label="Mode d'affichage">
         <button id="btn-chrono" class="view-toggle-btn active" aria-pressed="true">
@@ -92,33 +97,26 @@ permalink: /articles/
     </div>
 
     {% if any_series > 0 %}
-    <!-- Vue par série -->
+    <!-- Vue par série : grille de cartes vers les pages dédiées /series/<slug>/ -->
     <div id="view-series" style="display:none;">
-        {% assign series_posts = site.posts | where_exp: "p", "p.series" %}
-        {% assign series_groups = series_posts | group_by: "series" | sort: "name" %}
-        {% for group in series_groups %}
-        {% assign ordered = group.items | sort: "series_part" %}
-        <div class="tags-page-section" id="series-{{ group.name | slugify }}">
-            <h2><i class="fas fa-layer-group" aria-hidden="true"></i> {{ group.name }}
-                <span class="text-muted" style="font-size:0.7em;font-weight:400;">&nbsp;·&nbsp; {{ ordered.size }} {% if ordered.size > 1 %}articles{% else %}article{% endif %}</span>
-            </h2>
-            <ol class="list-group series-list-items">
-                {% for post in ordered %}
-                <li class="list-group-item articles-chrono-item">
-                    <div class="articles-chrono-main">
-                        <span class="series-number">{{ forloop.index }}.</span>
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        <span class="text-muted articles-chrono-meta">{{ post.date | date: "%d/%m/%Y" }}</span>
-                    </div>
-                    {% assign excerpt_text = post.excerpt | strip_html | strip_newlines | truncate: 160 %}
-                    {% if excerpt_text != "" %}
-                    <p class="articles-chrono-excerpt">{{ excerpt_text }}</p>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ol>
+        <div class="series-grid">
+            {% assign sorted_series = site.series | sort: "title" %}
+            {% for series_page in sorted_series %}
+            {% assign posts_count = site.posts | where: "series", series_page.series_name | size %}
+            {% if posts_count == 0 %}{% continue %}{% endif %}
+            <a href="{{ series_page.url | relative_url }}" class="series-card">
+                <div class="series-card-header">
+                    <i class="fas fa-layer-group series-card-icon" aria-hidden="true"></i>
+                    <span class="series-card-count">{{ posts_count }}{% if series_page.expected_count %}/{{ series_page.expected_count }}{% endif %}</span>
+                </div>
+                <h3 class="series-card-title">{{ series_page.title }}</h3>
+                {% if series_page.description %}
+                <p class="series-card-description">{{ series_page.description | truncate: 180 }}</p>
+                {% endif %}
+                <span class="series-card-cta">Voir la série <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
     {% endif %}
 </div>

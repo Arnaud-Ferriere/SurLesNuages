@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+{% assign posts_in_series = site.posts | where: "series", page.series_name | sort: "series_part" %}
+
+<article class="container mt-5">
+    <div class="article-container p-4">
+        <header class="text-center mb-4">
+            <p class="series-breadcrumb">
+                <a href="{{ '/articles/' | relative_url }}"><i class="fas fa-arrow-left" aria-hidden="true"></i> {{ site.data.ui.articles_title }}</a>
+            </p>
+            <h1 class="display-5"><i class="fas fa-layer-group" aria-hidden="true"></i> {{ page.title }}</h1>
+            {% if page.description %}
+            <p class="lead text-muted">{{ page.description }}</p>
+            {% endif %}
+            <p class="text-muted">
+                <i class="fas fa-book" aria-hidden="true"></i>
+                {{ posts_in_series.size }} {% if posts_in_series.size > 1 %}articles publiés{% else %}article publié{% endif %}
+                {% if page.expected_count and page.expected_count > posts_in_series.size %}
+                    &nbsp;·&nbsp; <span class="series-progress">{{ posts_in_series.size }}/{{ page.expected_count }}</span>
+                {% endif %}
+            </p>
+        </header>
+
+        {% if page.content and page.content != "" %}
+        <section class="content">
+            {{ content }}
+        </section>
+        {% endif %}
+
+        <section class="series-page-articles">
+            {% if posts_in_series.size == 0 %}
+            <p class="text-muted text-center"><em>Aucun article publié pour l'instant dans cette série. Revenez bientôt !</em></p>
+            {% else %}
+            <ol class="series-page-list">
+                {% for post in posts_in_series %}
+                <li class="series-page-item">
+                    <div class="series-page-item-header">
+                        <span class="series-page-number">{{ forloop.index }}.</span>
+                        <a href="{{ post.url | relative_url }}" class="series-page-title">{{ post.title }}</a>
+                    </div>
+                    <div class="series-page-meta">
+                        <span class="text-muted"><i class="fas fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%d/%m/%Y" }}</span>
+                        {% if post.difficulty %}
+                        {% case post.difficulty %}
+                          {% when "debutant" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_debutant %}
+                          {% when "intermediaire" %}{% assign diff_icon = "☁️" %}{% assign diff_label = site.data.ui.diff_intermediaire %}
+                          {% when "avance" %}{% assign diff_icon = "🌧️" %}{% assign diff_label = site.data.ui.diff_avance %}
+                          {% when "expert" %}{% assign diff_icon = "🌪️" %}{% assign diff_label = site.data.ui.diff_expert %}
+                        {% endcase %}
+                        <span class="difficulty-badge difficulty-{{ post.difficulty }}" aria-label="{{ site.data.ui.diff_aria_prefix }} {{ diff_label }}"><span aria-hidden="true">{{ diff_icon }} </span>{{ diff_label }}</span>
+                        {% endif %}
+                    </div>
+                    {% assign excerpt_text = post.excerpt | strip_html | strip_newlines | truncate: 200 %}
+                    {% if excerpt_text != "" %}
+                    <p class="series-page-excerpt">{{ excerpt_text }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+        </section>
+    </div>
+</article>

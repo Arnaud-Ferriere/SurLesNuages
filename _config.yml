@@ -42,9 +42,19 @@ exclude:
   - CLAUDE.md
   - Templates
 
+collections:
+  series:
+    output: true
+    permalink: /series/:path/
+
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "series"
+    values:
+      layout: "series"
