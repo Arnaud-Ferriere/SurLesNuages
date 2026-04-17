@@ -46,6 +46,9 @@ collections:
   series:
     output: true
     permalink: /series/:path/
+  series_drafts:
+    output: true
+    permalink: /series/:path/
 
 defaults:
   - scope:
@@ -56,5 +59,10 @@ defaults:
   - scope:
       path: ""
       type: "series"
+    values:
+      layout: "series"
+  - scope:
+      path: ""
+      type: "series_drafts"
     values:
       layout: "series"
