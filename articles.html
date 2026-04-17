@@ -7,6 +7,7 @@ permalink: /articles/
 <div class="container mt-5">
     <h1 class="display-5 mb-4">{{ site.data.ui.articles_title }}</h1>
 
+    {% assign any_series = site.posts | where_exp: "p", "p.series" | size %}
     <!-- Sélecteur de vue -->
     <div class="articles-view-toggle mb-4" role="group" aria-label="Mode d'affichage">
         <button id="btn-chrono" class="view-toggle-btn active" aria-pressed="true">
@@ -15,9 +16,11 @@ permalink: /articles/
         <button id="btn-tags" class="view-toggle-btn" aria-pressed="false">
             <i class="fas fa-tags" aria-hidden="true"></i> {{ site.data.ui.articles_by_tags }}
         </button>
+        {% if any_series > 0 %}
         <button id="btn-series" class="view-toggle-btn" aria-pressed="false">
             <i class="fas fa-layer-group" aria-hidden="true"></i> {{ site.data.ui.articles_by_series }}
         </button>
+        {% endif %}
     </div>
 
     <!-- Vue chronologique -->
@@ -88,12 +91,10 @@ permalink: /articles/
         {% endif %}
     </div>
 
+    {% if any_series > 0 %}
     <!-- Vue par série -->
     <div id="view-series" style="display:none;">
         {% assign series_posts = site.posts | where_exp: "p", "p.series" %}
-        {% if series_posts.size == 0 %}
-        <p class="text-muted">{{ site.data.ui.articles_no_series }}</p>
-        {% else %}
         {% assign series_groups = series_posts | group_by: "series" | sort: "name" %}
         {% for group in series_groups %}
         {% assign ordered = group.items | sort: "series_part" %}
@@ -117,8 +118,8 @@ permalink: /articles/
             </ol>
         </div>
         {% endfor %}
-        {% endif %}
     </div>
+    {% endif %}
 </div>
 
 <script src="{{ '/assets/js/articles.js' | relative_url }}"></script>

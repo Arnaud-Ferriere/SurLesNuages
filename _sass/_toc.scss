@@ -125,38 +125,37 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   TOC drawer (opens from the pill)
+   TOC drawer (pops out from the pill in bottom-left corner)
    ───────────────────────────────────────────────────────────── */
 .toc-drawer {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }
 .toc-drawer[hidden] { display: none; }
 
 .toc-drawer-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.25);
   animation: toc-fade 0.2s ease;
 }
 
 .toc-drawer-panel {
-  position: relative;
+  position: absolute;
+  bottom: 75px;
+  left: 20px;
   background: var(--color-card-bg);
   color: var(--color-text);
-  border-radius: 1rem 1rem 0 0;
-  width: 100%;
-  max-width: 640px;
-  max-height: 75vh;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  width: min(calc(100vw - 40px), 420px);
+  max-height: min(70vh, 560px);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
-  animation: toc-slide-up 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transform-origin: bottom left;
+  animation: toc-pop 0.22s ease;
 }
 
 .toc-drawer-header {
@@ -219,26 +218,16 @@
 .toc-drawer-list .toc-h3 { padding-left: 1.5rem; }
 .toc-drawer-list .toc-h3::before { content: '\2013'; color: #aaa; }
 
-/* Desktop: center the drawer as a modal instead of bottom sheet */
-@media (min-width: 768px) {
-  .toc-drawer { align-items: center; }
-  .toc-drawer-panel {
-    border-radius: 1rem;
-    max-height: 80vh;
-    animation: toc-zoom 0.25s ease;
-  }
+@media (max-width: 575px) {
+  .toc-drawer-panel { bottom: 60px; left: 10px; max-height: 65vh; }
 }
 
 @keyframes toc-fade {
   from { opacity: 0; } to { opacity: 1; }
 }
-@keyframes toc-slide-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-@keyframes toc-zoom {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+@keyframes toc-pop {
+  from { opacity: 0; transform: scale(0.9) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
