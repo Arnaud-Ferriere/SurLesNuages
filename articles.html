@@ -51,13 +51,6 @@ permalink: /articles/
                     {% if excerpt_text != "" %}
                     <p class="articles-chrono-excerpt">{{ excerpt_text }}</p>
                     {% endif %}
-                    {% if post.tags.size > 0 %}
-                    <span class="articles-chrono-tags">
-                        {% for tag in post.tags %}
-                        <a href="#{{ tag | slugify }}" class="tag-badge tag-badge-sm" onclick="switchToTagsView(event, '{{ tag | slugify }}')">{{ tag }}</a>
-                        {% endfor %}
-                    </span>
-                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
