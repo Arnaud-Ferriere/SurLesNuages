@@ -104,7 +104,11 @@ permalink: /articles/
             <a href="{{ series_page.url | relative_url }}" class="series-card">
                 <div class="series-card-header">
                     <i class="fas fa-layer-group series-card-icon" aria-hidden="true"></i>
-                    <span class="series-card-count">{{ series_posts.size }}{% if card_expected %}/{{ card_expected }}{% endif %}</span>
+                    <span class="series-card-count">{%- if card_expected and card_expected > series_posts.size -%}
+                        {{ series_posts.size }}/{{ card_expected }} article{%- if card_expected > 1 -%}s{%- endif -%}
+                    {%- else -%}
+                        {{ series_posts.size }} article{%- if series_posts.size > 1 -%}s{%- endif -%}
+                    {%- endif -%}</span>
                 </div>
                 <h3 class="series-card-title">{{ card_title }}</h3>
                 {% if card_description %}
