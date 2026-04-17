@@ -2,6 +2,33 @@
     var content = document.querySelector('article .content');
     if (!content) return;
 
+    // Copy-to-clipboard button on code blocks
+    function addCopyButtons(root) {
+        root.querySelectorAll('.highlight').forEach(function (block) {
+            if (block.querySelector('.code-copy-btn')) return;
+            var btn = document.createElement('button');
+            btn.className = 'code-copy-btn';
+            btn.type = 'button';
+            btn.setAttribute('aria-label', 'Copier le code');
+            btn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i> Copier';
+            btn.addEventListener('click', function () {
+                var code = block.querySelector('code') || block.querySelector('pre');
+                if (!code) return;
+                navigator.clipboard.writeText(code.innerText).then(function () {
+                    btn.classList.add('copied');
+                    btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copié !';
+                    setTimeout(function () {
+                        btn.classList.remove('copied');
+                        btn.innerHTML = '<i class="fas fa-copy" aria-hidden="true"></i> Copier';
+                    }, 2000);
+                }).catch(function () {
+                    btn.innerHTML = '<i class="fas fa-xmark" aria-hidden="true"></i> Échec';
+                });
+            });
+            block.appendChild(btn);
+        });
+    }
+
     // Wrap tables for responsive scroll + carte style
     function wrapTables(root) {
         root.querySelectorAll('table').forEach(function (table) {
@@ -177,6 +204,7 @@
     var defer = window.requestIdleCallback || function(cb) { setTimeout(cb, 1); };
 
     wrapTables(content);
+    addCopyButtons(content);
     setupImageZoom(content);
     parseObsidianCallouts(content);
     setupPrintButton();
