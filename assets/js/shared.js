@@ -25,4 +25,16 @@
         modalImg.alt = alt || '';
         bootstrap.Modal.getOrCreateInstance(document.getElementById('imageModal')).show();
     };
+
+    // Keyboard shortcut "/" → focus the search input (home page only)
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+        var tag = (e.target && e.target.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+        var input = document.getElementById('home-search-input');
+        if (!input) return;
+        e.preventDefault();
+        input.focus();
+        input.select();
+    });
 })();
