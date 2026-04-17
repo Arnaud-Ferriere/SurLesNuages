@@ -92,20 +92,9 @@
   font-weight: 500;
   cursor: pointer;
   max-width: min(calc(100vw - 40px), 400px);
-  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 .toc-pill.visible {
   display: inline-flex;
-}
-.toc-pill:hover {
-  background: var(--color-secondary);
-  color: #fff;
-  border-color: var(--color-secondary);
-  transform: translateY(-2px);
-}
-.toc-pill:hover .toc-pill-count {
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
 }
 .toc-pill:focus-visible {
   outline: 2px solid var(--color-secondary);
