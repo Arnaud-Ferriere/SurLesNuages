@@ -99,7 +99,11 @@ article .content h4 {
   color: color-mix(in srgb, var(--color-secondary) 30%, var(--color-primary));
 }
 
-article .content h2 {
+/* Collapsible section styling applies only when post.js has wrapped the
+   h2 with a collapse button. Without :has(), legal/a11y pages that use
+   layout: default (no post.js) would get cursor: pointer and lose text
+   selection on h2 for no reason. */
+article .content h2:has(> .collapse-section-btn) {
   display: flex;
   align-items: center;
   justify-content: space-between;
