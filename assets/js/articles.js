@@ -1,7 +1,9 @@
 var btnChrono  = document.getElementById('btn-chrono');
 var btnTags    = document.getElementById('btn-tags');
+var btnSeries  = document.getElementById('btn-series');
 var viewChrono = document.getElementById('view-chrono');
 var viewTags   = document.getElementById('view-tags');
+var viewSeries = document.getElementById('view-series');
 
 function getNavbarHeight() {
     var navbar = document.querySelector('.navbar');
@@ -15,42 +17,51 @@ function scrollToAnchor(id) {
     window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
-btnChrono.addEventListener('click', function () {
-    viewChrono.style.display = '';
-    viewTags.style.display = 'none';
-    btnChrono.classList.add('active');
-    btnChrono.setAttribute('aria-pressed', 'true');
-    btnTags.classList.remove('active');
-    btnTags.setAttribute('aria-pressed', 'false');
-});
+function activateView(view) {
+    var mapping = {
+        chrono: { btn: btnChrono, panel: viewChrono },
+        tags:   { btn: btnTags,   panel: viewTags },
+        series: { btn: btnSeries, panel: viewSeries }
+    };
+    Object.keys(mapping).forEach(function (key) {
+        var m = mapping[key];
+        if (!m.btn || !m.panel) return;
+        var active = key === view;
+        m.panel.style.display = active ? '' : 'none';
+        m.btn.classList.toggle('active', active);
+        m.btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+}
 
-btnTags.addEventListener('click', function () {
-    viewChrono.style.display = 'none';
-    viewTags.style.display = '';
-    btnTags.classList.add('active');
-    btnTags.setAttribute('aria-pressed', 'true');
-    btnChrono.classList.remove('active');
-    btnChrono.setAttribute('aria-pressed', 'false');
-});
+if (btnChrono) btnChrono.addEventListener('click', function () { activateView('chrono'); });
+if (btnTags)   btnTags.addEventListener('click',   function () { activateView('tags'); });
+if (btnSeries) btnSeries.addEventListener('click', function () { activateView('series'); });
 
 function switchToTagsView(event, anchor) {
     event.preventDefault();
-    btnTags.click();
+    activateView('tags');
     setTimeout(function () { scrollToAnchor(anchor); }, 50);
 }
 
-document.getElementById('view-tags').addEventListener('click', function (e) {
-    var link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-    e.preventDefault();
-    scrollToAnchor(link.getAttribute('href').slice(1));
-});
+if (viewTags) {
+    viewTags.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        e.preventDefault();
+        scrollToAnchor(link.getAttribute('href').slice(1));
+    });
+}
 
 (function () {
     var hash = window.location.hash;
     if (!hash) return;
     var id = hash.slice(1);
     if (!document.getElementById(id)) return;
-    btnTags.click();
+    // Auto-switch to the correct view based on anchor prefix
+    if (id.indexOf('series-') === 0) {
+        activateView('series');
+    } else {
+        activateView('tags');
+    }
     setTimeout(function () { scrollToAnchor(id); }, 50);
 })();

@@ -68,6 +68,8 @@ about_interest_image: "Image du centre d'intérêt"
 articles_title: "Articles"
 articles_chronological: "Chronologique"
 articles_by_tags: "Par tags"
+articles_by_series: "Par série"
+articles_no_series: "Aucun article regroupé en série pour l'instant."
 articles_no_articles: "Aucun article publié pour l'instant."
 
 # Page 404
