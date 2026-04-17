@@ -87,10 +87,14 @@
     background-color: var(--color-card-bg);
   }
 
-  /* Inline code in articles */
+  /* Inline code in articles (excludes code inside <pre>) */
   article .content code {
     background: #1e2a3a;
     color: #89b4fa;
+  }
+  article .content pre code {
+    background: none;
+    color: inherit;
   }
 
   /* Blockquotes */
