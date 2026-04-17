@@ -1,12 +1,17 @@
-/* Syntax highlighting (Rouge - base16.dark) */
-.highlight {
+/* Syntax highlighting (Rouge - base16.dark)
+   Rouge generates both <div class="highlight"> and <pre class="highlight">;
+   keep only position (for the copy button) and overflow on the wrapper,
+   and let <pre> handle its own background/padding via its natural styling. */
+div.highlight {
+  position: relative;
+  overflow: visible;
+}
+pre.highlight {
   background: #1e1e2e;
   border-radius: 10px;
   padding: 1rem;
   overflow-x: auto;
-  margin: 1.5rem 0;
   box-shadow: var(--box-shadow-light);
-  position: relative;
 }
 
 /* Copy-to-clipboard button on code blocks */
