@@ -1,0 +1,217 @@
+---
+layout: default
+title: Conformité
+permalink: /conformite/
+---
+
+<article class="container mt-5">
+  <div class="article-container p-4">
+    <header class="text-center mb-4">
+      <h1 class="display-5"><i class="fas fa-shield-halved" aria-hidden="true"></i> Conformité</h1>
+      <p class="text-muted">Dernière mise à jour : {{ site.time | date: "%d/%m/%Y" }}</p>
+      <p class="lead text-muted">
+        Mentions légales, politique de confidentialité et engagements liés à l'exploitation du site.
+      </p>
+    </header>
+
+    <!-- Sommaire rapide -->
+    <nav class="toc-container" aria-label="Sommaire">
+      <ol class="toc-list">
+        <li><a href="#mentions-legales">Mentions légales</a></li>
+        <li><a href="#confidentialite">Politique de confidentialité (RGPD)</a></li>
+        <li><a href="#propriete-intellectuelle">Propriété intellectuelle</a></li>
+        <li><a href="#accessibilite">Accessibilité</a></li>
+      </ol>
+    </nav>
+
+    <section class="content">
+
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <h2 id="mentions-legales">Mentions légales</h2>
+
+      <h3>Éditeur du site</h3>
+      <p>
+        Le site <strong>{{ site.title }}</strong> (<a href="{{ site.url }}">{{ site.url | remove: "https://" }}</a>)
+        est édité à titre personnel par&nbsp;:
+      </p>
+      <ul>
+        <li><strong>{{ site.data.author.name }}</strong></li>
+        <li>{{ site.data.author.role }}</li>
+        <li>Contact : <a href="#contact" data-email-user="{{ site.data.author.email_user }}" data-email-domain="{{ site.data.author.email_domain }}" data-email-replace>{{ site.data.author.email_user }} (at) {{ site.data.author.email_domain }}</a></li>
+      </ul>
+      <p>
+        Le site a une vocation purement personnelle et éditoriale (partage d'expériences techniques).
+        Il n'est associé à aucune activité commerciale et n'est pas soumis à l'obligation d'inscription au RCS.
+      </p>
+
+      <h3>Directeur de la publication</h3>
+      <p>{{ site.data.author.name }}</p>
+
+      <h3>Hébergement</h3>
+      <p>
+        Le site est hébergé <strong>gratuitement</strong> sur <strong>GitHub Pages</strong>, le service
+        d'hébergement de sites statiques proposé par GitHub :
+      </p>
+      <ul>
+        <li>GitHub, Inc.</li>
+        <li>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</li>
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">https://github.com</a></li>
+      </ul>
+      <p>
+        L'intégralité du code source de ce site est disponible en <strong>open source</strong> sur GitHub.
+        Vous pouvez y consulter les sources, signaler une erreur, proposer une correction, ou vous en
+        inspirer pour votre propre projet :
+      </p>
+      <p>
+        <a href="https://github.com/Arnaud-Ferriere/SurLesNuages" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          Arnaud-Ferriere/SurLesNuages
+        </a>
+      </p>
+
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <h2 id="confidentialite">Politique de confidentialité (RGPD)</h2>
+
+      <h3>En résumé</h3>
+      <p>
+        Le site ne pose <strong>aucun cookie</strong>, ne vous suit pas à travers d'autres sites,
+        ne partage rien avec des régies publicitaires, et n'utilise <strong>aucun traceur tiers</strong>.
+        Aucune bannière de consentement n'est nécessaire car aucun traitement soumis à consentement n'est effectué.
+      </p>
+
+      <h3>Responsable du traitement</h3>
+      <p>
+        {{ site.data.author.name }}, éditeur du site. Pour toute question relative à vos données personnelles,
+        vous pouvez me contacter par e-mail :
+        <a href="#contact" data-email-user="{{ site.data.author.email_user }}" data-email-domain="{{ site.data.author.email_domain }}" data-email-replace>{{ site.data.author.email_user }} (at) {{ site.data.author.email_domain }}</a>.
+      </p>
+
+      <h3>Statistiques anonymes de fréquentation (GoatCounter)</h3>
+      <p>
+        J'utilise <a href="https://www.goatcounter.com" target="_blank" rel="noopener noreferrer">GoatCounter</a>
+        pour mesurer l'audience du site. Cet outil est conçu pour respecter la vie privée :
+      </p>
+      <ul>
+        <li>Aucun cookie déposé sur votre navigateur</li>
+        <li>Votre adresse IP est hachée avec un sel qui change chaque jour ; elle n'est jamais stockée</li>
+        <li>Aucun identifiant individuel, aucun profil utilisateur</li>
+        <li>Les données sont agrégées : pages vues, pays, navigateur, site référent</li>
+        <li>Hébergement des statistiques en Europe (Pays-Bas)</li>
+      </ul>
+      <p>
+        Selon les lignes directrices de la CNIL, ce type de mesure d'audience anonyme est
+        <a href="https://www.cnil.fr/fr/cookies-solutions-pour-les-outils-de-mesure-daudience" target="_blank" rel="noopener noreferrer">exempté de consentement</a>
+        car strictement nécessaire à l'exploitation du service et sans portée publicitaire.
+      </p>
+
+      <h3>Commentaires (Giscus / GitHub Discussions)</h3>
+      <p>
+        Les commentaires sont gérés par <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a>,
+        qui s'appuie sur les <strong>GitHub Discussions</strong> du dépôt public du site. Pour laisser un commentaire :
+      </p>
+      <ul>
+        <li>Vous devez disposer d'un compte GitHub et y consentir en vous connectant</li>
+        <li>Votre pseudonyme et avatar GitHub s'affichent publiquement à côté du commentaire</li>
+        <li>Le contenu du commentaire est stocké sur GitHub ; il est soumis à la
+          <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">politique de confidentialité de GitHub</a></li>
+        <li>Le chargement de Giscus est différé : il ne s'effectue que lorsque vous faites défiler jusqu'à la zone de commentaires</li>
+      </ul>
+
+      <h3>Préférence de thème (localStorage)</h3>
+      <p>
+        Si vous cliquez sur le bouton de changement de thème (clair / sombre) dans la navbar, votre choix
+        est mémorisé dans le <code>localStorage</code> de votre navigateur (clé <code>theme</code>, valeurs
+        <code>light</code> ou <code>dark</code>). Il s'agit d'un stockage purement local, jamais transmis
+        au serveur, utilisé uniquement pour vous servir le thème que vous avez explicitement choisi.
+      </p>
+      <p>
+        Selon les lignes directrices de la CNIL, ce stockage est
+        <strong>exempté de consentement</strong> car strictement nécessaire à la fourniture d'un service
+        explicitement demandé par l'utilisateur (préférence d'affichage). Si vous n'utilisez pas le bouton,
+        aucune valeur n'est écrite : le site se contente alors de respecter la préférence de votre
+        système d'exploitation (<code>prefers-color-scheme</code>).
+      </p>
+      <p>
+        Vous pouvez effacer cette préférence à tout moment depuis les paramètres de votre navigateur
+        (suppression du stockage de site).
+      </p>
+
+      <h3>Aucune autre collecte</h3>
+      <p>Le site ne collecte rien d'autre :</p>
+      <ul>
+        <li>Pas de formulaire de contact ou d'inscription</li>
+        <li>Pas de newsletter</li>
+        <li>Pas d'intégration de réseaux sociaux traquant les visiteurs (pas de bouton "J'aime", de widget Twitter, etc.) — <strong>les boutons de partage présents en bas des articles sont de simples liens HTML</strong> vers les pages d'intention de publication des plateformes (LinkedIn, Bluesky, X) : aucun script tiers chargé, aucune donnée transmise tant que vous ne cliquez pas</li>
+        <li>Toutes les ressources (polices, scripts, images, bibliothèques) sont hébergées sur le même domaine : aucune requête vers des CDN tiers</li>
+      </ul>
+
+      <h3>Vos droits (RGPD)</h3>
+      <p>
+        Conformément au Règlement Général sur la Protection des Données, vous disposez à tout moment des
+        droits d'accès, de rectification, d'effacement, de portabilité, de limitation et d'opposition au
+        traitement de vos données. Comme aucune donnée personnelle identifiante n'est stockée ici, il n'y
+        a techniquement rien à exporter, rectifier ou supprimer de mon côté.
+      </p>
+      <p>
+        Pour les commentaires publiés via Giscus, il vous suffit de les éditer ou supprimer directement
+        depuis votre compte GitHub. Pour toute autre question, vous pouvez me contacter par e-mail.
+      </p>
+
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <h2 id="propriete-intellectuelle">Propriété intellectuelle</h2>
+
+      <h3>Contenu rédactionnel</h3>
+      <p>
+        Les articles, illustrations, et éléments rédactionnels du site sont la propriété de
+        {{ site.data.author.name }} et sont publiés sous la licence
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.
+      </p>
+      <p>
+        Vous êtes libre de les partager, adapter et même les utiliser commercialement, à condition
+        d'attribuer le contenu à l'auteur et d'indiquer si des modifications ont été apportées.
+      </p>
+
+      <h3>Template du site</h3>
+      <p>
+        Le thème graphique de ce site est basé sur
+        <a href="https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll" target="_blank" rel="noopener noreferrer">Cirrus for Jekyll</a>,
+        un template open source que je maintiens sous licence CC BY 4.0.
+      </p>
+
+      <h3>Bibliothèques tierces</h3>
+      <p>
+        Le site intègre les bibliothèques open source suivantes, toutes auto-hébergées dans le respect de leurs licences :
+      </p>
+      <ul>
+        <li><strong>Bootstrap 5.3</strong> (<a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>)</li>
+        <li><strong>Font Awesome 6.7</strong> Free (<a href="https://fontawesome.com/license/free" target="_blank" rel="noopener noreferrer">MIT + CC BY 4.0 + SIL OFL 1.1</a>)</li>
+        <li><strong>Mermaid 11</strong> (<a href="https://github.com/mermaid-js/mermaid/blob/develop/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>)</li>
+        <li><strong>Poppins</strong> Google Fonts (<a href="https://openfontlicense.org/" target="_blank" rel="noopener noreferrer">SIL OFL 1.1</a>)</li>
+        <li><strong>Giscus</strong> (<a href="https://github.com/giscus/giscus/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a>)</li>
+      </ul>
+
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <h2 id="accessibilite">Accessibilité</h2>
+      <p>
+        Le site vise la conformité WCAG 2.1 niveau AA. La déclaration complète — fonctionnalités mises en place,
+        outils de test, limitations connues, et procédure pour signaler un problème — est détaillée sur sa
+        page dédiée&nbsp;:
+      </p>
+      <p>
+        <a href="{{ '/accessibilite/' | relative_url }}">
+          <i class="fas fa-universal-access" aria-hidden="true"></i>
+          Consulter la déclaration d'accessibilité complète
+        </a>
+      </p>
+
+      <hr>
+
+      <h2>Modifications</h2>
+      <p>
+        Cette page peut évoluer en fonction des changements apportés au site ou à la réglementation.
+        La date de dernière mise à jour figure en en-tête de page.
+      </p>
+
+    </section>
+  </div>
+</article>

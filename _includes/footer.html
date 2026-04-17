@@ -3,6 +3,11 @@
   {% if footer_wave %}<div class="footer-wave" aria-hidden="true"></div>{% endif %}
   <div class="footer-content">
     <p>{{ site.data.author.name_display }} - {{ site.time | date: '%Y' }}</p>
+    <p class="footer-links">
+      <a href="{{ '/conformite/' | relative_url }}">{{ site.data.ui.footer_compliance }}</a>
+      <span aria-hidden="true"> · </span>
+      <a href="{{ '/accessibilite/' | relative_url }}">{{ site.data.ui.footer_accessibility }}</a>
+    </p>
     <p class="footer-cirrus">{{ site.data.ui.footer_cirrus_prefix }} <a href="https://github.com/Arnaud-Ferriere/Cirrus-for-Jekyll" target="_blank" rel="noopener noreferrer">Cirrus for Jekyll</a>, {{ site.data.ui.footer_cirrus_suffix }} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p>
   </div>
 </footer>

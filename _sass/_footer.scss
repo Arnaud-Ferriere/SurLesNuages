@@ -39,3 +39,13 @@
   opacity: 0.55;
   margin-top: 0.2rem !important;
 }
+
+.footer-links {
+  font-size: 0.85rem;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0 !important;
+  opacity: 0.85;
+
+  a { margin: 0 0.15rem; }
+  span { opacity: 0.5; margin: 0 0.15rem; }
+}

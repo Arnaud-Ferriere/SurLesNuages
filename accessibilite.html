@@ -1,0 +1,128 @@
+---
+layout: default
+title: Déclaration d'accessibilité
+permalink: /accessibilite/
+---
+
+<article class="container mt-5">
+  <div class="article-container p-4">
+    <header class="text-center mb-4">
+      <h1 class="display-5"><i class="fas fa-universal-access" aria-hidden="true"></i> Déclaration d'accessibilité</h1>
+      <p class="text-muted">Dernière mise à jour : {{ site.time | date: "%d/%m/%Y" }}</p>
+    </header>
+
+    <section class="content">
+
+      <h2>Engagement</h2>
+      <p>
+        Je ({{ site.data.author.name }}) m'engage à rendre le site <strong>Sur les nuages</strong>
+        accessible au plus grand nombre, en visant la conformité aux
+        <a href="https://www.w3.org/Translations/WCAG21-fr/" target="_blank" rel="noopener noreferrer">WCAG 2.1 niveau AA</a>
+        (Web Content Accessibility Guidelines).
+      </p>
+      <p>
+        L'accessibilité n'est pas une case à cocher mais un travail continu : si vous rencontrez
+        un obstacle sur ce site, je veux le savoir pour y remédier :
+        <strong>n'hésitez pas à me contacter !</strong>
+      </p>
+      <p>
+        <em>Note : cette déclaration est une auto-évaluation, elle n'est pas le résultat d'un
+        audit formel par un organisme tiers.</em>
+      </p>
+
+      <h2>Fonctionnalités mises en place</h2>
+
+      <h3>Navigation au clavier</h3>
+      <ul>
+        <li><strong>Lien d'évitement</strong> vers le contenu principal (première tabulation sur chaque page)</li>
+        <li><strong>Focus visible</strong> sur tous les éléments interactifs (boutons, liens, menus, navbar, back-to-top)</li>
+        <li><strong>Raccourci clavier</strong> : appuyer sur <kbd>/</kbd> sur la page d'accueil focalise la barre de recherche</li>
+        <li><strong>Piège de focus</strong> sur les modaux (diagrammes Mermaid en plein écran, images zoomées)</li>
+        <li>Les images cliquables sont accessibles via <kbd>Entrée</kbd> ou <kbd>Espace</kbd></li>
+      </ul>
+
+      <h3>Structure sémantique</h3>
+      <ul>
+        <li>Repères ARIA / éléments sémantiques : <code>main</code>, <code>nav</code>, <code>article</code>, <code>aside</code>, <code>footer</code></li>
+        <li>Hiérarchie de titres respectée (h1 → h2 → h3 sans saut)</li>
+        <li>Table des matières générée comme <code>nav</code> étiqueté</li>
+        <li>Fil d'Ariane (breadcrumb) présent dans les données structurées et sur les pages de séries</li>
+      </ul>
+
+      <h3>Textes alternatifs et ARIA</h3>
+      <ul>
+        <li>Toutes les images informatives possèdent un attribut <code>alt</code> descriptif</li>
+        <li>Les icônes purement décoratives sont marquées <code>aria-hidden="true"</code></li>
+        <li>Les boutons sans texte visible ont un <code>aria-label</code> explicite</li>
+        <li>Les composants interactifs utilisent les attributs ARIA appropriés : <code>aria-expanded</code>, <code>aria-pressed</code>, <code>aria-sort</code>, <code>aria-live</code></li>
+        <li>Les liens externes sont annoncés comme ouvrant dans une nouvelle fenêtre</li>
+      </ul>
+
+      <h3>Contenus multimédia</h3>
+      <ul>
+        <li>Les vidéos sans audio sont explicitement étiquetées comme telles</li>
+        <li>Une piste de sous-titres vide est fournie pour les vidéos de démonstration (conformité WCAG 1.2.2)</li>
+      </ul>
+
+      <h3>Adaptation aux préférences utilisateur</h3>
+      <ul>
+        <li>Thème clair / sombre automatique selon les préférences système, ou choix manuel persistant</li>
+        <li>Respect de <code>prefers-reduced-motion</code> : les animations sont désactivées si vous avez configuré votre système en ce sens</li>
+        <li>Contrastes validés pour atteindre le ratio 4.5:1 minimum (WCAG AA)</li>
+      </ul>
+
+      <h3>Performance et lisibilité</h3>
+      <ul>
+        <li>Police lisible (Poppins), tailles relatives en <code>rem</code> pour respecter le zoom navigateur</li>
+        <li>Tableaux scrollables étiquetés <code>role="region"</code> avec focus clavier</li>
+        <li>Aucune requête vers des ressources externes : tout le site charge depuis le même domaine</li>
+      </ul>
+
+      <h2>Tests et outils</h2>
+      <p>
+        Les pages sont auditées régulièrement avec :
+      </p>
+      <ul>
+        <li><strong>Lighthouse</strong> (Accessibility score ≥ 96)</li>
+        <li><strong>PageSpeed Insights</strong> pour la partie accessibilité mobile/desktop</li>
+        <li><strong>Google Rich Results Test</strong> pour la validation des données structurées</li>
+        <li>Navigation clavier manuelle, notamment sur les composants interactifs (TOC, modaux, menus repliables)</li>
+        <li>Essais de lecture avec des lecteurs d'écran : <strong>NVDA</strong> (open source, sous Windows) et le <strong>Narrateur Windows</strong> intégré, pour valider que les zones de contenu, les boutons et les états interactifs (aria-expanded, aria-live, etc.) sont annoncés correctement</li>
+      </ul>
+
+      <h2>Limitations connues</h2>
+      <p>
+        À ce jour, je n'ai pas identifié de blocage majeur, mais certaines zones dépendent de
+        services ou bibliothèques tiers dont je ne maîtrise pas entièrement l'accessibilité :
+      </p>
+      <ul>
+        <li><strong>Diagrammes Mermaid</strong> : le rendu SVG est produit par la bibliothèque tierce
+          <a href="https://mermaid.js.org/" target="_blank" rel="noopener noreferrer">Mermaid</a> ;
+          certains diagrammes complexes peuvent manquer d'équivalent textuel détaillé. Je suis
+          tributaire des améliorations apportées en amont par le projet. N'hésitez pas à signaler
+          un cas précis si un diagramme vous pose problème.</li>
+        <li><strong>Commentaires</strong> : la zone de commentaires est gérée par
+          <a href="https://giscus.app" target="_blank" rel="noopener noreferrer">Giscus</a>,
+          qui s'appuie sur GitHub Discussions. L'interface et son niveau d'accessibilité dépendent
+          entièrement de ce service tiers.</li>
+      </ul>
+
+      <h2>Signaler un problème</h2>
+      <p>
+        Si vous rencontrez un problème d'accessibilité (contraste insuffisant, navigation au clavier bloquée,
+        contenu inaccessible aux lecteurs d'écran, fonctionnalité d'accessibilité manquante, etc.), vous pouvez :
+      </p>
+      <ul>
+        <li>M'écrire directement par e-mail :
+          <a href="#contact" data-email-user="{{ site.data.author.email_user }}" data-email-domain="{{ site.data.author.email_domain }}" data-email-replace>{{ site.data.author.email_user }} (at) {{ site.data.author.email_domain }}</a>
+        </li>
+        <li>Ouvrir une issue sur le
+          <a href="https://github.com/Arnaud-Ferriere/SurLesNuages/issues" target="_blank" rel="noopener noreferrer">dépôt GitHub</a> du site</li>
+      </ul>
+      <p>
+        Je m'engage à répondre dans un délai raisonnable et à corriger ce qui peut l'être.
+      </p>
+
+    </section>
+  </div>
+</article>

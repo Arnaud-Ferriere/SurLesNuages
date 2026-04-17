@@ -82,6 +82,8 @@ error_404_back: "Retour à l'accueil"
 # Pied de page
 footer_cirrus_prefix: "Basé sur"
 footer_cirrus_suffix: "mon template open source —"
+footer_compliance: "Conformité"
+footer_accessibility: "Accessibilité"
 
 # Accessibilité
 a11y_skip: "Aller au contenu principal"
