@@ -139,8 +139,11 @@
         var headings = root.querySelectorAll('h2, h3');
         if (headings.length < 3) return;
         var tocList = document.getElementById('toc-list');
+        // Only H2s count for pill numbering
+        var h2s = [];
         headings.forEach(function (h, i) {
             if (!h.id) h.id = 'heading-' + i;
+            if (h.tagName === 'H2') h2s.push(h);
             var li = document.createElement('li');
             if (h.tagName === 'H3') li.classList.add('toc-h3');
             var a = document.createElement('a');
@@ -150,6 +153,102 @@
             tocList.appendChild(li);
         });
         document.getElementById('toc-wrapper').style.display = 'block';
+        setupFloatingTOC(h2s, tocList);
+    }
+
+    // Floating TOC pill + drawer (alternative navigation for long articles)
+    function setupFloatingTOC(h2s, sourceList) {
+        if (h2s.length < 3) return;
+        var inlineTOC = document.getElementById('toc-wrapper');
+
+        // Build the pill
+        var pill = document.createElement('button');
+        pill.id = 'toc-pill';
+        pill.className = 'toc-pill';
+        pill.type = 'button';
+        pill.setAttribute('aria-haspopup', 'dialog');
+        pill.setAttribute('aria-controls', 'toc-drawer');
+        pill.setAttribute('aria-expanded', 'false');
+        pill.setAttribute('aria-label', 'Ouvrir la table des matières');
+        pill.innerHTML =
+            '<i class="fas fa-list" aria-hidden="true"></i>' +
+            '<span class="toc-pill-count">1/' + h2s.length + '</span>' +
+            '<span class="toc-pill-title"></span>';
+        document.body.appendChild(pill);
+
+        // Build the drawer (clone of source list)
+        var drawer = document.createElement('div');
+        drawer.id = 'toc-drawer';
+        drawer.className = 'toc-drawer';
+        drawer.setAttribute('role', 'dialog');
+        drawer.setAttribute('aria-modal', 'true');
+        drawer.setAttribute('aria-labelledby', 'toc-drawer-title');
+        drawer.hidden = true;
+        drawer.innerHTML =
+            '<div class="toc-drawer-backdrop"></div>' +
+            '<div class="toc-drawer-panel">' +
+                '<div class="toc-drawer-header">' +
+                    '<h2 id="toc-drawer-title">Table des matières</h2>' +
+                    '<button class="toc-drawer-close" type="button" aria-label="Fermer">' +
+                        '<i class="fas fa-xmark" aria-hidden="true"></i>' +
+                    '</button>' +
+                '</div>' +
+                '<ol class="toc-drawer-list">' + sourceList.innerHTML + '</ol>' +
+            '</div>';
+        document.body.appendChild(drawer);
+
+        var openerBeforeOpen = null;
+        function openDrawer() {
+            openerBeforeOpen = document.activeElement;
+            drawer.hidden = false;
+            pill.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            drawer.querySelector('.toc-drawer-close').focus();
+        }
+        function closeDrawer() {
+            drawer.hidden = true;
+            pill.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            if (openerBeforeOpen) openerBeforeOpen.focus();
+        }
+        pill.addEventListener('click', openDrawer);
+        drawer.querySelector('.toc-drawer-backdrop').addEventListener('click', closeDrawer);
+        drawer.querySelector('.toc-drawer-close').addEventListener('click', closeDrawer);
+        drawer.querySelector('.toc-drawer-list').addEventListener('click', function (e) {
+            if (e.target.closest('a')) closeDrawer();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (!drawer.hidden && e.key === 'Escape') closeDrawer();
+        });
+
+        // Track which H2 is the current section via IntersectionObserver
+        var currentIndex = 0;
+        var pillCount = pill.querySelector('.toc-pill-count');
+        var pillTitle = pill.querySelector('.toc-pill-title');
+        function updatePill(idx) {
+            currentIndex = idx;
+            pillCount.textContent = (idx + 1) + '/' + h2s.length;
+            pillTitle.textContent = h2s[idx].textContent.trim();
+        }
+        updatePill(0);
+        var visible = new Set();
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) visible.add(entry.target);
+                else visible.delete(entry.target);
+            });
+            // Pick the topmost visible H2
+            var firstVisible = h2s.findIndex(function (h) { return visible.has(h); });
+            if (firstVisible >= 0) updatePill(firstVisible);
+        }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+        h2s.forEach(function (h) { io.observe(h); });
+
+        // Hide the pill while the inline TOC is visible
+        var inlineObserver = new IntersectionObserver(function (entries) {
+            var inlineVisible = entries[0].isIntersecting;
+            pill.classList.toggle('visible', !inlineVisible);
+        }, { threshold: 0 });
+        inlineObserver.observe(inlineTOC);
     }
 
     // Sections H2 repliables — Bootstrap collapse (accessibilité native)
