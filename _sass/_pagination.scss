@@ -14,3 +14,9 @@
 .page-link:hover {
   color: var(--color-primary);
 }
+
+.page-item.disabled .page-link {
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
