@@ -78,12 +78,12 @@
   bottom: 20px;
   left: 20px;
   z-index: 3;
-  background: var(--color-navbar-bg);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 2em;
   padding: 0.55rem 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: none;
   align-items: center;
   gap: 0.5rem;
@@ -92,7 +92,7 @@
   font-weight: 500;
   cursor: pointer;
   max-width: min(calc(100vw - 40px), 400px);
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 .toc-pill.visible {
   display: inline-flex;
@@ -100,18 +100,24 @@
 .toc-pill:hover {
   background: var(--color-secondary);
   color: #fff;
+  border-color: var(--color-secondary);
   transform: translateY(-2px);
+}
+.toc-pill:hover .toc-pill-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
 }
 .toc-pill:focus-visible {
   outline: 2px solid var(--color-secondary);
   outline-offset: 2px;
 }
 .toc-pill-count {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 59, 130, 0.12);
+  color: var(--color-secondary);
   padding: 0.15rem 0.5rem;
   border-radius: 1em;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   flex-shrink: 0;
 }
 .toc-pill-title {
