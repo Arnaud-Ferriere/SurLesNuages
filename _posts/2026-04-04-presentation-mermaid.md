@@ -570,9 +570,10 @@ En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](ht
 
 Voici une petite animation de démonstration:
 
-<video autoplay loop muted playsinline preload="metadata" width="1008" height="792" style="max-width:100%;height:auto;">
+<video autoplay loop muted playsinline preload="metadata" width="1008" height="792" style="max-width:100%;height:auto;" aria-label="Démonstration visuelle sans son : utilisation des outils de prévisualisation Mermaid dans Obsidian">
   <source src="/assets/articles/presentation-mermaid/mermaidtoolsdemo.webm" type="video/webm">
   <source src="/assets/articles/presentation-mermaid/mermaidtoolsdemo.mp4" type="video/mp4">
+  <track kind="captions" src="/assets/articles/presentation-mermaid/mermaidtoolsdemo.vtt" srclang="fr" label="Français (pas d'audio)" default>
 </video>
 
 Ce qu'il m'apporte :

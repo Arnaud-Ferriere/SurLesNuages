@@ -72,7 +72,9 @@
         "@type": "Person",
         "name": "{{ site.data.author.name }}",
         "url": "{{ site.url }}",
-        "jobTitle": "Cloud & Power Platform Expert",
+        "jobTitle": "{{ site.data.author.role }}",
+        "description": "{{ site.data.author.tagline | escape }}",
+        "knowsAbout": ["Active Directory", "Microsoft Entra ID", "Microsoft 365", "Gestion des identités", "Automatisation", "PowerShell", "Power Platform"],
         "sameAs": [
           "{{ site.data.author.linkedin }}",
           "{{ site.data.author.github }}"
@@ -83,8 +85,8 @@
         "name": "{{ site.data.author.name }}",
         "url": "{{ site.url }}"
       }{% if page.tags and page.tags.size > 0 %},
-      "keywords": "{{ page.tags | join: ', ' }}"{% endif %}{% if page.image %},
-      "image": "{{ page.image | absolute_url }}"{% endif %}
+      "keywords": "{{ page.tags | join: ', ' }}"{% endif %},
+      "image": "{{ page.image | default: site.default_image | absolute_url }}"
     }
     </script>
     {% else %}
