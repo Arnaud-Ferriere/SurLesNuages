@@ -100,7 +100,7 @@ layout: default
         {% assign page_url_enc = page.url | absolute_url | url_encode %}
         {% assign page_title_enc = page.title | url_encode %}
         <div class="post-share">
-            <span class="post-share-label">✨ {{ site.data.ui.post_share_prompt | default: "Ça vous a aidé ? Partagez :" }}</span>
+            <span class="post-share-label">{{ site.data.ui.post_share_prompt | default: "Ça vous a aidé ? Partagez :" }}</span>
             <a class="post-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page_url_enc }}" target="_blank" rel="noopener noreferrer" aria-label="Partager sur LinkedIn">
                 <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
             </a>
