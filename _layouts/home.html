@@ -25,9 +25,9 @@ layout: default
                 <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ post.title }}"{% if forloop.first %} fetchpriority="high" decoding="async"{% else %} loading="lazy"{% endif %}>
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h3 class="card-title">
                         <a href="{{ post.url | relative_url }}" class="stretched-link text-decoration-none">{{ post.title }}</a>
-                    </h5>
+                    </h3>
                     {% if post.difficulty %}
                     {% case post.difficulty %}
                       {% when "debutant" %}{% assign diff_icon = "☀️" %}{% assign diff_label = site.data.ui.diff_debutant %}

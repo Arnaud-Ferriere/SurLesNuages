@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var dir   = header.getAttribute('data-dir') === 'desc' ? 'asc' : 'desc';
         var switching = true;
 
-        document.querySelectorAll("th[role='button']").forEach(function (h) {
+        document.querySelectorAll("th[tabindex]").forEach(function (h) {
             h.setAttribute('data-dir', '');
             h.setAttribute('aria-sort', 'none');
             h.querySelector('.sort-arrow').classList.replace('fa-chevron-down', 'fa-chevron-up');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.querySelectorAll("th[role='button']").forEach(function (th, index) {
+    document.querySelectorAll("th[tabindex]").forEach(function (th, index) {
         th.addEventListener('click', function () { sortTable(index, th); });
         th.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sortTable(index, th); }
