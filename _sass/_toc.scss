@@ -78,7 +78,7 @@
   bottom: 20px;
   left: 20px;
   z-index: 3;
-  background: var(--color-primary);
+  background: var(--color-navbar-bg);
   color: #fff;
   border: none;
   border-radius: 2em;
@@ -99,6 +99,7 @@
 }
 .toc-pill:hover {
   background: var(--color-secondary);
+  color: #fff;
   transform: translateY(-2px);
 }
 .toc-pill:focus-visible {
