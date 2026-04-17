@@ -5,6 +5,12 @@ layout: default
 {% assign words = content | number_of_words %}
 {% if words < 360 %}{% assign reading_time = 1 %}{% else %}{% assign reading_time = words | divided_by: 180 %}{% endif %}
 
+{% comment %}Look up the series stub (first in _series/, then fallback to _series_drafts/ for local dev){% endcomment %}
+{% if page.series %}
+  {% assign _series_stub = site.series | where: "series_name", page.series | first %}
+  {% unless _series_stub %}{% assign _series_stub = site.series_drafts | where: "series_name", page.series | first %}{% endunless %}
+{% endif %}
+
 <!-- Breadcrumbs JSON-LD (invisible, SEO only) -->
 <script type="application/ld+json">
 {
@@ -22,13 +28,25 @@ layout: default
       "position": 2,
       "name": "{{ site.data.ui.nav_articles }}",
       "item": "{{ '/articles/' | absolute_url }}"
-    },
+    }{% if _series_stub %},
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "{{ page.title }}",
+      "name": "{{ page.series | escape }}",
+      "item": "{{ _series_stub.url | absolute_url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ page.title | escape }}",
       "item": "{{ page.url | absolute_url }}"
-    }
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% endif %}
   ]
 }
 </script>
