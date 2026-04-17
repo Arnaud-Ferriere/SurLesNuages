@@ -185,6 +185,17 @@
   .difficulty-badge { margin-bottom: 0; }
 }
 
+/* Series view: inline number in front of the title */
+.series-list-items {
+  list-style: none;
+  padding-left: 0;
+}
+.series-number {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-right: 0.15rem;
+}
+
 .articles-chrono-meta {
   font-size: 0.85rem;
 }
