@@ -10,10 +10,19 @@
     <meta name="theme-color" content="#0f1923" media="(prefers-color-scheme: dark)">
 
     <!-- SEO de base -->
-    {% assign page_desc = page.excerpt | default: page.description | default: site.description | strip_html | truncate: 160 %}
+    {% comment %}For series pages, override title/description from stub.series_name + first article's series_description{% endcomment %}
+    {% if page.collection == "series" or page.collection == "series_drafts" %}
+      {% assign _first_post = site.posts | where: "series", page.series_name | sort: "series_part" | first %}
+      {% assign computed_title = page.series_name %}
+      {% assign computed_desc = _first_post.series_description | default: page.description %}
+    {% else %}
+      {% assign computed_title = page.title %}
+      {% assign computed_desc = page.excerpt | default: page.description %}
+    {% endif %}
+    {% assign page_desc = computed_desc | default: site.description | strip_html | truncate: 160 %}
     <meta name="description" content="{{ page_desc }}">
-    {% if page.title %}
-    <title>{{ page.title }} - {{ site.title }}</title>
+    {% if computed_title %}
+    <title>{{ computed_title }} - {{ site.title }}</title>
     {% else %}
     <title>{{ site.title }}</title>
     {% endif %}
@@ -24,7 +33,7 @@
     <!-- Open Graph -->
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:title" content="{{ computed_title | default: site.title }}">
     <meta property="og:description" content="{{ page_desc }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     {% capture page_date_str %}{{ page.date }}{% endcapture %}
@@ -48,7 +57,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:title" content="{{ computed_title | default: site.title }}">
     <meta name="twitter:description" content="{{ page_desc }}">
     {% if page.image %}
     <meta name="twitter:image" content="{{ page.image | absolute_url }}">

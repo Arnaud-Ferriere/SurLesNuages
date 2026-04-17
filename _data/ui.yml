@@ -92,6 +92,7 @@ a11y_linkedin: "Ouvrir mon profil LinkedIn"
 a11y_github: "Ouvrir mon profil GitHub"
 a11y_email: "M'envoyer un e-mail"
 a11y_rss: "Flux RSS"
+a11y_breadcrumb: "Fil d'Ariane"
 
 # Labels courts (visibles dans la navbar)
 nav_label_linkedin: "LinkedIn"
