@@ -203,10 +203,29 @@
     // Fonctions non-critiques différées après le premier paint
     var defer = window.requestIdleCallback || function(cb) { setTimeout(cb, 1); };
 
+    // "Copy link" button in the share bar (outside .content)
+    function setupShareCopyLink() {
+        var btn = document.querySelector('.post-share-copy');
+        if (!btn) return;
+        var label = btn.querySelector('.post-share-copy-label');
+        btn.addEventListener('click', function () {
+            var url = btn.getAttribute('data-url') || window.location.href;
+            navigator.clipboard.writeText(url).then(function () {
+                btn.classList.add('copied');
+                if (label) label.textContent = 'Lien copié !';
+                setTimeout(function () {
+                    btn.classList.remove('copied');
+                    if (label) label.textContent = 'Copier le lien';
+                }, 2000);
+            });
+        });
+    }
+
     wrapTables(content);
     addCopyButtons(content);
     setupImageZoom(content);
     parseObsidianCallouts(content);
+    setupShareCopyLink();
     setupPrintButton();
     generateTOC(content);     // AVANT setupH2Collapse (dépendance textContent)
     setupH2Collapse(content);
