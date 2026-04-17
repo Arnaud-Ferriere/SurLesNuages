@@ -11,9 +11,20 @@ permalink: /accessibilite/
       <p class="text-muted">Dernière mise à jour : {{ site.time | date: "%d/%m/%Y" }}</p>
     </header>
 
+    <!-- Sommaire rapide -->
+    <nav class="toc-container" aria-label="Sommaire">
+      <ol class="toc-list">
+        <li><a href="#engagement">Engagement</a></li>
+        <li><a href="#fonctionnalites">Fonctionnalités mises en place</a></li>
+        <li><a href="#tests-outils">Tests et outils</a></li>
+        <li><a href="#limitations">Limitations connues</a></li>
+        <li><a href="#signaler">Signaler un problème</a></li>
+      </ol>
+    </nav>
+
     <section class="content">
 
-      <h2>Engagement</h2>
+      <h2 id="engagement">Engagement</h2>
       <p>
         Je ({{ site.data.author.name }}) m'engage à rendre le site <strong>Sur les nuages</strong>
         accessible au plus grand nombre, en visant la conformité aux
@@ -30,7 +41,7 @@ permalink: /accessibilite/
         audit formel par un organisme tiers.</em>
       </p>
 
-      <h2>Fonctionnalités mises en place</h2>
+      <h2 id="fonctionnalites">Fonctionnalités mises en place</h2>
 
       <h3>Navigation au clavier</h3>
       <ul>
@@ -78,7 +89,7 @@ permalink: /accessibilite/
         <li>Aucune requête vers des ressources externes : tout le site charge depuis le même domaine</li>
       </ul>
 
-      <h2>Tests et outils</h2>
+      <h2 id="tests-outils">Tests et outils</h2>
       <p>
         Les pages sont auditées régulièrement avec :
       </p>
@@ -90,7 +101,7 @@ permalink: /accessibilite/
         <li>Essais de lecture avec des lecteurs d'écran : <strong>NVDA</strong> (open source, sous Windows) et le <strong>Narrateur Windows</strong> intégré, pour valider que les zones de contenu, les boutons et les états interactifs (aria-expanded, aria-live, etc.) sont annoncés correctement</li>
       </ul>
 
-      <h2>Limitations connues</h2>
+      <h2 id="limitations">Limitations connues</h2>
       <p>
         À ce jour, je n'ai pas identifié de blocage majeur, mais certaines zones dépendent de
         services ou bibliothèques tiers dont je ne maîtrise pas entièrement l'accessibilité :
@@ -107,7 +118,7 @@ permalink: /accessibilite/
           entièrement de ce service tiers.</li>
       </ul>
 
-      <h2>Signaler un problème</h2>
+      <h2 id="signaler">Signaler un problème</h2>
       <p>
         Si vous rencontrez un problème d'accessibilité (contraste insuffisant, navigation au clavier bloquée,
         contenu inaccessible aux lecteurs d'écran, fonctionnalité d'accessibilité manquante, etc.), vous pouvez :
