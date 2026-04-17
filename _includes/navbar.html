@@ -34,7 +34,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="mailto:{{ site.data.author.email_user }}@{{ site.data.author.email_domain }}"
+                <a class="nav-link" href="#contact"
+                    data-email-user="{{ site.data.author.email_user }}" data-email-domain="{{ site.data.author.email_domain }}"
                     aria-label="{{ site.data.ui.a11y_email }}" rel="noopener noreferrer">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span>{{ site.data.ui.nav_label_email }}</span>

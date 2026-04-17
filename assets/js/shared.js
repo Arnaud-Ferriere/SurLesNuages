@@ -26,6 +26,15 @@
         bootstrap.Modal.getOrCreateInstance(document.getElementById('imageModal')).show();
     };
 
+    // Anti-crawler email links: the raw HTML never contains "user@domain",
+    // parts are stored in data attributes and reassembled client-side.
+    // Add `data-email-replace` to also replace the visible text.
+    document.querySelectorAll('a[data-email-user][data-email-domain]').forEach(function (a) {
+        var email = a.getAttribute('data-email-user') + '\u0040' + a.getAttribute('data-email-domain');
+        a.href = 'mailto:' + email;
+        if (a.hasAttribute('data-email-replace')) a.textContent = email;
+    });
+
     // Keyboard shortcut "/" → focus the search input (home page only)
     document.addEventListener('keydown', function (e) {
         if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
