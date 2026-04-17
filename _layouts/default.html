@@ -108,10 +108,9 @@
     </script>
     {% endif %}
 
-    <!-- Preload LCP image — discovered before CSS blocks render -->
-    {% if page.banner or page.image %}
-    {% assign lcp_image = page.banner | default: page.image %}
-    <link rel="preload" as="image" href="{{ lcp_image | relative_url }}" fetchpriority="high">
+    <!-- Preload LCP image — banner is the only image displayed at top of article -->
+    {% if page.banner %}
+    <link rel="preload" as="image" href="{{ page.banner | relative_url }}" fetchpriority="high">
     {% endif %}
 
     <!-- Preload Poppins 500 (body text, most used weight) -->
