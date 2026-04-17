@@ -3,8 +3,9 @@
     if (!content) return;
 
     // Copy-to-clipboard button on code blocks
+    // Use div.highlight to avoid matching both <div class="highlight"> and <pre class="highlight">
     function addCopyButtons(root) {
-        root.querySelectorAll('.highlight').forEach(function (block) {
+        root.querySelectorAll('div.highlight').forEach(function (block) {
             if (block.querySelector('.code-copy-btn')) return;
             var btn = document.createElement('button');
             btn.className = 'code-copy-btn';
