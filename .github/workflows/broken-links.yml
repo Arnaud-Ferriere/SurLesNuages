@@ -45,12 +45,12 @@ jobs:
         with:
           # Arguments passés à lychee :
           # - '_site/**/*.html' : scanne tout le HTML généré
-          # - --base _site : résout les liens relatifs depuis _site/
+          # - --root-dir : chemin ABSOLU pour résoudre les liens root-relatifs (/articles/...)
           # - --verbose : log détaillé
           # - --no-progress : pas de barre de progression (inutile en CI)
           # - --exclude-path '_site/assets' : ignore les gros dossiers d'assets
           args: >-
-            --base _site
+            --root-dir ${{ github.workspace }}/_site
             --verbose
             --no-progress
             --exclude-path '_site/assets'
