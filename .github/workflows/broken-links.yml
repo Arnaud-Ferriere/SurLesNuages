@@ -15,12 +15,6 @@ jobs:
   link-check:
     runs-on: ubuntu-latest
 
-    # TEST : force les actions JavaScript (Node 20) à tourner sur Node 24
-    # Permet de valider dès maintenant la compat avant le switch auto de juin 2026.
-    # À retirer une fois le test validé (ou à garder si on veut être proactif).
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     # Permissions nécessaires pour que l'action puisse créer une issue
     permissions:
       issues: write
