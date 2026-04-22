@@ -1,0 +1,74 @@
+name: Vérification des liens cassés
+
+# Quand lancer ce workflow
+on:
+  # À chaque push sur main
+  push:
+    branches: [main]
+  # Tous les lundis à 9h UTC (pour attraper les liens externes qui meurent)
+  schedule:
+    - cron: '0 9 * * 1'
+  # Déclenchement manuel via l'onglet "Actions" sur GitHub
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    # Permissions nécessaires pour que l'action puisse créer une issue
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      # 1. Récupère le code du repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Installe Ruby + Bundler (nécessaires pour Jekyll)
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true  # cache les gems pour accélérer les runs suivants
+
+      # 3. Build du site Jekyll → génère le dossier _site/
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      # 4. Lance lychee sur le site compilé
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Arguments passés à lychee :
+          # - '_site/**/*.html' : scanne tout le HTML généré
+          # - --base _site : résout les liens relatifs depuis _site/
+          # - --verbose : log détaillé
+          # - --no-progress : pas de barre de progression (inutile en CI)
+          # - --exclude-path '_site/assets' : ignore les gros dossiers d'assets
+          args: >-
+            --base _site
+            --verbose
+            --no-progress
+            --exclude-path '_site/assets'
+            '_site/**/*.html'
+          # Fichier de sortie (utilisé pour créer l'issue)
+          output: ./lychee-report.md
+          # Ne PAS faire échouer le workflow si liens cassés
+          # (on crée une issue à la place, pas besoin de spam d'email)
+          fail: false
+
+      # 5. Crée ou met à jour une issue si des liens sont cassés
+      - name: Create Issue From File
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: '🔗 Liens cassés détectés'
+          content-filepath: ./lychee-report.md
+          labels: |
+            bug
+            liens-casses
+            automated
