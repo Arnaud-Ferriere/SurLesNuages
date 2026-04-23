@@ -23,7 +23,7 @@
       responsibilities:
         - category: "Formation et leadership"
           items:
-            - "Lead technique de l'équipe et formation des nouveaux arrivants. Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle"
+            - "Lead technique de l'équipe, onboarding et formation continue des nouveaux arrivants. Prise en charge de l'intérim du responsable du service support et administration (équipe de 6 personnes), coordination des priorités, suivi des SLAs et continuité opérationnelle"
             - "Rationalisation et refonte de la base de connaissances SharePoint Online du service (regroupement des connaissances sur un seul site, amélioration de la recherche avec ajout de catégories/tags, mise en place de revues périodiques, agent IA RAG)"
             - "Formation des équipes aux bonnes pratiques d'alimentation et de maintenance des bases de connaissances"
             - "Aide à la mise en place de bases de connaissances similaires dans des services connexes intéressés par le projet"
@@ -79,7 +79,7 @@
         - "MCO Exchange Online (création de boites partagées, liste de distribution etc)"
         - "Création de règles Exchange (par exemple, avertissement pour les messages externes, purge automatique des mails anciens, etc)"
         - "Administration Teams et One Drive"
-        - "Intégration de domaines et infrastructures (AD, logiciels tiers, parc etc), lors d'acquisitions"
+        - "Intégrations d'acquisitions (audit existant, inventaire, migration identités et données, domaine et AD, intégration réseau, interconnexion VPN)"
     - category: "Développement PowerApps"
       items:
         - "Autoformation sur Power Apps/Power Platform"
@@ -91,6 +91,12 @@
         - "Installation et configuration de rôles (AD DS, fichiers, impressions, broker, ferme rds...)"
         - "Mise en place du VPN Fortinet durant la période COVID pour permettre le télétravail"
         - "Brassage des baies des nouvelles agences / siège, configuration des switchs"
+    - category: "Sécurité et architecture"
+      items:
+        - "Conception et mise en place d'un modèle de tiering d'administration (T0 à T3 + Cloud, Protected Users, comptes gMSA non-privilégiés)"
+        - "Gestion d'incidents de sécurité (phishing, compromission de comptes) : détection, remédiation, analyse post-incident"
+        - "Chiffrement des postes via BitLocker, authentification moderne SAML/OAuth2 (VPN, applications Azure AD)"
+        - "Application de la PSSI groupe (référentiels ANSSI, COBIT, ITIL)"
     - category: "Support utilisateurs"
       items:
         - "Support sur site et à distance N1 / N2"
@@ -99,6 +105,10 @@
         - "Création d'une base de connaissance SharePoint Online"
         - "Formation utilisateurs, sensibilisations à la sécurité et bonnes pratiques"
         - "Tuteur d'un alternant, formation \"technicien systèmes et réseau\""
+    - category: "Gestion de la flotte mobile"
+      items:
+        - "Administration Workspace ONE / Airwatch : enrôlement Zero Touch, profils, déploiement applicatif, listes blanches/noires"
+        - "Intégration AD → MDM via groupes dynamiques"
   tech: "AD DS / Entra ID, Windows server 2008 à 2020, GPO, RDS, Office (toutes versions), Microsoft 365, Power Platform, PowerShell, GLPI, Fortinet"
 
 - company: "Stelogy (anciennement Nomotech)"
