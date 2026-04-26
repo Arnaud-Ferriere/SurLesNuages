@@ -11,6 +11,10 @@ url: "https://surlesnuages.fr"
 baseurl: ""
 lang: fr
 
+# Repo GitHub source du site (utilisé pour le bouton "voir la source .md")
+github_repo: "Arnaud-Ferriere/SurLesNuages"
+github_branch: "main"
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
