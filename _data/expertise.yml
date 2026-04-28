@@ -1,0 +1,10 @@
+# Domaines d'expertise — utilisé par les blocs JSON-LD (knowsAbout)
+# dans _layouts/default.html (Article) et _includes/jsonld-person.html (Person).
+- Active Directory
+- Microsoft Entra ID
+- Microsoft 365
+- Gestion des identités
+- Environnements hybrides
+- Automatisation
+- PowerShell
+- Power Platform

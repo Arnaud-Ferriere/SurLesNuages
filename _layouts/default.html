@@ -83,12 +83,12 @@
       "inLanguage": "{{ site.lang | default: 'fr' }}",
       "author": {
         "@type": "Person",
-        "@id": "{{ site.url }}/about/#person",
+        "@id": "{{ site.url }}{{ site.data.author.person_id_path }}",
         "name": {{ site.data.author.name | jsonify }},
         "url": "{{ site.url }}/about/",
         "jobTitle": {{ site.data.author.role | jsonify }},
         "description": {{ site.data.author.tagline | jsonify }},
-        "knowsAbout": ["Active Directory", "Microsoft Entra ID", "Microsoft 365", "Gestion des identités", "Automatisation", "PowerShell", "Power Platform"],
+        "knowsAbout": {{ site.data.expertise | jsonify }},
         "sameAs": [
           {{ site.data.author.linkedin | jsonify }},
           {{ site.data.author.github | jsonify }}
@@ -96,7 +96,7 @@
       },
       "publisher": {
         "@type": "Person",
-        "@id": "{{ site.url }}/about/#person",
+        "@id": "{{ site.url }}{{ site.data.author.person_id_path }}",
         "name": {{ site.data.author.name | jsonify }},
         "url": "{{ site.url }}/about/"
       }{% if page.tags and page.tags.size > 0 %},
@@ -115,7 +115,7 @@
       "inLanguage": "{{ site.lang | default: 'fr' }}",
       "publisher": {
         "@type": "Person",
-        "@id": "{{ site.url }}/about/#person"
+        "@id": "{{ site.url }}{{ site.data.author.person_id_path }}"
       },
       "potentialAction": {
         "@type": "SearchAction",

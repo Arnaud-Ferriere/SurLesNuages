@@ -1,5 +1,8 @@
 name: Arnaud Ferriere
 name_display: Arnaud FERRIERE
+# Chemin (relatif) vers l'@id stable du Person dans les JSON-LD.
+# Concaténer avec site.url pour obtenir l'URI absolue : {{ site.url }}{{ site.data.author.person_id_path }}
+person_id_path: /about/#person
 role: Consultant & Administrateur Systèmes
 tagline: "Gestion des identités | Active Directory – Entra ID | Microsoft 365 | Automatisation"
 photo: assets/about/photo.webp
