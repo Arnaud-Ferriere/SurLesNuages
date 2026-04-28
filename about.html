@@ -17,7 +17,7 @@ permalink: /about/
     <div id="description" class="container mt-5">
         <div class="row">
             <div class="col-md-3">
-                <img src="{{ site.data.author.photo | relative_url }}" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high"
+                <img src="{{ site.data.author.photo | relative_url }}" class="img-thumbnail rounded" width="300" height="300" fetchpriority="high" decoding="async"
                     alt="{{ site.data.author.photo_alt }}">
             </div>
             <div class="col-md-9">
@@ -276,7 +276,7 @@ permalink: /about/
             <div class="stacked-card">
                 <div class="stacked-card-body">
                     {% for lang in site.data.languages %}
-                    <img width="48" height="48" src="{{ lang.flag | relative_url }}" alt="{{ lang.name }}" />
+                    <img width="48" height="48" src="{{ lang.flag | relative_url }}" alt="{{ lang.name }}" loading="lazy" decoding="async" />
                     <strong>{{ lang.name }} :</strong> {{ lang.level }}{% if lang.url %} - <a
                         href="{{ lang.url }}"
                         target="_blank" rel="noopener noreferrer" class="cert-link">{{ lang.link_text }} <i

@@ -81,6 +81,22 @@ article .content pre code {
   overflow-x: auto;
 }
 
+/* Réserver l'espace avant rendu Mermaid pour éviter le CLS.
+   Le sélecteur :not([data-processed]) fait disparaître la réserve
+   dès que mermaid.run() a terminé → pas de trou résiduel sur les
+   petits diagrammes. */
+.mermaid:not([data-processed]) {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #888);
+  opacity: 0.4;
+  white-space: pre-wrap;
+}
+
 .mermaid svg {
   max-width: 100%;
   height: auto;
