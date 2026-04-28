@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/about/#person",
+  "name": {{ site.data.author.name | jsonify }},
+  "url": "{{ site.url }}/about/",
+  "image": "{{ site.data.author.photo | absolute_url }}",
+  "jobTitle": {{ site.data.author.role | jsonify }},
+  "description": {{ site.data.author.tagline | jsonify }},
+  "knowsAbout": [
+    "Active Directory",
+    "Microsoft Entra ID",
+    "Microsoft 365",
+    "Gestion des identités",
+    "Environnements hybrides",
+    "Automatisation",
+    "PowerShell",
+    "Power Platform"
+  ],
+  "sameAs": [
+    {{ site.data.author.linkedin | jsonify }},
+    {{ site.data.author.github | jsonify }}
+  ]
+}
+</script>

@@ -71,30 +71,36 @@
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "{{ page.title | escape }}",
-      "description": "{{ page_desc | escape }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page_desc | jsonify }},
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
       "url": "{{ page.url | absolute_url }}",
-      "inLanguage": "fr",
+      "inLanguage": "{{ site.lang | default: 'fr' }}",
       "author": {
         "@type": "Person",
-        "name": "{{ site.data.author.name }}",
-        "url": "{{ site.url }}",
-        "jobTitle": "{{ site.data.author.role }}",
-        "description": "{{ site.data.author.tagline | escape }}",
+        "@id": "{{ site.url }}/about/#person",
+        "name": {{ site.data.author.name | jsonify }},
+        "url": "{{ site.url }}/about/",
+        "jobTitle": {{ site.data.author.role | jsonify }},
+        "description": {{ site.data.author.tagline | jsonify }},
         "knowsAbout": ["Active Directory", "Microsoft Entra ID", "Microsoft 365", "Gestion des identités", "Automatisation", "PowerShell", "Power Platform"],
         "sameAs": [
-          "{{ site.data.author.linkedin }}",
-          "{{ site.data.author.github }}"
+          {{ site.data.author.linkedin | jsonify }},
+          {{ site.data.author.github | jsonify }}
         ]
       },
       "publisher": {
         "@type": "Person",
-        "name": "{{ site.data.author.name }}",
-        "url": "{{ site.url }}"
+        "@id": "{{ site.url }}/about/#person",
+        "name": {{ site.data.author.name | jsonify }},
+        "url": "{{ site.url }}/about/"
       }{% if page.tags and page.tags.size > 0 %},
-      "keywords": "{{ page.tags | join: ', ' }}"{% endif %},
+      "keywords": {{ page.tags | jsonify }}{% endif %},
       "image": "{{ page.image | default: site.default_image | absolute_url }}"
     }
     </script>
@@ -103,10 +109,14 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "{{ site.title }}",
+      "name": {{ site.title | jsonify }},
       "url": "{{ site.url }}",
-      "description": "{{ site.description | escape }}",
-      "inLanguage": "fr",
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "{{ site.lang | default: 'fr' }}",
+      "publisher": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/about/#person"
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
