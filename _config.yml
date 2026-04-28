@@ -4,12 +4,19 @@ home_tagline: "Découvrez mes derniers articles sur l'administration système, l
 default_image: /assets/photo.webp
 default_banner: ""
 description: >-
-  Consultant en administration systèmes, spécialisé dans les environnements
-  hybrides, la gestion des identités, les solutions Microsoft 365 et
-  l'automatisation. Découvrez mes articles, projets et certifications.
+  Consultant et administrateur systèmes spécialisé dans la gestion des identités,
+  les environnements hybrides Active Directory – Entra ID, Microsoft 365 et
+  l'automatisation (PowerShell, Power Platform). Articles techniques et retours
+  d'expérience.
 url: "https://surlesnuages.fr"
 baseurl: ""
 lang: fr
+
+# Auteur du site (utilisé par jekyll-feed pour le RSS).
+# Email volontairement omis pour ne pas l'exposer dans /feed.xml public.
+author:
+  name: Arnaud Ferriere
+  url: https://surlesnuages.fr/about/
 
 # Repo GitHub source du site (utilisé pour le bouton "voir la source .md")
 github_repo: "Arnaud-Ferriere/SurLesNuages"
