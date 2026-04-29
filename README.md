@@ -15,5 +15,6 @@ Détails et licences des bibliothèques tierces sur [/conformite/](https://surle
 
 ## Signaler une erreur
 
-Une coquille, un lien cassé, une info périmée ou même une explication pas claire ? N'hésitez pas à ouvrir une [issue](https://github.com/Arnaud-Ferriere/SurLesNuages/issues) ou une PR. Chaque article expose un bouton **`.md`** dans son entête
+Une coquille, une info périmée ou même une explication pas claire ? Je prends le temps de faire des recherches pour que les informations publiées soient dans l'état de l'art, mais je ne suis pas à l'abri d'une erreur ! N'hésitez pas à ouvrir une [issue](https://github.com/Arnaud-Ferriere/SurLesNuages/issues) ou une PR. Chaque article expose un bouton **`.md`** dans son entête
 qui pointe vers la source GitHub directement.
+
