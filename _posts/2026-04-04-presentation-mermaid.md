@@ -25,7 +25,7 @@ Je trouve que les schémas faits de cette façon sont bien plus simples à maint
 
 Je présente dans cet article les types de diagramme que j'utilise le plus fréquemment ainsi que la façon dont j'utilise Mermaid sur Obsidian.
 
-N'hésitez pas à aller consulter sa [documentation](https://mermaid.ai/open-source/intro/syntax-reference.html) qui est complète et claire. 
+N'hésitez pas à aller consulter sa [documentation](https://mermaid.ai/open-source/intro/syntax-reference.html) qui est complète et claire. A l'écriture de cet article, Mermaid est en v11.
 
 ---
 
