@@ -10,6 +10,8 @@
   --font-main: 'Poppins', sans-serif;
   --spacing-base: 1rem;
   --border-radius: 15px;
-  --box-shadow-light: 0 6px 12px rgba(0, 0, 0, 0.05);
-  --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Soft, multi-layer shadows (Material-style) — diffuse light naturally
+     instead of producing a single hard band underneath the element. */
+  --box-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 16px rgba(0, 0, 0, 0.04);
+  --box-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.08);
 }

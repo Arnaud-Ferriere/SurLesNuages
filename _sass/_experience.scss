@@ -31,15 +31,14 @@
   vertical-align: middle;
 }
 
-/* Section content */
+/* Section content
+   Bootstrap collapse handles show/hide and the height transition itself
+   (via the transient .collapsing class). We just keep a top margin and
+   leave overflow visible so the card shadows below don't get clipped. */
 .section-content {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.5s ease-in-out;
   margin-top: 10px;
 }
 
-/* Bootstrap collapse handles show/hide — keep overflow visible when open */
 .section-content.collapse:not(.show) {
   display: none;
 }
