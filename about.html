@@ -127,7 +127,9 @@ permalink: /about/
                     {% for mission in exp.missions %}
                     <div class="mission">
                         <div class="mission-header">
+                            {% if mission.logo %}
                             <img src="{{ mission.logo | relative_url }}" alt="Logo {{ mission.client }}" class="mission-logo" width="80" height="80" loading="lazy">
+                            {% endif %}
                             <h4 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
                         </div>
 
