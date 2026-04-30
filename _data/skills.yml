@@ -16,8 +16,5 @@
 - name: "Conception de solutions & rédaction technique : DAT, analyse fonctionnelle, cadrage Power Platform"
   level: "Maitrise"
 
-- name: "Sécurité : Accès conditionnels, bonnes pratiques ANSSI"
-  level: "Pratique"
-
-- name: "Développement (HTML/CSS, Python, Markdown, Git)"
+- name: "Outils dev : Git, Markdown, Python, HTML/CSS"
   level: "Pratique"
