@@ -55,14 +55,10 @@
         de Metsys : partage de connaissances, support à l'avant-vente, outils
         internes Power Platform.
       responsibilities:
-        - category: "Talks et partage de connaissances"
+        - category: "Contributions transverses"
           items:
             - "Animation d'un midi technique interne (présentation de la Power Platform)"
-        - category: "Avant-vente"
-          items:
             - "Contribution ponctuelle à l'avant-vente : rédaction d'une proposition technique pour le cadrage d'une migration d'environnement hybride"
-        - category: "Outil interne de réservation de véhicules Power Apps / Power Automate"
-          items:
             - "Conception et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
             - "Analyse et maintenance de l'application précédente"
       tech: "Power Apps, Power Automate, SharePoint Online"
