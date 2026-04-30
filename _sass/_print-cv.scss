@@ -123,12 +123,10 @@
   .poste-title strong,
   .mission-title strong { color: #003b82 !important; }
 
-  .poste-description {
-    font-style: italic !important;
-    color: #555 !important;
-    font-size: 9.5pt !important;
-    margin-bottom: 4pt !important;
-  }
+  /* Description narrative d'entreprise masquée en print : ce contenu (ex.
+     "Metsys se positionne comme un acteur clé...") est précieux sur le site
+     mais inutile sur un CV de candidature. */
+  .poste-description { display: none !important; }
 
   .missions-title {
     font-size: 10pt !important;
@@ -181,5 +179,11 @@
     color: #222 !important;
     font-weight: normal !important;
     cursor: default !important;
+  }
+
+  /* Section centres d'intérêt masquée sur le CV imprimé.
+     Réactiver simplement en supprimant les 3 lignes ci-dessous. */
+  #interets {
+    display: none !important;
   }
 }
