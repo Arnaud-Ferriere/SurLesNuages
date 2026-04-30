@@ -7,10 +7,16 @@
   .section-header {
     display: block !important;
     border-bottom: 2px solid #003b82 !important;
-    margin-bottom: 0.4em !important;
-    padding-bottom: 0.1em !important;
+    margin-bottom: 0.3em !important;
+    padding-bottom: 0.05em !important;
     break-after: avoid !important;
     page-break-after: avoid !important;
+  }
+
+  /* Respiration entre sections (override le mt-5 -> 0 global pour cibler
+     une valeur intermédiaire spécifique au CV print). */
+  #certifications, #skills, #stacked-experiences, #education, #langues {
+    margin-top: 8pt !important;
   }
   .section-header h2 {
     color: #003b82 !important;
@@ -30,9 +36,11 @@
     overflow: visible !important;
   }
 
-  /* === CERTIFICATIONS : grille -> liste propre === */
+  /* === CERTIFICATIONS : grille 2 colonnes en print pour gagner de la place === */
   .certifications-grid {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 6pt !important;
   }
   .certifications-grid .card {
     display: flex !important;
@@ -43,8 +51,14 @@
     border-radius: 0 !important;
     padding: 3pt 4pt !important;
     text-align: left !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
-  .certifications-grid .card:nth-child(odd) {
+  /* Alternance par paires de lignes : ligne 1 (cards 1+2) bleutée, ligne 2
+     (3+4) blanche, ligne 3 (5+6) bleutée, etc. — préserve la cohérence
+     visuelle en grille 2 colonnes. */
+  .certifications-grid .card:nth-child(4n+1),
+  .certifications-grid .card:nth-child(4n+2) {
     background-color: #f0f4f8 !important;
   }
   .certifications-grid .card .card-body {
@@ -133,14 +147,26 @@
     color: #003b82 !important;
     font-style: italic !important;
     font-weight: 600 !important;
-    margin: 6pt 0 3pt !important;
+    margin: 4pt 0 2pt !important;
   }
-  .mission-header { margin-top: 5pt !important; }
+  .mission-header { margin-top: 3pt !important; }
   .mission-title {
     font-size: 10pt !important;
     font-weight: 600 !important;
   }
   .mission-description { font-size: 9.5pt !important; }
+
+  /* Compaction des paragraphes et listes dans les blocs missions */
+  .mission-description p { margin-bottom: 2pt !important; }
+  .mission-description ul {
+    margin-bottom: 3pt !important;
+    padding-left: 14pt !important;
+  }
+  .mission-description ul li {
+    margin-bottom: 1pt !important;
+    line-height: 1.25 !important;
+  }
+
   .section-separator { border-top: 1px solid #ddd !important; }
 
   /* === FORMATIONS : liste -> tableau visuel === */
