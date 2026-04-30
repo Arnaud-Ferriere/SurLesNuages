@@ -143,6 +143,7 @@ permalink: /about/
 
                             <ul>
                                 {% for resp in mission.responsibilities %}
+                                {% if resp.category %}
                                 <li>
                                     {{ resp.category }} :
                                     <ul>
@@ -151,6 +152,9 @@ permalink: /about/
                                         {% endfor %}
                                     </ul>
                                 </li>
+                                {% else %}
+                                <li>{{ resp }}</li>
+                                {% endif %}
                                 {% endfor %}
                             </ul>
 
