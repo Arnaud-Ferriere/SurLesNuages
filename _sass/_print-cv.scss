@@ -15,7 +15,7 @@
 
   /* Respiration entre sections (override le mt-5 -> 0 global pour cibler
      une valeur intermédiaire spécifique au CV print). */
-  #certifications, #skills, #stacked-experiences, #education, #langues {
+  #certifications, #skills, #stacked-experiences, #education, #langues, #interets {
     margin-top: 8pt !important;
   }
   .section-header h2 {
@@ -117,12 +117,18 @@
   .stacked-card:last-child { border-bottom: none !important; }
   .stacked-card-body { padding: 0 !important; }
 
-  /* Une mission unitaire reste atomique (8-15 lignes en moyenne, tient en
-     fraction de page). Si elle dépasse, le navigateur la coupe quand même. */
-  .mission {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    margin-bottom: 4pt !important;
+  /* Les missions peuvent se couper entre les pages si nécessaire — sinon
+     une mission longue est poussée en bloc à la page suivante et laisse
+     un trou blanc en bas de la page précédente. Les garde-fous suivants
+     évitent les coupures laides :
+     - orphans/widows: 3 (déclaré dans body) empêche 1-2 lignes orphelines
+     - break-after: avoid sur les titres garde le titre avec sa 1ère ligne */
+  .mission { margin-bottom: 4pt !important; }
+  .mission-header,
+  .missions-title,
+  .poste-header {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
   }
 
   .poste-header {
@@ -207,9 +213,4 @@
     cursor: default !important;
   }
 
-  /* Section centres d'intérêt masquée sur le CV imprimé.
-     Réactiver simplement en supprimant les 3 lignes ci-dessous. */
-  #interets {
-    display: none !important;
-  }
 }
