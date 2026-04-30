@@ -11,6 +11,7 @@ permalink: /about/
         <p class="print-name">{{ site.data.author.name }}</p>
         <p class="print-subtitle">{{ site.data.author.role }}</p>
         <p class="print-tagline">{{ site.data.author.tagline }}</p>
+        <p class="print-contact">{{ site.data.author.location }} &middot; {{ site.data.author.mobility }} &middot; {{ site.data.author.email_user }}@{{ site.data.author.email_domain }} &middot; {{ site.data.author.phone }} &middot; {{ site.data.author.linkedin_display }}</p>
     </div>
 
     <!--DESCRIPTION-->
@@ -250,7 +251,7 @@ permalink: /about/
                 <div class="stacked-card-body">
                     <ul>
                         {% for f in site.data.education %}
-                        <li><strong>{{ f.year }} :</strong> {{ f.name }}{% if f.url %} - <a
+                        <li><strong>{{ f.year }} :</strong> {{ f.name }}{% if f.url %}<span class="cert-link-sep"> - </span><a
                                 href="{{ f.url }}"
                                 target="_blank" rel="noopener noreferrer" class="cert-link">{{ f.link_text }} <i
                                     class="fa-solid fa-square-up-right" aria-hidden="true"></i></a>{% endif %}</li>

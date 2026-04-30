@@ -71,6 +71,11 @@
     color: #666;
     margin: 0;
   }
+  .print-header .print-contact {
+    font-size: 9pt;
+    color: #444;
+    margin: 4pt 0 0;
+  }
 
   /* === MASQUER les elements inutiles === */
   #description,
@@ -85,6 +90,7 @@
   .cloud-footer,
   footer,
   .cert-link,
+  .cert-link-sep,
   .card-icon,
   .poste-logo,
   .mission-logo,
