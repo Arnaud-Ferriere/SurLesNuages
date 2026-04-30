@@ -179,7 +179,10 @@
     line-height: 1.25 !important;
   }
 
-  .section-separator { border-top: 1px solid #ddd !important; }
+  /* Le séparateur HR entre poste-section et missions-section est redondant
+     en print : "Missions :" en italique bleu suffit déjà à annoncer la
+     bascule. Supprimé pour gagner en clarté. */
+  .section-separator { display: none !important; }
 
   /* === FORMATIONS : liste -> tableau visuel === */
   #formations .stacked-card-body ul {
