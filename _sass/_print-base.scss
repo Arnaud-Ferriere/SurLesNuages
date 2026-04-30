@@ -41,6 +41,12 @@
     font-family: Arial, Helvetica, sans-serif !important;
   }
 
+  /* Neutralisation des marges Bootstrap par défaut sur paragraphes et listes.
+     Bootstrap applique 1rem (~16pt) à chaque <p> ce qui est ENORME sur un CV
+     dense — gros levier d'économie de pages en print. */
+  p { margin-bottom: 3pt !important; }
+  ul, ol { margin-bottom: 4pt !important; }
+
   /* Empecher le navigateur d'imprimer les URLs apres les liens */
   a::after { content: none !important; }
 

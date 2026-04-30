@@ -94,12 +94,22 @@
     border: none !important;
     border-radius: 0 !important;
     border-bottom: 1px solid #ddd !important;
-    padding: 8pt 0 !important;
+    padding: 3pt 0 !important;
     margin-bottom: 0 !important;
-    page-break-inside: avoid !important;
+    /* page-break-inside retiré volontairement : une expérience peut contenir
+       plusieurs missions et créerait un trou blanc en bas de page si elle est
+       gardée d'un seul tenant. La granularité de coupure descend à .mission. */
   }
   .stacked-card:last-child { border-bottom: none !important; }
   .stacked-card-body { padding: 0 !important; }
+
+  /* Une mission unitaire reste atomique (8-15 lignes en moyenne, tient en
+     fraction de page). Si elle dépasse, le navigateur la coupe quand même. */
+  .mission {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 4pt !important;
+  }
 
   .poste-header {
     display: block !important;
