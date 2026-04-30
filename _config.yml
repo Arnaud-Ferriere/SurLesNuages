@@ -1,13 +1,12 @@
 title: Sur les nuages
 home_title: "Bienvenue sur les nuages !"
-home_tagline: "Découvrez mes derniers articles sur l'administration système, le cloud, et bien plus encore !"
+home_tagline: "Je partage ici mes notes de terrain et expériences autour de l'identité, Microsoft 365 et l'automatisation. </br>La tête dans les nuages, les pieds sur terre."
 default_image: /assets/photo.webp
 default_banner: ""
 description: >-
-  Consultant et administrateur systèmes spécialisé dans la gestion des identités,
-  les environnements hybrides Active Directory – Entra ID, Microsoft 365 et
-  l'automatisation (PowerShell, Power Platform). Articles techniques et retours
-  d'expérience.
+  Consultant Microsoft 365 spécialisé en gestion des identités et environnements
+  hybrides Active Directory / Entra ID. Automatisation PowerShell et Power Platform.
+  Articles techniques et retours d'expérience.
 url: "https://surlesnuages.fr"
 baseurl: ""
 lang: fr
