@@ -284,7 +284,7 @@ permalink: /about/
                 <div class="stacked-card-body">
                     {% for lang in site.data.languages %}
                     <img width="48" height="48" src="{{ lang.flag | relative_url }}" alt="{{ lang.name }}" loading="lazy" decoding="async" />
-                    <strong>{{ lang.name }} :</strong> {{ lang.level }}{% if lang.url %} - <a
+                    <strong>{{ lang.name }} :</strong> {{ lang.level }}{% if lang.url %}<span class="cert-link-sep"> - </span><a
                         href="{{ lang.url }}"
                         target="_blank" rel="noopener noreferrer" class="cert-link">{{ lang.link_text }} <i
                             class="fa-solid fa-square-up-right" aria-hidden="true"></i></a>{% endif %}<br />
