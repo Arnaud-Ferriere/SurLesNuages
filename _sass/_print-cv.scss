@@ -36,11 +36,11 @@
     overflow: visible !important;
   }
 
-  /* === CERTIFICATIONS : grille 2 colonnes en print pour gagner de la place === */
+  /* === CERTIFICATIONS : 1 colonne en print pour rester ATS-friendly ===
+     Les ATS lisent en flot top-to-bottom et un grid multi-colonnes peut
+     mélanger l'ordre de lecture des certifs ou casser leur parsing. */
   .certifications-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0 6pt !important;
+    display: block !important;
   }
   .certifications-grid .card {
     display: flex !important;
@@ -54,9 +54,6 @@
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
-  /* Alternance retirée volontairement : avec peu de certifications, le
-     "première ligne colorée, deuxième ligne blanche" rend mal. Réactiver
-     une fois que la liste atteint 6+ certifs si l'effet visuel le justifie. */
   .certifications-grid .card .card-body {
     display: flex !important;
     flex-direction: row !important;
