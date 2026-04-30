@@ -118,8 +118,18 @@
      un trou blanc en bas de la page précédente. Les garde-fous suivants
      évitent les coupures laides :
      - orphans/widows: 3 (déclaré dans body) empêche 1-2 lignes orphelines
-     - break-after: avoid sur les titres garde le titre avec sa 1ère ligne */
-  .mission { margin-bottom: 4pt !important; }
+     - break-after: avoid sur les titres garde le titre avec sa 1ère ligne
+
+     Indentation visuelle (padding-left + border-left bleu) : chaque mission
+     est nichée sous son poste parent. Sans ça, .mission-title et
+     .poste-title se confondent visuellement et la hiérarchie devient
+     ambiguë. */
+  .mission {
+    padding-left: 10pt !important;
+    border-left: 2px solid #003b82 !important;
+    margin-top: 3pt !important;
+    margin-bottom: 5pt !important;
+  }
   .mission-header,
   .missions-title,
   .poste-header {
@@ -131,7 +141,7 @@
     display: block !important;
   }
   .poste-title {
-    font-size: 10.5pt !important;
+    font-size: 11pt !important;
     font-weight: 700 !important;
     color: #222 !important;
     margin-bottom: 2pt !important;
