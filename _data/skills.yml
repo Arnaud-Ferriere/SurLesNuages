@@ -1,16 +1,19 @@
-- name: "Gestion des identités et accès, gouvernance"
+- name: "Gestion des identités, accès & gouvernance (SSO, MFA, accès conditionnels, modèle de tiering)"
   level: "Expert"
 
-- name: "Annuaires : Active directory, Microsoft Entra ID"
+- name: "Active Directory & Microsoft Entra ID (hybride, Connect Sync, ADFS, IdP multiples)"
   level: "Maitrise"
 
-- name: "Automatisation : PowerShell, PowerApps, Power Automate"
+- name: "Sécurité M365 (Defender, Purview, accès conditionnels, ANSSI, gestion d'incidents)"
   level: "Maitrise"
 
-- name: "Cloud & Collaboration : Microsoft 365, Teams, SharePoint, Exchange"
+- name: "Automatisation : PowerShell, Power Automate, Power Apps, Graph API"
   level: "Maitrise"
 
-- name: "Microsoft Exchange (Online)"
+- name: "Microsoft 365 & collaboration : Exchange Online, Teams, SharePoint, OneDrive"
+  level: "Maitrise"
+
+- name: "Conception de solutions & rédaction technique : DAT, analyse fonctionnelle, cadrage Power Platform"
   level: "Maitrise"
 
 - name: "Sécurité : Accès conditionnels, bonnes pratiques ANSSI"

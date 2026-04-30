@@ -3,14 +3,21 @@ name_display: Arnaud FERRIERE
 # Chemin (relatif) vers l'@id stable du Person dans les JSON-LD.
 # Concaténer avec site.url pour obtenir l'URI absolue : {{ site.url }}{{ site.data.author.person_id_path }}
 person_id_path: /about/#person
-role: Consultant & Administrateur Systèmes
-tagline: "Gestion des identités | Active Directory – Entra ID | Microsoft 365 | Automatisation"
+role: Consultant Microsoft 365, Identité et Automatisation
+tagline: "Active Directory – Entra ID | PowerShell | Power Platform | Microsoft 365"
 photo: assets/about/photo.webp
 photo_alt: "Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique"
 linkedin: https://www.linkedin.com/in/ferrierearnaud/
+linkedin_display: linkedin.com/in/ferrierearnaud
 github: https://github.com/Arnaud-Ferriere
 email_user: arn.fer
 email_domain: gmail.com
+# Coordonnées affichées UNIQUEMENT dans la version imprimée du CV (about.html
+# print-header). Ne sont jamais rendues dans le HTML servi aux navigateurs ou aux
+# bots, le bloc parent étant `display: none` en mode écran.
+location: "Châteaubourg (35)"
+mobility: "Mobile Rennes/Nantes/Paris/remote"
+phone: "0666422591"
 bio: >-
   Je suis tombé dans l'informatique tout petit avec un bon vieux 286 sur MS-DOS 6.22. J'ai grandi avec
   et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation
