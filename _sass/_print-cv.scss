@@ -54,13 +54,9 @@
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
-  /* Alternance par paires de lignes : ligne 1 (cards 1+2) bleutée, ligne 2
-     (3+4) blanche, ligne 3 (5+6) bleutée, etc. — préserve la cohérence
-     visuelle en grille 2 colonnes. */
-  .certifications-grid .card:nth-child(4n+1),
-  .certifications-grid .card:nth-child(4n+2) {
-    background-color: #f0f4f8 !important;
-  }
+  /* Alternance retirée volontairement : avec peu de certifications, le
+     "première ligne colorée, deuxième ligne blanche" rend mal. Réactiver
+     une fois que la liste atteint 6+ certifs si l'effet visuel le justifie. */
   .certifications-grid .card .card-body {
     display: flex !important;
     flex-direction: row !important;
