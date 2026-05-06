@@ -1,0 +1,97 @@
+/* ============================================================
+   BLOC PROMO — affiché en bas d'article si _data/promo.yml existe
+   ============================================================ */
+
+.promo-block {
+  /* Aucun style propre — wrapper transparent qui hérite des espacements
+     Bootstrap (.container .mt-4 .mb-2) appliqués dans le HTML. */
+}
+
+.promo-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.promo-logo {
+  flex: 0 0 auto;
+}
+
+.promo-logo img {
+  max-width: 96px;
+  max-height: 96px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.promo-body {
+  flex: 1 1 auto;
+  min-width: 0; /* prevent flex overflow on long taglines */
+}
+
+.promo-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 0.15rem;
+}
+
+.promo-tagline {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 0 0 0.6rem;
+}
+
+.promo-cta-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.8rem;
+}
+
+.promo-cta-text {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.promo-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 999px;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.promo-cta-btn:hover,
+.promo-cta-btn:focus-visible {
+  background-color: var(--color-secondary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsive : empile en colonne sur petit écran */
+@media (max-width: 576px) {
+  .promo-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .promo-logo img {
+    max-width: 72px;
+    max-height: 72px;
+  }
+}

@@ -128,6 +128,30 @@ layout: default
     </div>
 </article>
 
+{% if site.data.promo %}
+<aside class="promo-block container mt-4 mb-2" aria-label="{{ site.data.ui.promo_aria | default: 'Sponsor de l''article' }}">
+    <div class="promo-card">
+        {% if site.data.promo.logo %}
+        <div class="promo-logo">
+            <img src="{{ site.data.promo.logo | relative_url }}" alt="Logo {{ site.data.promo.name }}" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="promo-body">
+            <p class="promo-name">{{ site.data.promo.name }}</p>
+            <p class="promo-tagline">{{ site.data.promo.tagline }}</p>
+            {% if site.data.promo.cta_url %}
+            <p class="promo-cta-line">
+                {% if site.data.promo.cta_text %}<span class="promo-cta-text">{{ site.data.promo.cta_text }}</span>{% endif %}
+                <a class="promo-cta-btn" href="{{ site.data.promo.cta_url }}" target="_blank" rel="noopener noreferrer">
+                    {{ site.data.promo.cta_label }} <i class="fa-solid fa-square-up-right" aria-hidden="true"></i>
+                </a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</aside>
+{% endif %}
+
 <div class="giscus-comments container mt-4 mb-2">
     <script>
     (function() {

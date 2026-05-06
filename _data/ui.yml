@@ -41,6 +41,9 @@ post_pdf: "PDF"
 post_save_pdf: "Enregistrer en PDF"
 post_source_md: ".md"
 post_view_source: "Voir la source Markdown sur GitHub"
+
+# Bloc promo (Employeur) — affiché en bas d'article si _data/promo.yml existe
+promo_aria: "Sponsor de l'article"
 post_share_prompt: "Ça vous a aidé ? Partagez :"
 post_toc: "Table des matières"
 post_related: "Sur le même sujet"
