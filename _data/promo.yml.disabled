@@ -1,0 +1,9 @@
+# Bloc promotionnel affiché en bas de chaque article.
+# Rendu via _layouts/post.html (aside.promo-block) si ce fichier existe.
+# Supprimer ou renommer ce fichier pour désactiver le bloc.
+name: "Metsys"
+logo: "/assets/about/metsys-logo.svg"
+tagline: "Conseil & expertise Microsoft 365, Cloud, Cybersécurité et Power Platform."
+cta_text: "Vous avez un projet ?"
+cta_label: "Contactez Metsys"
+cta_url: "https://www.metsys.fr/contact/"

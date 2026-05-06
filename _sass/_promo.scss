@@ -3,8 +3,16 @@
    ============================================================ */
 
 .promo-block {
-  /* Aucun style propre — wrapper transparent qui hérite des espacements
-     Bootstrap (.container .mt-4 .mb-2) appliqués dans le HTML. */
+  margin-top: 0.5rem;
+}
+
+/* Le `<article class="container">` qui précède le bloc promo hérite de
+   `.container { margin-bottom: 4em }` défini dans _base.scss, ce qui
+   crée un gros gap (~64px desktop / ~32px mobile) entre l'article et
+   le bloc promo. On annule ce margin-bottom uniquement quand un
+   .promo-block suit, via :has(). */
+.container:has(+ .promo-block) {
+  margin-bottom: 0;
 }
 
 .promo-card {
@@ -12,19 +20,34 @@
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.25rem 1.5rem;
+  padding: 25px;
   background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius, 0.5rem);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-light);
+  /* Style aligné sur .article-container (cf. _articles.scss) pour
+     visuellement enchaîner les deux blocs sur la page article. */
 }
 
 .promo-logo {
   flex: 0 0 auto;
+  width: 120px;
+  aspect-ratio: 1; /* Fond carré (120x120) — le logo, peu importe son ratio
+                      natif (ex. Metsys 3.24:1), est centré dans le carré.
+                      Réserve aussi la largeur même quand le SVG n'a pas
+                      de dimensions natives (sinon collapse à 0px). */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fond blanc — pattern réutilisé de .poste-logo/.mission-logo pour
+     garantir la lisibilité quel que soit le thème (light ou dark) et
+     quelle que soit la palette du logo fourni par l'utilisateur. */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px;
 }
 
 .promo-logo img {
-  max-width: 96px;
+  max-width: 100%;
   max-height: 96px;
   width: auto;
   height: auto;
@@ -65,22 +88,18 @@
 .promo-cta-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.9rem;
-  border: 1.5px solid var(--color-secondary);
-  border-radius: 999px;
+  gap: 0.3rem;
   color: var(--color-secondary);
   font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness 0.15s ease;
 }
 
 .promo-cta-btn:hover,
 .promo-cta-btn:focus-visible {
-  background-color: var(--color-secondary);
-  color: #fff;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 /* Responsive : empile en colonne sur petit écran */
