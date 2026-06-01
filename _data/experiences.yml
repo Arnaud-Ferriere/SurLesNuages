@@ -51,15 +51,26 @@
     - client: "Activités internes Metsys"
       period: "Depuis 2023"
       context: >-
-        En parallèle de la mission cliente, contributions transverses au sein
-        de Metsys : partage de connaissances, support à l'avant-vente, outils
-        internes Power Platform.
+        En parallèle de la mission cliente, responsabilités transverses au sein
+        de Metsys : encadrement et accompagnement de carrière de consultants
+        (jusqu'à 5), support à l'avant-vente, partage de connaissances et
+        outils internes Power Platform.
       responsibilities:
-        - "Animation d'un midi technique interne (présentation de la Power Platform)"
-        - "Contribution ponctuelle à l'avant-vente : rédaction d'une proposition technique pour le cadrage d'une migration d'environnement hybride"
-        - "Conception et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
-        - "Analyse et maintenance de l'application précédente"
-      tech: "Power Apps, Power Automate, SharePoint Online"
+        - category: "Encadrement et accompagnement de carrière"
+          items:
+            - "Conduite des entretiens annuels et professionnels, points mensuels en one-to-one et définition des plans de développement (formations, certifications)"
+            - "Intégration des nouveaux arrivants, plan d'action des premières semaines et suivi rapproché en période d'essai"
+            #- "Accompagnement en intercontrat avec plans de montée en compétences, préparation des certifications et des entretiens clients, bilans d'objectifs"
+            - "Suivi administratif et garant de la conformité (validation des CRA, congés et télétravail, mise à jour des CV de l'équipe)"
+            - "Participation au comité de pilotage d'agence et relais des actualités auprès de l'équipe"
+        - category: "Contributions transverses"
+          items:
+            #- "Propriété et administration du site de formation interne (Metsys Academy / Moodle), structuration et évolution des parcours"
+            - "Animation de midi technique interne (par exemple présentation de la Power Platform)"
+            - "Contribution ponctuelle à l'avant-vente avec rédaction de proposition technique pour le cadrage de migration d'environnement hybride"
+            - "Conception et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
+            - "Analyse et maintenance de l'application"
+      tech: "Power Apps, Power Automate, SharePoint Online, Moodle"
 
 - company: "Net-Plus"
   logo: "assets/about/netplus-logo.png"

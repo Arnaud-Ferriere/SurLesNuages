@@ -155,9 +155,12 @@
     border-color: var(--color-secondary);
   }
 
-  /* Section separator */
+  /* Section separator — --color-border (#2a3544) est trop proche du fond
+     de card (#1a2636) en dark, le trait disparaît. On utilise une version
+     atténuée du bleu secondaire, cohérente avec le light mode
+     (rgba(0,59,130,0.2)). */
   .section-separator {
-    border-top-color: var(--color-border);
+    border-top-color: color-mix(in srgb, var(--color-secondary) 60%, transparent);
   }
 
   /* Post tags border */

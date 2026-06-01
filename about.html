@@ -125,6 +125,7 @@ permalink: /about/
                 <div class="missions-section">
                     <h4 class="missions-title">{{ site.data.ui.about_missions }}</h5>
                     {% for mission in exp.missions %}
+                    {% unless forloop.first %}<hr class="section-separator">{% endunless %}
                     <div class="mission">
                         <div class="mission-header">
                             {% if mission.logo %}
