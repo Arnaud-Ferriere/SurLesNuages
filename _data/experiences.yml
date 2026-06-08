@@ -99,7 +99,7 @@
       items:
         - "Migration de l'infra interne à hybride"
         - "Attribution de licences, gestion de groupes dynamiques pour automatiser l'attribution"
-        - "Sécurisation de l'infrastructure, activation du MFA, mise en place des accès conditionnel"
+        - "Sécurisation de l'infrastructure, activation du MFA, mise en place des accès conditionnels"
         - "MCO Exchange Online (création de boites partagées, liste de distribution etc)"
         - "Création de règles Exchange (par exemple, avertissement pour les messages externes, purge automatique des mails anciens, etc)"
         - "Administration Teams et One Drive"
