@@ -2,19 +2,19 @@
   level: "Expert"
 
 - name: "Active Directory & Microsoft Entra ID (hybride, Connect Sync, ADFS, IdP multiples)"
-  level: "Maitrise"
+  level: "Expert"
 
 - name: "Sécurité M365 (Defender, Purview, accès conditionnels, ANSSI, gestion d'incidents)"
-  level: "Maitrise"
+  level: "Maîtrise"
 
 - name: "Automatisation : PowerShell, Power Automate, Power Apps, Graph API"
-  level: "Maitrise"
+  level: "Maîtrise"
 
 - name: "Microsoft 365 & collaboration : Exchange Online, Teams, SharePoint, OneDrive"
-  level: "Maitrise"
+  level: "Maîtrise"
 
 - name: "Conception de solutions & rédaction technique : DAT, analyse fonctionnelle, cadrage Power Platform"
-  level: "Maitrise"
+  level: "Maîtrise"
 
 - name: "Outils dev : Git, Markdown, Python, HTML/CSS"
   level: "Pratique"
