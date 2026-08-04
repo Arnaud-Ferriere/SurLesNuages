@@ -30,6 +30,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+    {% comment %}Pages "orphelines" (hors site, non listées) : noindex + sitemap: false{% endcomment %}
+    {% if page.noindex %}
+    <meta name="robots" content="noindex, follow">
+    {% endif %}
+
     <!-- Open Graph -->
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:locale" content="fr_FR">
