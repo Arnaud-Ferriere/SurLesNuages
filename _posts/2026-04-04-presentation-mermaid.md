@@ -566,7 +566,7 @@ Le diagramme s'affiche directement dans la vue lecture.
 ---
 ### Plugin communautaire : Mermaid Tools
 
-En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](https://obsidian.md/plugins?id=mermaid-tools) ([page Github](https://github.com/dartungar/obsidian-mermaid?tab=readme-ov-file)) qui apporte une barre d'outils dédiée dans l'éditeur Obsidian.
+En plus de cette intégration native, j'utilise le plugin [**Mermaid Tools**](https://community.obsidian.md/plugins/mermaid-tools) ([page Github](https://github.com/dartungar/obsidian-mermaid?tab=readme-ov-file)) qui apporte une barre d'outils dédiée dans l'éditeur Obsidian.
 
 Voici une petite animation de démonstration:
 
