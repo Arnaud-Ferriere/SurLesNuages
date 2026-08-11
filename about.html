@@ -112,7 +112,7 @@ permalink: /about/
                 <div class="poste-section">
                     <div class="poste-header">
                         <img src="{{ exp.logo | relative_url }}" alt="Logo {{ exp.company }}" class="poste-logo" width="80" height="80" loading="lazy">
-                        <h3 class="poste-title"><strong>{{ exp.period }} : </strong> {{ exp.title }}</h4>
+                        <h3 class="poste-title"><strong>{{ exp.period }} : </strong><span class="poste-company">{{ exp.company }}&nbsp;: </span>{{ exp.title }}</h3>
                     </div>
                     <p class="poste-description">{{ exp.description }}</p>
                 </div>
@@ -123,7 +123,7 @@ permalink: /about/
 
                 <!-- Section Missions -->
                 <div class="missions-section">
-                    <h4 class="missions-title">{{ site.data.ui.about_missions }}</h5>
+                    <h4 class="missions-title">{{ site.data.ui.about_missions }}</h4>
                     {% for mission in exp.missions %}
                     {% unless forloop.first %}<hr class="section-separator">{% endunless %}
                     <div class="mission">
@@ -131,7 +131,7 @@ permalink: /about/
                             {% if mission.logo %}
                             <img src="{{ mission.logo | relative_url }}" alt="Logo {{ mission.client }}" class="mission-logo" width="80" height="80" loading="lazy">
                             {% endif %}
-                            <h4 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h5>
+                            <h4 class="mission-title"><strong>{{ mission.period }} : </strong> {{ mission.client }}</h4>
                         </div>
 
                         <div class="mission-description">

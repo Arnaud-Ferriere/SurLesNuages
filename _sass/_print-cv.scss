@@ -146,6 +146,13 @@
   .poste-title strong,
   .mission-title strong { color: #003b82 !important; }
 
+  /* Les logos etant masques a l'impression, le nom de l'employeur ne serait
+     porte par rien : on reaffiche le texte masque a l'ecran. */
+  .poste-company {
+    display: inline !important;
+    color: #003b82 !important;
+  }
+
   /* Description narrative d'entreprise masquée en print : ce contenu (ex.
      "Metsys se positionne comme un acteur clé...") est précieux sur le site
      mais inutile sur un CV de candidature. */
