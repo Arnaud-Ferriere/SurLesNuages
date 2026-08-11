@@ -44,6 +44,8 @@
             - "Analyse fonctionnelle, cahier des charges et proposition d'architecture pour la refonte de l'outil de support Power Apps (Power Apps + SPO + Power Automate, env. Dev/Prod)"
             - "Suivi projet et accompagnement des développeurs Power Platform jusqu'à la mise en production"
             - "Rédaction des Documents d'Architecture Technique (DAT) des automatisations et outils réalisés"
+            - "Conception d'un modèle générique de spécifications fonctionnelles, réutilisé au-delà du périmètre initial"
+            - "Gouvernance des licences Microsoft 365 Copilot, du pilote au passage en Run : critères d'attribution, circuit d'approbation, encadrement des accès au regard des contenus exposés, suivi des attributions, industrialisation (équivalente à environ 0,4 ETP, soit près de 100 jours de traitement support par an)"
         - category: "Gestion de crise"
           items:
             - "Interlocuteur clé pour le diagnostic, la transmission d'informations entre services et la mise en place de remédiations de masse"
@@ -52,14 +54,15 @@
       period: "Depuis 2023"
       context: >-
         En parallèle de la mission cliente, responsabilités transverses au sein
-        de Metsys : encadrement et accompagnement de carrière de consultants
-        (jusqu'à 5), support à l'avant-vente, partage de connaissances et
-        outils internes Power Platform.
+        de Metsys : manager depuis mai 2026 (4 consultants, périmètre
+        cible de 5), participation au recrutement, support à l'avant-vente,
+        partage de connaissances et outils internes Power Platform.
       responsibilities:
-        - category: "Encadrement et accompagnement de carrière"
+        - category: "Encadrement et accompagnement de carrière (depuis mai 2026)"
           items:
-            - "Conduite des entretiens annuels et professionnels, points mensuels en one-to-one et définition des plans de développement (formations, certifications)"
-            - "Intégration des nouveaux arrivants, plan d'action des premières semaines et suivi rapproché en période d'essai"
+            - "Points mensuels en one-to-one, conduite d'entretiens annuels et définition de plans de développement individualisés selon l'axe de chaque consultant (formations, certifications)"
+            - "Participation au recrutement : conduite d'entretiens techniques de qualification"
+            - "Intégration des nouveaux arrivants, plan d'action des premières semaines et suivi en période d'essai"
             #- "Accompagnement en intercontrat avec plans de montée en compétences, préparation des certifications et des entretiens clients, bilans d'objectifs"
             - "Suivi administratif et garant de la conformité (validation des CRA, congés et télétravail, mise à jour des CV de l'équipe)"
             - "Participation au comité de pilotage d'agence et relais des actualités auprès de l'équipe"
@@ -68,7 +71,8 @@
             #- "Propriété et administration du site de formation interne (Metsys Academy / Moodle), structuration et évolution des parcours"
             - "Animation de midi technique interne (par exemple présentation de la Power Platform)"
             - "Contribution ponctuelle à l'avant-vente avec rédaction de proposition technique pour le cadrage de migration d'environnement hybride"
-            - "Conception et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
+            - "Conception, livraison d'un DAT et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
+            - 
       tech: "Power Apps, Power Automate, SharePoint Online, Moodle"
 
 - company: "Net-Plus"
