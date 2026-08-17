@@ -1,3 +1,8 @@
+- name: "MS-102 – Microsoft 365 Administrator Expert"
+  date: "Août 2026"
+  badge: "assets/about/microsoft-certified-expert-badge.svg"
+  url: "https://learn.microsoft.com/api/credentials/share/en-us/Arnaud-Ferriere/AE49EDDB3AE2C7B0?sharingId=F8FF919B676DA62B"
+
 - name: "SC-300 – Identity and Access Administrator Associate"
   date: "Septembre 2024"
   badge: "assets/about/microsoft-certified-associate-badge.svg"
