@@ -68,7 +68,7 @@
             - "Participation au comité de pilotage d'agence et relais des actualités auprès de l'équipe"
         - category: "Contributions transverses"
           items:
-            #- "Propriété et administration du site de formation interne (Metsys Academy / Moodle), structuration et évolution des parcours"
+            - "Propriété et administration du site de formation interne (Moodle), onboarding des contributeurs"
             - "Animation de midi technique interne (par exemple présentation de la Power Platform)"
             - "Contribution ponctuelle à l'avant-vente avec rédaction de proposition technique pour le cadrage de migration d'environnement hybride"
             - "Conception, livraison d'un DAT et MCO d'une application Power Apps interne de réservation de véhicules de la flotte d'entreprise et covoiturage"
