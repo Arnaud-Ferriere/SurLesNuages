@@ -3,8 +3,8 @@ name_display: Arnaud FERRIERE
 # Chemin (relatif) vers l'@id stable du Person dans les JSON-LD.
 # Concaténer avec site.url pour obtenir l'URI absolue : {{ site.url }}{{ site.data.author.person_id_path }}
 person_id_path: /about/#person
-role: Consultant Microsoft 365, Identité et Automatisation
-tagline: "Active Directory – Entra ID | PowerShell | Power Platform | Microsoft 365"
+role: Ingénieur systèmes / Consultant M365, IAM et automatisation
+tagline: "Active Directory / Entra ID / IAM | PowerShell | Power Platform | Microsoft 365"
 photo: assets/about/photo.webp
 photo_alt: "Dessin représentant l'auteur du site, Arnaud Ferriere, dans et au dessus de nuages, entouré de serveurs informatique"
 linkedin: https://www.linkedin.com/in/ferrierearnaud/
@@ -23,7 +23,7 @@ bio: >-
   et suivi toutes les évolutions depuis, en passant par Windows 95 et ses 50 disquettes d'installation
   (jamais dans le même ordre !) jusqu'au développement actuel des IA... et de tout ce qui viendra !
   <br />
-  Aujourd'hui, je suis consultant et Administrateur systèmes spécialisé dans la gestion des identités
+  Aujourd'hui, je suis consultant et Ingénieur systèmes spécialisé dans la gestion des identités
   et les environnements hybrides Active Directory - Entra ID et les outils collaboratifs Microsoft 365.
   A côté de ça j'ai développé mes compétences en automatisation sur la Power Platform de Microsoft et
   PowerShell, me permettant de contribuer à des projets où l'innovation et l'amélioration continue
